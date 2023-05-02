@@ -28,11 +28,18 @@ namespace Pynterfase
                     ClusuarioL objUsuarioL = new ClusuarioL();
                     int existe = objUsuarioL.mtdLogin(txtEmail.Text, txtPassword.Text);
 
-                    if (existe == 1) {
+                    if (existe == 1)
+                    {
 
                         Session["usuario"] = txtEmail.Text;
                         Response.Redirect("~/Vista/Proyectos.aspx");
 
+
+                    }
+                    else
+                    {
+
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "UserorpasswordError();", true);
 
                     }
 
@@ -55,6 +62,19 @@ namespace Pynterfase
             }
 
 
+
+
+        }
+
+        protected void lbtnNotRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Vista/Register.aspx");
+        }
+
+        protected void lbtnForgotPass_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("Vista/forgotpassword.aspx");
 
 
         }

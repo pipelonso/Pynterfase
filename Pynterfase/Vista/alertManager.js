@@ -73,3 +73,11 @@ function AlreadyExistUser() {
     });
 }
 
+function UserorpasswordError() {
+    swal({
+        title: 'USUARIO O CONTRASEÑA NO VALIDOS',
+        text: 'Compruebe los valores ingresados',
+        type: 'error'
+    });
+}
+

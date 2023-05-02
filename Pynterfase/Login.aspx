@@ -30,9 +30,9 @@
                 <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" CssClass="btn-light w-100" OnClick="btnIngresar_Click"/>
                 <br />
                 <br />
-                <asp:LinkButton ID="lbtnForgotPass" runat="server" CssClass="text-black align-content-cente">Olvide mi contraseña</asp:LinkButton>
+                <asp:LinkButton ID="lbtnForgotPass" runat="server" CssClass="text-black align-content-cente" OnClick="lbtnForgotPass_Click">Olvide mi contraseña</asp:LinkButton>
                 <br />
-                <asp:LinkButton ID="lbtnNotRegister" runat="server" CssClass="text-black align-content-center">No estoy registrado</asp:LinkButton>
+                <asp:LinkButton ID="lbtnNotRegister" runat="server" CssClass="text-black align-content-center" OnClick="lbtnNotRegister_Click">No estoy registrado</asp:LinkButton>
             </div>
             <div class="col-3">
 
