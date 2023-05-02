@@ -1,0 +1,25 @@
+﻿
+* {
+
+    margin : 0px;
+    padding : 0px;
+
+}
+
+body {
+    background-image: url('../imagenes/back1.gif');
+    background-size: cover;
+}
+
+.regbox {
+    position: relative;
+    top: 50px;    
+    height: 600px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(128, 128, 128);
+    background-color: rgb(25, 25, 25);
+    opacity: 70%;
+    backdrop-filter : blur(20%);
+    color : white;
+}

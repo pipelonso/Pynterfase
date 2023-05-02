@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProjectsContent.master.cs" Inherits="Pynterfase.Vista.ProjectsContent" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+    <link href="Vista/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Vista/mycss/ProjectsMaster.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="position-sticky bg-primary barra">
+                <ol class="nav">
+                    <li class="nav-item m-2">
+                        <a href="#" class="link-underline text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-hexagon-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z" />
+                            </svg>
+                            usuario
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a href="#" class="link-underline text-white ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                                <path d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
+                                <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z" />
+                            </svg>
+                            Proyectos
+                        </a>
+                    </li>
+                </ol>
+                
+                
+            </div>
+
+            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <script src="Vista/js/bootstrap.min.js"></script>
+            </asp:ContentPlaceHolder>
+            
+        </div>
+        
+    </form>
+</body>
+</html>

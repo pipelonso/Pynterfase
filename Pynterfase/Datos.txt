@@ -1,0 +1,15 @@
+﻿if (!IsPostBack)
+            {
+
+                ClusuarioL objUserL = new ClusuarioL();
+                int verificated = objUserL.mtdCheckVerification(Session["usuario"].ToString());
+
+                if (verificated == 0)
+                {
+
+                    Response.Redirect("~/Vista/Verification.aspx");
+
+                }
+
+
+            }
