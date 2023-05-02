@@ -16,25 +16,29 @@
     <form id="form1" runat="server">
         
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6 bg-primary myalingY myadjust">
-                <h1 class="text-center">LOGIN</h1>
+            <div class="col-sm"></div>
+            <div class="col-lg-6 col-sm-12 myalingY myadjust loginbg">
+                <h1 class="ongray">LOGIN</h1>
+                <br />
                 <p>CORREO</p>
-                <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass=" w-100 form-text text-center align-content-center"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass=" w-100 form-text text-center align-content-center txtcajas"></asp:TextBox>
                 <br />
                 <br />
                 <p>CONTRASEÑA</p>
-                <asp:TextBox ID="txtPassword" runat="server" placeholder="Contraseña" CssClass="w-100 text-center" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" placeholder="Contraseña" CssClass="w-100 text-center txtcajas" TextMode="Password"></asp:TextBox>
                 <br />
                 <br />
-                <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" CssClass="btn-light w-100" OnClick="btnIngresar_Click"/>
+                <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" CssClass="btn-light w-100 txtcajas" OnClick="btnIngresar_Click"/>
                 <br />
                 <br />
-                <asp:LinkButton ID="lbtnForgotPass" runat="server" CssClass="text-black align-content-cente" OnClick="lbtnForgotPass_Click">Olvide mi contraseña</asp:LinkButton>
-                <br />
-                <asp:LinkButton ID="lbtnNotRegister" runat="server" CssClass="text-black align-content-center" OnClick="lbtnNotRegister_Click">No estoy registrado</asp:LinkButton>
+                <div class="container-fluid">
+                    <asp:LinkButton ID="lbtnForgotPass" runat="server" CssClass="ongray align-content-center" OnClick="lbtnForgotPass_Click">Olvide mi contraseña</asp:LinkButton>
+                    <br />
+                    <asp:LinkButton ID="lbtnNotRegister" runat="server" CssClass="ongray align-content-center" OnClick="lbtnNotRegister_Click">No estoy registrado</asp:LinkButton>
+                </div>
+                
             </div>
-            <div class="col-3">
+            <div class="col-sm">
 
                 
             </div>

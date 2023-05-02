@@ -104,6 +104,7 @@
     <Content Include="Vista\imagenes\giphy.gif" />
     <Content Include="Vista\imagenes\regImg.svg" />
     <Content Include="Vista\imagenes\sunshine-2250.gif" />
+    <Content Include="Vista\imagenes\window_base.svg" />
     <Content Include="Vista\mycss\Editor.css" />
     <Content Include="Vista\mycss\ProjectsMaster.css" />
     <Content Include="Vista\mycss\ProjectsPanel.css" />
