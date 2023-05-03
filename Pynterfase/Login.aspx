@@ -28,7 +28,7 @@
                 <asp:TextBox ID="txtPassword" runat="server" placeholder="Contraseña" CssClass="w-100 text-center txtcajas" TextMode="Password"></asp:TextBox>
                 <br />
                 <br />
-                <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" CssClass="btn-light w-100 txtcajas" OnClick="btnIngresar_Click"/>
+                <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" CssClass="btn-light w-100 txtcajas ongray h2 onbtn" OnClick="btnIngresar_Click"/>
                 <br />
                 <br />
                 <div class="container-fluid">
