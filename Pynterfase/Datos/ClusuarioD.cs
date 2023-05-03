@@ -163,5 +163,41 @@ namespace Pynterfase.Datos
 
         }
 
+        public int mtdRecuperarPass(string correo,string codigo) {
+
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            string consulta = "SELECT Recuperacion.* FROM Recuperacion , Usuario WHERE Recuperacion.IdUsuario = Usuario.IdUsuario AND Usuario.correo = '"+correo+"'";
+            DataTable conteo = objSQL.mtdconsultar(consulta);
+
+            int operacion = 0;
+
+            if (conteo.Rows.Count >= 1)
+            {
+                //Edita
+
+                ClUsuarioE datosusuario = mtdGetAllUser(correo);
+                string actualizar = "UPDATE Recuperacion SET codigo = '"+codigo+"' WHERE IdUsuario = '"+datosusuario.IdUsuario+"';";
+                operacion = objSQL.mtdInsert(actualizar);
+                
+
+
+            }
+            else
+            {
+                //agrega
+                ClUsuarioE datosusuario = mtdGetAllUser(correo);
+                string agregar = "INSERT INTO Recuperacion (IdUsuario, codigo) VALUES ("+datosusuario.IdUsuario+",'"+codigo+"')";
+                operacion = objSQL.mtdInsert(agregar);
+
+                
+            }
+
+
+            return operacion;
+        }
+
+
+
+
     }
 }

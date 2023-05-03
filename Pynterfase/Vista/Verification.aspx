@@ -15,7 +15,7 @@
             <p>Ingresa el codigo que acaba de llegar a tu correo</p>
             <asp:TextBox ID="txtCodigo" runat="server"></asp:TextBox>
             <asp:Button ID="btnVerificar" runat="server" Text="Verificar" OnClick="btnVerificar_Click" />
-
+            
         </div>
     </form>
 </body>

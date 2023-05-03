@@ -24,30 +24,20 @@ namespace Pynterfase
                     objUsuarioL.mtdAddVerificationCode(Session["usuario"].ToString());
                     ClUsuarioE objUsuarioE = objUsuarioL.mtdGetAllUser(Session["usuario"].ToString());
                     ClVerificacionE objVerificationE = objUsuarioL.mtdGetVerificationCode(Session["usuario"].ToString());
+
+
+                    string correo = Session["usuario"].ToString();
+                    string asunto = "¡HOLA! Verifique su correo electronico";
+                    string cuerpo = "Hola este es su codigo de verificación de correo electronico \n " + objVerificationE.codigo;
                     
+                    MailManager mailManager = new MailManager();
+                    mailManager.mtdsendMail(objUsuarioE.nombre , correo , asunto , cuerpo);
 
 
-                    var mailmessage = new MimeMessage();
 
-                    mailmessage.From.Add(new MailboxAddress("Pynterfase","afibanez7@misena.edu.co"));
-                    mailmessage.To.Add(new MailboxAddress(objUsuarioE.nombre, Session["usuario"].ToString()));
-                    mailmessage.Subject = "Verificación de correo";
-                    mailmessage.Body = new TextPart()
-                    {
-                    Text = "HOLA! Este es tu codigo de verificación "+objVerificationE.codigo+""
-                    };
-
-                    using (var smtpClient = new SmtpClient()) {
-
-                    smtpClient.Connect("smtp.gmail.com",465,true);
-                    smtpClient.Authenticate("afibanez7@misena.edu.co","oscar y erizo3");
-                    smtpClient.Send(mailmessage);
-                    smtpClient.Disconnect(true);
-
-                
-                }
+                    
             
-            }
+                }
             }
 
 

@@ -81,3 +81,26 @@ function UserorpasswordError() {
     });
 }
 
+function UserNotFound() {
+    swal({
+        title: 'El usuario no fue encontrado',
+        text: 'Lamentamos mucho las molestias, vuelva a intentarlo con otro correo',
+        type: 'error'
+    });
+}
+
+function MailsendNotification() {
+    swal({
+        title: 'Se a enviado un correo',
+        text: 'Se te pedira el codigo que llego al correo que indicaste',
+        type: 'success'
+    });
+}
+
+function FailMailsendNotification() {
+    swal({
+        title: 'A ocurrido un error',
+        text: 'No se pudo vincular el codigo con la base de datos o con tu correo',
+        type: 'success'
+    });
+}

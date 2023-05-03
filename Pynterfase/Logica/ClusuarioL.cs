@@ -80,6 +80,16 @@ namespace Pynterfase.Logica
 
         }
 
+        public int mtdRecuperacionPass(string correo , string codigo) { 
+        
+            ClusuarioD objUsD = new ClusuarioD();
+            int operacion = objUsD.mtdRecuperarPass(correo, codigo);
+            return operacion;
+
+        } 
+
+
+
 
 
     }

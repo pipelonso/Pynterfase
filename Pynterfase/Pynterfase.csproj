@@ -97,6 +97,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Vista\Editor.aspx" />
     <Content Include="Vista\forgotpassword.aspx" />
+    <Content Include="Vista\forgotpassword.js" />
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
     <Content Include="Vista\imagenes\back1.gif" />
     <Content Include="Vista\imagenes\giphy.gif" />
@@ -153,6 +154,7 @@
     </Compile>
     <Compile Include="Logica\ClRandomCodeGen.cs" />
     <Compile Include="Logica\ClusuarioL.cs" />
+    <Compile Include="Logica\MailManager.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
