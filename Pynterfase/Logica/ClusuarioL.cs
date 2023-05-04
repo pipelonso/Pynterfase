@@ -86,8 +86,25 @@ namespace Pynterfase.Logica
             int operacion = objUsD.mtdRecuperarPass(correo, codigo);
             return operacion;
 
-        } 
+        }
 
+        public int mtdVerificateRecuperationCode(string codigo, string idUsuario) {
+
+            ClusuarioD objUSD = new ClusuarioD();
+            int ndatos = objUSD.mtdVerifyRestaurationCode(codigo,idUsuario);
+            return ndatos;
+        
+        
+        }
+
+        public int mtdUpdatePassword(string correo , string newpass) {
+
+            ClusuarioD objUSD = new ClusuarioD();
+            int operacion = objUSD.mtdUpdatePassword(correo , newpass);
+            return operacion;
+
+        
+        }
 
 
 

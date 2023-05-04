@@ -101,6 +101,14 @@ function FailMailsendNotification() {
     swal({
         title: 'A ocurrido un error',
         text: 'No se pudo vincular el codigo con la base de datos o con tu correo',
-        type: 'success'
+        type: 'error'
+    });
+}
+
+function IncorrectCode() {
+    swal({
+        title: 'Codigo incorrecto',
+        text: 'El codigo que ingresaste es incorrecto, revisa tu correo electronico para saber codigo',
+        type: 'error'
     });
 }

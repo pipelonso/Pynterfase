@@ -27,10 +27,22 @@
                     
                     <div id="contCode" style="" >
                         <p>Digita el codigo que llego a tu correo</p>
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        <asp:Button ID="btnRevisarCodigo" runat="server" Text="VERIFICAR" />
+                        <asp:TextBox ID="txtCode" runat="server"></asp:TextBox>
+                        <asp:Button ID="btnRevisarCodigo" runat="server" Text="VERIFICAR" OnClick="btnRevisarCodigo_Click" />
                     </div>
                     
+                    <hr />
+
+                    <div id="contpass">
+                        <p>Ingresa tu nueva contraseña</p>
+                        <asp:TextBox ID="txtPass1" runat="server" Height="25px" TextMode="Password"></asp:TextBox>
+                        <p>Repite tu nueva contraseña</p>
+                        <asp:TextBox ID="txtPass2" runat="server" TextMode="Password"></asp:TextBox>
+
+                        <asp:Button ID="btnChangePass" runat="server" Text="Cambiar contraseña" OnClick="btnChangePass_Click" />
+
+                    </div>
+
                 </div>
                 <div class="col-lg-2"></div>
             </div>

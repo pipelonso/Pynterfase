@@ -1,7 +1,8 @@
 ﻿function ocultarContCode() {
 
     document.getElementById("contCode").style.display = "none"
-    
+    document.getElementById("contpass").style.display = "none";
+
 }
 
 function mostrarContCode() {
@@ -11,3 +12,15 @@ function mostrarContCode() {
 
 }
 
+function mostrarconPass() {
+
+    document.getElementById("contpass").style.display = "contents";
+    document.getElementById("contCode").style.opacity = "25%";
+
+}
+
+function ocultarcontPass() {
+
+    document.getElementById("contpass").style.display = "none";
+
+}

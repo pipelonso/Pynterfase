@@ -196,7 +196,28 @@ namespace Pynterfase.Datos
             return operacion;
         }
 
+        public int mtdVerifyRestaurationCode(string codigo, string idUsuario)
+        {
 
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            string consulta = "SELECT * FROM Recuperacion WHERE codigo = '" + codigo + "' AND idUsuario = '"+idUsuario+"'";
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            return datos.Rows.Count;
+
+
+        }
+
+        public int mtdUpdatePassword(string correo , string newpass)
+        {
+
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            string Actualizacion = "UPDATE Usuario SET password = '"+newpass+"' WHERE correo = '"+correo+"'";
+            int operacion = objSQL.mtdInsert(Actualizacion);
+            return operacion;
+
+
+        }
 
 
     }
