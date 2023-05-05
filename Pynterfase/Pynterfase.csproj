@@ -105,6 +105,7 @@
     <Content Include="Vista\imagenes\regImg.svg" />
     <Content Include="Vista\imagenes\sunshine-2250.gif" />
     <Content Include="Vista\imagenes\window_base.svg" />
+    <Content Include="Vista\InfoUsuario.aspx" />
     <Content Include="Vista\mycss\Editor.css" />
     <Content Include="Vista\mycss\ProjectsMaster.css" />
     <Content Include="Vista\mycss\ProjectsPanel.css" />
@@ -187,6 +188,13 @@
     </Compile>
     <Compile Include="Vista\forgotpassword.aspx.designer.cs">
       <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\InfoUsuario.aspx.cs">
+      <DependentUpon>InfoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\InfoUsuario.aspx.designer.cs">
+      <DependentUpon>InfoUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Proyectos.aspx.cs">
       <DependentUpon>Proyectos.aspx</DependentUpon>
