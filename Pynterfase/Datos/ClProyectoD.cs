@@ -9,12 +9,12 @@ namespace Pynterfase.Datos
 {
     public class ClProyectoD
     {
-
         public List<ClproyectoE> mtdGetAllProjects(string idUsuario) {
 
             string consulta = "selectprojectsitems " + idUsuario;
 
             ClProcesosSQL objSQL = new ClProcesosSQL();
+            //Pendiente redirigirlo a una nueva clase de procesos de sql destinada para procedimientos alcenados
             DataTable datos = objSQL.mtdconsultar(consulta);
             List<ClproyectoE> listaProyectos = new List<ClproyectoE>();
 
