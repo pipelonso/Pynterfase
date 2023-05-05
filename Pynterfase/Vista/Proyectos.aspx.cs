@@ -1,4 +1,6 @@
-﻿using Pynterfase.Logica;
+﻿using Pynterfase.Datos;
+using Pynterfase.Entidades;
+using Pynterfase.Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,22 +18,75 @@ namespace Pynterfase.Vista
             if (!IsPostBack)
             {
 
-                ClusuarioL objUserL = new ClusuarioL();
-                int verificated = objUserL.mtdCheckVerification(Session["usuario"].ToString());
+                if (Session["usuario"].ToString() == null || Session["usuario"].ToString() == "") {
 
-                if (verificated == 0)
+                    Response.Redirect("~/Login.aspx");
+                    
+
+
+                }
+                else
                 {
 
-                    Response.Redirect("~/Vista/Verification.aspx");
+                    ClusuarioL objUserL = new ClusuarioL();
+                    int verificated = objUserL.mtdCheckVerification(Session["usuario"].ToString());
+
+                    if (verificated == 0)
+                    {
+
+                        Response.Redirect("~/Vista/Verification.aspx");
+
+                    }
+                    else
+                    {
+
+                        ClusuarioD objUSD = new ClusuarioD();
+                        ClUsuarioE objUDE = objUSD.mtdGetAllUser(Session["usuario"].ToString());
+
+                        ClProyectoL objProjL = new ClProyectoL();
+                        List<ClproyectoE> ListaProyectos = objProjL.mtdGetAllByUser(objUDE.IdUsuario.ToString());
+
+                        rpProyectos.DataSource = ListaProyectos;
+                        rpProyectos.DataBind();
+
+                    }
+
+
+
 
                 }
 
-                lbListaProyectos.Items.Add("Floppa");
-                lbListaProyectos.Items.Add("Cosmica");
-                lbListaProyectos.Items.Add("Del universo");
-                lbListaProyectos.Items.Add("Brillante");
+                
+
+                
 
             }
+
+
+
+        }
+
+        protected void btnOpenProject_Click(object sender, EventArgs e)
+        {
+
+            Button btn = (Button)sender;
+            RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+            Label lblIdProyecto = (Label)item.FindControl("lblIdProyecto");
+            int idProyecto = Convert.ToInt32(lblIdProyecto.Text);
+
+            Response.Redirect("~/Vista/Editor.aspx?iPr=" + idProyecto);
+
+        }
+
+        protected void rpProyectos_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+
+        protected void rpProyectos_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            
+
 
 
 

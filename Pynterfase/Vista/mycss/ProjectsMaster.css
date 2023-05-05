@@ -7,6 +7,6 @@
 .barra{
 
     top : 0px;
-
+    z-index : 10000;
 
 }

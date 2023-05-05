@@ -20,6 +20,8 @@ namespace Pynterfase.Vista
             //Form.Controls.Add(myButton);
            
 
+
+
                 HtmlGenericControl myDiv = new HtmlGenericControl("div");
                 myDiv.ID = "myDiv";
                 myDiv.Attributes.Add("class", "bg-primary");
@@ -33,8 +35,8 @@ namespace Pynterfase.Vista
                 myDiv.Style["top"] = "10px";
 
 
-           
-            
+            //La linea de abajo obtiene el id del proyecto
+            //int idProyecto = Convert.ToInt32(Request.QueryString["iPr"]);
 
 
 

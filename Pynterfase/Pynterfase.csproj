@@ -101,6 +101,7 @@
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
     <Content Include="Vista\imagenes\back1.gif" />
     <Content Include="Vista\imagenes\giphy.gif" />
+    <Content Include="Vista\imagenes\leave.svg" />
     <Content Include="Vista\imagenes\regImg.svg" />
     <Content Include="Vista\imagenes\sunshine-2250.gif" />
     <Content Include="Vista\imagenes\window_base.svg" />
@@ -144,14 +145,17 @@
   <ItemGroup>
     <Compile Include="Datos\ClConexion.cs" />
     <Compile Include="Datos\ClProcesosSQL.cs" />
+    <Compile Include="Datos\ClProyectoD.cs" />
     <Compile Include="Datos\ClusuarioD.cs" />
     <Compile Include="Entidades\ClEstadoE.cs" />
+    <Compile Include="Entidades\ClproyectoE.cs" />
     <Compile Include="Entidades\ClRecuperacionE.cs" />
     <Compile Include="Entidades\ClUsuarioE.cs" />
     <Compile Include="Entidades\ClVerificacionE.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logica\ClProyectoL.cs" />
     <Compile Include="Logica\ClRandomCodeGen.cs" />
     <Compile Include="Logica\ClusuarioL.cs" />
     <Compile Include="Logica\MailManager.cs" />
