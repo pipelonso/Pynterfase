@@ -1,0 +1,30 @@
+﻿body {
+
+
+}
+
+.userpicture {
+
+    width : 200px;
+    height: 200px;
+    border-radius : 50%;
+
+
+}
+
+.infouserbox {
+    border: solid;
+    border-color: lightgray;
+    border-width: 2px;
+    background-image: url('../imagenes/userback.svg');
+    background-size:cover;
+}
+
+.Editbnt{
+
+    height:20px;
+    position : relative;
+    top : 4px;
+
+
+}

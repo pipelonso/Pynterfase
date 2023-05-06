@@ -13,5 +13,18 @@ namespace Pynterfase.Vista
         {
 
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("~/Vista/InfoUsuario.aspx");
+
+
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/Proyectos.aspx");
+        }
     }
 }
