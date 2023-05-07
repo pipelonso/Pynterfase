@@ -28,3 +28,49 @@
 
 
 }
+
+.avatarimg{
+
+    height:150px;
+
+
+}
+
+.avatarimgbox{
+
+    border-style:solid;
+    border-color : gray;
+
+
+}
+
+
+.imgselector{
+
+    border:solid;
+    border-color:white;
+    
+}
+
+.imgselector:hover{
+
+    border-color : black;
+
+
+}
+
+.nameSpace{
+
+    border:solid;
+    border-color:gray;
+    border-width : 2px;
+
+}
+
+.paswordspace {
+    border: solid;
+    border-color: gray;
+    border-width: 2px;
+}
+
+
