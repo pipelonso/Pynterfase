@@ -106,7 +106,15 @@ namespace Pynterfase.Logica
         
         }
 
+        public int mtdUpdateName(string nombre , string correo) { 
+        
+            ClusuarioD objUSD = new ClusuarioD();
+            int operacion = objUSD.mtdUpdateName(nombre , correo);
+            return operacion;   
 
+
+        
+        }
 
 
     }

@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="mycss/InfoUser.css" rel="stylesheet" />
+    <link href="../Styles/sweetalert.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
@@ -41,7 +42,7 @@
                         <p class="mx-2">¿No te gusto ninguno? Selecciona una imagen de tu dispositivo</p>
                         <asp:FileUpload ID="FlUpimgUser" runat="server" CssClass="mx-2 btn-light btn w-90" />
                         <asp:Button ID="btnUploadImg" runat="server" Text="Confirmar selección" CssClass="botones w-90 mx-2 my-2" OnClick="btnUploadImg_Click" />
-
+                        
                     </div>
                     
                 </div>
@@ -51,7 +52,7 @@
 
                     <p class="m-2">Nombre de usuario</p>
                     <asp:TextBox ID="txtName" runat="server" CssClass="nav-item w-90 my-2 mx-3 txtcajas" placeholder="Tu nuevo nombre aqui"></asp:TextBox>
-                    <asp:Button ID="btnEnviarNombre" runat="server" Text="Cambiar nombre" CssClass="botones nav-item w-90 my-2 mx-3" />
+                    <asp:Button ID="btnEnviarNombre" runat="server" Text="Cambiar nombre" CssClass="botones nav-item w-90 my-2 mx-3" OnClick="btnEnviarNombre_Click" />
 
                 </div>
 
@@ -67,7 +68,7 @@
                     <br />
                     <asp:TextBox ID="txtrepPass" runat="server" CssClass="w-90 mx-2 txtcajas" placeholder="Repetir contraseña nueva"></asp:TextBox>
                     <br />
-                    <asp:Button ID="btnUpdatePass" runat="server" Text="Actualizar contraseña" CssClass="botones w-90 my-2 mx-2" />
+                    <asp:Button ID="btnUpdatePass" runat="server" Text="Actualizar contraseña" CssClass="botones w-90 my-2 mx-2" OnClick="btnUpdatePass_Click" />
 
 
                 </div>
@@ -79,4 +80,6 @@
         </div>
     </div>
     <script src="InfoUsuario.js"></script>
+    <script src="../Scripts/sweetalert.min.js"></script>
+    <script src="alertManager.js"></script>
 </asp:Content>

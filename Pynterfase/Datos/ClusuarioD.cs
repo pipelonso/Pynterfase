@@ -62,7 +62,7 @@ namespace Pynterfase.Datos
             objUsuarioE.nombre = datos.Rows[0]["nombre"].ToString();
             objUsuarioE.correo = datos.Rows[0]["correo"].ToString();
             objUsuarioE.password = datos.Rows[0]["password"].ToString();
-
+            objUsuarioE.imagenUsuario = datos.Rows[0]["imagenUsuario"].ToString();
 
 
             return objUsuarioE;
@@ -218,6 +218,21 @@ namespace Pynterfase.Datos
 
 
         }
+
+        public int mtdUpdateName(string nombre, string correo) {
+
+
+           
+
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            string insert = "UPDATE Usuario SET nombre = '"+nombre+"' WHERE correo = '"+correo+"'";
+            int operacion = objSQL.mtdInsert(insert);
+            return operacion; 
+
+        
+        }
+
+
 
 
     }

@@ -112,3 +112,11 @@ function IncorrectCode() {
         type: 'error'
     });
 }
+
+function Errorgen() {
+    swal({
+        title: 'No se veia venir',
+        text: 'A ocurrido un error inesperado',
+        type: 'error'
+    });
+}
