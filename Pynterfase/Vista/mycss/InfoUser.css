@@ -24,7 +24,7 @@
 
     height:20px;
     position : relative;
-    top : 4px;
+    top : 15px;
 
 
 }
@@ -39,7 +39,7 @@
 .avatarimgbox{
 
     border-style:solid;
-    border-color : gray;
+    border-color : lightgray;
 
 
 }
@@ -62,15 +62,50 @@
 .nameSpace{
 
     border:solid;
-    border-color:gray;
+    border-color:lightgray;
     border-width : 2px;
 
 }
 
 .paswordspace {
     border: solid;
-    border-color: gray;
+    border-color: lightgray;
     border-width: 2px;
 }
 
+
+.w-90{
+
+    width : 90%;
+
+
+}
+
+
+
+.txtcajas {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+}
+
+.botones {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: white;
+}
+
+    .botones:hover {
+        border: dotted;
+        border-color: dimgray;
+        border-width: 3px;
+        background-color: lightblue;
+    }
+
+.uploadimgbox {
+    border: solid;
+    border-color: lightgray;
+    border-width: 2px;
+}
 

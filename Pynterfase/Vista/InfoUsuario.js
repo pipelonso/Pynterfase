@@ -8,13 +8,17 @@
 
 function onshowname() {
 
-    //onhideall();
+    onhideall();
 
     document.getElementById("passwordboxspace").style.display = "none";
-    document.getElementById("nameboxspace").style.display = "contents";
-    
+    document.getElementById("nameboxspace").style.display = "block";
+
+    var imgboxheight = document.getElementById("userbox").clientHeight;
+    document.getElementById("nameboxspace").style.height = imgboxheight.toString() + "px";
+
+
     document.getElementById("imgAvatarBox").style.display = "none";
-    //nameSpace navbar col-lg-5 col-md-12 col-sm-12 nav-item my-2
+    
 
 }
 
@@ -24,7 +28,11 @@ function onshowimg() {
 
     document.getElementById("passwordboxspace").style.display = "none";
     document.getElementById("nameboxspace").style.display = "none";
-    document.getElementById("imgAvatarBox").style.display = "contents";
+    
+    document.getElementById("imgAvatarBox").style.display = "block";
+    var imgboxheight = document.getElementById("imgAvatarBox").clientHeight;
+
+    document.getElementById("userbox").style.height = imgboxheight.toString() + "px";
 
 }
 
@@ -32,7 +40,9 @@ function onshowpass() {
 
     onhideall();
 
-    document.getElementById("passwordboxspace").style.display = "contents";
+    document.getElementById("passwordboxspace").style.display = "block";
+    var imgboxheight = document.getElementById("passwordboxspace").clientHeight;
+    document.getElementById("userbox").style.height = imgboxheight.toString() + "px";
     document.getElementById("nameboxspace").style.display = "none";
     document.getElementById("imgAvatarBox").style.display = "none";
 
