@@ -105,9 +105,11 @@
     <Content Include="Vista\imagenes\giphy.gif" />
     <Content Include="Vista\imagenes\leave.svg" />
     <Content Include="Vista\imagenes\pencil-fill.svg" />
+    <Content Include="Vista\imagenes\projectsBack.svg" />
     <Content Include="Vista\imagenes\regImg.svg" />
     <Content Include="Vista\imagenes\sunshine-2250.gif" />
     <Content Include="Vista\imagenes\userback.svg" />
+    <Content Include="Vista\imagenes\userpageback.svg" />
     <Content Include="Vista\imagenes\UserPics\24331490_4800_1_05.jpg" />
     <Content Include="Vista\imagenes\window_base.svg" />
     <Content Include="Vista\InfoUsuario.aspx" />

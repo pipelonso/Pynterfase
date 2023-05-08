@@ -120,3 +120,11 @@ function Errorgen() {
         type: 'error'
     });
 }
+
+function NoImgUpload() {
+    swal({
+        title: 'No has cargado ninguna imagen',
+        text: 'Porfavor carga una imagen para poder añadirla a tu foto de perfil',
+        type: 'error'
+    });
+}

@@ -1,6 +1,6 @@
 ﻿body {
-
-
+    background-image: url('../imagenes/projectsBack.svg');
+    background-size : cover;
 }
 
 .myLista{
@@ -17,10 +17,10 @@
 }
 
 .botones:hover {
-    border: dotted;
+    border: double;
     border-color: dimgray;
     border-width: 3px;
-    background-color: lightblue;
+    background-color: lightslategray;
 }
 
 .projbox{
@@ -38,5 +38,5 @@
         border: solid;
         border-color: gray;
         border-width: 2px;
-        background-color: lightcyan;
+        background-color: lightslategray;
     }

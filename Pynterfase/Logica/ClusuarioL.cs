@@ -116,6 +116,16 @@ namespace Pynterfase.Logica
         
         }
 
+        public int UpdatePic(string imgpath , string correo) {
+
+            ClusuarioD objUSD = new ClusuarioD();
+            int operacion = objUSD.UpdatePicture(imgpath , correo);
+            return operacion;
+        
+        
+        }
+
+
 
     }
 }

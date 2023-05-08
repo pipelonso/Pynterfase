@@ -232,6 +232,18 @@ namespace Pynterfase.Datos
         
         }
 
+        public int UpdatePicture(string imgpath , string correo)
+        {
+
+            ClProcesosSQL objProcesosSQL = new ClProcesosSQL();
+            string updatepic = "UPDATE Usuario SET imagenUsuario = '"+imgpath+"' WHERE correo = '"+correo+"'"  ;
+            int operacion = objProcesosSQL.mtdInsert(updatepic);
+            return operacion;
+
+
+        }
+
+
 
 
 

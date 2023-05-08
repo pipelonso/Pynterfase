@@ -16,7 +16,7 @@
         
         <asp:Repeater ID="rpProyectos" runat="server" OnItemCommand="rpProyectos_ItemCommand" OnItemDataBound="rpProyectos_ItemDataBound">
             <ItemTemplate>
-                <div class="projcont projbox">
+                <div class="projcont projbox my-2">
                     
                     <div class="navbar my-2">
                         <div class="col-sm-12 my-2 col-md-2">

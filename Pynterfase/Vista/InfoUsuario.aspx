@@ -11,10 +11,10 @@
             <div class="navbar">
                 <div class="navbar col-lg-6 col-md-12 col-sm-12 infouserbox nav-item mx-1 my-2" id="userbox">
                     <div class="nav-item mx-3">
-                        <asp:Label ID="lblUsername" runat="server" Text="_username_" CssClass="my-2"></asp:Label>
+                        <asp:Label ID="lblUsername" runat="server" Text="_username_" CssClass="my-2 text-white"></asp:Label>
                         <asp:ImageButton ID="ediNamebtn" runat="server" ImageUrl="~/Vista/imagenes/pencil-fill.svg" CssClass="Editbnt my-2" OnClick="ediNamebtn_Click" />
                         <br />
-                        <asp:Label ID="lblMail" runat="server" Text="_mail_" CssClass="my-2"></asp:Label>
+                        <asp:Label ID="lblMail" runat="server" Text="_mail_" CssClass="my-2 text-white"></asp:Label>
                         <br />
                         <asp:Button ID="btnEditPassShow" runat="server" Text="Editar contraseña" CssClass="botones w-100 my-2" OnClick="btnEditPassShow_Click" />
 
@@ -60,13 +60,13 @@
 
                     <p class="mx-2">Contraseña actual</p>
                     <br />
-                    <asp:TextBox ID="txtActualPass" runat="server" CssClass="w-90 mx-2 txtcajas" placeholder="Contraseña Actual"></asp:TextBox>
+                    <asp:TextBox ID="txtActualPass" runat="server" CssClass="w-90 mx-2 txtcajas" placeholder="Contraseña Actual" TextMode="Password"></asp:TextBox>
                     <p class="mx-2">Contraseña nueva</p>
                     <br />
-                    <asp:TextBox ID="txtNewPass" runat="server" CssClass="w-90 mx-2 txtcajas" placeholder="Contraseña Nueva"></asp:TextBox>
+                    <asp:TextBox ID="txtNewPass" runat="server" CssClass="w-90 mx-2 txtcajas" placeholder="Contraseña Nueva" TextMode="Password"></asp:TextBox>
                     <p class="mx-2">Repite contraseña mueva</p>
                     <br />
-                    <asp:TextBox ID="txtrepPass" runat="server" CssClass="w-90 mx-2 txtcajas" placeholder="Repetir contraseña nueva"></asp:TextBox>
+                    <asp:TextBox ID="txtrepPass" runat="server" CssClass="w-90 mx-2 txtcajas" placeholder="Repetir contraseña nueva" TextMode="Password"></asp:TextBox>
                     <br />
                     <asp:Button ID="btnUpdatePass" runat="server" Text="Actualizar contraseña" CssClass="botones w-90 my-2 mx-2" OnClick="btnUpdatePass_Click" />
 

@@ -1,6 +1,6 @@
 ﻿body {
-
-
+    background-image: url('../imagenes/userpageback.svg');
+    background-size : cover;
 }
 
 .userpicture {
@@ -97,7 +97,7 @@
 }
 
     .botones:hover {
-        border: dotted;
+        border: double;
         border-color: dimgray;
         border-width: 3px;
         background-color: lightblue;
