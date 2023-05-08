@@ -41,16 +41,19 @@ namespace Pynterfase
                     objUsuarioE.correo = txtEmail.Text;
                     objUsuarioE.nombre = txtName.Text;
 
-                    //FALTA VALIDACION DE CONTRASEÑA DOBLE
-                    //FALTAN MUCHAS VERIFICACIONES 
-                    //CONSULTAR EXISTENCIA DE USUARIO
-                    //CONSULTAR CAMPOS VACIOS
-
                     objUsuarioE.password = txtPassword.Text;
 
                     objUsuarioL.mtdRegister(objUsuarioE);
 
                     Session["usuario"] = txtEmail.Text;
+
+                    Random rnd = new Random();
+
+                    int randompicnum = rnd.Next(1,6);
+
+
+                    int randompicture = objUsuarioL.UpdatePic("~/Vista/Pynterfase avatars/" + randompicnum.ToString() + ".png" ,txtEmail.Text); 
+
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert();", true);
                     Response.Redirect("~/Vista/Proyectos.aspx");
 
