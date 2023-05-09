@@ -125,6 +125,7 @@
     <Content Include="Vista\mycss\ProjectsMaster.css" />
     <Content Include="Vista\mycss\ProjectsPanel.css" />
     <Content Include="Vista\mycss\Register.css" />
+    <Content Include="Vista\mycss\Visor.css" />
     <Content Include="Vista\Proyectos.aspx" />
     <Content Include="Vista\Pynterfase avatars\1.png" />
     <Content Include="Vista\Pynterfase avatars\2.png" />

@@ -1,0 +1,12 @@
+﻿body {
+    background-image: url('../imagenes/leave.svg');
+    background-size : cover;
+}
+
+
+
+.titlediv {
+    background-image: url('../imagenes/OnBar.svg');
+    background-size: cover;
+    height: 50px;
+}
