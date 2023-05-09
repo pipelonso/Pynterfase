@@ -100,12 +100,14 @@
     <Content Include="Vista\forgotpassword.js" />
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
     <Content Include="Vista\imagenes\back1.gif" />
+    <Content Include="Vista\imagenes\backreglogin.gif" />
     <Content Include="Vista\imagenes\eye-slash.svg" />
     <Content Include="Vista\imagenes\eye.svg" />
     <Content Include="Vista\imagenes\giphy.gif" />
     <Content Include="Vista\imagenes\leave.svg" />
     <Content Include="Vista\imagenes\pencil-fill.svg" />
     <Content Include="Vista\imagenes\projectsBack.svg" />
+    <Content Include="Vista\imagenes\regbox.svg" />
     <Content Include="Vista\imagenes\regImg.svg" />
     <Content Include="Vista\imagenes\sunshine-2250.gif" />
     <Content Include="Vista\imagenes\userback.svg" />

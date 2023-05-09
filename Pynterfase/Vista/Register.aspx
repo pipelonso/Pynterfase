@@ -24,20 +24,22 @@
                             <br />
                             <p>CORREO ELECTRONICO</p>
 
-                            <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass="w-100"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass="w-100 txtcajas"></asp:TextBox>
 
-                            <p>Nombre de usuario</p>
-                            <asp:TextBox ID="txtName" runat="server" placeholder="Nombre de usuario" CssClass="w-100"></asp:TextBox>
+                            <p>Nombre de usuario</p> 
+                            <asp:TextBox ID="txtName" runat="server" placeholder="Nombre de usuario" CssClass="w-100 txtcajas"></asp:TextBox>
 
                             <p>Contraseña</p>
-                            <asp:TextBox ID="txtPassword" runat="server" CssClass="w-100" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" CssClass="w-100 txtcajas" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
 
                             <p>Repetir contraseña</p>
-                            <asp:TextBox ID="txtRepPassword" runat="server" CssClass="w-100" TextMode="Password" placeholder="Repetir contraseña"></asp:TextBox>
+                            <asp:TextBox ID="txtRepPassword" runat="server" CssClass="w-100 txtcajas" TextMode="Password" placeholder="Repetir contraseña"></asp:TextBox>
                             <br />
                             <br />
 
-                            <asp:Button ID="btnRegister" runat="server" Text="REGISTRARSE" OnClick="btnRegister_Click" CssClass="w-100" />
+                            <asp:Button ID="btnRegister" runat="server" Text="REGISTRARSE" OnClick="btnRegister_Click" CssClass="w-100 onbtn  txtcajas" Height="50px" />
+                            <br />
+                            <asp:LinkButton ID="lbtnAlreadyRegister" runat="server" CssClass="ongray my-3" OnClick="lbtnAlreadyRegister_Click">Ya estoy registrado</asp:LinkButton>
                         </div>
                         <div class="col-2"></div>
                     </div>

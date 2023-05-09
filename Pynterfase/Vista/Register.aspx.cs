@@ -78,5 +78,10 @@ namespace Pynterfase
             
 
         }
+
+        protected void lbtnAlreadyRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
+        }
     }
 }

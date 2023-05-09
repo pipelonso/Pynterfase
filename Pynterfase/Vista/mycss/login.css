@@ -1,7 +1,8 @@
 ﻿body {
-    background: rgb(255, 255, 255);
-    /*background-image: url('../imagenes/sunshine-2250.gif');
-    background-size : cover;*/
+    /*background: rgb(255, 255, 255);*/
+    /*background-image: url('../imagenes/sunshine-2250.gif');*/
+    background-image: url('../imagenes/backreglogin.gif');
+    background-size: cover;
 }
 
 .myalingY{
