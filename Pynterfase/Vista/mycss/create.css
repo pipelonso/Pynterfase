@@ -1,0 +1,48 @@
+﻿body {
+    background-image: url('../imagenes/projectsBack.svg');
+    background-size : cover;
+}
+
+
+.contproject {
+    background-image: url('../imagenes/Incircle.svg');
+    background-size : cover;
+    height : 600px;
+   
+}
+
+
+.imgint{
+
+
+
+
+}
+
+.titlediv {
+    background-image: url('../imagenes/OnBar.svg');
+    background-size : cover;
+    height : 50px;
+    
+}
+
+
+.botones {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: white;
+}
+
+    .botones:hover {
+        border: double;
+        border-color: dimgray;
+        border-width: 3px;
+        background-color: lightslategray;
+    }
+
+.txtcajas {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+}

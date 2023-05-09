@@ -91,5 +91,10 @@ namespace Pynterfase.Vista
 
 
         }
+
+        protected void btnNewProject_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/Create.aspx");
+        }
     }
 }

@@ -7,7 +7,7 @@
     <script src="js/bootstrap.min.js"></script>
     <div class="container-fluid">
         <h4>Crear un proyecto nuevo</h4>
-    <asp:Button ID="btnNewProject" runat="server" Text="CREAR NUEVO PROYECTO" CssClass="w-100 botones"/>
+    <asp:Button ID="btnNewProject" runat="server" Text="CREAR NUEVO PROYECTO" CssClass="w-100 botones" OnClick="btnNewProject_Click"/>
     </div>
     
     <h1 class="m-2">Tus Proyectos</h1>
