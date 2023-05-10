@@ -21,7 +21,7 @@ namespace Pynterfase
         {
 
 
-            if (txtEmail.Text == "" || txtName.Text == "" || txtPassword.Text == "" || txtRepPassword.Text == "")
+            if (txtEmail.Text.Trim() == "" || txtName.Text.Trim() == "" || txtPassword.Text.Trim() == "" || txtRepPassword.Text.Trim() == "")
             {
 
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "voidall();", true);
