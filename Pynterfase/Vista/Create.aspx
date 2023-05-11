@@ -13,7 +13,7 @@
             <div class="contproject col-lg-5 col-md-5 col-sm-12 nav-item">
 
                 <p>Nombre de tu proyecto</p>
-                <asp:TextBox runat="server" placeholder=" Nombre" CssClass="w-100 txtcajas"></asp:TextBox>
+                <asp:TextBox runat="server" placeholder=" Nombre" CssClass="w-100 txtcajas" ID="txtName"></asp:TextBox>
 
                 <p>Quieres que tu proyecto sea</p>
 
@@ -22,7 +22,7 @@
             </div>
 
             <div class="nav-item col-lg-6 col-md-12 col-sm-12 h-75">
-                <asp:Button ID="btnCrear" runat="server" Text="CREAR PROYECTO" CssClass="w-100 botones" />
+                <asp:Button ID="btnCrear" runat="server" Text="CREAR PROYECTO" CssClass="w-100 botones" OnClick="btnCrear_Click" />
             </div>
 
         </div>

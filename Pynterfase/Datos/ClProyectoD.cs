@@ -10,11 +10,11 @@ namespace Pynterfase.Datos
     public class ClProyectoD
     {
         public List<ClproyectoE> mtdGetAllProjects(string idUsuario) {
-
+            //Ya usa procedimiento almacenado
             string consulta = "selectprojectsitems " + idUsuario;
 
             ClProcesosSQL objSQL = new ClProcesosSQL();
-            //Pendiente redirigirlo a una nueva clase de procesos de sql destinada para procedimientos alcenados
+            
             DataTable datos = objSQL.mtdconsultar(consulta);
             List<ClproyectoE> listaProyectos = new List<ClproyectoE>();
 
@@ -23,7 +23,7 @@ namespace Pynterfase.Datos
             {
                 ClproyectoE Proj = new ClproyectoE();
                 Proj.IdProyecto = int.Parse(datos.Rows[i]["Idproyecto"].ToString());
-                Proj.idUsuario = int.Parse(datos.Rows[i]["IdUsuario"].ToString());
+                Proj.idUsuarioP = int.Parse(datos.Rows[i]["IdUsuario"].ToString());
                 Proj.nombreProyecto = datos.Rows[i]["nombreProyecto"].ToString();
                 Proj.visibilidad = datos.Rows[i]["visibilidad"].ToString();
                 Proj.nombre = datos.Rows[i]["nombre"].ToString();
@@ -34,6 +34,17 @@ namespace Pynterfase.Datos
             return listaProyectos;
 
         }
+
+        public int mtdAddProject(ClproyectoE objProyecto) {
+
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            string insert = "INSERT INTO Proyecto (idUsuario , nombreProyecto , visibilidad) VALUES ("+objProyecto.idUsuarioP+",'"+objProyecto.nombreProyecto+"','"+objProyecto.visibilidad+"')";
+            int res = objSQL.mtdInsert(insert);
+
+            return res;
+        
+        }
+
 
 
     }

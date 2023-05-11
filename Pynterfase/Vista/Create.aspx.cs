@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pynterfase.Entidades;
+using Pynterfase.Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +16,46 @@ namespace Pynterfase.Vista
 
             ddlVisibilidad.Items.Add("Publico");
             ddlVisibilidad.Items.Add("Privado");
+
+
+
+        }
+
+        protected void btnCrear_Click(object sender, EventArgs e)
+        {
+
+            if (txtName.Text.Trim() != "") {
+
+                ClProyectoL objProyectoL = new ClProyectoL();
+                ClproyectoE objProyectoE = new ClproyectoE();
+                ClusuarioL objUSL = new ClusuarioL();
+                ClUsuarioE objUSE = objUSL.mtdGetAllUser(Session["usuario"].ToString());
+                objProyectoE.nombreProyecto = txtName.Text;
+                objProyectoE.idUsuarioP = objUSE.IdUsuario;
+                objProyectoE.visibilidad = ddlVisibilidad.SelectedValue;
+                int res = objProyectoL.mtdAddProject(objProyectoE);
+
+                if (res == 1) {
+
+                    Response.Redirect("~/Vista/Editor.aspx");
+
+                }
+                else
+                {
+
+                    //Mensaje de error
+
+                }
+
+
+
+            } 
+
+
+            
+
+            
+
 
 
 

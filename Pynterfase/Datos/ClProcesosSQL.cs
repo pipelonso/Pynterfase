@@ -20,6 +20,7 @@ namespace Pynterfase.Datos
             ClConexion conexion = new ClConexion(); 
             SqlCommand comando = new SqlCommand(insert,conexion.mtdConexion());
             int res = comando.ExecuteNonQuery();
+            conexion.mtdConexion().Close();
             return res;
         
         
@@ -35,6 +36,7 @@ namespace Pynterfase.Datos
             SqlDataAdapter adaptador = new SqlDataAdapter(consulta,conexion.mtdConexion());
             DataTable datos = new DataTable();
             adaptador.Fill(datos);
+            conexion.mtdConexion().Close();
             return datos;
         
         }

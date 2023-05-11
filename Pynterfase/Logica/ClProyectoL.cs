@@ -18,6 +18,14 @@ namespace Pynterfase.Logica
         
         }
 
+        public int mtdAddProject(ClproyectoE objProyecto) {
+
+            ClProyectoD objProyectoD = new ClProyectoD();
+            int res = objProyectoD.mtdAddProject(objProyecto);
+
+            return res;
+
+        }
 
     }
 }
