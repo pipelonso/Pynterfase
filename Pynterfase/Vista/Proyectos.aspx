@@ -34,9 +34,9 @@
                         
 
                         <div class="justify-content-around">
-                            <asp:Button ID="btnOpenProject" runat="server" Text="Abrir" CssClass="my-2 botones w-75" OnClick="btnOpenProject_Click"/>
-                            <asp:Button ID="btnShare" runat="server" Text="Compartir" CssClass="my-2 botones w-75" />
-                            <asp:Button ID="btnDelete" runat="server" Text="Eliminar" CssClass="my-2 botones w-75" />
+                            <asp:Button ID="btnOpenProject" runat="server" Text="Abrir" CssClass="my-2 mx-2 botones w-75" OnClick="btnOpenProject_Click"/>
+                            <asp:Button ID="btnShare" runat="server" Text="Compartir" CssClass="my-2 mx-2 botones w-75" />
+                            <asp:Button ID="btnDelete" runat="server" Text="Eliminar" CssClass="my-2 mx-2 botones w-75" />
                         </div>
                     </div>
                     

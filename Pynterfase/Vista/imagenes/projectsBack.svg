@@ -26,7 +26,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.52724989"
-     inkscape:cx="553.81709"
+     inkscape:cx="448.55391"
      inkscape:cy="470.3652"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -36,6 +36,18 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient361">
+      <stop
+         style="stop-color:#ababab;stop-opacity:1;"
+         offset="0"
+         id="stop357" />
+      <stop
+         style="stop-color:#ababab;stop-opacity:0;"
+         offset="1"
+         id="stop359" />
+    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient6935">
@@ -57,6 +69,15 @@
        x2="105"
        y2="0"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient361"
+       id="linearGradient363"
+       x1="91.952736"
+       y1="249.09679"
+       x2="93.338089"
+       y2="172.09679"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      inkscape:label="Capa 1"
@@ -77,7 +98,7 @@
        id="path1009"
        sodipodi:nodetypes="ccccccc" />
     <path
-       style="fill:#ababab;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:url(#linearGradient363);fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 210.13229,225.67743 159.7452,237.74195 109.3581,172.09678 H 0.13229 v 77 h 210 z"
        id="path1011"
        sodipodi:nodetypes="ccccccc" />

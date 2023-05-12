@@ -26,9 +26,9 @@
 .projbox{
 
     border: solid;
-    border-color:white;
+    border-color:dimgray;
     border-width : 2px;
-    background-color:white;
+    /*background-color:white;*/
 
 }
 
@@ -38,5 +38,6 @@
         border: solid;
         border-color: gray;
         border-width: 2px;
-        background-color: lightslategray;
+        color : white;
+        /*background-color: lightslategray;*/
     }

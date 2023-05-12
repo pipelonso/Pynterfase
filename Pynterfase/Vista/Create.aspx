@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="mycss/create.css" rel="stylesheet" />
+    <script src="alertManager.js"></script>
+    <link href="../Styles/sweetalert.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
@@ -10,7 +12,7 @@
         </div>
         <div class="navbar">
 
-            <div class="contproject col-lg-5 col-md-5 col-sm-12 nav-item">
+            <div class=" col-12 contproject col-lg-5 col-md-5 col-sm-12 nav-item">
 
                 <p>Nombre de tu proyecto</p>
                 <asp:TextBox runat="server" placeholder=" Nombre" CssClass="w-100 txtcajas" ID="txtName"></asp:TextBox>
@@ -21,7 +23,7 @@
 
             </div>
 
-            <div class="nav-item col-lg-6 col-md-12 col-sm-12 h-75">
+            <div class="col-12 nav-item col-lg-6 col-md-12 col-sm-12 h-75">
                 <asp:Button ID="btnCrear" runat="server" Text="CREAR PROYECTO" CssClass="w-100 botones" OnClick="btnCrear_Click" />
             </div>
 
@@ -31,5 +33,5 @@
 
     </div>
 
-
+    <script src="../Scripts/sweetalert.min.js"></script>
 </asp:Content>

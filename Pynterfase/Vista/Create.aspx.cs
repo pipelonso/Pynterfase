@@ -37,19 +37,29 @@ namespace Pynterfase.Vista
 
                 if (res == 1) {
 
+                    //Crear consulta del elemento creado para poder mandar el id por la url
+
+
                     Response.Redirect("~/Vista/Editor.aspx");
 
                 }
                 else
                 {
-
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "Errorgen();", true);
                     //Mensaje de error
 
                 }
 
 
 
-            } 
+            }
+            else
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "voidall();", true);
+
+
+            }
 
 
             
