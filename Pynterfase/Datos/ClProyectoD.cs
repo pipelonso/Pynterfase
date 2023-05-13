@@ -10,27 +10,9 @@ namespace Pynterfase.Datos
     public class ClProyectoD
     {
         public List<ClproyectoE> mtdGetAllProjects(string idUsuario) {
-            //Ya usa procedimiento almacenado
-            string consulta = "selectprojectsitems " + idUsuario;
-
-            ClProcesosSQL objSQL = new ClProcesosSQL();
             
-            DataTable datos = objSQL.mtdconsultar(consulta);
-            List<ClproyectoE> listaProyectos = new List<ClproyectoE>();
-
-
-            for (int i = 0; i < datos.Rows.Count; i++)
-            {
-                ClproyectoE Proj = new ClproyectoE();
-                Proj.IdProyecto = int.Parse(datos.Rows[i]["Idproyecto"].ToString());
-                Proj.idUsuarioP = int.Parse(datos.Rows[i]["IdUsuario"].ToString());
-                Proj.nombreProyecto = datos.Rows[i]["nombreProyecto"].ToString();
-                Proj.visibilidad = datos.Rows[i]["visibilidad"].ToString();
-                Proj.nombre = datos.Rows[i]["nombre"].ToString();
-                listaProyectos.Add(Proj);
-
-            }
-
+            Procedimientos proc = new Procedimientos();
+            List<ClproyectoE> listaProyectos = proc.mtdGetAllProjects(idUsuario);
             return listaProyectos;
 
         }

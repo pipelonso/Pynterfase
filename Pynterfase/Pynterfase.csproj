@@ -170,6 +170,7 @@
     <Compile Include="Datos\ClProcesosSQL.cs" />
     <Compile Include="Datos\ClProyectoD.cs" />
     <Compile Include="Datos\ClusuarioD.cs" />
+    <Compile Include="Datos\Procedimientos.cs" />
     <Compile Include="Entidades\ClEstadoE.cs" />
     <Compile Include="Entidades\ClproyectoE.cs" />
     <Compile Include="Entidades\ClRecuperacionE.cs" />
