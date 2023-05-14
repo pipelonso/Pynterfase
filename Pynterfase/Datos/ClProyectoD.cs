@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 
 namespace Pynterfase.Datos
@@ -27,7 +28,17 @@ namespace Pynterfase.Datos
         
         }
 
+        public ClproyectoE mtdGetRecentProjectIdByMail(string correo) {
 
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            string consulta = "select MAX(idProyecto) as idProyecto FROM Proyecto , Usuario WHERE Usuario.correo = '"+correo+"' AND Proyecto.idUsuario = Usuario.IdUsuario";
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            ClproyectoE objProyecto = new ClproyectoE();
+            objProyecto.IdProyecto = int.Parse(datos.Rows[0]["idProyecto"].ToString());
+            return objProyecto;
+
+        }
 
     }
 }

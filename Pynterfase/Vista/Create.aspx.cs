@@ -38,10 +38,10 @@ namespace Pynterfase.Vista
                 if (res == 1) {
 
                     //Crear consulta del elemento creado para poder mandar el id por la url
-
-
-                    Response.Redirect("~/Vista/Editor.aspx");
-
+                    ClproyectoE newProyectoE = objProyectoL.mtdGetRecentProjectIdByMail(Session["usuario"].ToString());
+                    int idProyecto = newProyectoE.IdProyecto;
+                    //Response.Redirect("~/Vista/Editor.aspx");
+                    Response.Redirect("~/Vista/Editor.aspx?iPr=" + idProyecto);
                 }
                 else
                 {

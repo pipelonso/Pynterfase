@@ -1,4 +1,5 @@
-﻿using Pynterfase.Datos;
+﻿using Microsoft.SqlServer.Server;
+using Pynterfase.Datos;
 using Pynterfase.Entidades;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,16 @@ namespace Pynterfase.Logica
             return res;
 
         }
+
+        public ClproyectoE mtdGetRecentProjectIdByMail(string correo) {
+
+            ClProyectoD objProyectoD = new ClProyectoD();
+            ClproyectoE objProyecto = objProyectoD.mtdGetRecentProjectIdByMail(correo);
+            return objProyecto;
+        
+        }
+
+
 
     }
 }
