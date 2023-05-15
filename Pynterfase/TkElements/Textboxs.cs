@@ -8,6 +8,7 @@ namespace Pynterfase.TkElements
     public class Textboxs
     {
 
+        public int idTextbox { get; set; }
         public string Text { get; set; } // Obtiene o establece el texto que se muestra en el control.
         public int Width { get; set; } // Obtiene o establece el ancho del control.
         public int Height { get; set; } // Obtiene o establece la altura del control.

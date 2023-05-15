@@ -8,6 +8,10 @@ namespace Pynterfase.TkElements
     public class Checkboxs
     {
 
+        public int idCheckbox { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
+
         public bool Checked { get; set; }  // Obtiene o establece si el checkbox está marcado
         public string Text { get; set; }  // Obtiene o establece el texto que se muestra junto al checkbox
         public bool State { get; set; }  // Obtiene o establece el estado del checkbox (seleccionado o no seleccionado)

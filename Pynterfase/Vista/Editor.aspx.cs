@@ -100,7 +100,10 @@ namespace Pynterfase.Vista
         protected void btnGenerarLienzo_Click(object sender, EventArgs e)
         {
 
+            List<Lienzo> listalienzo = new List<Lienzo>();
 
+            Lienzo lienzo = new Lienzo();
+            
 
 
 

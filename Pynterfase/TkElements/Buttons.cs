@@ -7,7 +7,9 @@ namespace Pynterfase.TkElements
 {
     public class Buttons
     {
-
+        public int idButton { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
         public string Activebackground { get; set; }  // Establece el color de fondo cuando el widget está activo.
         public string Activeforeground { get; set; }  // Establece el color de primer plano cuando el widget está activo.
         public string Anchor { get; set; }  // Establece la posición de la cadena dentro del widget.
