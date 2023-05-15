@@ -13,3 +13,13 @@ function HideCreateCanvas() {
     
 
 }
+
+
+function ResizeCanvas(x , y) {
+
+    document.getElementById("lienzo").style.width = x + "px";
+    document.getElementById("lienzo").style.height = y + "px";
+
+
+
+}

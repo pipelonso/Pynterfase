@@ -28,7 +28,7 @@ namespace Pynterfase.Vista
 
             string path = Server.MapPath("~/Users/Projects/" + iPr + ".json");
 
-            if (File.Exists("path")) {
+            if (File.Exists(path)) {
 
                 string json = File.ReadAllText(path);
                 //leer dimesiones del lienzo
@@ -37,15 +37,21 @@ namespace Pynterfase.Vista
                 {
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                 };
-                var data = JsonSerializer.Deserialize<Proyecto>(json, options);
+                
+                var data = JsonSerializer.Deserialize<Receptor>(json, options);
 
-                string lienzoX = data.ListaLienzo[0].x;
-                string lienzoY = data.ListaLienzo[0].y;
+                string lienzox = data.listalienzo[0].xz;
+                string lienzoy = data.listalienzo[0].yz;
                 ScriptManager.RegisterStartupScript(this, GetType(), "OcultarPanelDeLienzoCrear", "HideCreateCanvas();", true);
+
+                //Crear script para aplicar tamaño del json al lienzo
+                //OnResizeCanvas
+                ScriptManager.RegisterStartupScript(this, GetType(), "RedimensionarLienzoInicial", "ResizeCanvas(" + lienzox+","+lienzoy+");", true);
 
 
             }
-            else{
+            else
+            {
 
                 //aparecer panel de creación de lienzo
                 ScriptManager.RegisterStartupScript(this, GetType(), "AparecerPanelDeLienzoCrear", "ShowCreateCavas();", true);
@@ -100,12 +106,35 @@ namespace Pynterfase.Vista
         protected void btnGenerarLienzo_Click(object sender, EventArgs e)
         {
 
-            List<Lienzo> listalienzo = new List<Lienzo>();
+            if (txtAlto.Text.Trim() != "") {
 
-            Lienzo lienzo = new Lienzo();
-            
+                if (txtAncho.Text.Trim() != "") {
+
+                    Proyecto objProyecto = new Proyecto();
+                    List<Lienzo> listalienzo = new List<Lienzo>();
+
+                    Lienzo objlienzo = new Lienzo();
+                    objlienzo.xz = txtAncho.Text;
+                    objlienzo.yz = txtAlto.Text;
+                    objlienzo.geometry = txtAlto.Text + "X" + txtAncho.Text;
 
 
+                    listalienzo.Add(objlienzo);
+
+                    objProyecto.listalienzo = listalienzo;
+
+                    string iPr = Request.QueryString["iPr"];
+
+                    string json = JsonSerializer.Serialize(objProyecto);
+                    string rutaarchivo = Server.MapPath("~/Users/Projects/" + iPr + ".json");
+                    StreamWriter escritor = new StreamWriter(rutaarchivo);
+                    escritor.Write(json);
+                    escritor.Close();
+
+
+                }
+
+            }         
 
         }
     }

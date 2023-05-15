@@ -8,9 +8,8 @@ namespace Pynterfase.TkElements
     public class Lienzo
     {
         public int idLienzo { get; set; }
-        public string x { get; set; } //tamaño x de ventana para json
-        public string y { get; set; } //tamaño y ventana para json
-        
+        public string xz { get; set; } //tamaño x de ventana para json
+        public string yz { get; set; } //tamaño y ventana para json        
         public string geometry { get; set; } //Tamaño inicial  de la ventana
         public string Title { get; set; } // Obtiene o establece el título de la ventana.
         public int Width { get; set; } // Obtiene o establece el ancho de la ventana.

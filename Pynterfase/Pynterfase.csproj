@@ -215,6 +215,7 @@
     <Compile Include="TkElements\Checkboxs.cs" />
     <Compile Include="TkElements\Lienzo.cs" />
     <Compile Include="TkElements\Proyecto.cs" />
+    <Compile Include="TkElements\Receptor.cs" />
     <Compile Include="TkElements\Textboxs.cs" />
     <Compile Include="Vista\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
