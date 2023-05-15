@@ -17,7 +17,7 @@
             <asp:TextBox ID="txtAlto" runat="server" placeholder="1000"></asp:TextBox>
             <asp:Button ID="btnGenerarLienzo" runat="server" Text="CREAR LIENZO" OnClick="btnGenerarLienzo_Click" />
         </div>
-        <div id="lienzo" class="canvaslayer" runat="server">
+        <div id="lienzo" class="canvaslayer" style="width : 2px; height : 2px;" runat="server">
 
             <%--<p class="canvaslayer"></p>--%>
         </div>
