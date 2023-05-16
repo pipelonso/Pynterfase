@@ -61,10 +61,16 @@
         background-size: cover;
     }
 
+.chekers{
 
+    height : 30px;
+    background-color : none;
+    border-radius : 3px;
+}
 
-
-
+.chekers:hover {
+    background-color : lightgray;;
+}
 
 .tkCheckboxbtn {
     background-image: url('../imagenes/tkbuttons/btncheckbox.svg');
@@ -93,4 +99,34 @@
     border-style : solid;
     border-width : 2px;
     border-color : darkred;
+}
+
+.botones {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: white;
+}
+
+    .botones:hover {
+        border: double;
+        border-color: dimgray;
+        border-width: 3px;
+        background-color: lightslategray;
+    }
+
+.txtcajas {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+}
+
+.checkscontainer{
+
+    border : solid;
+    border-width : 1px;
+    border-color : lightgray;
+
+
+
 }

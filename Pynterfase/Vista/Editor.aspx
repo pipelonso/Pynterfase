@@ -13,30 +13,53 @@
     <form id="form1" runat="server">
         <div id="canvasDimPanel">
             <h4>Fila la resolución del lienzo para poder trabajar</h4>
-            <p>Ancho de la ventana</p>
-            <asp:TextBox ID="txtAncho" runat="server" placeholder="1000"></asp:TextBox>
-            <p>Alto de la ventana</p>
-            <asp:TextBox ID="txtAlto" runat="server" placeholder="1000"></asp:TextBox>
-            <p>Titulo de la ventana</p>
-            <asp:TextBox ID="txtTitle" runat="server" placeholder="Titulo"></asp:TextBox>
-
-            <asp:CheckBox ID="ChbResizable" runat="server" Text="Tamaño de pantalla escalable" />
-            <asp:CheckBox ID="ChbMaximizable" runat="server" Text="Ventana Maximizable" />
-            <asp:CheckBox ID="ChbMinimizable" runat="server" Text="Ventana Minimizable" />
-            <asp:CheckBox ID="ChbFullScrean" runat="server" Text="Pantalla completa" />
-            <asp:CheckBox ID="ChbShowintaskbar" runat="server" Text="Mostrar en barra de tareas" />
-            <asp:CheckBox ID="ChbTransparency" runat="server" Text="Habilitar transparencias" />
-            <asp:CheckBox ID="ChbAlwaysOnTop" runat="server" Text="Siempre arriba" />
-            <asp:CheckBox ID="ChbCursorVisible" runat="server" Text="Mostrar Cursos del raton" Checked="True" />
-            <asp:CheckBox ID="ChbTakeFocus" runat="server" Text="Obtener el foco inicial" />
-            <asp:CheckBox ID="ChbAutoMeasure" runat="server" Text="Ajustar tamaño al contenido" Checked="True" />
+            <div class="container-fluid">
+                <p>Ancho de la ventana</p>
+                <asp:TextBox ID="txtAncho" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>
+                <p>Alto de la ventana</p>
+                <asp:TextBox ID="txtAlto" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>
+                <p>Titulo de la ventana</p>
+                <asp:TextBox ID="txtTitle" runat="server" placeholder="Titulo" CssClass="w-100 txtcajas"></asp:TextBox>
+            </div>
 
             <br />
-            <asp:TextBox ID="txtBGColor" runat="server" placeholder="####"></asp:TextBox>
-            <input type="button" name="btnShowColorPalete" value="Elegir" />
+            <div class="container navbar">
+                <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
+                <div class="container-fluid nav-item col-12 col-sm-12 col-md-10 col-lg-6 checkscontainer">
+
+                    <asp:CheckBox ID="ChbResizable" runat="server" Text="Tamaño de pantalla escalable" CssClass=" my-1 w-100 chekers" />
+                    
+                    <asp:CheckBox ID="ChbMaximizable" runat="server" Text="Ventana Maximizable" CssClass="my-1 w-100 chekers" />
+                    
+                    <asp:CheckBox ID="ChbMinimizable" runat="server" Text="Ventana Minimizable" CssClass="my-1 w-100 chekers" />                    
+                    
+                    <asp:CheckBox ID="ChbFullScrean" runat="server" Text="Pantalla completa" CssClass="my-1 w-100 chekers" />
+                    
+                    <asp:CheckBox ID="ChbShowintaskbar" runat="server" Text="Mostrar en barra de tareas" CssClass="my-1 w-100 chekers" />
+                    
+                    <asp:CheckBox ID="ChbTransparency" runat="server" Text="Habilitar transparencias" CssClass="my-1 w-100 chekers" />
+                    
+                    <asp:CheckBox ID="ChbAlwaysOnTop" runat="server" Text="Siempre arriba" CssClass="my-1 w-100 chekers" />
+                    
+                    <asp:CheckBox ID="ChbCursorVisible" runat="server" Text="Mostrar Cursor del raton" Checked="True" CssClass="my-1 w-100 chekers"/>
+                    
+                    <asp:CheckBox ID="ChbTakeFocus" runat="server" Text="Obtener el foco inicial" CssClass="my-1 w-100 chekers" />                    
+                    
+                    <asp:CheckBox ID="ChbAutoMeasure" runat="server" Text="Ajustar tamaño al contenido" Checked="True" CssClass="my-1 w-100 chekers" />
+
+                </div>
+                <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
+            </div>
 
 
-            <asp:Button ID="btnGenerarLienzo" runat="server" Text="CREAR LIENZO" OnClick="btnGenerarLienzo_Click" CssClass="w-100" />
+            <br />
+            <asp:TextBox ID="txtBGColor" runat="server" placeholder="####" CssClass="txtcajas my-2 mx-3"></asp:TextBox>
+            <input type="button" name="btnShowColorPalete" value="Elegir" class="botones my-2 mx-3"/>
+
+            <div class="container-fluid">
+                <asp:Button ID="btnGenerarLienzo" runat="server" Text="CREAR LIENZO" OnClick="btnGenerarLienzo_Click" CssClass="w-100 botones my-2" />
+            </div>
+            
         </div>
         <div class="container-fluid navbar superiorBar">
 
@@ -59,10 +82,10 @@
             <div class="nav-item col-lg-2 col-md-1 col-sm-12 col-12"></div>
             <%-- Esta porqueria horrible de aqui es el lienzo principal del editor --%>
             <div class="nav-item col-lg-8 col-md-10 col-sm-12 col-12 limitlienzo">
-                
+
                 <div id="lienzo" class="canvaslayer" style="width: 2px; height: 2px;" runat="server">
                 </div>
-                
+
             </div>
             <div class="nav-item col-lg-2 col-md-1 col-sm-12 col-12"></div>
 
