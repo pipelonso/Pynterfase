@@ -126,6 +126,15 @@
     <Content Include="Vista\imagenes\regbox.svg" />
     <Content Include="Vista\imagenes\regImg.svg" />
     <Content Include="Vista\imagenes\sunshine-2250.gif" />
+    <Content Include="Vista\imagenes\TkButtons\btnBaseTk.svg" />
+    <Content Include="Vista\imagenes\TkButtons\btnButton.svg" />
+    <Content Include="Vista\imagenes\TkButtons\btnButtonHover.svg" />
+    <Content Include="Vista\imagenes\TkButtons\btnCheckbox.svg" />
+    <Content Include="Vista\imagenes\TkButtons\btnCheckBoxHover.svg" />
+    <Content Include="Vista\imagenes\TkButtons\btnLabel.svg" />
+    <Content Include="Vista\imagenes\TkButtons\btnLabelHover.svg" />
+    <Content Include="Vista\imagenes\TkButtons\btnTextBox.svg" />
+    <Content Include="Vista\imagenes\TkButtons\btnTextBoxHover.svg" />
     <Content Include="Vista\imagenes\userback.svg" />
     <Content Include="Vista\imagenes\userpageback.svg" />
     <Content Include="Vista\imagenes\UserPics\24331490_4800_1_05.jpg" />

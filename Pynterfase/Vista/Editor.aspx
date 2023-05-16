@@ -6,12 +6,12 @@
 <head runat="server">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="mycss/Editor.css" rel="stylesheet" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="canvasDimPanel"> 
+        <div id="canvasDimPanel">
             <h4>Fila la resolución del lienzo para poder trabajar</h4>
             <p>Ancho de la ventana</p>
             <asp:TextBox ID="txtAncho" runat="server" placeholder="1000"></asp:TextBox>
@@ -36,13 +36,40 @@
             <input type="button" name="btnShowColorPalete" value="Elegir" />
 
 
-            <asp:Button ID="btnGenerarLienzo" runat="server" Text="CREAR LIENZO" OnClick="btnGenerarLienzo_Click" CssClass="w-100"/>
+            <asp:Button ID="btnGenerarLienzo" runat="server" Text="CREAR LIENZO" OnClick="btnGenerarLienzo_Click" CssClass="w-100" />
         </div>
-        <%-- Esta porqueria horrible de aqui es el lienzo principal del editor --%>
-        <div id="lienzo" class="canvaslayer" style="width : 2px; height : 2px;" runat="server">
+        <div class="container-fluid navbar superiorBar">
 
-            <%--<p class="canvaslayer"></p>--%>
+            <div class="col-lg-2 col-md-2 col-sm-12 nav-item"></div>
+            <div id="ElementsPanel" class="nav-item navbar tkcontainerElements col-lg-6 col-md-6 col-sm-12 col-12">
+                <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 mx-2" />
+                <input type="button" name="btnBotonTk" value="" id="btnTKLabel" class="tkLabelbtn tkbutton my-1 mx-2" />
+                <input type="button" name="btnBotonTk" value="" id="btnTKTextBox" class="tkTextboxbtn tkbutton my-1 mx-2" />
+                <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 mx-2" />
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 nav-item"></div>
+
+
         </div>
+
+
+
+        <div class="container navbar">
+
+            <div class="nav-item col-lg-2 col-md-1 col-sm-12 col-12"></div>
+            <%-- Esta porqueria horrible de aqui es el lienzo principal del editor --%>
+            <div class="nav-item col-lg-8 col-md-10 col-sm-12 col-12 limitlienzo">
+                
+                <div id="lienzo" class="canvaslayer" style="width: 2px; height: 2px;" runat="server">
+                </div>
+                
+            </div>
+            <div class="nav-item col-lg-2 col-md-1 col-sm-12 col-12"></div>
+
+
+        </div>
+
+
         <asp:Button ID="btnTop" runat="server" Text=">>" OnClick="btnTop_Click" />
         <script src="js/bootstrap.min.js"></script>
         <script src="Editor.js"></script>

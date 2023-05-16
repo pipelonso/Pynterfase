@@ -1,4 +1,6 @@
 ﻿body {
+    background-image: url('../imagenes/projectsback.svg');
+    background-size: cover;
 }
 
 .canvaslayer{
@@ -14,3 +16,81 @@
     border-radius : 0px;
 }
 
+.superiorBar {
+    position: sticky;
+    top: -2px;
+    z-index: 20000;
+    background-image: url('../imagenes/onbar.svg');
+    background-size : cover;
+}
+
+
+.tkbutton {
+    width: 60px;
+    height: 60px;
+}
+
+
+.tkButtonbtn {
+    background-image: url('../imagenes/tkbuttons/btnbutton.svg');
+    background-size: cover;
+}
+
+    .tkButtonbtn:hover {
+        background-image: url('../imagenes/tkbuttons/btnbuttonhover.svg');
+        background-size: cover;
+    }
+
+
+.tkLabelbtn {
+    background-image: url('../imagenes/tkbuttons/btnlabel.svg');
+    background-size: cover;
+}
+    .tkLabelbtn:hover {
+        background-image: url('../imagenes/tkbuttons/btnlabelhover.svg');
+        background-size: cover;
+    }
+
+.tkTextboxbtn {
+    background-image: url('../imagenes/tkbuttons/btntextbox.svg');
+    background-size: cover;
+}
+
+    .tkTextboxbtn:hover {
+        background-image: url('../imagenes/tkbuttons/btntextboxhover.svg');
+        background-size: cover;
+    }
+
+
+
+
+
+
+.tkCheckboxbtn {
+    background-image: url('../imagenes/tkbuttons/btncheckbox.svg');
+    background-size: cover;
+}
+
+    .tkCheckboxbtn:hover {
+        background-image: url('../imagenes/tkbuttons/btncheckboxhover.svg');
+        background-size: cover;
+    }
+
+
+.tkcontainerElements {
+
+    border : solid;
+    border-width : 1px;
+    border-color : darkslategray;
+
+
+
+}
+
+.limitlienzo {
+    overflow: auto;
+    height: 500px;
+    border-style : solid;
+    border-width : 2px;
+    border-color : darkred;
+}
