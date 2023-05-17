@@ -28,23 +28,23 @@
                 <div class="container-fluid nav-item col-12 col-sm-12 col-md-10 col-lg-6 checkscontainer">
 
                     <asp:CheckBox ID="ChbResizable" runat="server" Text="Tamaño de pantalla escalable" CssClass=" my-1 w-100 chekers" />
-                    
+
                     <asp:CheckBox ID="ChbMaximizable" runat="server" Text="Ventana Maximizable" CssClass="my-1 w-100 chekers" />
-                    
-                    <asp:CheckBox ID="ChbMinimizable" runat="server" Text="Ventana Minimizable" CssClass="my-1 w-100 chekers" />                    
-                    
+
+                    <asp:CheckBox ID="ChbMinimizable" runat="server" Text="Ventana Minimizable" CssClass="my-1 w-100 chekers" />
+
                     <asp:CheckBox ID="ChbFullScrean" runat="server" Text="Pantalla completa" CssClass="my-1 w-100 chekers" />
-                    
+
                     <asp:CheckBox ID="ChbShowintaskbar" runat="server" Text="Mostrar en barra de tareas" CssClass="my-1 w-100 chekers" />
-                    
+
                     <asp:CheckBox ID="ChbTransparency" runat="server" Text="Habilitar transparencias" CssClass="my-1 w-100 chekers" />
-                    
+
                     <asp:CheckBox ID="ChbAlwaysOnTop" runat="server" Text="Siempre arriba" CssClass="my-1 w-100 chekers" />
-                    
-                    <asp:CheckBox ID="ChbCursorVisible" runat="server" Text="Mostrar Cursor del raton" Checked="True" CssClass="my-1 w-100 chekers"/>
-                    
-                    <asp:CheckBox ID="ChbTakeFocus" runat="server" Text="Obtener el foco inicial" CssClass="my-1 w-100 chekers" />                    
-                    
+
+                    <asp:CheckBox ID="ChbCursorVisible" runat="server" Text="Mostrar Cursor del raton" Checked="True" CssClass="my-1 w-100 chekers" />
+
+                    <asp:CheckBox ID="ChbTakeFocus" runat="server" Text="Obtener el foco inicial" CssClass="my-1 w-100 chekers" />
+
                     <asp:CheckBox ID="ChbAutoMeasure" runat="server" Text="Ajustar tamaño al contenido" Checked="True" CssClass="my-1 w-100 chekers" />
 
                 </div>
@@ -54,16 +54,20 @@
 
             <br />
             <asp:TextBox ID="txtBGColor" runat="server" placeholder="####" CssClass="txtcajas my-2 mx-3"></asp:TextBox>
-            <input type="button" name="btnShowColorPalete" value="Elegir" class="botones my-2 mx-3"/>
+            <input type="button" name="btnShowColorPalete" value="Elegir" class="botones my-2 mx-3" />
 
             <div class="container-fluid">
                 <asp:Button ID="btnGenerarLienzo" runat="server" Text="CREAR LIENZO" OnClick="btnGenerarLienzo_Click" CssClass="w-100 botones my-2" />
             </div>
-            
-        </div>
-        <div class="container-fluid navbar superiorBar">
 
-            <div class="col-lg-2 col-md-2 col-sm-12 nav-item"></div>
+        </div>
+        <div class="container-fluid navbar superiorBar" id="supBar" style="height : 150px;">
+
+
+
+            <div class="col-lg-2 col-md-2 col-sm-12 nav-item">
+                <asp:Label ID="LlblProjectName" runat="server" Text="---"></asp:Label>
+            </div>
             <div id="ElementsPanel" class="nav-item navbar tkcontainerElements col-lg-6 col-md-6 col-sm-12 col-12">
                 <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 mx-2" />
                 <input type="button" name="btnBotonTk" value="" id="btnTKLabel" class="tkLabelbtn tkbutton my-1 mx-2" />
@@ -71,15 +75,18 @@
                 <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 mx-2" />
             </div>
             <div class="nav-item">
-                <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width : 150px;"/>
+                <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width: 150px;" />
                 <br />
-                <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2" style="width : 150px;"/>
+                <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2" style="width: 150px;" />
 
             </div>
+
             <div class="col-lg-2 col-md-2 col-sm-12 nav-item"></div>
-
-
-        </div>
+                <div>
+                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="botones mx-2" />
+                    <img src="imagenes/cloud-check-fill.svg" alt="onsaveFileimg" class="mx-2" style="height: 30px" />
+                </div>
+            </div>
 
 
 
@@ -87,7 +94,7 @@
 
             <div class="nav-item col-lg-2 col-md-1 col-sm-12 col-12"></div>
             <%-- Esta porqueria horrible de aqui es el lienzo principal del editor --%>
-            <div class="nav-item col-lg-8 col-md-10 col-sm-12 col-12 limitlienzo">
+            <div class="nav-item col-lg-8 col-md-10 col-sm-12 col-12 limitlienzo" id="limiteslienzo">
 
                 <div id="lienzo" class="canvaslayer" style="width: 2px; height: 2px;" runat="server">
                 </div>
@@ -99,7 +106,7 @@
         </div>
 
 
-        <asp:Button ID="btnTop" runat="server" Text=">>" OnClick="btnTop_Click" />
+        <%--<asp:Button ID="btnTop" runat="server" Text=">>" OnClick="btnTop_Click" />--%>
         <script src="js/bootstrap.min.js"></script>
         <script src="Editor.js"></script>
     </form>

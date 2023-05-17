@@ -12,7 +12,7 @@ namespace Pynterfase.TkElements
         public Checkboxs[] listacheckbox { get; set; }
         public Buttons[] listabuttons { get; set; }
         public Textboxs[] listatextbox { get; set; }
-
+        public Labels[] listalabels { get; set; }
 
     }
 }

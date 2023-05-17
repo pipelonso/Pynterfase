@@ -115,6 +115,8 @@
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
     <Content Include="Vista\imagenes\back1.gif" />
     <Content Include="Vista\imagenes\backreglogin.gif" />
+    <Content Include="Vista\imagenes\cloud-arrow-up.svg" />
+    <Content Include="Vista\imagenes\cloud-check-fill.svg" />
     <Content Include="Vista\imagenes\EditorSupBar.svg" />
     <Content Include="Vista\imagenes\editor_back.svg" />
     <Content Include="Vista\imagenes\eye-slash.svg" />
@@ -224,6 +226,7 @@
     </Compile>
     <Compile Include="TkElements\Buttons.cs" />
     <Compile Include="TkElements\Checkboxs.cs" />
+    <Compile Include="TkElements\Labels.cs" />
     <Compile Include="TkElements\Lienzo.cs" />
     <Compile Include="TkElements\Proyecto.cs" />
     <Compile Include="TkElements\Receptor.cs" />

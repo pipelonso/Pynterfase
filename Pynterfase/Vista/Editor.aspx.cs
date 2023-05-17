@@ -47,7 +47,7 @@ namespace Pynterfase.Vista
                 //Crear script para aplicar tamaño del json al lienzo
                 //OnResizeCanvas
                 ScriptManager.RegisterStartupScript(this, GetType(), "RedimensionarLienzoInicial", "ResizeCanvas(" + lienzox+","+lienzoy+");", true);
-
+                ScriptManager.RegisterStartupScript(this, GetType(), "Adaptar altura del lienzo", "setCanvasHeight();", true);
 
             }
             else
@@ -91,14 +91,14 @@ namespace Pynterfase.Vista
         protected void btnTop_Click(object sender, EventArgs e)
         {
 
-            HtmlGenericControl myDiv = (HtmlGenericControl)FindControl("myDiv");
+            //HtmlGenericControl myDiv = (HtmlGenericControl)FindControl("myDiv");
 
-            string currentTopStyle = myDiv.Style["Top"];
-            string currenttopnumtext = currentTopStyle.Replace("p"," ").Replace("x"," ").Trim();
-            int currentTop = int.Parse(currenttopnumtext) + 5;
+            //string currentTopStyle = myDiv.Style["Top"];
+            //string currenttopnumtext = currentTopStyle.Replace("p"," ").Replace("x"," ").Trim();
+            //int currentTop = int.Parse(currenttopnumtext) + 5;
 
 
-            myDiv.Style["Top"] = currentTop + "px";
+            //myDiv.Style["Top"] = currentTop + "px";
 
 
         }

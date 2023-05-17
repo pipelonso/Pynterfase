@@ -11,8 +11,8 @@ namespace Pynterfase.TkElements
         public List<Lienzo> listalienzo { get; set; }
         public List<Checkboxs> listalheckbox { get; set; }
         public List<Buttons> listaluttons { get; set; }
-        public List<Textboxs> listalextbox { get; set; }
-        
+        public List<Textboxs> listatextbox { get; set; }
+        public List<Labels> listalabels { get; set; }
 
 
 
