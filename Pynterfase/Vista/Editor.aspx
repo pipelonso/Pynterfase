@@ -11,8 +11,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="canvasDimPanel">
-            <h4>Fila la resolución del lienzo para poder trabajar</h4>
+        <div id="canvasDimPanel" class="bg-light">
+            <h4 class="m-2">Fila la resolución del lienzo para poder trabajar</h4>
             <div class="container-fluid">
                 <p>Ancho de la ventana</p>
                 <asp:TextBox ID="txtAncho" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>
@@ -66,13 +66,17 @@
 
 
             <div class="col-lg-2 col-md-2 col-sm-12 nav-item">
-                <asp:Label ID="LlblProjectName" runat="server" Text="---"></asp:Label>
+                <asp:Label ID="LlblProjectName" runat="server" Text="---" CssClass="text-white"></asp:Label>
             </div>
             <div id="ElementsPanel" class="nav-item navbar tkcontainerElements col-lg-6 col-md-6 col-sm-12 col-12">
-                <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 mx-2" />
-                <input type="button" name="btnBotonTk" value="" id="btnTKLabel" class="tkLabelbtn tkbutton my-1 mx-2" />
-                <input type="button" name="btnBotonTk" value="" id="btnTKTextBox" class="tkTextboxbtn tkbutton my-1 mx-2" />
-                <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 mx-2" />
+                <div class="nav-item">
+                    <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 mx-2" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKLabel" class="tkLabelbtn tkbutton my-1 mx-2" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKTextBox" class="tkTextboxbtn tkbutton my-1 mx-2" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 mx-2" />
+                </div>
+                <br />                
+                <input type="button" name="editcanvasProp" value="EDITAR PROPIEDADES DE LA VENTANA" class="botones my-2 mx-2 nav-item"/>
             </div>
             <div class="nav-item">
                 <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width: 150px;" />
