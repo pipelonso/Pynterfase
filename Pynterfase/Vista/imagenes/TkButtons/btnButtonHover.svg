@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="btnBaseTk.svg"
+   sodipodi:docname="btnButtonHover.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.25166597"
-     inkscape:cx="1064.9036"
-     inkscape:cy="47.682252"
+     inkscape:zoom="1.0066639"
+     inkscape:cx="325.33203"
+     inkscape:cy="180.7952"
      inkscape:window-width="1366"
      inkscape:window-height="745"
      inkscape:window-x="-8"
@@ -86,37 +86,6 @@
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient1636">
-      <stop
-         style="stop-color:#464646;stop-opacity:1;"
-         offset="0"
-         id="stop1632" />
-      <stop
-         style="stop-color:#6a6a6a;stop-opacity:1;"
-         offset="1"
-         id="stop1634" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient1636"
-       id="linearGradient1638"
-       x1="0"
-       y1="0"
-       x2="79.375"
-       y2="79.375"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient1636"
-       id="linearGradient4391"
-       gradientUnits="userSpaceOnUse"
-       x1="0"
-       y1="0"
-       x2="79.375"
-       y2="79.375"
-       gradientTransform="translate(79.372786)" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient5873"
        id="linearGradient5141"
        gradientUnits="userSpaceOnUse"
@@ -136,26 +105,6 @@
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient5910"
-       id="linearGradient6646"
-       gradientUnits="userSpaceOnUse"
-       x1="35.209484"
-       y1="114.70149"
-       x2="74.206589"
-       y2="153.69859"
-       gradientTransform="translate(79.371016)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5873"
-       id="linearGradient6648"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(79.371016,79.375)"
-       x1="0"
-       y1="0"
-       x2="79.375"
-       y2="79.375" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient16314"
        id="linearGradient16316"
        x1="8.9038305"
@@ -172,31 +121,25 @@
        x2="6.5976815"
        y2="85.444626"
        gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter882"
+       x="-0.70120971"
+       y="-0.71546516"
+       width="2.3451936"
+       height="2.3756843">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.4159085"
+         id="feGaussianBlur884" />
+    </filter>
   </defs>
   <g
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0.00221082,-79.374557)">
-    <path
-       style="fill:url(#linearGradient1638);fill-opacity:1;stroke:none;stroke-width:0.153;stroke-linecap:round"
-       d="M 0,0 H 79.374999 V 79.374999 H 0 Z"
-       id="path236"
-       inkscape:export-filename="..\..\..\..\Imágenes\tkbtn\btnButton.svg"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <path
-       style="fill:#444444;fill-opacity:1;stroke:#444444;stroke-width:0.752999;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
-       d="m 79.000714,69.647357 -9.588253,9.352469 h 9.588253 z"
-       id="path1938"
-       sodipodi:nodetypes="cccc" />
-    <path
-       style="fill:url(#linearGradient4391);fill-opacity:1;stroke:none;stroke-width:0.153;stroke-linecap:round"
-       d="M 79.372786,0 H 158.74779 V 79.374999 H 79.372786 Z"
-       id="path4385"
-       inkscape:export-filename="..\..\..\..\Imágenes\tkbtn\btnCheckbox.svg"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
     <path
        style="fill:url(#linearGradient5141);fill-opacity:1;stroke:none;stroke-width:0.153;stroke-linecap:round"
        d="M 0,79.375 H 79.374999 V 158.75 H 0 Z"
@@ -210,14 +153,6 @@
        d="m 79.000714,149.02236 -9.588253,9.35247 h 9.588253 z"
        id="path5139"
        sodipodi:nodetypes="cccc" />
-    <path
-       style="fill:url(#linearGradient6648);fill-opacity:1;stroke:none;stroke-width:0.153;stroke-linecap:round"
-       d="M 79.371016,79.375 H 158.74601 V 158.75 H 79.371016 Z"
-       id="path6640" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:url(#linearGradient6646);stroke-width:0.749458;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
-       d="M 79.368805,158.37483 H 158.37173 V 79.374555"
-       id="path6642" />
     <path
        style="fill:none;fill-opacity:1;stroke:url(#linearGradient16316);stroke-width:0.905734;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
        d="M 9.4707919,108.10826 H 68.487265 v 21.79585 l -59.1282466,0.11177 z"
@@ -255,5 +190,11 @@
        style="fill:none;fill-opacity:1;stroke:url(#linearGradient34649);stroke-width:0.728369;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
        d="M 0.3920961,90.50904 V 79.739184 H 11.987337"
        id="path34641" />
+    <path
+       style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.752999;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter882)"
+       d="m 74.008607,145.73696 -9.588253,9.35247 h 9.588253 z"
+       id="path326"
+       sodipodi:nodetypes="cccc"
+       transform="matrix(3.0412965,0,0,3.0412965,-146.0814,-313.29811)" />
   </g>
 </svg>

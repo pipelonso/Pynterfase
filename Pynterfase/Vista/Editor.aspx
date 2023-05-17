@@ -70,6 +70,12 @@
                 <input type="button" name="btnBotonTk" value="" id="btnTKTextBox" class="tkTextboxbtn tkbutton my-1 mx-2" />
                 <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 mx-2" />
             </div>
+            <div class="nav-item">
+                <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width : 150px;"/>
+                <br />
+                <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2" style="width : 150px;"/>
+
+            </div>
             <div class="col-lg-2 col-md-2 col-sm-12 nav-item"></div>
 
 

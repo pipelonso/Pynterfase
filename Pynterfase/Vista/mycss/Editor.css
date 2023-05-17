@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url('../imagenes/projectsback.svg');
+    background-image: url('../imagenes/editor_back.svg');
     background-size: cover;
 }
 
@@ -20,8 +20,8 @@
     position: sticky;
     top: -2px;
     z-index: 20000;
-    background-image: url('../imagenes/onbar.svg');
-    background-size : cover;
+    background-image: url('../imagenes/editorsupbar.svg');
+    background-size: cover;
 }
 
 

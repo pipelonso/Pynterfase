@@ -115,6 +115,8 @@
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
     <Content Include="Vista\imagenes\back1.gif" />
     <Content Include="Vista\imagenes\backreglogin.gif" />
+    <Content Include="Vista\imagenes\EditorSupBar.svg" />
+    <Content Include="Vista\imagenes\editor_back.svg" />
     <Content Include="Vista\imagenes\eye-slash.svg" />
     <Content Include="Vista\imagenes\eye.svg" />
     <Content Include="Vista\imagenes\giphy.gif" />
