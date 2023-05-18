@@ -138,7 +138,7 @@
 
 
         <%-- Panel que contiene el lienzo y el panel de propiedades --%>
-        <div class="container-fluid navbar" id="panelEditorCuerpo"> 
+        <div class="container-fluid navbar" id="panelEditorCuerpo">
 
             <div class="nav-item col-lg-2 col-md-12 col-sm-12 col-12 mx-2 limitProperties my-2" id="propertiesPanel">
 
@@ -240,7 +240,7 @@
                         <p>Image:</p>
                         <input type="text" id="txtButtonTkimage" name="image" class="w-100 txtcajas" />
                         <p>Justify:</p>
-                        <select id="txtButtonTkjustify" name="justify" class="w-100 txtcajas" >
+                        <select id="txtButtonTkjustify" name="justify" class="w-100 txtcajas">
                             <option value="none"></option>
                             <option value="left">left</option>
                             <option value="center">center</option>
@@ -251,7 +251,7 @@
                         <p>Pady:</p>
                         <input type="text" id="txtButtonTkpady" name="pady" class="w-100 txtcajas" />
                         <p>Relief:</p>
-                        <select id="txtButtonTkrelief" name="relief" class="w-100 txtcajas" >
+                        <select id="txtButtonTkrelief" name="relief" class="w-100 txtcajas">
                             <option value="none"></option>
                             <option value="flat">flat</option>
                             <option value="raised">raised</option>
@@ -269,29 +269,160 @@
                         <input type="text" id="txtButtonTktextvariable" name="textvariable" class="w-100 txtcajas" />
                         <p>Underline:</p>
                         <input type="text" id="txtButtonTkunderline" name="underline" class="w-100 txtcajas" />
-                        <p>Width:</p>                        
-                        <input  type="text" id="txtButtonTkwidth" name="width" class="w-100 txtcajas" />
+                        <p>Width:</p>
+                        <input type="text" id="txtButtonTkwidth" name="width" class="w-100 txtcajas" />
                         <p>Wrap Length:</p>
                         <input type="text" id="txtButtonTkwraplength" name="wraplength" class="w-100 txtcajas my-2" />
                     </div>
 
-                    <div id="labelPropPanel" class="container-container-fl text-light">
+                    <div id="labelPropPanel" class="container-fluid text-light">
 
                         <p>Propiedades de Label</p>
 
+                        <p>xz</p>
+                        <input type="text" id="txtLabelTKxz" class="w-100 txtcajas" />
+                        <p>yz</p>
+                        <input type="text" id="txtLabelTKyz" class="w-100 txtcajas" />
+                        <p>anchor</p>
+                        <input type="text" id="txtLabelTKanchor" class="w-100 txtcajas" />
+                        <p>bg</p>
+                        <input type="text" id="txtLabelTKbg"  class="w-100 txtcajas"/>
+                        <p>cursor</p>
+                        <select id="txtLabelTKcursor" class="w-100 txtcajas" >
+                            <option value="valor1">valor1</option>
+                            <option value="valor2">valor2</option>
+                            <option value="valor3">valor3</option>
+
+                        </select>
+                        <p>font</p>
+                        <input type="text" id="txtLabelTKfont" class="w-100 txtcajas" />
+                        <p>fg</p>
+                        <input type="text" id="txtLabelTKfg" class="w-100 txtcajas" />
+                        <p>height</p>
+                        <input type="text" id="txtLabelTKheight" class="w-100 txtcajas" />
+                        <p>image</p>
+                        <input type="text" id="txtLabelTKimage" class="w-100 txtcajas" />
+                        <p>justify</p>
+                        <input type="text" id="txtLabelTKjustify" class="w-100 txtcajas" />
+                        <p>padx</p>
+                        <input type="text" id="txtLabelTKpadx" class="w-100 txtcajas" />
+                        <p>pady</p>
+                        <input type="text" id="txtLabelTKpady" class="w-100 txtcajas" />
+                        <p>relief</p>
+                        <select id="txtLabelTKrelief" class="w-100 txtcajas" >
+                            <option value="flat">flat</option>
+                            <option value="sunken">sunken</option>
+                            <option value="raised">raised</option>
+                            <option value="groove">groove</option>
+                            <option value="ridge">ridge</option>
+
+                        </select>
+                        <p>text</p>
+                        <input type="text" id="txtLabelTKtext" class="w-100 txtcajas" />
+                        <p>textvarible</p>
+                        <input type="text" id="txtLabelTKtextvarible" class="w-100 txtcajas" />
+                        <p>underline</p>
+                        <select id="txtLabelTKunderline" class="w-100 txtcajas" >
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+
+                        </select>
+                        <p>width</p>
+                        <input type="text" id="txtLabelTKwidth" class="w-100 txtcajas" />
+                        <p>wraplength</p>
+                        <input type="text" id="txtLabelTKwraplength" class="w-100 txtcajas" />
                     </div>
-                    
-                    <div id="textboxPropPanel" class="container-container-fl text-light" >
+
+                    <div id="textboxPropPanel" class="container-fluid text-light">
 
                         <p>Propiedades de TextBox</p>
 
+                        <p>idTextbox</p>
+                        <input type="text" id="txtTextboxTKidTextbox" class="w-100 txtcajas" />
+                        <p>Text</p>
+                        <input type="text" id="txtTextboxTKText" class="w-100 txtcajas" />
+                        <p>Width</p>
+                        <input type="text" id="txtTextboxTKWidth" class="w-100 txtcajas" />
+                        <p>Height</p>
+                        <input type="text" id="txtTextboxTKHeight" class="w-100 txtcajas" />
+                        <p>MaxLength</p>
+                        <input type="text" id="txtTextboxTKMaxLength" class="w-100 txtcajas" />
+                        <p>Multiline</p>
+                        <select id="txtTextboxTKMultiline" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                        <p>ReadOnly</p>
+                        <select id="txtTextboxTKReadOnly" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                        <p>WordWrap</p>
+                        <select id="txtTextboxTKWordWrap" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                        <p>AcceptsTab</p>
+                        <select id="txtTextboxTKAcceptsTab" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                        <p>AcceptsReturn</p>
+                        <select id="txtTextboxTKAcceptsReturn" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                        <p>HideSelection</p>
+                        <select id="txtTextboxTKHideSelection" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                        <p>SelectionStart</p>
+                        <input type="text" id="txtTextboxTKSelectionStart" class="w-100 txtcajas" />
+                        <p>SelectionLength</p>
+                        <input type="text" id="txtTextboxTKSelectionLength" class="w-100 txtcajas" />
+                        <p>ScrollBars</p>
+                        <select id="txtTextboxTKScrollBars" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
                     </div>
 
-                    <div id="checkboxPropPanel" class="container-container-fl text-light" >
+                    <div id="checkboxPropPanel" class="container-fluid text-light">
 
                         <p>Propiedades Checkbox</p>
 
-
+                        <p>idCheckbox</p>
+                        <input type="text" id="txtCheckboxTKidCheckbox" class="w-100 txtcajas" />
+                        <p>x</p>
+                        <input type="text" id="txtCheckboxTKx" class="w-100 txtcajas" />
+                        <p>y</p>
+                        <input type="text" id="txtCheckboxTKy" class="w-100 txtcajas"  />
+                        <p>Checked</p>
+                        <select id="txtCheckboxTKChecked" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                        <p>Text</p>
+                        <input type="text" id="txtCheckboxTKText" class="w-100 txtcajas" />
+                        <p>State</p>
+                        <select id="txtCheckboxTKState" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                        <p>OnValue</p>
+                        <input type="text" id="txtCheckboxTKOnValue" class="w-100 txtcajas" />
+                        <p>OffValue</p>
+                        <input type="text" id="txtCheckboxTKOffValue" class="w-100 txtcajas" />
+                        <p>Variable</p>
+                        <input type="text" id="txtCheckboxTKVariable" class="w-100 txtcajas" />
+                        <p>Command</p>
+                        <input type="text" id="txtCheckboxTKCommand" class="w-100 txtcajas" />
+                        <p>Tristate</p>
+                        <select id="txtCheckboxTKTristate" class="w-100 txtcajas" >
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
                     </div>
 
 

@@ -8,9 +8,12 @@
     var botonesdecontrol = document.getElementById("controlPanelSupbar");
     var espaciodor = document.getElementById("espaciadosSupBar");
     var guardardiv = document.getElementById("controlesGuardar");
+    var labelPropPanel = document.getElementById("labelPropPanel");    
+    var textboxPropPanel = document.getElementById("textboxPropPanel");
+    var checkboxPropPanel = document.getElementById("checkboxPropPanel");
 
 
-    panelButtonProp.style.display = "none";
+    
     propertiesPanel.style.display = "none";
     limitlienzo.style.display = "none";
     infobox.style.display = "none";
@@ -18,9 +21,11 @@
     botonesdecontrol.style.display = "none";
     espaciodor.style.display = "none";
     guardardiv.style.display = "none";
-    
-    
 
+    panelButtonProp.style.display = "none";
+    labelPropPanel.style.display = "none";
+    textboxPropPanel.style.display = "none";
+    checkboxPropPanel.style.display = "none";
 
 
 }
