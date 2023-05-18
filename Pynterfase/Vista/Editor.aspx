@@ -275,12 +275,10 @@
                         <input type="text" id="txtButtonTkwraplength" name="wraplength" class="w-100 txtcajas" />
                     </div>
 
-
-
                 </div>
 
             </div>
-
+            <%-- ------------------------------------------------------------------------------------------------------------------------------ --%>
             <%-- Esta porqueria horrible de aqui es el lienzo principal del editor --%>
             <div class="nav-item col-lg-8 col-md-10 col-sm-12 col-12 limitlienzo" id="limiteslienzo">
 
