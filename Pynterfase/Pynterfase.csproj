@@ -143,6 +143,7 @@
     <Content Include="Vista\imagenes\userpageback.svg" />
     <Content Include="Vista\imagenes\UserPics\24331490_4800_1_05.jpg" />
     <Content Include="Vista\imagenes\window_base.svg" />
+    <Content Include="Vista\imagenes\x-circle.svg" />
     <Content Include="Vista\InfoUsuario.aspx" />
     <Content Include="Vista\InfoUsuario.js" />
     <Content Include="Vista\mycss\create.css" />

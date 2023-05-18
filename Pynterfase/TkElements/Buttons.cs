@@ -14,9 +14,9 @@ namespace Pynterfase.TkElements
         public string Activeforeground { get; set; }  // Establece el color de primer plano cuando el widget está activo.
         public string Anchor { get; set; }  // Establece la posición de la cadena dentro del widget.
         public string Background { get; set; }  // Establece el color de fondo del widget.
-        public string Bitmap { get; set; }  // Establece una imagen en blanco y negro como un mapa de bits para el widget.
+        public string Bitmap { get; set; }  // Establece una imagen en blanco y negro como un mapa de bits para el widget. https://www.geeksforgeeks.org/how-to-use-bitmap-images-in-button-in-tkinter/
         public string Borderwidth { get; set; }  // Establece el ancho del borde del widget.
-        public string Compound { get; set; }  // Determina cómo se mostrará la imagen y el texto juntos en el widget.
+        public string Compound { get; set; }  // Determina cómo se mostrará la imagen y el texto juntos en el widget. 
         public string Cursor { get; set; }  // Establece el cursor del mouse cuando está sobre el widget.
         public string Default { get; set; }  // Establece el botón predeterminado para el widget.
         public string Disabledforeground { get; set; }  // Establece el color de primer plano cuando el widget está desactivado.

@@ -51,94 +51,103 @@ namespace Pynterfase.Vista
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
 
         /// <summary>
-        /// Control ChbResizable.
+        /// Control btnGenerarLienzo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbResizable;
+        protected global::System.Web.UI.WebControls.Button btnGenerarLienzo;
 
         /// <summary>
-        /// Control ChbMaximizable.
+        /// Control Chkeditresizable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbMaximizable;
+        protected global::System.Web.UI.WebControls.CheckBox Chkeditresizable;
 
         /// <summary>
-        /// Control ChbMinimizable.
+        /// Control ChkeditMaximizable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbMinimizable;
+        protected global::System.Web.UI.WebControls.CheckBox ChkeditMaximizable;
 
         /// <summary>
-        /// Control ChbFullScrean.
+        /// Control ChkeditMinimizable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbFullScrean;
+        protected global::System.Web.UI.WebControls.CheckBox ChkeditMinimizable;
 
         /// <summary>
-        /// Control ChbShowintaskbar.
+        /// Control ChkeditFullScrean.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbShowintaskbar;
+        protected global::System.Web.UI.WebControls.CheckBox ChkeditFullScrean;
 
         /// <summary>
-        /// Control ChbTransparency.
+        /// Control ChkeditShowTaskbar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbTransparency;
+        protected global::System.Web.UI.WebControls.CheckBox ChkeditShowTaskbar;
 
         /// <summary>
-        /// Control ChbAlwaysOnTop.
+        /// Control ChkeditTransparent.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbAlwaysOnTop;
+        protected global::System.Web.UI.WebControls.CheckBox ChkeditTransparent;
 
         /// <summary>
-        /// Control ChbCursorVisible.
+        /// Control ChkeditAlwaysInFront.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbCursorVisible;
+        protected global::System.Web.UI.WebControls.CheckBox ChkeditAlwaysInFront;
 
         /// <summary>
-        /// Control ChbTakeFocus.
+        /// Control ChkeditShowCursor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbTakeFocus;
+        protected global::System.Web.UI.WebControls.CheckBox ChkeditShowCursor;
 
         /// <summary>
-        /// Control ChbAutoMeasure.
+        /// Control ChkeditTakeFocus.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChbAutoMeasure;
+        protected global::System.Web.UI.WebControls.CheckBox ChkeditTakeFocus;
+
+        /// <summary>
+        /// Control ChkeditAutoMeasure.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox ChkeditAutoMeasure;
 
         /// <summary>
         /// Control txtBGColor.
@@ -148,15 +157,6 @@ namespace Pynterfase.Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBGColor;
-
-        /// <summary>
-        /// Control btnGenerarLienzo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGenerarLienzo;
 
         /// <summary>
         /// Control LlblProjectName.

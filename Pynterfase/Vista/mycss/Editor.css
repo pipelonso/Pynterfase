@@ -131,3 +131,28 @@
 
 
 }
+
+.infobox {
+    border: solid;
+    border-width: 1px;
+    border-color: darkslategray;
+}
+
+.closebtn {
+    background:none;
+    background-image: url('../imagenes/x-circle.svg');
+    background-size : cover;
+    height : 30px;
+    width : 30px;
+    border : none;
+
+}
+
+.limitProperties{
+
+    overflow : auto;
+    height : 500px;
+    border : solid;
+    border-color : darkred;
+    border-width : 1px;
+}

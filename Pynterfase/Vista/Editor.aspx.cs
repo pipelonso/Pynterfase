@@ -23,6 +23,7 @@ namespace Pynterfase.Vista
             ////myButton.Click += new EventHandler(myButton_Click);
             //Form.Controls.Add(myButton);
 
+            ScriptManager.RegisterStartupScript(this, GetType(), "OcultarPanelDeLienzoEditar", "CloseEditWindowSizePanel();", true);
 
             string iPr = Request.QueryString["iPr"];
 
