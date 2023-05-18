@@ -40,5 +40,23 @@ namespace Pynterfase.Datos
 
         }
 
+
+        public ClproyectoE mtdGetProjectById(string id) {
+
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            string consulta = "SELECT * FROM Proyecto WHERE IdProyecto = " + id;
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            ClproyectoE objProyecto = new ClproyectoE();
+            objProyecto.IdProyecto = int.Parse(datos.Rows[0]["IdProyecto"].ToString());
+            objProyecto.idUsuarioP = int.Parse(datos.Rows[0]["IdUsuario"].ToString());
+            objProyecto.nombreProyecto = datos.Rows[0]["nombreProyecto"].ToString();
+            objProyecto.visibilidad = datos.Rows[0]["visibilidad"].ToString();
+
+            return objProyecto;
+
+        }
+
+
     }
 }

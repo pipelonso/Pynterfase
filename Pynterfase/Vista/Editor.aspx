@@ -109,7 +109,7 @@
 
 
         <div class="container-fluid navbar superiorBar" id="supBar" style="height: 150px;">
-            <div class="col-lg-2 col-md-2 col-sm-12 nav-item infobox">
+            <div class="col-lg-2 col-md-2 col-sm-12 nav-item infobox mx-1" id="infobox">
                 <asp:Label ID="LlblProjectName" runat="server" Text="---" CssClass="text-white mx-2"></asp:Label>
             </div>
             <div id="ElementsPanel" class="nav-item navbar tkcontainerElements col-lg-6 col-md-6 col-sm-12 col-12">
@@ -122,15 +122,15 @@
                 <br />
                 <input type="button" name="editcanvasProp" value="EDITAR PROPIEDADES DE LA VENTANA" class="botones my-2 mx-2 nav-item" onclick="OpenEditWindowSizePanel();" />
             </div>
-            <div class="nav-item">
+            <div class="nav-item" id="controlPanelSupbar">
                 <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width: 150px;" />
                 <br />
                 <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2" style="width: 150px;" />
 
             </div>
 
-            <div class="col-lg-2 col-md-2 col-sm-12 nav-item"></div>
-            <div>
+            <div class="col-lg-2 col-md-2 col-sm-12 nav-item" id="espaciadosSupBar"></div>
+            <div id="controlesGuardar">
                 <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="botones mx-2" />
                 <img src="imagenes/cloud-check-fill.svg" alt="onsaveFileimg" class="mx-2" style="height: 30px" />
             </div>
@@ -138,9 +138,9 @@
 
 
         <%-- Panel que contiene el lienzo y el panel de propiedades --%>
-        <div class="container navbar"> 
+        <div class="container-fluid navbar" id="panelEditorCuerpo"> 
 
-            <div class="nav-item col-lg-2 col-md-1 col-sm-12 col-12 mx-1 limitProperties my-1" id="propertiesPanel">
+            <div class="nav-item col-lg-2 col-md-12 col-sm-12 col-12 mx-2 limitProperties my-2" id="propertiesPanel">
 
                 <div class="w-100 bg-dark" style="">
 
@@ -272,15 +272,36 @@
                         <p>Width:</p>                        
                         <input  type="text" id="txtButtonTkwidth" name="width" class="w-100 txtcajas" />
                         <p>Wrap Length:</p>
-                        <input type="text" id="txtButtonTkwraplength" name="wraplength" class="w-100 txtcajas" />
+                        <input type="text" id="txtButtonTkwraplength" name="wraplength" class="w-100 txtcajas my-2" />
                     </div>
+
+                    <div id="labelPropPanel" class="container-container-fl text-light">
+
+                        <p>Propiedades de Label</p>
+
+                    </div>
+                    
+                    <div id="textboxPropPanel" class="container-container-fl text-light" >
+
+                        <p>Propiedades de TextBox</p>
+
+                    </div>
+
+                    <div id="checkboxPropPanel" class="container-container-fl text-light" >
+
+                        <p>Propiedades Checkbox</p>
+
+
+                    </div>
+
+
 
                 </div>
 
             </div>
             <%-- ------------------------------------------------------------------------------------------------------------------------------ --%>
             <%-- Esta porqueria horrible de aqui es el lienzo principal del editor --%>
-            <div class="nav-item col-lg-8 col-md-10 col-sm-12 col-12 limitlienzo" id="limiteslienzo">
+            <div class="nav-item col-lg-9 col-md-12 col-sm-12 col-12 limitlienzo mx-2" id="limiteslienzo">
 
                 <div id="lienzo" class="canvaslayer" style="width: 2px; height: 2px;" runat="server">
                 </div>

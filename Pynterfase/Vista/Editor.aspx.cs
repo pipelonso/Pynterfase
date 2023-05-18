@@ -10,6 +10,8 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Text.Json;
 using Pynterfase.TkElements;
+using Pynterfase.Entidades;
+
 
 namespace Pynterfase.Vista
 {
@@ -22,10 +24,18 @@ namespace Pynterfase.Vista
             //myButton.Text = "Haz clic aquí";
             ////myButton.Click += new EventHandler(myButton_Click);
             //Form.Controls.Add(myButton);
-
+            //startsall
             ScriptManager.RegisterStartupScript(this, GetType(), "OcultarPanelDeLienzoEditar", "CloseEditWindowSizePanel();", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "HideEditor", "startsall();", true);
+            
 
             string iPr = Request.QueryString["iPr"];
+            ClProyectoL objProyectoL = new ClProyectoL();
+            ClproyectoE objProyecto = objProyectoL.mtdGetProjectById(iPr);
+
+            LlblProjectName.Text = objProyecto.nombreProyecto;
+
+
 
             string path = Server.MapPath("~/Users/Projects/" + iPr + ".json");
 
@@ -44,7 +54,7 @@ namespace Pynterfase.Vista
                 string lienzox = data.listalienzo[0].xz;
                 string lienzoy = data.listalienzo[0].yz;
                 ScriptManager.RegisterStartupScript(this, GetType(), "OcultarPanelDeLienzoCrear", "HideCreateCanvas();", true);
-
+                ScriptManager.RegisterStartupScript(this, GetType(), "ShowEditor", "startEditor();", true);
                 //Crear script para aplicar tamaño del json al lienzo
                 //OnResizeCanvas
                 ScriptManager.RegisterStartupScript(this, GetType(), "RedimensionarLienzoInicial", "ResizeCanvas(" + lienzox+","+lienzoy+");", true);

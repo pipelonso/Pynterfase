@@ -36,6 +36,16 @@ namespace Pynterfase.Logica
         
         }
 
+        public ClproyectoE mtdGetProjectById(string id) {
+
+            ClProyectoD objProyectoD = new ClProyectoD();
+            ClproyectoE objProyecto = objProyectoD.mtdGetProjectById(id);
+            return objProyecto;
+
+        }
+
+
+
 
 
     }

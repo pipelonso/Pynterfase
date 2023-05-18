@@ -1,4 +1,55 @@
-﻿function ShowCreateCavas() {
+﻿function startsall() {
+
+    var panelButtonProp = document.getElementById("buttonPropPanel");    
+    var propertiesPanel = document.getElementById("propertiesPanel");
+    var limitlienzo = document.getElementById("limiteslienzo");
+    var infobox = document.getElementById("infobox");
+    var elementspanel = document.getElementById("ElementsPanel");
+    var botonesdecontrol = document.getElementById("controlPanelSupbar");
+    var espaciodor = document.getElementById("espaciadosSupBar");
+    var guardardiv = document.getElementById("controlesGuardar");
+
+
+    panelButtonProp.style.display = "none";
+    propertiesPanel.style.display = "none";
+    limitlienzo.style.display = "none";
+    infobox.style.display = "none";
+    elementspanel.style.display = "none";
+    botonesdecontrol.style.display = "none";
+    espaciodor.style.display = "none";
+    guardardiv.style.display = "none";
+    
+    
+
+
+
+}
+
+function startEditor() {
+
+    var panelButtonProp = document.getElementById("buttonPropPanel");
+    var propertiesPanel = document.getElementById("propertiesPanel");
+    var limitlienzo = document.getElementById("limiteslienzo");
+    var infobox = document.getElementById("infobox");
+    var elementspanel = document.getElementById("ElementsPanel");
+    var botonesdecontrol = document.getElementById("controlPanelSupbar");
+    var espaciodor = document.getElementById("espaciadosSupBar");
+    var guardardiv = document.getElementById("controlesGuardar");
+
+
+    //panelButtonProp.style.display = "block";
+    propertiesPanel.style.display = "block";
+    limitlienzo.style.display = "block";
+    infobox.style.display = "block";
+    elementspanel.style.display = "block";
+    botonesdecontrol.style.display = "block";
+    espaciodor.style.display = "block";
+    guardardiv.style.display = "block";
+
+}
+
+
+function ShowCreateCavas() {
 
     var panel = document.getElementById("canvasDimPanel");
     panel.style.display = "block";
