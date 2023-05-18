@@ -137,8 +137,8 @@
         </div>
 
 
-
-        <div class="container navbar">
+        <%-- Panel que contiene el lienzo y el panel de propiedades --%>
+        <div class="container navbar"> 
 
             <div class="nav-item col-lg-2 col-md-1 col-sm-12 col-12 mx-1 limitProperties my-1" id="propertiesPanel">
 
