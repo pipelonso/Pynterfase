@@ -276,3 +276,11 @@ function handleKeyDown(event) {
         return false; // Evita que se realice el envío del formulario
     }
 }
+
+
+function applyChanges() {
+
+
+    console.log("EXPLOTA");
+
+}

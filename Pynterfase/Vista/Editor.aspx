@@ -439,7 +439,7 @@
 
             </div>
 
-            <input type="button" name="name" value="Aplicar" class="botones w-w-100" />
+            <input type="button" name="name" value="Aplicar" class="botones w-w-100" onclick="applyChanges();" />
             <%-- ------------------------------------------------------------------------------------------------------------------------------ --%>
             <%-- Esta porqueria horrible de aqui es el lienzo principal del editor --%>
             <div class="nav-item col-lg-9 col-md-12 col-sm-12 col-12 limitlienzo mx-2" id="limiteslienzo">
