@@ -265,3 +265,14 @@ function AddTKElement() {
 
 
 }
+
+
+
+function handleKeyDown(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault(); // Evita el comportamiento predeterminado del formulario de envío
+        var input = event.target.value; // Obtén el valor del campo de texto
+        console.log(input); // Realiza alguna acción con el valor (en este caso, lo imprime en la consola)
+        return false; // Evita que se realice el envío del formulario
+    }
+}
