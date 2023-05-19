@@ -7,6 +7,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="mycss/Editor.css" rel="stylesheet" />
     <link href="../Styles/sweetalert.css" rel="stylesheet" />
+    <link href="mycss/tkStyles.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
@@ -114,16 +115,17 @@
             </div>
             <div id="ElementsPanel" class="nav-item navbar tkcontainerElements col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="nav-item">
-                    <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 mx-2" />
-                    <input type="button" name="btnBotonTk" value="" id="btnTKLabel" class="tkLabelbtn tkbutton my-1 mx-2" />
-                    <input type="button" name="btnBotonTk" value="" id="btnTKTextBox" class="tkTextboxbtn tkbutton my-1 mx-2" />
-                    <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 mx-2" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 mx-2" onclick="setselectedButton();" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKLabel" class="tkLabelbtn tkbutton my-1 mx-2" onclick="setselectedLabel();" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKTextBox" class="tkTextboxbtn tkbutton my-1 mx-2" onclick="setselectedTextbox();" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 mx-2" onclick="setSelectedCheckbox();" />
                 </div>
                 <br />
                 <input type="button" name="editcanvasProp" value="EDITAR PROPIEDADES DE LA VENTANA" class="botones my-2 mx-2 nav-item" onclick="OpenEditWindowSizePanel();" />
             </div>
             <div class="nav-item" id="controlPanelSupbar">
-                <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width: 150px;" />
+                <p id="lblSelected" class="text-light text-center"> --- </p>
+                <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width: 150px;" onclick="AddTKElement();" />
                 <br />
                 <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2" style="width: 150px;" />
 
@@ -145,7 +147,9 @@
                 <div class="w-100 bg-dark" style="">
 
                     <div id="buttonPropPanel" class="container-fluid text-light">
-                        <p>Propiedades Boton</p>
+                        <p style="background-color : darkorange" class="text-center w-100">Propiedades Boton</p>
+                        <p>Id</p>
+                        <input type="text" name="name" value="" id="txtButtonId" disabled="disabled" class="txtcajas w-100" />
                         <p>X</p>
                         <input type="text" name="txtXbuttonTK" value="" class="w-100 txtcajas" />
                         <p>Y</p>
@@ -277,7 +281,11 @@
 
                     <div id="labelPropPanel" class="container-fluid text-light">
 
-                        <p>Propiedades de Label</p>
+                        <p style="background-color : darkslateblue" class="text-center w-100">Propiedades de Label</p>
+
+                        <p>id</p>
+                        <input type="text" name="name" value=""  id="txtLabelId" disabled="disabled" class="txtcajas w-100" />
+
 
                         <p>xz</p>
                         <input type="text" id="txtLabelTKxz" class="w-100 txtcajas" />
@@ -335,10 +343,10 @@
 
                     <div id="textboxPropPanel" class="container-fluid text-light">
 
-                        <p>Propiedades de TextBox</p>
+                        <p style="background-color : darkseagreen" class="text-center w-100">Propiedades de TextBox</p>
 
                         <p>idTextbox</p>
-                        <input type="text" id="txtTextboxTKidTextbox" class="w-100 txtcajas" />
+                        <input type="text" id="txtTextboxTKidTextbox" class="w-100 txtcajas" disabled="disabled" />
                         <p>Text</p>
                         <input type="text" id="txtTextboxTKText" class="w-100 txtcajas" />
                         <p>Width</p>
@@ -390,10 +398,10 @@
 
                     <div id="checkboxPropPanel" class="container-fluid text-light">
 
-                        <p>Propiedades Checkbox</p>
+                        <p style="background-color : darkslategrey" class="text-center w-100">Propiedades Checkbox</p>
 
                         <p>idCheckbox</p>
-                        <input type="text" id="txtCheckboxTKidCheckbox" class="w-100 txtcajas" />
+                        <input type="text" id="txtCheckboxTKidCheckbox" class="w-100 txtcajas" disabled="disabled"/>
                         <p>x</p>
                         <input type="text" id="txtCheckboxTKx" class="w-100 txtcajas" />
                         <p>y</p>
@@ -435,6 +443,7 @@
             <div class="nav-item col-lg-9 col-md-12 col-sm-12 col-12 limitlienzo mx-2" id="limiteslienzo">
 
                 <div id="lienzo" class="canvaslayer" style="width: 2px; height: 2px;" runat="server">
+                    
                 </div>
 
             </div>

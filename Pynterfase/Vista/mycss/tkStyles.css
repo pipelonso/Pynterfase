@@ -1,0 +1,79 @@
+﻿body {
+}
+
+
+.TKbuttonBase{
+
+    border : outset;
+    color : black;
+    background-color : lightgray;
+    
+
+}
+
+
+.TKbuttonBase:hover{
+
+    border : outset;
+    color : black;
+    background-color : lightsalmon;
+    
+
+}
+
+.TKtextboxBase{
+
+    border : solid;
+    border-width: 1px;
+    border-color : gray;
+    background-color : white;
+    color : black;
+
+
+}
+.TKtextboxBase:hover{
+
+    border : solid;
+    border-width: 1px;
+    border-color : gray;
+    background-color : lightsalmon;
+    color : black;
+
+
+}
+
+.TkLabelBase{
+
+    color : black;
+    
+}
+
+
+.TkLabelBase:hover{
+
+    color : red;
+   
+}
+
+.TkCheckBoxBase{
+
+    color : black;
+
+}
+
+
+    .TkCheckBoxBase:hover {
+        color: black;
+        background-color: lightsalmon;
+    }
+
+
+
+
+
+
+
+
+
+
+

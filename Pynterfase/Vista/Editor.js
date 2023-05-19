@@ -1,4 +1,8 @@
-﻿function startsall() {
+﻿var selectedItem = 0;
+
+
+
+function startsall() {
 
     var panelButtonProp = document.getElementById("buttonPropPanel");    
     var propertiesPanel = document.getElementById("propertiesPanel");
@@ -11,7 +15,9 @@
     var labelPropPanel = document.getElementById("labelPropPanel");    
     var textboxPropPanel = document.getElementById("textboxPropPanel");
     var checkboxPropPanel = document.getElementById("checkboxPropPanel");
+    var btnAddTk = document.getElementById("btnAddTk");
 
+    btnAddTk.disabled = true;
 
     
     propertiesPanel.style.display = "none";
@@ -148,3 +154,114 @@ function OpenEditWindowSizePanel() {
 }
 
 
+function setselectedButton() {
+
+    selectedItem = 1;
+    var textchage = document.getElementById("lblSelected");
+    textchage.innerHTML = "AGREGAR BOTON";
+
+    var btnAddTk = document.getElementById("btnAddTk");
+
+    btnAddTk.disabled = false;
+
+
+}
+
+function setselectedLabel() {
+
+    selectedItem = 2;
+    var textchage = document.getElementById("lblSelected");
+    textchage.innerHTML = "AGREGAR LABEL"; 
+
+    var btnAddTk = document.getElementById("btnAddTk");
+
+    btnAddTk.disabled = false;
+
+}
+
+function setselectedTextbox() {
+
+    selectedItem = 3;
+    var textchage = document.getElementById("lblSelected");
+    textchage.innerHTML = "AGREGAR TEXTBOX";
+
+    var btnAddTk = document.getElementById("btnAddTk");
+
+    btnAddTk.disabled = false;
+
+}
+
+function setSelectedCheckbox() {
+
+    selectedItem = 4;
+    var textchage = document.getElementById("lblSelected");
+    textchage.innerHTML = "AGREGAR CHECKBOX";
+
+    var btnAddTk = document.getElementById("btnAddTk");
+
+    btnAddTk.disabled = false;
+
+
+}
+
+function AddTKElement() {
+
+    var panelButtonProp = document.getElementById("buttonPropPanel");
+    var labelPropPanel = document.getElementById("labelPropPanel");
+    var textboxPropPanel = document.getElementById("textboxPropPanel");
+    var checkboxPropPanel = document.getElementById("checkboxPropPanel");
+
+
+    if (selectedItem == 1) {
+
+
+        var btnAddTk = document.getElementById("btnAddTk");
+        btnAddTk.disabled = true;
+        panelButtonProp.style.display = "block";
+        labelPropPanel.style.display = "none";
+        checkboxPropPanel.style.display = "none";
+        textboxPropPanel.style.display = "none";
+
+    } else if (selectedItem == 2) {
+
+        var btnAddTk = document.getElementById("btnAddTk");
+        btnAddTk.disabled = true;
+        labelPropPanel.style.display = "block";
+        panelButtonProp.style.display = "none";
+        checkboxPropPanel.style.display = "none";
+        textboxPropPanel.style.display = "none";
+
+
+    } else if (selectedItem == 3) {
+
+
+        var btnAddTk = document.getElementById("btnAddTk");
+        btnAddTk.disabled = true;
+        textboxPropPanel.style.display = "block";
+        labelPropPanel.style.display = "none";
+        panelButtonProp.style.display = "none";
+        checkboxPropPanel.style.display = "none";
+
+
+    } else if (selectedItem == 4) {
+
+
+        var btnAddTk = document.getElementById("btnAddTk");
+        btnAddTk.disabled = true;
+        checkboxPropPanel.style.display = "block";
+        labelPropPanel.style.display = "none";
+        panelButtonProp.style.display = "none";
+        textboxPropPanel.style.display = "none";
+
+
+    } else {
+
+        console.log("Esto no deberia ocurrir");
+
+    } 
+
+
+
+
+
+}
