@@ -1,6 +1,6 @@
 ﻿var selectedItem = 0;
-
-
+var selectdID = 0;
+var initialid = 0;
 
 function startsall() {
 
@@ -280,7 +280,19 @@ function handleKeyDown(event) {
 
 function applyChanges() {
 
-
-    console.log("EXPLOTA");
+    fetch('../Users/Projects/1.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            if (data.listacheckbox == null) {
+                console.log("listacheckbox está vacío");
+            } else {
+                console.log("listacheckbox no está vacío");
+            }
+        })
+        .catch(error => {
+            console.log('Error:', error);
+        });
+    
 
 }

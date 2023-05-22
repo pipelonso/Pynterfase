@@ -48,11 +48,54 @@ namespace Pynterfase.Vista
                 {
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                 };
-                
+
                 var data = JsonSerializer.Deserialize<Receptor>(json, options);
 
                 string lienzox = data.listalienzo[0].xz;
                 string lienzoy = data.listalienzo[0].yz;
+
+                List<int> listaids = new List<int>();
+
+                if (data.listabuttons != null)
+                {
+                    for (int i = 0; i < data.listabuttons.Length; i++)
+                    {
+                        listaids.Add(data.listabuttons[i].idButton);
+                    }
+                }
+
+                if (data.listalabels != null) {
+                    for (int i = 0; i < data.listalabels.Length; i++)
+                    {
+                        listaids.Add(data.listalabels[i].idLabel);
+                    }                
+                }
+                
+                if (data.listatextbox != null) {
+                    for (int i = 0; i < data.listacheckbox.Length; i++)
+                    {
+                        listaids.Add(data.listatextbox[i].idTextbox);
+                    }
+                }
+
+                if (data.listacheckbox != null) {
+                    for (int i = 0; i < data.listacheckbox.Length; i++)
+                    {
+                        listaids.Add(data.listacheckbox[i].idCheckbox);
+                    }               
+                }
+
+                if (listaids.Count >= 1) {
+
+                    int maxid = listaids.Max();
+                    ScriptManager.RegisterStartupScript(this, GetType(), "FijarIdMaxima", "initialid = "+maxid+";", true);
+                    //var initialid = 0;
+
+                }
+                
+
+                
+
                 ScriptManager.RegisterStartupScript(this, GetType(), "OcultarPanelDeLienzoCrear", "HideCreateCanvas();", true);
                 ScriptManager.RegisterStartupScript(this, GetType(), "ShowEditor", "startEditor();", true);
                 //Crear script para aplicar tamaño del json al lienzo
@@ -128,7 +171,7 @@ namespace Pynterfase.Vista
                     objlienzo.xz = txtAncho.Text;
                     objlienzo.yz = txtAlto.Text;
                     objlienzo.geometry = txtAlto.Text + "X" + txtAncho.Text;
-
+                    objlienzo.Title = txtTitle.Text;
 
                     listalienzo.Add(objlienzo);
 

@@ -9,9 +9,9 @@ namespace Pynterfase.TkElements
     {
 
 
-        
-        
-        
+
+
+        public int idLabel { get; set; }
         public int xz { get; set; }
         public int yz { get; set; }
         public int anchor { get; set; } //anclaje el texto

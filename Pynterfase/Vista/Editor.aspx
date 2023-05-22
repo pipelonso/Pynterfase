@@ -127,7 +127,9 @@
                 <p id="lblSelected" class="text-light text-center"> --- </p>
                 <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width: 150px;" onclick="AddTKElement();" />
                 <br />
-                <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2" style="width: 150px;" />
+                <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2 " style="width: 150px;" />
+                <br />
+                <input type="button" name="name" value="Aplicar" class="botones mx-2 my-1" style="width:150px;" onclick="applyChanges();" />
 
             </div>
 
@@ -439,12 +441,12 @@
 
             </div>
 
-            <input type="button" name="name" value="Aplicar" class="botones w-w-100" onclick="applyChanges();" />
+            
             <%-- ------------------------------------------------------------------------------------------------------------------------------ --%>
             <%-- Esta porqueria horrible de aqui es el lienzo principal del editor --%>
             <div class="nav-item col-lg-9 col-md-12 col-sm-12 col-12 limitlienzo mx-2" id="limiteslienzo">
-
-                <div id="lienzo" class="canvaslayer" style="width: 2px; height: 2px;" runat="server">
+                
+                <div id="lienzo" class="canvaslayer justify-content-center" style="width: 2px; height: 2px;" runat="server">
                     
                 </div>
 
