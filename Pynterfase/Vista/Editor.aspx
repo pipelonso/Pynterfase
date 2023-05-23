@@ -152,7 +152,7 @@
                     <div id="buttonPropPanel" class="container-fluid text-light">
                         <p style="background-color : darkorange" class="text-center w-100">Propiedades Boton</p>
                         <p>Id</p>
-                        <input type="text" name="name" value="" id="txtButtonId" disabled="disabled" class="txtcajas w-100" />
+                        <input type="text" name="name" value="" id="txtButtonId" disabled="disabled" class="txtcajas w-100 text-white"  />
                         <p>X</p>
                         <input type="text" name="txtXbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Y</p>

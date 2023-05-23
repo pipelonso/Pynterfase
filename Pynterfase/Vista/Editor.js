@@ -1,7 +1,7 @@
 ﻿var selectedItem = 0;
 var selectdID = 0;
 var initialid = 0;
-
+var selectedType = "";
 
 
 
@@ -206,6 +206,8 @@ function setSelectedCheckbox() {
 
 }
 
+var botontk;
+
 function AddTKElement() {
 
     var panelButtonProp = document.getElementById("buttonPropPanel");
@@ -224,23 +226,27 @@ function AddTKElement() {
         checkboxPropPanel.style.display = "none";
         textboxPropPanel.style.display = "none";
 
-        
+        //Creacion del boton
         
 
-        var botontk = document.createElement("div");
+        botontk = document.createElement("div");
         var divlienzo = document.getElementById("lienzo");
         
  
         botontk.style.height = "30px";
         botontk.style.width = "100px";
         botontk.classList.add("TKbuttonBase");        
+        
+
 
         var pid = document.createElement("p");
-        var ptext = document.createElement("p");
-
+        var ptipo = document.createElement("p");
+        //b = boton 
         initialid += 1;
+        botontk.id = "b" + initialid; //La primera letra en el padre significa el tipo de objeto que es
         var txtidbutton = document.getElementById("txtButtonId");
         pid.textContent = initialid;
+        pid.id = "pb"+initialid; //la segunda letra en un hijo significa el tipo que es su padre
         txtidbutton.value = pid.textContent;
 
         
@@ -249,16 +255,18 @@ function AddTKElement() {
 
         
         pid.style.fontSize = "8px";
-        ptext.textContent = "button";
-        ptext.style.fontSize = "15px";
-        ptext.style.position = "relative";
-        ptext.style.top = "-30px";
-        ptext.classList.add("text-center");
-        botontk.style.position = "absolute";
+        ptipo.textContent = "button";
+        ptipo.id = "tb" + initialid; //la segunda letra en un hijo significa el tipo que es su padre
+        ptipo.style.fontSize = "7px";
+        ptipo.style.position = "relative";
+        ptipo.style.top = "-32px";
+        ptipo.classList.add("text-center");
+        
+        botontk.style.position = "relative"; //absolute
         botontk.style.top = "-1px";
         botontk.style.left = "-1px";
         botontk.appendChild(pid);
-        botontk.appendChild(ptext);
+        botontk.appendChild(ptipo);
         divlienzo.appendChild(botontk);
 
     } else if (selectedItem == 2) {
@@ -341,8 +349,66 @@ function applyChanges() {
 
 }
 
+var lienzodivpanel = document.getElementById("lienzo");
+
+lienzodivpanel.addEventListener("click", function (event) {
+
+    var target = event.target;
+    if (target.id != "lienzo") {
+
+        var panelButtonProp = document.getElementById("buttonPropPanel");
+        var labelPropPanel = document.getElementById("labelPropPanel");
+        var textboxPropPanel = document.getElementById("textboxPropPanel");
+        var checkboxPropPanel = document.getElementById("checkboxPropPanel");
 
 
+        //adquirir el id y tipo del elemento
+        var id = target.id;
+        var parseid = id.slice(1);
+        selectedType = id.charAt(0);
+
+        if (id.charAt(1) == "b") { //revisa si es un hijo de boton
+
+            selectedType = id.charAt(1);            
+            console.log(selectedType);
+
+        } 
+
+        console.log("ID del div: " + parseid);
+
+        if (selectedType == "b" || selectedType.slice(1) == "b") { //Este solo se ejecuta cuando el item seleccionado es el boton o es hijo del boton
+
+            panelButtonProp.style.display = "block";
+            labelPropPanel.style.display = "none";
+            checkboxPropPanel.style.display = "none";
+            textboxPropPanel.style.display = "none";
+
+            if (id.charAt(1) == "b") {
+
+                var txtidbutton = document.getElementById("txtButtonId");
+                txtidbutton.value = id.slice(2);
+
+
+            } else {
+
+                var txtidbutton = document.getElementById("txtButtonId");
+                txtidbutton.value = parseid;
+
+            }
+
+            
+
+
+        }
+
+
+    }
+    
+    
+
+
+
+});
 
 
 
