@@ -115,6 +115,8 @@
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
     <Content Include="Vista\imagenes\back1.gif" />
     <Content Include="Vista\imagenes\backreglogin.gif" />
+    <Content Include="Vista\imagenes\checkIdentityFalse.svg" />
+    <Content Include="Vista\imagenes\checkIdentityTrue.svg" />
     <Content Include="Vista\imagenes\cloud-arrow-up.svg" />
     <Content Include="Vista\imagenes\cloud-check-fill.svg" />
     <Content Include="Vista\imagenes\EditorSupBar.svg" />

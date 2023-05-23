@@ -2,6 +2,10 @@
 var selectdID = 0;
 var initialid = 0;
 
+
+
+
+
 function startsall() {
 
     var panelButtonProp = document.getElementById("buttonPropPanel");    
@@ -81,8 +85,6 @@ function ResizeCanvas(x , y) {
 
     document.getElementById("lienzo").style.width = x + "px";
     document.getElementById("lienzo").style.height = y + "px";
-
-
 
 }
 
@@ -222,6 +224,43 @@ function AddTKElement() {
         checkboxPropPanel.style.display = "none";
         textboxPropPanel.style.display = "none";
 
+        
+        
+
+        var botontk = document.createElement("div");
+        var divlienzo = document.getElementById("lienzo");
+        
+ 
+        botontk.style.height = "30px";
+        botontk.style.width = "100px";
+        botontk.classList.add("TKbuttonBase");        
+
+        var pid = document.createElement("p");
+        var ptext = document.createElement("p");
+
+        initialid += 1;
+        var txtidbutton = document.getElementById("txtButtonId");
+        pid.textContent = initialid;
+        txtidbutton.value = pid.textContent;
+
+        
+        var textchage = document.getElementById("lblSelected");
+        textchage.innerHTML = "---";
+
+        
+        pid.style.fontSize = "8px";
+        ptext.textContent = "button";
+        ptext.style.fontSize = "15px";
+        ptext.style.position = "relative";
+        ptext.style.top = "-30px";
+        ptext.classList.add("text-center");
+        botontk.style.position = "absolute";
+        botontk.style.top = "-1px";
+        botontk.style.left = "-1px";
+        botontk.appendChild(pid);
+        botontk.appendChild(ptext);
+        divlienzo.appendChild(botontk);
+
     } else if (selectedItem == 2) {
 
         var btnAddTk = document.getElementById("btnAddTk");
@@ -230,6 +269,9 @@ function AddTKElement() {
         panelButtonProp.style.display = "none";
         checkboxPropPanel.style.display = "none";
         textboxPropPanel.style.display = "none";
+
+
+
 
 
     } else if (selectedItem == 3) {
@@ -278,6 +320,9 @@ function handleKeyDown(event) {
 }
 
 
+
+
+
 function applyChanges() {
 
     fetch('../Users/Projects/1.json')
@@ -293,6 +338,11 @@ function applyChanges() {
         .catch(error => {
             console.log('Error:', error);
         });
-    
 
 }
+
+
+
+
+
+

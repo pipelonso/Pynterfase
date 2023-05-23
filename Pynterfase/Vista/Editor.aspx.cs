@@ -19,6 +19,9 @@ namespace Pynterfase.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            
+            
             //Button myButton = new Button();
             //myButton.ID = "myButton";
             //myButton.Text = "Haz clic aquí";
@@ -199,5 +202,9 @@ namespace Pynterfase.Vista
 
 
         }
+
+   
+
+        
     }
 }

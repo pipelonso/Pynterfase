@@ -13,6 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server"  >
+        
         <div id="canvasDimPanel" class="bg-light">
             <h4 class="m-2">Fila la resolución del lienzo para poder trabajar</h4>
             <div class="container-fluid">
