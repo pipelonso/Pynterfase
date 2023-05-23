@@ -126,6 +126,7 @@
     <Content Include="Vista\imagenes\giphy.gif" />
     <Content Include="Vista\imagenes\Incircle.svg" />
     <Content Include="Vista\imagenes\leave.svg" />
+    <Content Include="Vista\imagenes\normProj.svg" />
     <Content Include="Vista\imagenes\OnBar.svg" />
     <Content Include="Vista\imagenes\pencil-fill.svg" />
     <Content Include="Vista\imagenes\projectsBack.svg" />

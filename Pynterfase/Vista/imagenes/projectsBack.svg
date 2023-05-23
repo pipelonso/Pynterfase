@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.0544998"
-     inkscape:cx="441.91569"
-     inkscape:cy="452.34718"
+     inkscape:zoom="1.4912879"
+     inkscape:cx="351.37413"
+     inkscape:cy="381.54939"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -404,8 +404,16 @@
        inkscape:transform-center-y="-0.019297654"
        transform="matrix(0.23795181,0,0,0.23795181,55.997516,150.43408)" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.665;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="M 0.1,109.71729 H 209.38498"
+       style="fill:none;stroke:#000000;stroke-width:0.139132;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M -0.00245049,109.65104 H 57.687571"
        id="path22172" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.141;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 59.108102,109.65011 h 5.073061"
+       id="path1714" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.149;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 66.670869,109.64845 H 209.79794"
+       id="path1716" />
   </g>
 </svg>

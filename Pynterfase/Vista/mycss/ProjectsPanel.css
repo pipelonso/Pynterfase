@@ -23,13 +23,13 @@
     background-color: lightslategray;
 }
 
-.projbox{
-
+.projbox {
     border: solid;
-    border-color:dimgray;
-    border-width : 2px;
+    border-color: dimgray;
+    border-width: 2px;
     /*background-color:white;*/
-
+    background-image: url('../imagenes/normProj.svg');
+    background-size : cover;
 }
 
     .projbox:hover {
