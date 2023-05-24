@@ -13,7 +13,7 @@
     border: solid;
     border-color: lightgray;
     border-width: 3px;
-    background-color : white;
+    background-color : gray;
 }
 
 .botones:hover {
@@ -24,12 +24,14 @@
 }
 
 .projbox {
+    color: white;
     border: solid;
     border-color: dimgray;
     border-width: 2px;
     /*background-color:white;*/
     background-image: url('../imagenes/normProj.svg');
-    background-size : cover;
+    background-size: cover;
+    transition: width 0.5s ease, height 0.5s ease;
 }
 
     .projbox:hover {
@@ -41,3 +43,23 @@
         color : white;
         /*background-color: lightslategray;*/
     }
+
+
+.cajasanim {
+    opacity: 0; /* Inicialmente oculto */
+    animation-name: aparecer;
+    animation-duration: 2s; /* Duración de la animación */
+    animation-delay: 0.5s; /* Retraso antes de comenzar la animación */
+    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Comienza completamente transparente */
+    }
+
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}

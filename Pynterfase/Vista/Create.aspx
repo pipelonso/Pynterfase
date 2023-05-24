@@ -12,20 +12,32 @@
         </div>
         <div class="navbar">
 
-            <div class=" col-12 contproject col-lg-5 col-md-5 col-sm-12 nav-item">
+            <div class="text-white col-12 contproject col-lg-5 col-md-12 col-sm-12 nav-item">
+                <div class="mx-2">
 
-                <p>Nombre de tu proyecto</p>
-                <asp:TextBox runat="server" placeholder=" Nombre" CssClass="w-100 txtcajas" ID="txtName"></asp:TextBox>
+                    <p>Nombre de tu proyecto</p>
+                    <asp:TextBox runat="server" placeholder=" Nombre" CssClass="w-100 txtcajas" ID="txtName"></asp:TextBox>
 
-                <p>Quieres que tu proyecto sea</p>
+                    <p>Quieres que tu proyecto sea</p>
 
-                <asp:DropDownList ID="ddlVisibilidad" runat="server" CssClass="w-100 txtcajas"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlVisibilidad" runat="server" CssClass="w-100 txtcajas"></asp:DropDownList>
 
+                    <asp:Button ID="btnCrear" runat="server" Text="CREAR PROYECTO" CssClass="w-100 botones my-5" OnClick="btnCrear_Click" />
+
+                </div>
             </div>
 
-            <div class="col-12 nav-item col-lg-6 col-md-12 col-sm-12 h-75">
-                <asp:Button ID="btnCrear" runat="server" Text="CREAR PROYECTO" CssClass="w-100 botones" OnClick="btnCrear_Click" />
+            <div class="nav-item col-12 col-lg-6 col-md-12 col-sm-12 mx-1 textoanim">
+
+                <h3 class="w-100 text-white">Aqui comienza una nueva aventura</h3>
+                <div>
+                    <img src="imagenes/hexagon.svg" alt="Hexagono" style="position:relative; top:50px; z-index:-1; height : 300px;" class="girar" />
+                    <img src="imagenes/tkWindow.png" alt="Tkwindow" style="position:relative; left:-100px; z-index:-2;"/>
+                </div>
+                
             </div>
+
+
 
         </div>
 

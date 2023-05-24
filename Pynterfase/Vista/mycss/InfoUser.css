@@ -1,4 +1,5 @@
 ﻿body {
+    
     background-image: url('../imagenes/userpageback.svg');
     background-size : cover;
 }
@@ -13,11 +14,14 @@
 }
 
 .infouserbox {
+    height : auto;
+    width : auto;
     border: solid;
     border-color: lightgray;
     border-width: 2px;
     background-image: url('../imagenes/userback.svg');
-    background-size:cover;
+    background-size: cover;
+    transition: width 0.5s ease, height 0.5s ease;
 }
 
 .Editbnt{
@@ -109,3 +113,21 @@
     border-width: 2px;
 }
 
+.cajasanim {
+    opacity: 0; /* Inicialmente oculto */
+    animation-name: aparecer;
+    animation-duration: 2s; /* Duración de la animación */
+    animation-delay: 0.5s; /* Retraso antes de comenzar la animación */
+    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Comienza completamente transparente */
+    }
+
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}

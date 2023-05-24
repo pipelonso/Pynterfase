@@ -2,20 +2,20 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="793.70081"
-   height="200"
-   viewBox="0 0 210 52.916666"
+   width="300"
+   height="300"
+   viewBox="0 0 79.374998 79.375"
    version="1.1"
-   id="svg26979"
+   id="svg3146"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="EditorSupBar.svg"
+   sodipodi:docname="cuadricula.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview26981"
+     id="namedview3148"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.50333194"
-     inkscape:cx="306.95449"
-     inkscape:cy="224.50393"
+     inkscape:zoom="1.0066639"
+     inkscape:cx="233.94105"
+     inkscape:cy="128.14605"
      inkscape:window-width="1366"
      inkscape:window-height="745"
      inkscape:window-x="-8"
@@ -35,27 +35,27 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs26976">
+     id="defs3143">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient27158">
+       id="linearGradient12446">
       <stop
-         style="stop-color:#000000;stop-opacity:0.90452266;"
+         style="stop-color:#ebe2d3;stop-opacity:1;"
          offset="0"
-         id="stop27154" />
+         id="stop12442" />
       <stop
-         style="stop-color:#000000;stop-opacity:0.88944715;"
+         style="stop-color:#cec9ba;stop-opacity:1;"
          offset="1"
-         id="stop27156" />
+         id="stop12444" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient27158"
-       id="linearGradient27160"
+       xlink:href="#linearGradient12446"
+       id="linearGradient12448"
        x1="0"
-       y1="26.458332"
-       x2="210"
-       y2="26.458332"
+       y1="0"
+       x2="75.472145"
+       y2="76.031693"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <g
@@ -63,10 +63,10 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="stroke-width:0.752999;stroke-opacity:0.262821;fill-opacity:1;fill:url(#linearGradient27160)"
-       id="rect27152"
-       width="210"
-       height="52.916664"
+       style="fill:url(#linearGradient12448);stroke:none;stroke-width:1.553;stroke-linecap:square;stroke-linejoin:round;fill-opacity:1;stroke-opacity:1"
+       id="rect9869"
+       width="79.375"
+       height="79.375"
        x="0"
        y="0" />
   </g>

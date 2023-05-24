@@ -6,17 +6,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/bootstrap.min.js"></script>
     <div class="container-fluid">
-        <h4>Crear un proyecto nuevo</h4>
+        <h4 class="text-white">Crear un proyecto nuevo</h4>
     <asp:Button ID="btnNewProject" runat="server" Text="CREAR NUEVO PROYECTO" CssClass="w-100 botones" OnClick="btnNewProject_Click"/>
     </div>
     
-    <h1 class="m-2">Tus Proyectos</h1>
+    <h1 class="m-2 text-white">Tus Proyectos</h1>
     <div class="container-fluid">
         <%--<asp:ListBox ID="lbListaProyectos" runat="server" CssClass="col-xxl-9 col-xl-8 col-lg-7 col-md-12 col-sm-12 flex-column myLista"></asp:ListBox>--%>
         
         <asp:Repeater ID="rpProyectos" runat="server" OnItemCommand="rpProyectos_ItemCommand" OnItemDataBound="rpProyectos_ItemDataBound">
             <ItemTemplate>
-                <div class="projcont projbox my-2">
+                <div class="projcont projbox my-2 cajasanim">
                     
                     <div class="navbar my-2">
                         <div class="col-sm-12 my-2 col-md-2">

@@ -236,6 +236,7 @@ function AddTKElement() {
         botontk.style.height = "30px";
         botontk.style.width = "100px";
         botontk.classList.add("TKbuttonBase");        
+        botontk.classList.add("FadeInAnim");        
         
 
 

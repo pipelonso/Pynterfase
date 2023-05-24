@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <div class="container-fluid">
-            <h1 class="">Usuario</h1>
+            <h1 class="text-white">Usuario</h1>
             <div class="navbar">
                 <div class="navbar col-lg-6 col-md-12 col-sm-12 infouserbox nav-item mx-1 my-2" id="userbox">
                     <div class="nav-item mx-3">
@@ -29,7 +29,7 @@
 
                 </div>
 
-                <div class="imgSelection navbar nav-item col-lg-5 col-md-12 col-sm-12 avatarimgbox" id="imgAvatarBox">
+                <div class="text-white imgSelection navbar nav-item col-lg-5 col-md-12 col-sm-12 avatarimgbox cajasanim" id="imgAvatarBox">
                     <h4 class="text-center w-100">Selecciona un avatar por defecto</h4>
                     <asp:ImageButton ID="avatarpic1" runat="server" ImageUrl="~/Vista/Pynterfase avatars/1.png" CssClass="nav-item avatarimg my-2 mx-2 imgselector" OnClick="avatarpic1_Click" />
                     <asp:ImageButton ID="avatarpic2" runat="server" ImageUrl="~/Vista/Pynterfase avatars/2.png" CssClass="nav-item avatarimg my-2 mx-2 imgselector" OnClick="avatarpic2_Click" />
@@ -48,7 +48,7 @@
                 </div>
 
 
-                <div class="nameSpace navbar col-lg-5 col-md-12 col-sm-12 nav-item my-2" id="nameboxspace">
+                <div class="text-white nameSpace navbar col-lg-5 col-md-12 col-sm-12 nav-item my-2 cajasanim" id="nameboxspace">
 
                     <p class="m-2">Nombre de usuario</p>
                     <asp:TextBox ID="txtName" runat="server" CssClass="nav-item w-90 my-2 mx-3 txtcajas" placeholder="Tu nuevo nombre aqui"></asp:TextBox>
@@ -56,7 +56,7 @@
 
                 </div>
 
-                <div id="passwordboxspace" class="col-lg-5 col-md-12 col-sm-12 nav-item my-2 paswordspace">
+                <div id="passwordboxspace" class="text-white col-lg-5 col-md-12 col-sm-12 nav-item my-2 paswordspace cajasanim">
 
                     <p class="mx-2">Contraseña actual</p>
                     <br />

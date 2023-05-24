@@ -124,6 +124,7 @@
     <Content Include="Vista\imagenes\eye-slash.svg" />
     <Content Include="Vista\imagenes\eye.svg" />
     <Content Include="Vista\imagenes\giphy.gif" />
+    <Content Include="Vista\imagenes\hexagon.svg" />
     <Content Include="Vista\imagenes\Incircle.svg" />
     <Content Include="Vista\imagenes\leave.svg" />
     <Content Include="Vista\imagenes\normProj.svg" />
@@ -142,6 +143,7 @@
     <Content Include="Vista\imagenes\TkButtons\btnLabelHover.svg" />
     <Content Include="Vista\imagenes\TkButtons\btnTextBox.svg" />
     <Content Include="Vista\imagenes\TkButtons\btnTextBoxHover.svg" />
+    <Content Include="Vista\imagenes\tkWindow.png" />
     <Content Include="Vista\imagenes\userback.svg" />
     <Content Include="Vista\imagenes\userpageback.svg" />
     <Content Include="Vista\imagenes\UserPics\24331490_4800_1_05.jpg" />

@@ -5,9 +5,10 @@
 
 
 .contproject {
+
     background-image: url('../imagenes/Incircle.svg');
     background-size : cover;
-    height : 600px;
+    height : 500px;
    
 }
 
@@ -46,3 +47,40 @@
     border-color: lightgray;
     border-width: 3px;
 }
+
+
+.textoanim {
+    opacity: 0; /* Inicialmente oculto */
+    animation-name: aparecer;
+    animation-duration: 5s; /* Duración de la animación */
+    animation-delay: 0.5s; /* Retraso antes de comenzar la animación */
+    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Comienza completamente transparente */
+    }
+
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}
+
+.girar {
+    animation-name: girar-infinitamente;
+    animation-duration: 120s; /* Duración de la animación */
+    animation-iteration-count: infinite; /* Repetición infinita */
+    animation-timing-function: linear; /* Función de temporización lineal */
+}
+
+@keyframes girar-infinitamente {
+    0% {
+        transform: rotate(0deg); /* Sin rotación al inicio */
+    }
+
+    100% {
+        transform: rotate(360deg); /* Rotación completa en sentido horario */
+    }
+}
+

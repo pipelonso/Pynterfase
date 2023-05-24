@@ -14,7 +14,7 @@
 <body>
     <form id="form1" runat="server"  >
         
-        <div id="canvasDimPanel" class="bg-light">
+        <div id="canvasDimPanel" class="bg-light cajasanim">
             <h4 class="m-2">Fila la resolución del lienzo para poder trabajar</h4>
             <div class="container-fluid">
                 <p>Ancho de la ventana</p>
@@ -65,7 +65,7 @@
 
         </div>
 
-        <div class="container-fluid bg-light" id="editWindowSizePanel">
+        <div class="container-fluid bg-light cajasanim" id="editWindowSizePanel" >
             <input type="button" name="name" value="" class="closebtn my-2" onclick="CloseEditWindowSizePanel();" />
             <p class="mx-2 my-2 text-center">Ancho de la ventana</p>
             <input type="text" name="txtAnchoH" value="" id="txtAnchoH" class="w-100 txtcajas" />
@@ -110,7 +110,7 @@
 
 
 
-        <div class="container-fluid navbar superiorBar" id="supBar" style="height: 150px;">
+        <div class="cajasanim container-fluid navbar superiorBar" id="supBar" style="height: 150px;">
             <div class="col-lg-2 col-md-2 col-sm-12 nav-item infobox mx-1" id="infobox">
                 <asp:Label ID="LlblProjectName" runat="server" Text="---" CssClass="text-white mx-2"></asp:Label>
             </div>
