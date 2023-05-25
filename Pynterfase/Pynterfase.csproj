@@ -106,6 +106,7 @@
   <ItemGroup>
     <Content Include="Datos.txt" />
     <Content Include="Global.asax" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Vista\Create.aspx" />
     <Content Include="Vista\Editor.aspx" />
@@ -115,21 +116,25 @@
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
     <Content Include="Vista\imagenes\back1.gif" />
     <Content Include="Vista\imagenes\backreglogin.gif" />
+    <Content Include="Vista\imagenes\box-arrow-in-right.svg" />
     <Content Include="Vista\imagenes\checkIdentityFalse.svg" />
     <Content Include="Vista\imagenes\checkIdentityTrue.svg" />
     <Content Include="Vista\imagenes\cloud-arrow-up.svg" />
     <Content Include="Vista\imagenes\cloud-check-fill.svg" />
+    <Content Include="Vista\imagenes\code-square.svg" />
     <Content Include="Vista\imagenes\EditorSupBar.svg" />
     <Content Include="Vista\imagenes\editor_back.svg" />
     <Content Include="Vista\imagenes\eye-slash.svg" />
     <Content Include="Vista\imagenes\eye.svg" />
     <Content Include="Vista\imagenes\giphy.gif" />
     <Content Include="Vista\imagenes\hexagon.svg" />
+    <Content Include="Vista\imagenes\house.svg" />
     <Content Include="Vista\imagenes\Incircle.svg" />
     <Content Include="Vista\imagenes\leave.svg" />
     <Content Include="Vista\imagenes\normProj.svg" />
     <Content Include="Vista\imagenes\OnBar.svg" />
     <Content Include="Vista\imagenes\pencil-fill.svg" />
+    <Content Include="Vista\imagenes\person-badge.svg" />
     <Content Include="Vista\imagenes\projectsBack.svg" />
     <Content Include="Vista\imagenes\regbox.svg" />
     <Content Include="Vista\imagenes\regImg.svg" />
@@ -212,6 +217,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Logica\ClProyectoL.cs" />
     <Compile Include="Logica\ClRandomCodeGen.cs" />
     <Compile Include="Logica\ClusuarioL.cs" />
@@ -222,6 +234,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProjectsContent.Master.cs">
@@ -320,6 +339,7 @@
     <Content Include="Vista\js\bootstrap.js.map" />
     <Content Include="Vista\js\bootstrap.min.js.map" />
     <Content Include="ProjectsContent.Master" />
+    <Content Include="Principal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
