@@ -287,7 +287,7 @@
                         <p style="background-color : darkslateblue" class="text-center w-100">Propiedades de Label</p>
 
                         <p>id</p>
-                        <input type="text" name="name" value=""  id="txtLabelId" disabled="disabled" class="txtcajas w-100" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" name="name" value=""  id="txtLabelId" disabled="disabled" class="txtcajas w-100 text-white" onkeydown="return handleKeyDown(event);" />
 
 
                         <p>xz</p>
@@ -349,7 +349,7 @@
                         <p style="background-color : darkseagreen" class="text-center w-100">Propiedades de TextBox</p>
 
                         <p>idTextbox</p>
-                        <input type="text" id="txtTextboxTKidTextbox" class="w-100 txtcajas" disabled="disabled" />
+                        <input type="text" id="txtTextboxTKidTextbox" class="w-100 txtcajas  text-white" disabled="disabled" />
                         <p>Text</p>
                         <input type="text" id="txtTextboxTKText" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Width</p>

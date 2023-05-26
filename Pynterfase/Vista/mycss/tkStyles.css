@@ -46,14 +46,15 @@
 
     color : black;
     
+
+
 }
 
 
-.TkLabelBase:hover{
-
-    color : red;
-   
-}
+    .TkLabelBase:hover {
+        color: red;
+        background-color: mediumpurple;
+    }
 
 .TkCheckBoxBase{
 

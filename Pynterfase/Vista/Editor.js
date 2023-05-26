@@ -245,9 +245,14 @@ function AddTKElement() {
         //b = boton 
         initialid += 1;
         botontk.id = "b" + initialid; //La primera letra en el padre significa el tipo de objeto que es
-        var txtidbutton = document.getElementById("txtButtonId");
+
+
+        var txtidbutton = document.getElementById("txtButtonId"); //Aqui esta el valor que se remplaza en el panel de propiedades
+
+
         pid.textContent = initialid;
-        pid.id = "pb"+initialid; //la segunda letra en un hijo significa el tipo que es su padre
+        pid.id = "ib" + initialid; //la segunda letra en un hijo significa el tipo que es su padre
+        pid.style.display = "none";
         txtidbutton.value = pid.textContent;
 
         
@@ -262,13 +267,17 @@ function AddTKElement() {
         ptipo.style.position = "relative";
         ptipo.style.top = "-32px";
         ptipo.classList.add("text-center");
-        
+
+        ptipo.style.display = "none";
+
         botontk.style.position = "relative"; //absolute
         botontk.style.top = "-1px";
         botontk.style.left = "-1px";
         botontk.appendChild(pid);
         botontk.appendChild(ptipo);
         divlienzo.appendChild(botontk);
+
+
 
     } else if (selectedItem == 2) {
 
@@ -279,11 +288,66 @@ function AddTKElement() {
         checkboxPropPanel.style.display = "none";
         textboxPropPanel.style.display = "none";
 
+        initialid += 1;
+
+        var textchage = document.getElementById("lblSelected");
+        textchage.innerHTML = "---";
+
+
+        //creacion del label
+
+
+        var labelTk = document.createElement("div");
+        var divlienzo = document.getElementById("lienzo");
+
+        labelTk.style.height = "30px";
+        labelTk.classList.add("FadeInAnim");
+        labelTk.id = "l" + initialid;
+
+        
+
+
+
+        var ptipo = document.createElement("p");
+        var pid = document.createElement("p");
+        var ptext = document.createElement("p");
+
+        labelTk.classList.add("TkLabelBase");
+
+        ptipo.textContent = "label";
+        ptipo.style.fontSize = "7px";
+        ptipo.id = "tl" + initialid;
+        ptipo.style.position = "relative";
+        ptipo.style.top = "-32px";
+        ptipo.classList.add("text-center");
+        ptipo.style.display = "none";
+
+        pid.textContent = initialid;
+        pid.id = "il" + initialid;
+        pid.style.fontSize = "8px";
+        pid.style.display = "none";
+
+
+        var txtidLabel = document.getElementById("txtLabelId");  //asignación del id al lienzo -------------------------------------
+        txtidLabel.value = pid.textContent;
+
+        ptext.textContent = "---";
+        ptext.style.position = "relative";
+        ptext.id = "xl" + initialid;
+        //ptext.style.top = "-55px";
+
+        labelTk.style.position = "relative"; //absolute
+        divlienzo.appendChild(labelTk);
+        
+        labelTk.appendChild(pid);
+        labelTk.appendChild(ptipo);
+        labelTk.appendChild(ptext);
 
 
 
 
-    } else if (selectedItem == 3) {
+
+    } else if (selectedItem == 3) { //textbox
 
 
         var btnAddTk = document.getElementById("btnAddTk");
@@ -292,6 +356,33 @@ function AddTKElement() {
         labelPropPanel.style.display = "none";
         panelButtonProp.style.display = "none";
         checkboxPropPanel.style.display = "none";
+
+        initialid += 1;
+
+        var textchage = document.getElementById("lblSelected");
+        textchage.innerHTML = "---";
+
+        var textbox = document.createElement("div");
+        var divlienzo = document.getElementById("lienzo");
+
+        var txtTextboxTKidTextbox = document.getElementById("txtTextboxTKidTextbox");  //asignación del id al lienzo -------------------------------------
+        txtTextboxTKidTextbox.value = initialid;
+
+
+        textbox.id = "x" + initialid;
+        textbox.classList.add("FadeInAnim");
+        textbox.classList.add("TKtextboxBase");
+        textbox.style.width = "150px";
+        textbox.style.height = "25px";
+
+        var ptext = document.createElement("p");
+        ptext.id = "px" + initialid;
+
+
+        textbox.appendChild(ptext);
+        divlienzo.appendChild(textbox);
+
+
 
 
     } else if (selectedItem == 4) {
@@ -303,6 +394,14 @@ function AddTKElement() {
         labelPropPanel.style.display = "none";
         panelButtonProp.style.display = "none";
         textboxPropPanel.style.display = "none";
+
+        initialid += 1;
+
+        var textchage = document.getElementById("lblSelected");
+        textchage.innerHTML = "---";
+
+
+
 
 
     } else {
@@ -375,6 +474,15 @@ lienzodivpanel.addEventListener("click", function (event) {
 
         } 
 
+        if (id.charAt(1) == "l") { //revisa si es un hijo de label
+
+            selectedType = id.charAt(1);
+            console.log(selectedType);
+
+        }
+
+
+
         console.log("ID del div: " + parseid);
 
         if (selectedType == "b" || selectedType.slice(1) == "b") { //Este solo se ejecuta cuando el item seleccionado es el boton o es hijo del boton
@@ -397,7 +505,50 @@ lienzodivpanel.addEventListener("click", function (event) {
 
             }
 
-            
+
+
+
+        } else if (selectedType == "l" || selectedType.slice(1) == "l") {
+
+            panelButtonProp.style.display = "none";
+            labelPropPanel.style.display = "block";
+            checkboxPropPanel.style.display = "none";
+            textboxPropPanel.style.display = "none";
+
+            if (id.charAt(1) == "l") {
+
+                var txtLabelId = document.getElementById("txtLabelId");
+                txtLabelId.value = id.slice(2);
+
+
+            } else {
+
+                var txtLabelId = document.getElementById("txtLabelId");
+                txtLabelId.value = parseid;
+
+            }
+
+        } else if (selectedType == "x" || selectedType.slice(1) == "x") {
+
+            panelButtonProp.style.display = "none";
+            labelPropPanel.style.display = "none";
+            checkboxPropPanel.style.display = "none";
+            textboxPropPanel.style.display = "block";
+
+            if (id.charAt(1) == "x") {
+
+                var txtLabelId = document.getElementById("txtLabelId");
+                txtLabelId.value = id.slice(2);
+
+
+            } else {
+
+                var txtLabelId = document.getElementById("txtLabelId");
+                txtLabelId.value = parseid;
+
+            }
+
+
 
 
         }
