@@ -400,7 +400,17 @@ function AddTKElement() {
         var textchage = document.getElementById("lblSelected");
         textchage.innerHTML = "---";
 
+        var newckeckbox = document.createElement("div");
+        var divlienzo = document.getElementById("lienzo");
 
+
+
+
+
+
+
+
+        divlienzo.appendChild(newckeckbox);
 
 
 
