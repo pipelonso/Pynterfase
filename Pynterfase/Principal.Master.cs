@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pynterfase.Entidades;
+using Pynterfase.Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,38 @@ namespace Pynterfase
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["usuario"].ToString() == "")
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "HideUser", "sesioncontrols();", true);
+
+            }
+            else {
+
+                ClusuarioL objUsuarioL = new ClusuarioL();
+                ClUsuarioE objUSE = objUsuarioL.mtdGetAllUser(Session["usuario"].ToString());
+                lblUsername.Text = objUSE.nombre;
+                imgUser.ImageUrl = objUSE.imagenUsuario;
+                ScriptManager.RegisterStartupScript(this, GetType(), "HideUser", "showUserSesion();", true);
+
+            }
+
+
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/Register.aspx");
+        }
+
+        protected void btnUser_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/Proyectos.aspx");
         }
     }
 }

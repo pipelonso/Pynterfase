@@ -35,7 +35,23 @@
                         </asp:LinkButton>
                         
                     </li>
+
+                    <li>
+                        <div class="" style="position:relative; top:8px; ">
+
+                            <asp:LinkButton ID="btnHome" runat="server" CssClass="link-underline text-white text-decoration-none" OnClick="btnHome_Click">
+                            <img src="/Vista/imagenes/house.svg" alt="Home Icon" style="height:16px;"  class="bi bi-layout-sidebar-inset"/>                           
+                            Inicio
+                            </asp:LinkButton>
+
+                        </div>
+                        
+
+                    </li>
+
                 </ol>
+                
+
                 
                 
             </div>

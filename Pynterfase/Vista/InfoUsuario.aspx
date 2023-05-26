@@ -17,7 +17,8 @@
                         <asp:Label ID="lblMail" runat="server" Text="_mail_" CssClass="my-2 text-white"></asp:Label>
                         <br />
                         <asp:Button ID="btnEditPassShow" runat="server" Text="Editar contraseña" CssClass="botones w-100 my-2" OnClick="btnEditPassShow_Click" />
-
+                        <br />
+                        <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="botones w-100 " OnClick="btnCerrarSesion_Click" />
                     </div>
                     <hr />
                     <br />

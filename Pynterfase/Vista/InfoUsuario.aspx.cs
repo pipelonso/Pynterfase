@@ -323,5 +323,15 @@ namespace Pynterfase.Vista
 
 
         }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+
+            Session["usuario"] = "";
+            Response.Redirect("~/Inicio.aspx");
+
+
+
+        }
     }
 }

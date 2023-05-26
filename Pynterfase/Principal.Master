@@ -4,66 +4,46 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link href="Vista/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Vista/mycss/PrincipalMaster.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
-
-        
-
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
 
-            <div class="navbar bg-dark">
-                <div class="navbar nav-item">
+            <div class="navbar barra" id="barra">
+                <div class="navbar nav-item my-0">
                     <div class="nav-item">
-                        <asp:LinkButton ID="btnHome" runat="server" CssClass="navbar text-decoration-none text-white">
-
-                            <img src="Vista/imagenes/house.svg" alt="Home Icon" class="nav-item mx-2" style="height:30px;" />
-                            <p class="nav-item mx-2" style="position:relative; top:10px;" >Inicio</p>
-
-                        </asp:LinkButton>   
+                        <asp:LinkButton ID="btnHome" runat="server" CssClass="btn navbar text-decoration-none text-white onbtn mx-2"> <img src="Vista/imagenes/house.svg" alt="Home Icon" class="nav-item mx-2" style="height:20px;" /><p class="nav-item mx-2" style="position:relative; top:10px;" >Inicio</p></asp:LinkButton>
                     </div>
                     <div class="nav-item">
-                        <asp:LinkButton ID="btnDocumentación" runat="server" CssClass="navbar text-decoration-none text-white">
+                        <asp:LinkButton ID="btnDocumentación" runat="server" CssClass="btn navbar text-decoration-none text-white onbtn mx-2"> <img src="Vista/imagenes/code-square.svg" alt="Doc Icon" class="nav-item mx-2" style="height:20px;"/><p class="nav-item mx-2" style="position:relative; top:10px;">Documentación</p></asp:LinkButton>
 
-                            <img src="Vista/imagenes/code-square.svg" alt="Doc Icon" class="nav-item mx-2" style="height:30px;"/>
-                            <p class="nav-item mx-2" style="position:relative; top:10px;">Documentación</p>
-
-                        </asp:LinkButton>
-                        
                     </div>
                 </div>
-                    
-                <div class="nav-item navbar">
 
-                    <div id="Sesion Controls" class="nav-item navbar text-white">
+                <div class="nav-item navbar my-0">
 
-                        <asp:LinkButton ID="btnLogin" runat="server" CssClass="navbar nav-item text-decoration-none mx-2 text-white">
-                            <img src="Vista/imagenes/box-arrow-in-right.svg" alt="Enter Icon" class="nav-item mx-2" style="height:30px;" />
-                            <p class="nav-item mx-2 text-decoration-none" style="position:relative; top:10px;">INICIAR SESIÓN</p>
-                        </asp:LinkButton>
+                    <div id="SesionControls" class="nav-item navbar text-white">
+                        <div class="nav-item" id="botonLogin">
+                            <asp:LinkButton ID="btnLogin" runat="server" CssClass="btn navbar nav-item text-decoration-none mx-2 text-white onbtn mx-2" OnClick="btnLogin_Click"> <img src="Vista/imagenes/box-arrow-in-right.svg" alt="Enter Icon" class="nav-item mx-2" style="height:20px;" /><p class="nav-item mx-2 text-decoration-none" style="position:relative; top:10px;">INICIAR SESIÓN</p></asp:LinkButton>
+                        </div>
+                        <div class="nav-item" id="botonRegistro">
+                            <asp:LinkButton ID="btnRegister" runat="server" CssClass="btn navbar nav-item mx-2 text-white text-decoration-none onbtn mx-2" OnClick="btnRegister_Click"> <img src="Vista/imagenes/person-badge.svg" alt="Reg img" class="nav-item mx-2" style="height:20px;"  /><p class="nav-item mx-2 text-decoration-none" style="position:relative; top:10px;">REGISTRARSE</p></asp:LinkButton>
+                        </div>
 
-                        <asp:LinkButton ID="btnRegister" runat="server" CssClass="navbar nav-item mx-2 text-white text-decoration-none" >
-                            <img src="Vista/imagenes/person-badge.svg" alt="Reg img" class="nav-item mx-2" style="height:30px;"  />
-                            <p class="nav-item mx-2 text-decoration-none" style="position:relative; top:10px;">REGISTRARSE</p>
-
-                        </asp:LinkButton>
 
                     </div>
-                    
+
                     <div id="userOptions" class="nav-item">
 
-                        <asp:LinkButton ID="btnUser" runat="server" CssClass="navbar nav-item mx-2 text-white text-decoration-none">
+                        <asp:LinkButton ID="btnUser" runat="server" CssClass="btn navbar nav-item mx-2 text-white text-decoration-none onbtn mx-2 " OnClick="btnUser_Click"> <asp:Image ID="imgUser" runat="server" CssClass="nav-item mx-2 imagenes userpick" />
+                            <asp:Label ID="lblUsername" runat="server" Text="---" CssClass="nav-item mx-2 text-decoration-none"></asp:Label></asp:LinkButton>
 
-                            <asp:Image ID="imgUser" runat="server" CssClass="nav-item mx-2"/>
-                            <asp:Label ID="lblUsername" runat="server" Text="---" CssClass="nav-item mx-2 text-decoration-none"></asp:Label>
-
-                        </asp:LinkButton>
-                        
 
                     </div>
 
@@ -71,16 +51,15 @@
                 </div>
 
 
-                </div>
+            </div>
 
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
-                
-                
-            </asp:ContentPlaceHolder>
-            
         </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+
         <script src="Vista/js/bootstrap.min.js"></script>
+        <script src="Principal.js"></script>
     </form>
 </body>
 </html>

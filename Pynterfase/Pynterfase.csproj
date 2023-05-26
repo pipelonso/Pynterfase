@@ -108,6 +108,7 @@
     <Content Include="Global.asax" />
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Principal.js" />
     <Content Include="Vista\Create.aspx" />
     <Content Include="Vista\Editor.aspx" />
     <Content Include="Vista\Editor.js" />
@@ -159,6 +160,7 @@
     <Content Include="Vista\mycss\create.css" />
     <Content Include="Vista\mycss\Editor.css" />
     <Content Include="Vista\mycss\InfoUser.css" />
+    <Content Include="Vista\mycss\PrincipalMaster.css" />
     <Content Include="Vista\mycss\ProjectsMaster.css" />
     <Content Include="Vista\mycss\ProjectsPanel.css" />
     <Content Include="Vista\mycss\Register.css" />

@@ -1,0 +1,57 @@
+﻿
+body {
+
+
+
+}
+
+
+.imagenes{
+
+    height:30px;
+
+}
+
+.userpick{
+
+    border-radius : 50%;
+
+
+}
+
+.onbtn {
+    background-color: rgb(9, 9, 9);
+    border-radius : 3px;
+}
+
+.onbtn:hover {
+    animation : botones;
+    animation-delay : 0s;
+    animation-duration : 1s;
+    /*animation-direction : alternate-reverse;*/
+    animation-fill-mode : forwards;
+    border-radius : 3px;
+
+}
+
+.barra {
+    background-color: rgb(9, 9, 9);
+    
+}
+
+@keyframes botones {
+
+    0% {
+        background-color: rgb(9, 9, 9);
+        position: relative;
+        top: 0px;
+    }
+    100% {
+        background-color: rgb(78, 78, 78);
+        position : relative;
+        top:-5px;
+        
+    }
+
+
+}
