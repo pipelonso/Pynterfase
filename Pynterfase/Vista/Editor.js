@@ -403,13 +403,35 @@ function AddTKElement() {
         var newckeckbox = document.createElement("div");
         var divlienzo = document.getElementById("lienzo");
 
+        newckeckbox.id = "c" + initialid;
+
+        var txtCheckboxTKidCheckbox = document.getElementById("txtCheckboxTKidCheckbox");  //asignación del id al lienzo -------------------------------------
+        txtCheckboxTKidCheckbox.value = initialid;
+
+        newckeckbox.classList.add("navbar")
+        newckeckbox.classList.add("chekers");
+        newckeckbox.style.padding = "0px";
+        newckeckbox.style.margin = "0px";
+        var checkindicator = document.createElement("div");
+        checkindicator.style.width = "20px";
+        checkindicator.style.height = "20px";
+        checkindicator.classList.add("checkindicatorInactive");
+        checkindicator.classList.add("nav-item");
+        checkindicator.id = "ds" + initialid;
+
+        var textcheck = document.createElement("p");
+        textcheck.textContent = "---"
+        textcheck.classList.add("nav-item");
+        textcheck.id = "tc" + initialid;
 
 
 
+        newckeckbox.appendChild(checkindicator);
+        newckeckbox.appendChild(textcheck);
+        
 
 
-
-
+        newckeckbox.style.width = "100px";
         divlienzo.appendChild(newckeckbox);
 
 
@@ -547,14 +569,37 @@ lienzodivpanel.addEventListener("click", function (event) {
 
             if (id.charAt(1) == "x") {
 
-                var txtLabelId = document.getElementById("txtLabelId");
-                txtLabelId.value = id.slice(2);
+                var txtTextboxTKidTextbox = document.getElementById("txtTextboxTKidTextbox");
+                txtTextboxTKidTextbox.value = id.slice(2);
 
 
             } else {
 
-                var txtLabelId = document.getElementById("txtLabelId");
-                txtLabelId.value = parseid;
+                var txtTextboxTKidTextbox = document.getElementById("txtTextboxTKidTextbox");
+                txtTextboxTKidTextbox.value = parseid;
+
+            }
+
+
+
+
+        } else if (selectedType == "c" || selectedType.slice(1) == "c") {
+
+            panelButtonProp.style.display = "none";
+            labelPropPanel.style.display = "none";
+            checkboxPropPanel.style.display = "block";
+            textboxPropPanel.style.display = "none";
+
+            if (id.charAt(1) == "c") {
+
+                var txtCheckboxTKidCheckbox = document.getElementById("txtCheckboxTKidCheckbox");
+                txtCheckboxTKidCheckbox.value = id.slice(2);
+
+
+            } else {
+
+                var txtCheckboxTKidCheckbox = document.getElementById("txtCheckboxTKidCheckbox");
+                txtCheckboxTKidCheckbox.value = parseid;
 
             }
 

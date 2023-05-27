@@ -87,8 +87,16 @@
     }
 }
 
+.checkindicatorInactive {
+    background-image: url('../imagenes/checkidentityfalse.svg');
+    background-size: cover;
+}
 
 
+.checkindicatorActive {
+    background-image: url('../imagenes/checkidentitytrue.svg');
+    background-size: cover;
+}
 
 
 

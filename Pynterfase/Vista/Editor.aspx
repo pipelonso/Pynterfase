@@ -404,7 +404,7 @@
                         <p style="background-color : darkslategrey" class="text-center w-100">Propiedades Checkbox</p>
 
                         <p>idCheckbox</p>
-                        <input type="text" id="txtCheckboxTKidCheckbox" class="w-100 txtcajas" disabled="disabled"/>
+                        <input type="text" id="txtCheckboxTKidCheckbox" class="w-100 txtcajas text-white" disabled="disabled"/>
                         <p>x</p>
                         <input type="text" id="txtCheckboxTKx" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>y</p>
