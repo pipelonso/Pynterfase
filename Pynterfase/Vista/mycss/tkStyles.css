@@ -36,9 +36,9 @@
     border : solid;
     border-width: 1px;
     border-color : gray;
-    background-color : lightsalmon;
+    background-color : lightgreen;
     color : black;
-
+    
 
 }
 
@@ -96,6 +96,7 @@
 .checkindicatorActive {
     background-image: url('../imagenes/checkidentitytrue.svg');
     background-size: cover;
+    
 }
 
 

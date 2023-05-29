@@ -234,7 +234,10 @@ function AddTKElement() {
         
  
         botontk.style.height = "30px";
-        botontk.style.width = "100px";
+        /*botontk.style.width = "100px";*/
+        botontk.style.padding = "0px";
+        botontk.style.margin = "0px";
+        botontk.style.marginBottom = "0px";
         botontk.classList.add("TKbuttonBase");        
         botontk.classList.add("FadeInAnim");        
         
@@ -268,12 +271,18 @@ function AddTKElement() {
         ptipo.style.top = "-32px";
         ptipo.classList.add("text-center");
 
+        var btnText = document.createElement("p");
+        btnText.id = "xb" + initialid;
+        btnText.textContent = "Press Me";
+        btnText.style.textAlign = "center";
+
         ptipo.style.display = "none";
 
-        botontk.style.position = "relative"; //absolute
+        botontk.style.position = "absolute"; //absolute
         botontk.style.top = "-1px";
         botontk.style.left = "-1px";
         botontk.appendChild(pid);
+        botontk.appendChild(btnText);
         botontk.appendChild(ptipo);
         divlienzo.appendChild(botontk);
 
@@ -336,7 +345,7 @@ function AddTKElement() {
         ptext.id = "xl" + initialid;
         //ptext.style.top = "-55px";
 
-        labelTk.style.position = "relative"; //absolute
+        labelTk.style.position = "absolute"; //absolute
         divlienzo.appendChild(labelTk);
         
         labelTk.appendChild(pid);
@@ -374,7 +383,7 @@ function AddTKElement() {
         textbox.classList.add("TKtextboxBase");
         textbox.style.width = "150px";
         textbox.style.height = "25px";
-
+        textbox.position = "absolute";
         var ptext = document.createElement("p");
         ptext.id = "px" + initialid;
 
@@ -412,18 +421,21 @@ function AddTKElement() {
         newckeckbox.classList.add("chekers");
         newckeckbox.style.padding = "0px";
         newckeckbox.style.margin = "0px";
+        newckeckbox.style.position = "absolute";
         var checkindicator = document.createElement("div");
-        checkindicator.style.width = "20px";
-        checkindicator.style.height = "20px";
+        checkindicator.style.width = "15px";
+        checkindicator.style.height = "15px";
         checkindicator.classList.add("checkindicatorInactive");
         checkindicator.classList.add("nav-item");
-        checkindicator.id = "ds" + initialid;
+        checkindicator.id = "sc" + initialid;
+        checkindicator.style.padding = "0px";
+        
 
         var textcheck = document.createElement("p");
         textcheck.textContent = "---"
         textcheck.classList.add("nav-item");
         textcheck.id = "tc" + initialid;
-
+        textcheck.style.fontSize = "15px";
 
 
         newckeckbox.appendChild(checkindicator);
@@ -465,19 +477,497 @@ function handleKeyDown(event) {
 
 function applyChanges() {
 
-    fetch('../Users/Projects/1.json')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            if (data.listacheckbox == null) {
-                console.log("listacheckbox está vacío");
-            } else {
-                console.log("listacheckbox no está vacío");
+    if (selectedType == "b" || selectedType.slice(1) == "b") { //verifica si el valor seleccionado es un boton
+
+        var txtXbuttonTK = document.getElementById("txtXButtonTK");
+        var txtIDbutton = document.getElementById("txtButtonId");
+        var txtYbuttonTk = document.getElementById("txtYbuttonTk");
+        var txtABGbuttonTk = document.getElementById("txtABGbuttonTk");
+        var txtAFGbuttonTk = document.getElementById("txtAFGbuttonTk");
+        var txtanchorbuttonTk = document.getElementById("txtanchorbuttonTk");
+        var txtBGbuttonTK = document.getElementById("txtBGbuttonTK");
+        var ComboBitmap = document.getElementById("ComboBitmap");
+        var txtBorderWidthbuttonTK = document.getElementById("txtBorderWidthbuttonTK");
+        var comboCompound = document.getElementById("comboCompound");
+        var comboCursor = document.getElementById("comboCursor");
+        var comboDefaultbtn = document.getElementById("comboDefaultbtn");
+        var comboDisableForegroundbtn = document.getElementById("comboDisableForegroundbtn");
+        var comboFontBtn = document.getElementById("comboFontBtn");
+        var txtButtonTkforeground = document.getElementById("txtButtonTkforeground");
+        var txtButtonTkheight = document.getElementById("txtButtonTkheight");
+        var txtButtonTkhighlightbackground = document.getElementById("txtButtonTkhighlightbackground");
+        var txtButtonTkhighlightcolor = document.getElementById("txtButtonTkhighlightcolor");
+        var txtButtonTkhighlightthickness = document.getElementById("txtButtonTkhighlightthickness");
+        var txtButtonTkimage = document.getElementById("txtButtonTkimage");
+        var txtButtonTkjustify = document.getElementById("txtButtonTkjustify"); //Combo
+        var txtButtonTkpadx = document.getElementById("txtButtonTkpadx");
+        var txtButtonTkpady = document.getElementById("txtButtonTkpady");
+        var txtButtonTkrelief = document.getElementById("txtButtonTkrelief"); //Combo
+        var txtButtonTkstate = document.getElementById("txtButtonTkstate");
+        var txtButtonTktakefocus = document.getElementById("txtButtonTktakefocus");
+        var txtButtonTktext = document.getElementById("txtButtonTktext");
+        var txtButtonTktextvariable = document.getElementById("txtButtonTktextvariable");
+        var txtButtonTkunderline = document.getElementById("txtButtonTkunderline");
+        var txtButtonTkwidth = document.getElementById("txtButtonTkwidth");
+        var txtButtonTkwraplength = document.getElementById("txtButtonTkwraplength");
+
+        if (txtXbuttonTK.value != null) {
+
+            document.getElementById("b" + txtIDbutton.value).style.left = txtXbuttonTK.value + "px";
+            
+        }
+
+        if (txtYbuttonTk.value != null) {
+
+            document.getElementById("b" + txtIDbutton.value).style.top = txtYbuttonTk.value + "px";            
+
+        }
+
+        if (txtABGbuttonTk.value != null ) { //hacer que esto se guarde en otro elemento, el background remplaza su valor por defecto
+
+            document.getElementById("b" + txtIDbutton.value).style.backgroundColor = txtABGbuttonTk.value;
+
+        }
+
+        if (txtAFGbuttonTk.value != null) {
+
+            document.getElementById("xb" + initialid).style.color = txtAFGbuttonTk.value;
+
+        } 
+
+        if (txtanchorbuttonTk.value != "none") {
+
+            //<select id="txtanchorbuttonTk" class="txtcajas w-100">
+            //    <option value="none"></option>
+            //    <option value="tk.N">tk.N</option>
+            //    <option value="tk.S">tk.S</option>
+            //    <option value="tk.E">tk.E</option>
+            //    <option value="tk.W">tk.W</option>
+            //    <option value="tk.NE">tk.NE</option>
+            //    <option value="tk.NW">tk.NW</option>
+            //    <option value="tk.SE">tk.SE</option>
+            //    <option value="tk.SW">tk.SW</option>
+            //</select>
+
+            if (txtanchorbuttonTk.value == "tk.N") {
+
+                document.getElementById("xb" + initialid).style.position = "absolute";
+                document.getElementById("xb" + initialid).style.top = "0px";
+                document.getElementById("xb" + initialid).style.left = "50%";
+                document.getElementById("xb" + initialid).style.transform = "translateX(-50%)";
+                
             }
-        })
-        .catch(error => {
-            console.log('Error:', error);
-        });
+
+            if (txtanchorbuttonTk.value == "tx.S") {
+                document.getElementById("xb" + initialid).style.position = "absolute";
+                document.getElementById("xb" + initialid).style.bottom = "0px";
+                document.getElementById("xb" + initialid).style.left = "50%";
+                document.getElementById("xb" + initialid).style.transform = "translateX(-50%)";
+            }
+
+            if (txtanchorbuttonTk.value == "tx.E") {
+                document.getElementById("xb" + initialid).style.position = "absolute";
+                document.getElementById("xb" + initialid).style.top = "50%";
+                document.getElementById("xb" + initialid).style.right = "0%";
+                document.getElementById("xb" + initialid).style.transform = "translateY(-50%)";
+                document.getElementById("xb" + initialid).style.textAlign = "right";
+            }
+
+            if (txtanchorbuttonTk.value == "tx.W") {
+                document.getElementById("xb" + initialid).style.position = "absolute";
+                document.getElementById("xb" + initialid).style.top = "50%";
+                document.getElementById("xb" + initialid).style.left = "0%";
+                document.getElementById("xb" + initialid).style.transform = "translateY(-50%)";
+                document.getElementById("xb" + initialid).style.textAlign = "left";
+            }
+
+            if (txtanchorbuttonTk.value == "tx.NE") {
+                document.getElementById("xb" + initialid).style.position = "absolute";
+                document.getElementById("xb" + initialid).style.top = "0%";
+                document.getElementById("xb" + initialid).style.right = "0%";
+                
+            }
+
+            if (txtanchorbuttonTk.value == "tx.NW") {
+                document.getElementById("xb" + initialid).style.position = "absolute";
+                document.getElementById("xb" + initialid).style.top = "0%";
+                document.getElementById("xb" + initialid).style.left = "0%";
+                
+            }
+            if (txtanchorbuttonTk.value == "tx.SE") {
+                document.getElementById("xb" + initialid).style.position = "absolute";
+                document.getElementById("xb" + initialid).style.bottom = "0%";
+                document.getElementById("xb" + initialid).style.right = "0%";
+            }
+
+            if (txtanchorbuttonTk.value == "tx.SW") {
+                document.getElementById("xb" + initialid).style.position = "absolute";
+                document.getElementById("xb" + initialid).style.bottom = "0%";
+                document.getElementById("xb" + initialid).style.left = "0%";
+            }
+
+        }
+
+        if (txtBGbuttonTK.value != null) {
+
+            document.getElementById("b" + txtIDbutton.value).style.backgroundColor = txtBGbuttonTK.value;
+
+        }
+
+        if (ComboBitmap.value != "none") {
+
+            //<select id="ComboBitmap" class="txtcajas w-100">
+            //    <option value="none"></option>
+            //    <option value="error">error</option>
+            //    <option value="gray75">gray75</option>
+            //    <option value="gray50">gray50</option>
+            //    <option value="gray25">gray25</option>
+            //    <option value="gray12">gray12</option>
+            //    <option value="hourglass">hourglass</option>
+            //    <option value="info">info</option>
+            //    <option value="questhead">questhead</option>
+            //    <option value="question">question</option>
+            //    <option value="warning">warning</option>
+            //</select>
+
+            //Falta hacer cada bitmap
+
+
+        }
+
+        if (txtBorderWidthbuttonTK.value != null) {
+
+            document.getElementById("b" + txtIDbutton.value).style.borderWidth = txtBorderWidthbuttonTK.value + "px";
+
+        } 
+
+        if (comboCompound.value != "none") {
+
+            //Falta programar bien esto
+
+        }
+
+        if (comboCursor.value != "none") {
+
+            //<select id="comboCursor" class="txtcajas w-100">
+            //    <option value="none"></option>
+            //    <option value="arrow">Flecha estándar</option>
+            //    <option value="hand2">Mano indicando que se puede hacer clic</option>
+            //    <option value="watch">Reloj indicando que la operación está en progreso</option>
+            //    <option value="crosshair">Cruz</option>
+            //    <option value="ibeam">Cursor en forma de "I"</option>
+            //    <option value="top_left_arrow">Flecha apuntando hacia la esquina superior izquierda</option>
+            //    <option value="top_right_arrow">Flecha apuntando hacia la esquina superior derecha</option>
+            //    <option value="bottom_left_arrow">Flecha apuntando hacia la esquina inferior izquierda</option>
+            //    <option value="bottom_right_arrow">Flecha apuntando hacia la esquina inferior derecha</option>
+            //    <option value="size_ns">Flecha de cambio de tamaño vertical</option>
+            //    <option value="size_we">Flecha de cambio de tamaño horizontal</option>
+            //</select>
+
+            if (comboCursor.value == "arrow") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.add("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+                
+            }
+
+            if (comboCursor.value == "hand2") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.add("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+                
+            }
+
+            if (comboCursor.value == "watch") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.add("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+                
+            }
+
+            if (comboCursor.value == "crosshair") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.add("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+                
+            }
+
+            if (comboCursor.value == "ibean") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.add("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+                
+            }
+
+            if (comboCursor.value == "top_left_arrow") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.add("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+                
+            }
+
+            if (comboCursor.value == "top_right_arrow") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.add("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+                
+            }
+
+            if (comboCursor.value == "bottom_left_arrow") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.add("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+                
+            }
+
+            if (comboCursor.value == "bottom_right_arrow") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.add("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+                
+            }
+
+            if (comboCursor.value == "size_ns") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.add("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_we");
+
+            }
+
+            if (comboCursor.value == "size_we") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("hand2");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("watch");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("crosshair");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("ibean");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtIDbutton.value).classList.remove("size_ns");
+                document.getElementById("b" + txtIDbutton.value).classList.add("size_we");
+
+            }
+
+
+        }
+
+        if (comboDefaultbtn.value != "none") { //boton por defecto --------------------------------------------
+
+            //<select id="comboDefaultbtn" class="w-100 txtcajas">
+            //    <option value="none"></option>
+            //    <option value="normal">normal</option>
+            //    <option value="active">active</option>
+            //</select>
+
+
+            if (comboDefaultbtn.value == "normal") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.add("default_normal"); //tkinter.NORMAL
+                document.getElementById("b" + txtIDbutton.value).classList.remove("default_active"); //tkinter.ACTIVE
+
+            }
+
+            if (comboDefaultbtn.value == "active") {
+
+                document.getElementById("b" + txtIDbutton.value).classList.remove("default_normal");
+                document.getElementById("b" + txtIDbutton.value).classList.add("default_active");
+
+            } 
+
+
+
+        }
+
+        if (comboDisableForegroundbtn.value != "none") {
+
+            //falta crear elemento que almacene este estado, es un color
+
+        }
+
+        if (comboFontBtn.value != "none") {
+
+            //<select id="comboFontBtn" class="txtcajas w-100">
+            //    <option value="none"></option>
+            //    <option value="Arial">Arial</option>
+            //    <option value="Helvetica">Helvetica</option>
+            //    <option value="Times New Roman">Times New Roman</option>
+            //    <option value="Courier New">Courier New</option>
+            //    <option value="Verdana">Verdana</option>
+            //    <option value="Georgia">Georgia</option>
+            //    <option value="Comic Sans MS">Comic Sans MS</option>
+            //</select>
+
+            if (comboFontBtn.value == "Arial") {
+
+                document.getElementById("xb" + initialid).style.fontFamily = "Arial";
+
+            }
+            if (comboFontBtn.value == "Helvetica") {
+
+                document.getElementById("xb" + initialid).style.fontFamily = "Arial";
+
+            }
+            if (comboFontBtn.value == "Times New Roman") {
+
+                document.getElementById("xb" + initialid).style.fontFamily = "\"Times New Roman\"";
+
+            }
+            if (comboFontBtn.value == "Courier New") {
+
+                document.getElementById("xb" + initialid).style.fontFamily = "\"Courier New\"";
+
+            }
+            if (comboFontBtn.value == "Verdana") {
+
+                document.getElementById("xb" + initialid).style.fontFamily = "Arial";
+
+            }
+            if (comboFontBtn.value == "Georgia") {
+
+                document.getElementById("xb" + initialid).style.fontFamily = "Arial";
+
+            }
+            if (comboFontBtn.value == "Comic Sans MS") {
+
+                document.getElementById("xb" + initialid).style.fontFamily = "\"Comic Sans MS\"";
+
+            }
+
+
+        }
+
+        if (txtButtonTkforeground.value != null) {
+
+            document.getElementById("xb" + initialid).style.color = txtButtonTkforeground.value;
+
+        }
+
+        if (txtButtonTkheight.value != null) {
+
+            document.getElementById("b" + txtIDbutton.value).style.height = txtButtonTkheight.value + "px";
+
+        }
+
+        if (txtButtonTkwidth.value != null) {
+
+            document.getElementById("b" + txtIDbutton.value).style.width = txtButtonTkheight.value + "px";
+
+        }
+
+
+        if (txtButtonTkhighlightbackground.value != null) {
+
+            //falta crear elemento que almacene este valor
+
+        }
+
+        if (txtButtonTkhighlightcolor.value != null) {
+
+            //falta crear elemento que almacene este valor
+
+        }
+
+        if (txtButtonTktext.value != null) {
+
+            document.getElementById("xb" + initialid).textContent = txtButtonTktext.value;
+
+        }
+
+
+
+    } //Fin verificacion de boton
 
 }
 
@@ -507,6 +997,20 @@ lienzodivpanel.addEventListener("click", function (event) {
         } 
 
         if (id.charAt(1) == "l") { //revisa si es un hijo de label
+
+            selectedType = id.charAt(1);
+            console.log(selectedType);
+
+        }
+
+        if (id.charAt(1) == "x") { //revisa si es un hijo de textbox
+
+            selectedType = id.charAt(1);
+            console.log(selectedType);
+
+        }
+
+        if (id.charAt(1) == "c") { //revisa si es un hijo de checkbox
 
             selectedType = id.charAt(1);
             console.log(selectedType);
@@ -603,18 +1107,10 @@ lienzodivpanel.addEventListener("click", function (event) {
 
             }
 
-
-
-
         }
-
 
     }
     
-    
-
-
-
 });
 
 

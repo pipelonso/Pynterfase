@@ -154,17 +154,28 @@
                         <p>Id</p>
                         <input type="text" name="name" value="" id="txtButtonId" disabled="disabled" class="txtcajas w-100 text-white"  />
                         <p>X</p>
-                        <input type="text" name="txtXbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtXButtonTK" name="txtXbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Y</p>
-                        <input type="text" name="txtYbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtYbuttonTk" name="txtYbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Activebackground</p>
-                        <input type="text" name="txtABGbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtABGbuttonTk" name="txtABGbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Activeforeground</p>
-                        <input type="text" name="txtAFGbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtAFGbuttonTk" name="txtAFGbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Anchor</p>
-                        <input type="text" name="txtanchorbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <select id="txtanchorbuttonTk" class="txtcajas w-100">
+                            <option value="none"></option>
+                            <option value="tk.N">tk.N</option>
+                            <option value="tk.S">tk.S</option>
+                            <option value="tk.E">tk.E</option>
+                            <option value="tk.W">tk.W</option>
+                            <option value="tk.NE">tk.NE</option>
+                            <option value="tk.NW">tk.NW</option>
+                            <option value="tk.SE">tk.SE</option>
+                            <option value="tk.SW">tk.SW</option>                            
+                        </select>
+                        <%--<input type="text" id="txtanchorbuttonTk" name="txtanchorbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>Background</p>
-                        <input type="text" name="txtBGbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtBGbuttonTK" name="txtBGbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Bitmap</p>
                         <select id="ComboBitmap" class="txtcajas w-100">
                             <option value="none"></option>
@@ -180,7 +191,7 @@
                             <option value="warning">warning</option>
                         </select>
                         <p>Borderwidth</p>
-                        <input type="text" name="txtBorderWidthbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtBorderWidthbuttonTK" name="txtBorderWidthbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Compound</p>
                         <select id="comboCompound" class="txtcajas w-100">
                             <option value="nothing"></option>
