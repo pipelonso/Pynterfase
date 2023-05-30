@@ -151,12 +151,16 @@
 
                     <div id="buttonPropPanel" class="container-fluid text-light">
                         <p style="background-color : darkorange" class="text-center w-100">Propiedades Boton</p>
+                        <hr />
                         <p>Id</p>
                         <input type="text" name="name" value="" id="txtButtonId" disabled="disabled" class="txtcajas w-100 text-white"  />
+                        <hr />
                         <p>X</p>
                         <input type="text" id="txtXButtonTK" name="txtXbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>Y</p>
                         <input type="text" id="txtYbuttonTk" name="txtYbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <%--<p>Activebackground</p>
                         <input type="text" id="txtABGbuttonTk" name="txtABGbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Activeforeground</p>
@@ -173,9 +177,11 @@
                             <option value="tk.SE">tk.SE</option>
                             <option value="tk.SW">tk.SW</option>                            
                         </select>
+                        <hr />
                         <%--<input type="text" id="txtanchorbuttonTk" name="txtanchorbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>Background</p>
                         <input type="text" id="txtBGbuttonTK" name="txtBGbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>Bitmap</p>
                         <select id="ComboBitmap" class="txtcajas w-100">
                             <option value="none"></option>
@@ -190,8 +196,10 @@
                             <option value="question">question</option>
                             <option value="warning">warning</option>
                         </select>
+                        <hr />
                         <p>Borderwidth</p>
                         <input type="text" id="txtBorderWidthbuttonTK" name="txtBorderWidthbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>Compound</p>
                         <select id="comboCompound" class="txtcajas w-100">
                             <option value="nothing"></option>
@@ -203,6 +211,7 @@
                             <option value="center">center</option>
 
                         </select>
+                        <hr />
                         <p>Cursor</p>
                         <select id="comboCursor" class="txtcajas w-100">
                             <option value="none"></option>
@@ -218,6 +227,7 @@
                             <option value="size_ns">Flecha de cambio de tamaño vertical</option>
                             <option value="size_we">Flecha de cambio de tamaño horizontal</option>
                         </select>
+                        <hr />
                         <%--<p>Default</p>
                         <select id="comboDefaultbtn" class="w-100 txtcajas">
                             <option value="none"></option>
@@ -239,16 +249,19 @@
                             <option value="none"></option>
                             <option value="Arial">Arial</option>
                             <option value="Helvetica">Helvetica</option>
-                            <option value="Times New Roman">Times New Roman</option>
-                            <option value="Courier New">Courier New</option>
+                            <option value="Times_New_Roman">Times New Roman</option>
+                            <option value="Courier_New">Courier New</option>
                             <option value="Verdana">Verdana</option>
                             <option value="Georgia">Georgia</option>
-                            <option value="Comic Sans MS">Comic Sans MS</option>
+                            <option value="Comic_Sans_MS">Comic Sans MS</option>
                         </select>
+                        <hr />
                         <p>Foreground</p>
                         <input type="text" id="txtButtonTkforeground" name="foreground" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>Height:</p>
                         <input type="text" id="txtButtonTkheight" name="height" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <%--<p>Highlight Background:</p>
                         <input type="text" id="txtButtonTkhighlightbackground" name="highlightbackground" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <%--<p>Highlight Color:</p>
@@ -285,16 +298,19 @@
                             <option value="tk.ACTIVE">tk.ACTIVE</option>
                             <option value="tk.DISABLE">tk.DISABLE</option>
                         </select>
+                        <hr />
                         <%--<p>Take Focus:</p>
                         <input type="text" id="txtButtonTktakefocus" name="takefocus" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>Text:</p>
                         <input type="text" id="txtButtonTktext" name="text" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <%--<p>Text Variable:</p>
                         <input type="text" id="txtButtonTktextvariable" name="textvariable" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Underline:</p>
                         <input type="text" id="txtButtonTkunderline" name="underline" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>Width:</p>
                         <input type="text" id="txtButtonTkwidth" name="width" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <%--<p>Wrap Length:</p>
                         <input type="text" id="txtButtonTkwraplength" name="wraplength" class="w-100 txtcajas my-2" onkeydown="return handleKeyDown(event);" />--%>
                     </div>
@@ -346,11 +362,11 @@
                             <option value="none"></option>
                             <option value="Arial">Arial</option>
                             <option value="Helvetica">Helvetica</option>
-                            <option value="Times New Roman">Times New Roman</option>
-                            <option value="Courier New">Courier New</option>
+                            <option value="Times_New_Roman">Times New Roman</option>
+                            <option value="Courier_New">Courier New</option>
                             <option value="Verdana">Verdana</option>
                             <option value="Georgia">Georgia</option>
-                            <option value="Comic Sans MS">Comic Sans MS</option>
+                            <option value="Comic_Sans_MS">Comic Sans MS</option>
                         </select>
                         <%--<input type="text" id="txtLabelTKfont" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>fg</p>

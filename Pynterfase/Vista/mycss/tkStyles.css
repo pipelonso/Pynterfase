@@ -2,19 +2,18 @@
 }
 
 
-.TKbuttonBase{
-
-    border : outset;
-    color : black;
-    background-color : lightgray;
-    
-
+.TKbuttonBase {
+    border: outset;
+    border-width: 2px;
+    color: black;
+    background-color: lightgray;
 }
 
 
 .TKbuttonBase:hover{
 
     border : outset;
+    border-width : 2px;
     color : black;
     background-color : lightsalmon;
     

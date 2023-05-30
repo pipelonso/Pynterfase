@@ -881,6 +881,8 @@ function applyChanges() {
 
         if (comboFontBtn.value != "none") {
 
+            console.log("fijado: " + comboFontBtn.value);
+
             //<select id="comboFontBtn" class="txtcajas w-100">
             //    <option value="none"></option>
             //    <option value="Arial">Arial</option>
@@ -899,30 +901,30 @@ function applyChanges() {
             }
             if (comboFontBtn.value == "Helvetica") {
 
-                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Arial";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Helvetica";
 
             }
-            if (comboFontBtn.value == "Times New Roman") {
+            if (comboFontBtn.value == "Times_New_Roman") {
 
                 document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "\"Times New Roman\"";
 
             }
-            if (comboFontBtn.value == "Courier New") {
+            if (comboFontBtn.value == "Courier_New") {
 
                 document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "\"Courier New\"";
 
             }
             if (comboFontBtn.value == "Verdana") {
 
-                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Arial";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Verdana";
 
             }
             if (comboFontBtn.value == "Georgia") {
 
-                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Arial";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Georgia";
 
             }
-            if (comboFontBtn.value == "Comic Sans MS") {
+            if (comboFontBtn.value == "Comic_Sans_MS") {
 
                 document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "\"Comic Sans MS\"";
 
@@ -1260,30 +1262,30 @@ function applyChanges() {
             }
             if (txtLabelTKfont.value == "Helvetica") {
 
-                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Arial";
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Helvetica";
 
             }
-            if (txtLabelTKfont.value == "Times New Roman") {
+            if (txtLabelTKfont.value == "Times_New_Roman") {
 
                 document.getElementById("xl" + txtLabelId.value).style.fontFamily = "\"Times New Roman\"";
 
             }
-            if (txtLabelTKfont.value == "Courier New") {
+            if (txtLabelTKfont.value == "Courier_New") {
 
                 document.getElementById("xl" + txtLabelId.value).style.fontFamily = "\"Courier New\"";
 
             }
             if (txtLabelTKfont.value == "Verdana") {
 
-                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Arial";
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Verdana";
 
             }
             if (txtLabelTKfont.value == "Georgia") {
 
-                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Arial";
-
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Georgia";
+                //.replace(/_/g, " ")
             }
-            if (txtLabelTKfont.value == "Comic Sans MS") {
+            if (txtLabelTKfont.value == "Comic_Sans_MS") {
 
                 document.getElementById("xl" + txtLabelId.value).style.fontFamily = "\"Comic Sans MS\"";
             }
@@ -1455,7 +1457,7 @@ lienzodivpanel.addEventListener("click", function (event) {
         if (id.charAt(1) == "b") { //revisa si es un hijo de boton
 
             selectedType = id.charAt(1);            
-            console.log(selectedType);
+            console.log("Tipo seleccionado: " + selectedType);
 
         } 
 
@@ -1495,12 +1497,81 @@ lienzodivpanel.addEventListener("click", function (event) {
 
                 var txtidbutton = document.getElementById("txtButtonId");
                 txtidbutton.value = id.slice(2);
+                var txtXButtonTK = document.getElementById("txtXButtonTK");
+                txtXButtonTK.value = parseInt(document.getElementById("b" + id.slice(2)).style.left)
+                var txtYbuttonTk = document.getElementById("txtYbuttonTk");
+                txtYbuttonTk.value = parseInt(document.getElementById("b" + id.slice(2)).style.top);
+                var txtanchorbuttonTk = document.getElementById("txtanchorbuttonTk"); //Falta agregar parametro al elemento
+                var txtBGbuttonTK = document.getElementById("txtBGbuttonTK");
+                txtBGbuttonTK.value = document.getElementById("b" + id.slice(2)).style.backgroundColor;
+                var txtBorderWidthbuttonTK = document.getElementById("txtBorderWidthbuttonTK");
+                txtBorderWidthbuttonTK.value = parseInt(document.getElementById("b" + id.slice(2)).style.borderWidth);
+                var comboFontBtn = document.getElementById("comboFontBtn");
+                var getStringfont = document.getElementById("xb" + id.slice(2)).style.fontFamily;
+                console.log("fontFamily: " + document.getElementById("xb" + id.slice(2)).style.fontFamily);
+                
+                if (getStringfont == "Arial") {
 
+                    comboFontBtn.value = "Arial";
+
+                }
+
+                if (getStringfont == "Helvetica") {
+
+                    comboFontBtn.value = "Helvetica";
+
+                }
+
+                if (getStringfont == "Times New Roman") { //falla
+
+                    comboFontBtn.value = "Times_New_Roman";
+
+                }
+
+                if (getStringfont == "Courier New") { //falla
+
+                    comboFontBtn.value = "Courier_New";
+
+                }
+
+                if (getStringfont == "Verdana") {
+
+                    comboFontBtn.value = "Verdana";
+
+                }
+
+                if (getStringfont == "Georgia") {
+
+                    comboFontBtn.value = "Georgia";
+
+                }
+
+                if (getStringfont == "Comic Sans MS") { //falla
+
+                    comboFontBtn.value = "Comic_Sans_MS";
+
+                }
+
+                var txtButtonTkforeground = document.getElementById("txtButtonTkforeground");
+                txtButtonTkforeground.value = document.getElementById("xb" + id.slice(2)).style.color;
+
+                var txtButtonTkheight = document.getElementById("txtButtonTkheight");
+                txtButtonTkheight.value = document.getElementById("b" + id.slice(2)).style.height;
+
+                var txtButtonTktext = document.getElementById("txtButtonTktext");
+                txtButtonTktext.value = document.getElementById("xb" + id.slice(2)).textContent;
+
+                var txtButtonTkwidth = document.getElementById("txtButtonTkwidth");
+                txtButtonTkwidth.value = document.getElementById("b" + id.slice(2)).style.width; //Corregir elementos
 
             } else {
 
                 var txtidbutton = document.getElementById("txtButtonId");
                 txtidbutton.value = parseid;
+                var txtXButtonTK = document.getElementById("txtXButtonTK");
+                txtXButtonTK.value = parseInt(document.getElementById("b" + parseid).style.left)
+                var txtYbuttonTk = document.getElementById("txtYbuttonTk");
+                txtYbuttonTk.value = parseInt(document.getElementById("b" + parseid).style.left);
 
             }
 
@@ -1518,7 +1589,7 @@ lienzodivpanel.addEventListener("click", function (event) {
 
                 var txtLabelId = document.getElementById("txtLabelId");
                 txtLabelId.value = id.slice(2);
-
+                
 
             } else {
 
