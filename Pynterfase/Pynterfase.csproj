@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Datos.txt" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
@@ -117,6 +118,7 @@
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
     <Content Include="Vista\imagenes\back1.gif" />
     <Content Include="Vista\imagenes\backreglogin.gif" />
+    <Content Include="Vista\imagenes\bignite.svg" />
     <Content Include="Vista\imagenes\box-arrow-in-right.svg" />
     <Content Include="Vista\imagenes\checkIdentityFalse.svg" />
     <Content Include="Vista\imagenes\checkIdentityTrue.svg" />
@@ -165,6 +167,7 @@
     <Content Include="Vista\mycss\ProjectsPanel.css" />
     <Content Include="Vista\mycss\Register.css" />
     <Content Include="Vista\mycss\tkStyles.css" />
+    <Content Include="Vista\mycss\Verificacion.css" />
     <Content Include="Vista\mycss\Visor.css" />
     <Content Include="Vista\Proyectos.aspx" />
     <Content Include="Vista\Pynterfase avatars\1.png" />
@@ -202,6 +205,7 @@
     <Content Include="Vista\js\bootstrap.js" />
     <Content Include="Vista\js\bootstrap.min.js" />
     <Content Include="Vista\mycss\login.css" />
+    <Content Include="Vista\Verification.js" />
     <Content Include="Vista\Visor.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

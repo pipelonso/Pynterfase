@@ -23,6 +23,12 @@
     background-color: lightslategray;
 }
 
+.txtcajas {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+}
+
 .projbox {
     color: white;
     border: solid;

@@ -1,0 +1,30 @@
+﻿body {
+    background-image: url('../imagenes/projectsback.svg');
+    background-size : cover;
+}
+
+
+.botones {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: white;
+}
+
+    .botones:hover {
+        border: double;
+        border-color: dimgray;
+        border-width: 3px;
+        background-color: lightslategray;
+    }
+
+.txtcajas {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+}
+
+.vignite {
+    background-image: url('../imagenes/bignite.svg');
+    background-size : cover;
+}

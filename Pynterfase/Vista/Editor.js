@@ -132,8 +132,8 @@ function setCanvasHeight() {
     superbar.style.height = "auto";
     var alturasupbar = superbar.style.height;
     console.log("altura barSup: " + alturasupbar);
-    contenedorlienzo.style.height = parseInt(altura) + "px";
-    contenedorpropiedades.style.height = parseInt(altura) + "px";
+    contenedorlienzo.style.height = parseInt(altura) - 300 + "px";
+    contenedorpropiedades.style.height = parseInt(altura) - 300 + "px";
     console.log(altura + " --- " + contenedorlienzo.style.height);
     
 
@@ -218,7 +218,7 @@ function AddTKElement() {
 
     if (selectedItem == 1) {
 
-
+        selectedType = "b"; //Recordatorio del demonio, poner esta cosa en todos justificando el tipo
         var btnAddTk = document.getElementById("btnAddTk");
         btnAddTk.disabled = true;
         panelButtonProp.style.display = "block";
@@ -289,7 +289,7 @@ function AddTKElement() {
 
 
     } else if (selectedItem == 2) {
-
+        selectedType = "l"; //Recordatorio del demonio, poner esta cosa en todos justificando el tipo
         var btnAddTk = document.getElementById("btnAddTk");
         btnAddTk.disabled = true;
         labelPropPanel.style.display = "block";
@@ -357,7 +357,7 @@ function AddTKElement() {
 
 
     } else if (selectedItem == 3) { //textbox
-
+        selectedType = "x"; //Recordatorio del demonio, poner esta cosa en todos justificando el tipo
 
         var btnAddTk = document.getElementById("btnAddTk");
         btnAddTk.disabled = true;
@@ -372,6 +372,7 @@ function AddTKElement() {
         textchage.innerHTML = "---";
 
         var textbox = document.createElement("div");
+        
         var divlienzo = document.getElementById("lienzo");
 
         var txtTextboxTKidTextbox = document.getElementById("txtTextboxTKidTextbox");  //asignación del id al lienzo -------------------------------------
@@ -383,7 +384,7 @@ function AddTKElement() {
         textbox.classList.add("TKtextboxBase");
         textbox.style.width = "150px";
         textbox.style.height = "25px";
-        textbox.position = "absolute";
+        textbox.style.position = "absolute";
         var ptext = document.createElement("p");
         ptext.id = "px" + initialid;
 
@@ -396,7 +397,7 @@ function AddTKElement() {
 
     } else if (selectedItem == 4) {
 
-
+        selectedType = "c"; //Recordatorio del demonio, poner esta cosa en todos justificando el tipo
         var btnAddTk = document.getElementById("btnAddTk");
         btnAddTk.disabled = true;
         checkboxPropPanel.style.display = "block";
@@ -448,7 +449,9 @@ function AddTKElement() {
 
 
 
-    } else {
+    }
+    else
+    {
 
         console.log("Esto no deberia ocurrir");
 
@@ -482,34 +485,34 @@ function applyChanges() {
         var txtXbuttonTK = document.getElementById("txtXButtonTK");
         var txtIDbutton = document.getElementById("txtButtonId");
         var txtYbuttonTk = document.getElementById("txtYbuttonTk");
-        var txtABGbuttonTk = document.getElementById("txtABGbuttonTk");
-        var txtAFGbuttonTk = document.getElementById("txtAFGbuttonTk");
+        //var txtABGbuttonTk = document.getElementById("txtABGbuttonTk"); //Descart
+        //var txtAFGbuttonTk = document.getElementById("txtAFGbuttonTk"); //Descart
         var txtanchorbuttonTk = document.getElementById("txtanchorbuttonTk");
         var txtBGbuttonTK = document.getElementById("txtBGbuttonTK");
         var ComboBitmap = document.getElementById("ComboBitmap");
         var txtBorderWidthbuttonTK = document.getElementById("txtBorderWidthbuttonTK");
         var comboCompound = document.getElementById("comboCompound");
         var comboCursor = document.getElementById("comboCursor");
-        var comboDefaultbtn = document.getElementById("comboDefaultbtn");
-        var comboDisableForegroundbtn = document.getElementById("comboDisableForegroundbtn");
+        //var comboDefaultbtn = document.getElementById("comboDefaultbtn");  //Descart
+        //var comboDisableForegroundbtn = document.getElementById("comboDisableForegroundbtn"); //Descart
         var comboFontBtn = document.getElementById("comboFontBtn");
         var txtButtonTkforeground = document.getElementById("txtButtonTkforeground");
         var txtButtonTkheight = document.getElementById("txtButtonTkheight");
-        var txtButtonTkhighlightbackground = document.getElementById("txtButtonTkhighlightbackground");
-        var txtButtonTkhighlightcolor = document.getElementById("txtButtonTkhighlightcolor");
-        var txtButtonTkhighlightthickness = document.getElementById("txtButtonTkhighlightthickness");
-        var txtButtonTkimage = document.getElementById("txtButtonTkimage");
-        var txtButtonTkjustify = document.getElementById("txtButtonTkjustify"); //Combo
-        var txtButtonTkpadx = document.getElementById("txtButtonTkpadx");
-        var txtButtonTkpady = document.getElementById("txtButtonTkpady");
-        var txtButtonTkrelief = document.getElementById("txtButtonTkrelief"); //Combo
-        var txtButtonTkstate = document.getElementById("txtButtonTkstate");
-        var txtButtonTktakefocus = document.getElementById("txtButtonTktakefocus");
+        //var txtButtonTkhighlightbackground = document.getElementById("txtButtonTkhighlightbackground"); //descart
+        //var txtButtonTkhighlightcolor = document.getElementById("txtButtonTkhighlightcolor");    //Descart
+        //var txtButtonTkhighlightthickness = document.getElementById("txtButtonTkhighlightthickness"); //Descart
+        //var txtButtonTkimage = document.getElementById("txtButtonTkimage"); //descart
+        //var txtButtonTkjustify = document.getElementById("txtButtonTkjustify"); //Combo descart
+        //var txtButtonTkpadx = document.getElementById("txtButtonTkpadx"); //descart
+        //var txtButtonTkpady = document.getElementById("txtButtonTkpady"); //Descart
+        //var txtButtonTkrelief = document.getElementById("txtButtonTkrelief"); //Combo Descart
+        var txtButtonTkstate = document.getElementById("txtButtonTkstate"); 
+        //var txtButtonTktakefocus = document.getElementById("txtButtonTktakefocus"); //Descart
         var txtButtonTktext = document.getElementById("txtButtonTktext");
-        var txtButtonTktextvariable = document.getElementById("txtButtonTktextvariable");
-        var txtButtonTkunderline = document.getElementById("txtButtonTkunderline");
+        //var txtButtonTktextvariable = document.getElementById("txtButtonTktextvariable"); //Descart
+        //var txtButtonTkunderline = document.getElementById("txtButtonTkunderline"); //descart
         var txtButtonTkwidth = document.getElementById("txtButtonTkwidth");
-        var txtButtonTkwraplength = document.getElementById("txtButtonTkwraplength");
+        //var txtButtonTkwraplength = document.getElementById("txtButtonTkwraplength"); //Descart
 
         if (txtXbuttonTK.value != null) {
 
@@ -523,17 +526,17 @@ function applyChanges() {
 
         }
 
-        if (txtABGbuttonTk.value != null ) { //hacer que esto se guarde en otro elemento, el background remplaza su valor por defecto
+        //if (txtABGbuttonTk.value != null ) { //hacer que esto se guarde en otro elemento, el background remplaza su valor por defecto
 
-            document.getElementById("b" + txtIDbutton.value).style.backgroundColor = txtABGbuttonTk.value;
+        //    document.getElementById("b" + txtIDbutton.value).style.backgroundColor = txtABGbuttonTk.value;
 
-        }
+        //}
 
-        if (txtAFGbuttonTk.value != null) {
+        //if (txtAFGbuttonTk.value != null) {
 
-            document.getElementById("xb" + initialid).style.color = txtAFGbuttonTk.value;
+        //    document.getElementById("xb" + initialid).style.color = txtAFGbuttonTk.value;
 
-        } 
+        //} 
 
         if (txtanchorbuttonTk.value != "none") {
 
@@ -551,47 +554,47 @@ function applyChanges() {
 
             if (txtanchorbuttonTk.value == "tk.N") {
 
-                document.getElementById("xb" + initialid).style.position = "absolute";
-                document.getElementById("xb" + initialid).style.top = "0px";
-                document.getElementById("xb" + initialid).style.left = "50%";
-                document.getElementById("xb" + initialid).style.transform = "translateX(-50%)";
+                document.getElementById("xb" + txtIDbutton.value).style.position = "absolute";
+                document.getElementById("xb" + txtIDbutton.value).style.top = "0px";
+                document.getElementById("xb" + txtIDbutton.value).style.left = "50%";
+                document.getElementById("xb" + txtIDbutton.value).style.transform = "translateX(-50%)";
                 
             }
 
             if (txtanchorbuttonTk.value == "tx.S") {
-                document.getElementById("xb" + initialid).style.position = "absolute";
-                document.getElementById("xb" + initialid).style.bottom = "0px";
-                document.getElementById("xb" + initialid).style.left = "50%";
-                document.getElementById("xb" + initialid).style.transform = "translateX(-50%)";
+                document.getElementById("xb" + txtIDbutton.value).style.position = "absolute";
+                document.getElementById("xb" + txtIDbutton.value).style.bottom = "0px";
+                document.getElementById("xb" + txtIDbutton.value).style.left = "50%";
+                document.getElementById("xb" + txtIDbutton.value).style.transform = "translateX(-50%)";
             }
 
             if (txtanchorbuttonTk.value == "tx.E") {
-                document.getElementById("xb" + initialid).style.position = "absolute";
-                document.getElementById("xb" + initialid).style.top = "50%";
-                document.getElementById("xb" + initialid).style.right = "0%";
-                document.getElementById("xb" + initialid).style.transform = "translateY(-50%)";
-                document.getElementById("xb" + initialid).style.textAlign = "right";
+                document.getElementById("xb" + txtIDbutton.value).style.position = "absolute";
+                document.getElementById("xb" + txtIDbutton.value).style.top = "50%";
+                document.getElementById("xb" + txtIDbutton.value).style.right = "0%";
+                document.getElementById("xb" + txtIDbutton.value).style.transform = "translateY(-50%)";
+                document.getElementById("xb" + txtIDbutton.value).style.textAlign = "right";
             }
 
             if (txtanchorbuttonTk.value == "tx.W") {
-                document.getElementById("xb" + initialid).style.position = "absolute";
-                document.getElementById("xb" + initialid).style.top = "50%";
-                document.getElementById("xb" + initialid).style.left = "0%";
-                document.getElementById("xb" + initialid).style.transform = "translateY(-50%)";
-                document.getElementById("xb" + initialid).style.textAlign = "left";
+                document.getElementById("xb" + txtIDbutton.value).style.position = "absolute";
+                document.getElementById("xb" + txtIDbutton.value).style.top = "50%";
+                document.getElementById("xb" + txtIDbutton.value).style.left = "0%";
+                document.getElementById("xb" + txtIDbutton.value).style.transform = "translateY(-50%)";
+                document.getElementById("xb" + txtIDbutton.value).style.textAlign = "left";
             }
 
             if (txtanchorbuttonTk.value == "tx.NE") {
-                document.getElementById("xb" + initialid).style.position = "absolute";
-                document.getElementById("xb" + initialid).style.top = "0%";
-                document.getElementById("xb" + initialid).style.right = "0%";
+                document.getElementById("xb" + txtIDbutton.value).style.position = "absolute";
+                document.getElementById("xb" + txtIDbutton.value).style.top = "0%";
+                document.getElementById("xb" + txtIDbutton.value).style.right = "0%";
                 
             }
 
             if (txtanchorbuttonTk.value == "tx.NW") {
-                document.getElementById("xb" + initialid).style.position = "absolute";
-                document.getElementById("xb" + initialid).style.top = "0%";
-                document.getElementById("xb" + initialid).style.left = "0%";
+                document.getElementById("xb" + txtIDbutton.value).style.position = "absolute";
+                document.getElementById("xb" + txtIDbutton.value).style.top = "0%";
+                document.getElementById("xb" + txtIDbutton.value).style.left = "0%";
                 
             }
             if (txtanchorbuttonTk.value == "tx.SE") {
@@ -601,9 +604,9 @@ function applyChanges() {
             }
 
             if (txtanchorbuttonTk.value == "tx.SW") {
-                document.getElementById("xb" + initialid).style.position = "absolute";
-                document.getElementById("xb" + initialid).style.bottom = "0%";
-                document.getElementById("xb" + initialid).style.left = "0%";
+                document.getElementById("xb" + txtIDbutton.value).style.position = "absolute";
+                document.getElementById("xb" + txtIDbutton.value).style.bottom = "0%";
+                document.getElementById("xb" + txtIDbutton.value).style.left = "0%";
             }
 
         }
@@ -635,7 +638,7 @@ function applyChanges() {
 
         }
 
-        if (txtBorderWidthbuttonTK.value != null) {
+        if (txtBorderWidthbuttonTK.value != null && txtBorderWidthbuttonTK.value != "") {
 
             document.getElementById("b" + txtIDbutton.value).style.borderWidth = txtBorderWidthbuttonTK.value + "px";
 
@@ -843,38 +846,38 @@ function applyChanges() {
 
         }
 
-        if (comboDefaultbtn.value != "none") { //boton por defecto --------------------------------------------
+        //if (comboDefaultbtn.value != "none") { //boton por defecto --------------------------------------------
 
-            //<select id="comboDefaultbtn" class="w-100 txtcajas">
-            //    <option value="none"></option>
-            //    <option value="normal">normal</option>
-            //    <option value="active">active</option>
-            //</select>
-
-
-            if (comboDefaultbtn.value == "normal") {
-
-                document.getElementById("b" + txtIDbutton.value).classList.add("default_normal"); //tkinter.NORMAL
-                document.getElementById("b" + txtIDbutton.value).classList.remove("default_active"); //tkinter.ACTIVE
-
-            }
-
-            if (comboDefaultbtn.value == "active") {
-
-                document.getElementById("b" + txtIDbutton.value).classList.remove("default_normal");
-                document.getElementById("b" + txtIDbutton.value).classList.add("default_active");
-
-            } 
+        //    //<select id="comboDefaultbtn" class="w-100 txtcajas">
+        //    //    <option value="none"></option>
+        //    //    <option value="normal">normal</option>
+        //    //    <option value="active">active</option>
+        //    //</select>
 
 
+        //    if (comboDefaultbtn.value == "normal") {
 
-        }
+        //        document.getElementById("b" + txtIDbutton.value).classList.add("default_normal"); //tkinter.NORMAL
+        //        document.getElementById("b" + txtIDbutton.value).classList.remove("default_active"); //tkinter.ACTIVE
 
-        if (comboDisableForegroundbtn.value != "none") {
+        //    }
 
-            //falta crear elemento que almacene este estado, es un color
+        //    if (comboDefaultbtn.value == "active") {
 
-        }
+        //        document.getElementById("b" + txtIDbutton.value).classList.remove("default_normal");
+        //        document.getElementById("b" + txtIDbutton.value).classList.add("default_active");
+
+        //    } 
+
+
+
+        //}
+
+        //if (comboDisableForegroundbtn.value != "none") {
+
+        //    //falta crear elemento que almacene este estado, es un color
+
+        //}
 
         if (comboFontBtn.value != "none") {
 
@@ -891,83 +894,543 @@ function applyChanges() {
 
             if (comboFontBtn.value == "Arial") {
 
-                document.getElementById("xb" + initialid).style.fontFamily = "Arial";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Arial";
 
             }
             if (comboFontBtn.value == "Helvetica") {
 
-                document.getElementById("xb" + initialid).style.fontFamily = "Arial";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Arial";
 
             }
             if (comboFontBtn.value == "Times New Roman") {
 
-                document.getElementById("xb" + initialid).style.fontFamily = "\"Times New Roman\"";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "\"Times New Roman\"";
 
             }
             if (comboFontBtn.value == "Courier New") {
 
-                document.getElementById("xb" + initialid).style.fontFamily = "\"Courier New\"";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "\"Courier New\"";
 
             }
             if (comboFontBtn.value == "Verdana") {
 
-                document.getElementById("xb" + initialid).style.fontFamily = "Arial";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Arial";
 
             }
             if (comboFontBtn.value == "Georgia") {
 
-                document.getElementById("xb" + initialid).style.fontFamily = "Arial";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "Arial";
 
             }
             if (comboFontBtn.value == "Comic Sans MS") {
 
-                document.getElementById("xb" + initialid).style.fontFamily = "\"Comic Sans MS\"";
+                document.getElementById("xb" + txtIDbutton.value).style.fontFamily = "\"Comic Sans MS\"";
 
             }
 
 
         }
 
-        if (txtButtonTkforeground.value != null) {
+        if (txtButtonTkforeground.value != null && txtButtonTkforeground.value != "") {
 
-            document.getElementById("xb" + initialid).style.color = txtButtonTkforeground.value;
+            document.getElementById("xb" + txtIDbutton.value).style.color = txtButtonTkforeground.value;
 
         }
 
-        if (txtButtonTkheight.value != null) {
+        if (txtButtonTkheight.value != null && txtButtonTkheight.value != "") {
 
             document.getElementById("b" + txtIDbutton.value).style.height = txtButtonTkheight.value + "px";
 
         }
 
-        if (txtButtonTkwidth.value != null) {
+        if (txtButtonTkwidth.value != null && txtButtonTkwidth.value != "") {
 
-            document.getElementById("b" + txtIDbutton.value).style.width = txtButtonTkheight.value + "px";
-
-        }
-
-
-        if (txtButtonTkhighlightbackground.value != null) {
-
-            //falta crear elemento que almacene este valor
-
-        }
-
-        if (txtButtonTkhighlightcolor.value != null) {
-
-            //falta crear elemento que almacene este valor
-
-        }
-
-        if (txtButtonTktext.value != null) {
-
-            document.getElementById("xb" + initialid).textContent = txtButtonTktext.value;
+            document.getElementById("b" + txtIDbutton.value).style.width = txtButtonTkwidth.value + "px";
 
         }
 
 
+        //if (txtButtonTkhighlightbackground.value != null) {
+
+        //    //falta crear elemento que almacene este valor
+
+        //}
+
+        //if (txtButtonTkhighlightcolor.value != null) {
+
+        //    //falta crear elemento que almacene este valor
+
+        //}
+
+        if (txtButtonTktext.value != null && txtButtonTktext.value != "") {
+
+            document.getElementById("xb" + txtIDbutton.value).textContent = txtButtonTktext.value;
+
+        }
+
+        if (txtButtonTkstate.value != null && txtButtonTkstate.value != "") {
+
+
+
+        } 
 
     } //Fin verificacion de boton
+
+    if (selectedType == "l" || selectedType.slice(1) == "l") { //Comienzo verificación label
+
+        var txtLabelId = document.getElementById("txtLabelId");
+        var txtLabelTKxz = document.getElementById("txtLabelTKxz");
+        var txtLabelTKyz = document.getElementById("txtLabelTKyz");
+        var txtLabelTKanchor = document.getElementById("txtLabelTKanchor"); //combo
+        var txtLabelTKbg = document.getElementById("txtLabelTKbg");
+        var txtLabelTKcursor = document.getElementById("txtLabelTKcursor"); //Combo
+        var txtLabelTKfont = document.getElementById("txtLabelTKfont"); //Combo
+        var txtLabelTKfg = document.getElementById("txtLabelTKfg");
+        var txtLabelTKheight = document.getElementById("txtLabelTKheight");
+        var txtLabelTKtext = document.getElementById("txtLabelTKtext");
+        var txtLabelTKwidth = document.getElementById("txtLabelTKwidth");
+
+        if (txtLabelTKxz.value != null && txtLabelTKxz.value != "") {
+
+            document.getElementById("l" + txtLabelId.value).style.left = txtLabelTKxz.value + "px";
+
+        }
+
+        if (txtLabelTKyz.value != null && txtLabelTKyz.value != "") {
+
+            document.getElementById("l" + txtLabelId.value).style.top = txtLabelTKyz.value + "px";
+
+        }
+
+        if (txtLabelTKanchor.value != "none" && txtLabelTKanchor.value != "") {
+
+            if (txtLabelTKanchor.value == "tk.N") {
+
+                document.getElementById("xl" + txtLabelId.value).style.position = "absolute";
+                document.getElementById("xl" + txtLabelId.value).style.top = "0px";
+                document.getElementById("xl" + txtLabelId.value).style.left = "50%";
+                document.getElementById("xl" + txtLabelId.value).style.transform = "translateX(-50%)";
+
+            }
+
+            if (txtLabelTKanchor.value == "tx.S") {
+                document.getElementById("xl" + txtLabelId.value).style.position = "absolute";
+                document.getElementById("xl" + txtLabelId.value).style.bottom = "0px";
+                document.getElementById("xl" + txtLabelId.value).style.left = "50%";
+                document.getElementById("xl" + txtLabelId.value).style.transform = "translateX(-50%)";
+            }
+
+            if (txtLabelTKanchor.value == "tx.E") {
+                document.getElementById("xl" + txtLabelId.value).style.position = "absolute";
+                document.getElementById("xl" + txtLabelId.value).style.top = "50%";
+                document.getElementById("xl" + txtLabelId.value).style.right = "0%";
+                document.getElementById("xl" + txtLabelId.value).style.transform = "translateY(-50%)";
+                document.getElementById("xl" + txtLabelId.value).style.textAlign = "right";
+            }
+
+            if (txtLabelTKanchor.value == "tx.W") {
+                document.getElementById("xl" + txtLabelId.value).style.position = "absolute";
+                document.getElementById("xl" + txtLabelId.value).style.top = "50%";
+                document.getElementById("xl" + txtLabelId.value).style.left = "0%";
+                document.getElementById("xl" + txtLabelId.value).style.transform = "translateY(-50%)";
+                document.getElementById("xl" + txtLabelId.value).style.textAlign = "left";
+            }
+
+            if (txtLabelTKanchor.value == "tx.NE") {
+                document.getElementById("xl" + txtLabelId.value).style.position = "absolute";
+                document.getElementById("xl" + txtLabelId.value).style.top = "0%";
+                document.getElementById("xl" + txtLabelId.value).style.right = "0%";
+
+            }
+
+            if (txtLabelTKanchor.value == "tx.NW") {
+                document.getElementById("xl" + txtLabelId.value).style.position = "absolute";
+                document.getElementById("xl" + txtLabelId.value).style.top = "0%";
+                document.getElementById("xl" + txtLabelId.value).style.left = "0%";
+
+            }
+            if (txtLabelTKanchor.value == "tx.SE") {
+                document.getElementById("xl" + txtLabelId.value).style.position = "absolute";
+                document.getElementById("xl" + txtLabelId.value).style.bottom = "0%";
+                document.getElementById("xl" + txtLabelId.value).style.right = "0%";
+            }
+
+            if (txtLabelTKanchor.value == "tx.SW") {
+                document.getElementById("xl" + txtLabelId.value).style.position = "absolute";
+                document.getElementById("xl" + txtLabelId.value).style.bottom = "0%";
+                document.getElementById("xl" + txtLabelId.value).style.left = "0%";
+            }
+
+        }
+
+        if (txtLabelTKbg.value != null && txtLabelTKbg.value != "") {
+
+            document.getElementById("l" + txtLabelId.value).style.backgroundColor = txtLabelTKbg.value;
+
+        }
+
+        if (txtLabelTKcursor.value != "none" && txtLabelTKcursor.value != "") {
+
+            if (txtLabelTKcursor.value == "arrow") {
+
+                document.getElementById("l" + txtLabelId.value).classList.add("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("l" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "hand2") {
+
+                document.getElementById("l" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.add("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("l" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "watch") {
+
+                document.getElementById("l" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.add("watch");
+                document.getElementById("l" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "crosshair") {
+
+                document.getElementById("l" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("l" + txtLabelId.value).classList.add("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "ibean") {
+
+                document.getElementById("l" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("l" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.add("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "top_left_arrow") {
+
+                document.getElementById("l" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("l" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.add("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "top_right_arrow") {
+
+                document.getElementById("l" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("l" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.add("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "bottom_left_arrow") {
+
+                document.getElementById("l" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("l" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.add("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "bottom_right_arrow") {
+
+                document.getElementById("l" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("l" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.add("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "size_ns") {
+
+                document.getElementById("l" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("l" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("l" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("l" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("l" + txtLabelId.value).classList.add("size_ns");
+                document.getElementById("l" + txtLabelId.value).classList.remove("size_we");
+
+            }
+
+            if (txtLabelTKcursor.value == "size_we") {
+
+                document.getElementById("b" + txtLabelId.value).classList.remove("arrow");
+                document.getElementById("b" + txtLabelId.value).classList.remove("hand2");
+                document.getElementById("b" + txtLabelId.value).classList.remove("watch");
+                document.getElementById("b" + txtLabelId.value).classList.remove("crosshair");
+                document.getElementById("b" + txtLabelId.value).classList.remove("ibean");
+                document.getElementById("b" + txtLabelId.value).classList.remove("top_left_arrow");
+                document.getElementById("b" + txtLabelId.value).classList.remove("top_right_arrow");
+                document.getElementById("b" + txtLabelId.value).classList.remove("bottom_left_arrow");
+                document.getElementById("b" + txtLabelId.value).classList.remove("bottom_right_arrow");
+                document.getElementById("b" + txtLabelId.value).classList.remove("size_ns");
+                document.getElementById("b" + txtLabelId.value).classList.add("size_we");
+
+            }
+
+
+
+        }
+
+        if (txtLabelTKfont.value != "none" && txtLabelTKfont.value != "") {
+
+            if (txtLabelTKfont.value == "Arial") {
+
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Arial";
+
+            }
+            if (txtLabelTKfont.value == "Helvetica") {
+
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Arial";
+
+            }
+            if (txtLabelTKfont.value == "Times New Roman") {
+
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "\"Times New Roman\"";
+
+            }
+            if (txtLabelTKfont.value == "Courier New") {
+
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "\"Courier New\"";
+
+            }
+            if (txtLabelTKfont.value == "Verdana") {
+
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Arial";
+
+            }
+            if (txtLabelTKfont.value == "Georgia") {
+
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "Arial";
+
+            }
+            if (txtLabelTKfont.value == "Comic Sans MS") {
+
+                document.getElementById("xl" + txtLabelId.value).style.fontFamily = "\"Comic Sans MS\"";
+            }
+        }
+
+        if (txtLabelTKfg.value != null && txtLabelTKfg.value != "") {
+
+            document.getElementById("xl" + txtLabelId.value).style.color = txtLabelTKfg.value;
+
+        }
+
+        if (txtLabelTKheight.value != null && txtLabelTKheight.value != "") {
+
+            document.getElementById("l" + txtLabelId.value).style.height = txtLabelTKheight.value;
+
+        }
+
+        if (txtLabelTKtext.value != null && txtLabelTKtext.value != "") {
+
+            document.getElementById("xl" + txtLabelId.value).textContent = txtLabelTKtext.value;
+
+        }
+
+        if (txtLabelTKwidth.value != null && txtLabelTKwidth.value != "") {
+
+            document.getElementById("l" + txtLabelId.value).style.width = txtLabelTKwidth.value;
+
+        }        
+        
+    }//Fin verificacion label
+
+    if (selectedType == "x" || selectedType.slice(1) == "x") { //Verificación de textkbox
+
+
+
+        var txtTextboxTKidTextbox = document.getElementById("txtTextboxTKidTextbox");
+        var txtTextboxTKX = document.getElementById("txtTextboxTKX");
+        var txtTextboxTKY = document.getElementById("txtTextboxTKY");
+
+        var txtTextboxTKText = document.getElementById("txtTextboxTKText");
+        var txtTextboxTKWidth = document.getElementById("txtTextboxTKWidth");
+        var txtTextboxTKHeight = document.getElementById("txtTextboxTKHeight");
+        var txtTextboxTKMaxLength = document.getElementById("txtTextboxTKMaxLength");
+        var txtTextboxTKMultiline = document.getElementById("txtTextboxTKMultiline");
+        var txtTextboxTKReadOnly = document.getElementById("txtTextboxTKReadOnly");
+        var txtTextboxTKScrollBars = document.getElementById("txtTextboxTKScrollBars");
+
+
+        if (txtTextboxTKX.value != null && txtTextboxTKX.value != "") {
+
+            document.getElementById("x" + txtTextboxTKidTextbox.value).style.left = txtTextboxTKX.value + "px";
+
+        }
+        if (txtTextboxTKY.value != null && txtTextboxTKY.value != "") {
+
+            document.getElementById("x" + txtTextboxTKidTextbox.value).style.top = txtTextboxTKY.value + "px";
+
+        }
+
+        if (txtTextboxTKText.value != null && txtTextboxTKText.value != "") {
+
+            document.getElementById("px" + txtTextboxTKidTextbox.value).textContent = txtTextboxTKText.value;
+
+        }
+        if (txtTextboxTKWidth.value != null && txtTextboxTKWidth.value != "") {
+
+            document.getElementById("x" + txtTextboxTKidTextbox.value).style.width = txtTextboxTKWidth.value + "px";
+
+        }
+        if (txtTextboxTKHeight.value != null && txtTextboxTKHeight.value != "") {
+
+            document.getElementById("x" + txtTextboxTKidTextbox.value).style.height = txtTextboxTKHeight.value + "px";
+
+        }
+        if (txtTextboxTKMaxLength.value != null && txtTextboxTKMaxLength.value != "") {
+
+
+
+        }
+        if (txtTextboxTKMultiline.value != null && txtTextboxTKMultiline.value != "") {
+
+            //falta
+
+        }
+        if (txtTextboxTKReadOnly.value != null && txtTextboxTKReadOnly.value != "") {
+
+            //falta
+
+        }
+        if (txtTextboxTKScrollBars.value != null && txtTextboxTKScrollBars.value != "") {
+
+            //falta
+
+        }
+        
+    }//Fin verificacion textbox
+
+    if (selectedType == "c" || selectedType.slice(1) == "c") { //Comienzo verificacion checkbox
+
+        var txtCheckboxTKidCheckbox = document.getElementById("txtCheckboxTKidCheckbox");
+        var txtCheckboxTKx = document.getElementById("txtCheckboxTKx");
+        var txtCheckboxTKy = document.getElementById("txtCheckboxTKy");
+        var txtCheckboxTKChecked = document.getElementById("txtCheckboxTKChecked");
+        var txtCheckboxTKText = document.getElementById("txtCheckboxTKText");
+        var txtCheckboxTKState = document.getElementById("txtCheckboxTKState");           
+
+        if (txtCheckboxTKx.value != null && txtCheckboxTKx.value != "") {
+
+            document.getElementById("c" + txtCheckboxTKidCheckbox.value).style.left = txtCheckboxTKx.value + "px";
+
+        }
+        if (txtCheckboxTKy.value != null && txtCheckboxTKy.value != "") {
+
+            document.getElementById("c" + txtCheckboxTKidCheckbox.value).style.top = txtCheckboxTKy.value + "px";
+
+        }
+        if (txtCheckboxTKChecked.value != "none" && txtCheckboxTKChecked.value != "") {
+
+            if (txtCheckboxTKChecked.value == "true") {
+
+                document.getElementById("sc" + txtCheckboxTKidCheckbox.value).classList.remove("checkindicatorInactive");
+                document.getElementById("sc" + txtCheckboxTKidCheckbox.value).classList.add("checkindicatorActive");
+
+            } else {
+                document.getElementById("sc" + txtCheckboxTKidCheckbox.value).classList.remove("checkindicatorActive");
+                document.getElementById("sc" + txtCheckboxTKidCheckbox.value).classList.add("checkindicatorInactive");               
+            }
+
+            
+
+
+        }
+        if (txtCheckboxTKText.value != null && txtCheckboxTKText.value != "") {
+
+            document.getElementById("tc" + txtCheckboxTKidCheckbox.value).textContent = txtCheckboxTKText.value;
+
+        }
+        if (txtCheckboxTKState.value != null && txtCheckboxTKState.value != "") {
+
+        }
+        
+
+
+
+
+    }//Fin verificación checkbox
+
 
 }
 

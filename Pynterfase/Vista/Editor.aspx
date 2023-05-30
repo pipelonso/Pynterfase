@@ -157,10 +157,10 @@
                         <input type="text" id="txtXButtonTK" name="txtXbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Y</p>
                         <input type="text" id="txtYbuttonTk" name="txtYbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Activebackground</p>
+                        <%--<p>Activebackground</p>
                         <input type="text" id="txtABGbuttonTk" name="txtABGbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Activeforeground</p>
-                        <input type="text" id="txtAFGbuttonTk" name="txtAFGbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtAFGbuttonTk" name="txtAFGbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>Anchor</p>
                         <select id="txtanchorbuttonTk" class="txtcajas w-100">
                             <option value="none"></option>
@@ -218,13 +218,13 @@
                             <option value="size_ns">Flecha de cambio de tamaño vertical</option>
                             <option value="size_we">Flecha de cambio de tamaño horizontal</option>
                         </select>
-                        <p>Default</p>
+                        <%--<p>Default</p>
                         <select id="comboDefaultbtn" class="w-100 txtcajas">
                             <option value="none"></option>
                             <option value="normal">normal</option>
                             <option value="active">active</option>
-                        </select>
-                        <p>Disabledforeground</p>
+                        </select>--%>
+                        <%--<p>Disabledforeground</p>
                         <select id="comboDisableForegroundbtn" class="txtcajas w-100">
                             <option value="none"></option>
                             <option value="red">red</option>
@@ -233,7 +233,7 @@
                             <option value="gray">gray</option>
                             <option value="purple">purple</option>
                             <option value="green">green</option>
-                        </select>
+                        </select>--%>
                         <p>Font</p>
                         <select id="comboFontBtn" class="txtcajas w-100">
                             <option value="none"></option>
@@ -249,26 +249,26 @@
                         <input type="text" id="txtButtonTkforeground" name="foreground" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Height:</p>
                         <input type="text" id="txtButtonTkheight" name="height" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Highlight Background:</p>
-                        <input type="text" id="txtButtonTkhighlightbackground" name="highlightbackground" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Highlight Color:</p>
-                        <input type="text" id="txtButtonTkhighlightcolor" name="highlightcolor" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Highlight Thickness:</p>
-                        <input type="text" id="txtButtonTkhighlightthickness" name="highlightthickness" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Image:</p>
-                        <input type="text" id="txtButtonTkimage" name="image" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Justify:</p>
+                        <%--<p>Highlight Background:</p>
+                        <input type="text" id="txtButtonTkhighlightbackground" name="highlightbackground" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <%--<p>Highlight Color:</p>
+                        <input type="text" id="txtButtonTkhighlightcolor" name="highlightcolor" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <%--<p>Highlight Thickness:</p>
+                        <input type="text" id="txtButtonTkhighlightthickness" name="highlightthickness" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <%--<p>Image:</p>
+                        <input type="text" id="txtButtonTkimage" name="image" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <%--<p>Justify:</p>
                         <select id="txtButtonTkjustify" name="justify" class="w-100 txtcajas">
                             <option value="none"></option>
                             <option value="left">left</option>
                             <option value="center">center</option>
                             <option value="right">right</option>
-                        </select>
-                        <p>Padx:</p>
-                        <input type="text" id="txtButtonTkpadx" name="padx" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Pady:</p>
-                        <input type="text" id="txtButtonTkpady" name="pady" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Relief:</p>
+                        </select>--%>
+                        <%--<p>Padx:</p>
+                        <input type="text" id="txtButtonTkpadx" name="padx" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <%--<p>Pady:</p>
+                        <input type="text" id="txtButtonTkpady" name="pady" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <%--<p>Relief:</p>
                         <select id="txtButtonTkrelief" name="relief" class="w-100 txtcajas">
                             <option value="none"></option>
                             <option value="flat">flat</option>
@@ -276,21 +276,27 @@
                             <option value="sunken">sunken</option>
                             <option value="groove">groove</option>
                             <option value="ridge">ridge</option>
-                        </select>
+                        </select>--%>
                         <p>State:</p>
-                        <input type="text" id="txtButtonTkstate" name="state" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Take Focus:</p>
-                        <input type="text" id="txtButtonTktakefocus" name="takefocus" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <%--<input type="text" id="txtButtonTkstate" name="state" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <select id="txtButtonTkstate" class="w-100 txtcajas">
+                            <option value="none"></option>
+                            <option value="tk.NORMAL">tk.NORMAL</option>
+                            <option value="tk.ACTIVE">tk.ACTIVE</option>
+                            <option value="tk.DISABLE">tk.DISABLE</option>
+                        </select>
+                        <%--<p>Take Focus:</p>
+                        <input type="text" id="txtButtonTktakefocus" name="takefocus" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>Text:</p>
                         <input type="text" id="txtButtonTktext" name="text" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Text Variable:</p>
+                        <%--<p>Text Variable:</p>
                         <input type="text" id="txtButtonTktextvariable" name="textvariable" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Underline:</p>
-                        <input type="text" id="txtButtonTkunderline" name="underline" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtButtonTkunderline" name="underline" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>Width:</p>
                         <input type="text" id="txtButtonTkwidth" name="width" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>Wrap Length:</p>
-                        <input type="text" id="txtButtonTkwraplength" name="wraplength" class="w-100 txtcajas my-2" onkeydown="return handleKeyDown(event);" />
+                        <%--<p>Wrap Length:</p>
+                        <input type="text" id="txtButtonTkwraplength" name="wraplength" class="w-100 txtcajas my-2" onkeydown="return handleKeyDown(event);" />--%>
                     </div>
 
                     <div id="labelPropPanel" class="container-fluid text-light">
@@ -306,61 +312,95 @@
                         <p>yz</p>
                         <input type="text" id="txtLabelTKyz" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>anchor</p>
-                        <input type="text" id="txtLabelTKanchor" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <select id="txtLabelTKanchor" class="w-100 txtcajas">
+                            <option value="none"></option>
+                            <option value="tk.N">tk.N</option>
+                            <option value="tk.S">tk.S</option>
+                            <option value="tk.E">tk.E</option>
+                            <option value="tk.W">tk.W</option>
+                            <option value="tk.NE">tk.NE</option>
+                            <option value="tk.NW">tk.NW</option>
+                            <option value="tk.SE">tk.SE</option>
+                            <option value="tk.SW">tk.SW</option> 
+                        </select>
+                        <%--<input type="text" id="txtLabelTKanchor" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>bg</p>
                         <input type="text" id="txtLabelTKbg"  class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>cursor</p>
                         <select id="txtLabelTKcursor" class="w-100 txtcajas" >
-                            <option value="valor1">valor1</option>
-                            <option value="valor2">valor2</option>
-                            <option value="valor3">valor3</option>
-
+                            <option value="none"></option>
+                            <option value="arrow">Flecha estándar</option>
+                            <option value="hand2">Mano indicando que se puede hacer clic</option>
+                            <option value="watch">Reloj indicando que la operación está en progreso</option>
+                            <option value="crosshair">Cruz</option>
+                            <option value="ibeam">Cursor en forma de "I"</option>
+                            <option value="top_left_arrow">Flecha apuntando hacia la esquina superior izquierda</option>
+                            <option value="top_right_arrow">Flecha apuntando hacia la esquina superior derecha</option>
+                            <option value="bottom_left_arrow">Flecha apuntando hacia la esquina inferior izquierda</option>
+                            <option value="bottom_right_arrow">Flecha apuntando hacia la esquina inferior derecha</option>
+                            <option value="size_ns">Flecha de cambio de tamaño vertical</option>
+                            <option value="size_we">Flecha de cambio de tamaño horizontal</option>
                         </select>
                         <p>font</p>
-                        <input type="text" id="txtLabelTKfont" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <select id="txtLabelTKfont" class="w-100 txtcajas"> 
+                            <option value="none"></option>
+                            <option value="Arial">Arial</option>
+                            <option value="Helvetica">Helvetica</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Comic Sans MS">Comic Sans MS</option>
+                        </select>
+                        <%--<input type="text" id="txtLabelTKfont" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>fg</p>
                         <input type="text" id="txtLabelTKfg" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>height</p>
                         <input type="text" id="txtLabelTKheight" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>image</p>
-                        <input type="text" id="txtLabelTKimage" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>justify</p>
-                        <input type="text" id="txtLabelTKjustify" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>padx</p>
+                        <%--<p>image</p>
+                        <input type="text" id="txtLabelTKimage" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <%--<p>justify</p>
+                        <input type="text" id="txtLabelTKjustify" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <%--<p>padx</p>
                         <input type="text" id="txtLabelTKpadx" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>pady</p>
                         <input type="text" id="txtLabelTKpady" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>relief</p>
-                        <select id="txtLabelTKrelief" class="w-100 txtcajas" >
-                            <option value="flat">flat</option>
+                        <select id="txtLabelTKrelief" class="w-100 txtcajas" >--%>
+                         <%--   <option value="flat">flat</option>
                             <option value="sunken">sunken</option>
                             <option value="raised">raised</option>
                             <option value="groove">groove</option>
                             <option value="ridge">ridge</option>
 
-                        </select>
+                        </select>--%>
                         <p>text</p>
                         <input type="text" id="txtLabelTKtext" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>textvariable</p>
-                        <input type="text" id="txtLabelTKtextvarible" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>underline</p>
+                        <%--<p>textvariable</p>
+                        <input type="text" id="txtLabelTKtextvarible" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                       <%-- <p>underline</p>
                         <select id="txtLabelTKunderline" class="w-100 txtcajas" >
                             <option value="0">0</option>
                             <option value="1">1</option>
 
-                        </select>
+                        </select>--%>
                         <p>width</p>
                         <input type="text" id="txtLabelTKwidth" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-                        <p>wraplength</p>
-                        <input type="text" id="txtLabelTKwraplength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                       <%-- <p>wraplength</p>
+                        <input type="text" id="txtLabelTKwraplength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                     </div>
 
                     <div id="textboxPropPanel" class="container-fluid text-light">
 
                         <p style="background-color : darkseagreen" class="text-center w-100">Propiedades de TextBox</p>
 
+                        
                         <p>idTextbox</p>
                         <input type="text" id="txtTextboxTKidTextbox" class="w-100 txtcajas  text-white" disabled="disabled" />
+                        <p>X</p>
+                        <input type="text" id="txtTextboxTKX" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);"/>
+                        <p>y</p>
+                        <input type="text" id="txtTextboxTKY" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);"/>
                         <p>Text</p>
                         <input type="text" id="txtTextboxTKText" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>Width</p>
@@ -379,32 +419,33 @@
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
-                        <p>WordWrap</p>
+                        <%--<p>WordWrap</p>
                         <select id="txtTextboxTKWordWrap" class="w-100 txtcajas" >
                             <option value="true">true</option>
                             <option value="false">false</option>
-                        </select>
-                        <p>AcceptsTab</p>
+                        </select>--%>
+                        <%--<p>AcceptsTab</p>
                         <select id="txtTextboxTKAcceptsTab" class="w-100 txtcajas" >
                             <option value="true">true</option>
                             <option value="false">false</option>
-                        </select>
-                        <p>AcceptsReturn</p>
+                        </select>--%>
+                        <%--<p>AcceptsReturn</p>
                         <select id="txtTextboxTKAcceptsReturn" class="w-100 txtcajas" >
                             <option value="true">true</option>
                             <option value="false">false</option>
-                        </select>
-                        <p>HideSelection</p>
+                        </select>--%>
+                        <%--<p>HideSelection</p>
                         <select id="txtTextboxTKHideSelection" class="w-100 txtcajas" >
                             <option value="true">true</option>
                             <option value="false">false</option>
-                        </select>
-                        <p>SelectionStart</p>
+                        </select>--%>
+                        <%--<p>SelectionStart</p>
                         <input type="text" id="txtTextboxTKSelectionStart" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>SelectionLength</p>
-                        <input type="text" id="txtTextboxTKSelectionLength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtTextboxTKSelectionLength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>ScrollBars</p>
                         <select id="txtTextboxTKScrollBars" class="w-100 txtcajas" >
+                            <option value="none"></option>
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
@@ -422,6 +463,7 @@
                         <input type="text" id="txtCheckboxTKy" class="w-100 txtcajas"  onkeydown="return handleKeyDown(event);" />
                         <p>Checked</p>
                         <select id="txtCheckboxTKChecked" class="w-100 txtcajas" >
+                            <option value="none"></option>
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
@@ -432,7 +474,7 @@
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
-                        <p>OnValue</p>
+                        <%--<p>OnValue</p>
                         <input type="text" id="txtCheckboxTKOnValue" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>OffValue</p>
                         <input type="text" id="txtCheckboxTKOffValue" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
@@ -444,7 +486,7 @@
                         <select id="txtCheckboxTKTristate" class="w-100 txtcajas" >
                             <option value="true">true</option>
                             <option value="false">false</option>
-                        </select>
+                        </select>--%>
                     </div>
 
                     

@@ -16,7 +16,9 @@ namespace Pynterfase
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "setbig", "onstart();", true);
+
             if (!IsPostBack) { 
                 if (Session["usuario"].ToString() != "") {
                 
@@ -55,14 +57,13 @@ namespace Pynterfase
             if (res == 0)
             {
 
-
+                ScriptManager.RegisterStartupScript(this, GetType(), "NotCode", "IncorrectCode();", true);
 
             }
             else {
 
                 Response.Redirect("~/Vista/Proyectos.aspx");
-            
-            
+                        
             }
 
 

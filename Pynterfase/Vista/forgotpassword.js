@@ -7,14 +7,14 @@
 
 function mostrarContCode() {
 
-    document.getElementById("contCode").style.display = "contents"
+    document.getElementById("contCode").style.display = "block"
     document.getElementById("contSendMail").style.opacity = "25%";
 
 }
 
 function mostrarconPass() {
 
-    document.getElementById("contpass").style.display = "contents";
+    document.getElementById("contpass").style.display = "block";
     document.getElementById("contCode").style.opacity = "25%";
 
 }
