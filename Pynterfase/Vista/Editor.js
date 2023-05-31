@@ -1503,7 +1503,8 @@ lienzodivpanel.addEventListener("click", function (event) {
                 txtYbuttonTk.value = parseInt(document.getElementById("b" + id.slice(2)).style.top);
                 var txtanchorbuttonTk = document.getElementById("txtanchorbuttonTk"); //Falta agregar parametro al elemento
                 var txtBGbuttonTK = document.getElementById("txtBGbuttonTK");
-                txtBGbuttonTK.value = document.getElementById("b" + id.slice(2)).style.backgroundColor;
+                console.log("Color de fondo: " + rgbConvertHex(document.getElementById("b" + id.slice(2)).style.backgroundColor.toString()));
+                //txtBGbuttonTK.value = document.getElementById("b" + id.slice(2)).style.backgroundColor;
                 var txtBorderWidthbuttonTK = document.getElementById("txtBorderWidthbuttonTK");
                 txtBorderWidthbuttonTK.value = parseInt(document.getElementById("b" + id.slice(2)).style.borderWidth);
                 var comboFontBtn = document.getElementById("comboFontBtn");
@@ -1556,13 +1557,13 @@ lienzodivpanel.addEventListener("click", function (event) {
                 txtButtonTkforeground.value = document.getElementById("xb" + id.slice(2)).style.color;
 
                 var txtButtonTkheight = document.getElementById("txtButtonTkheight");
-                txtButtonTkheight.value = document.getElementById("b" + id.slice(2)).style.height;
+                txtButtonTkheight.value = parseInt(document.getElementById("b" + id.slice(2)).style.height);
 
                 var txtButtonTktext = document.getElementById("txtButtonTktext");
                 txtButtonTktext.value = document.getElementById("xb" + id.slice(2)).textContent;
 
                 var txtButtonTkwidth = document.getElementById("txtButtonTkwidth");
-                txtButtonTkwidth.value = document.getElementById("b" + id.slice(2)).style.width; //Corregir elementos
+                txtButtonTkwidth.value = parseInt(document.getElementById("b" + id.slice(2)).style.width); //Corregir elementos
 
             } else {
 
@@ -1646,6 +1647,28 @@ lienzodivpanel.addEventListener("click", function (event) {
     }
     
 });
+
+const componentToHex = (c) => {
+    const hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+const rgbToHex = (r, g, b) => {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function rgbConvertHex(colorDivValue) {
+    console.log("color que llega: " + colorDivValue)
+    var colorValues = colorDivValue.match(/\d+/g);
+    //var colorValues = colorDivValue.replace(/[() ]/g, "").split(",");
+    console.log("color en conversion: " + colorValues)
+    var red = parseInt(colorValues[0]);
+    var green = parseInt(colorValues[1]);
+    var blue = parseInt(colorValues[2]);
+
+    return red + green + blue
+
+}
 
 
 

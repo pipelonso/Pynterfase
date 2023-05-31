@@ -180,7 +180,11 @@
                         <hr />
                         <%--<input type="text" id="txtanchorbuttonTk" name="txtanchorbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>Background</p>
-                        <input type="text" id="txtBGbuttonTK" name="txtBGbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <div class="navbar">
+                            <%--<input type="text" id="txtBGbuttonTK" name="txtBGbuttonTK" value="" class="col-10 txtcajas nav-item" onkeydown="return handleKeyDown(event);" />--%>
+                            <input type="color" id="txtBGbuttonTK" value="#0000ff" class="nav-item w-100"/>
+                        </div>
+                        
                         <hr />
                         <p>Bitmap</p>
                         <select id="ComboBitmap" class="txtcajas w-100">
@@ -257,7 +261,11 @@
                         </select>
                         <hr />
                         <p>Foreground</p>
-                        <input type="text" id="txtButtonTkforeground" name="foreground" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <div class="navbar">
+                            <input type="text" id="txtButtonTkforeground" name="foreground" class="col-10 txtcajas nav-item" onkeydown="return handleKeyDown(event);" />
+                            <input type="color" id="chFGButtonTk" value="#0000ff" class="nav-item col-2"/>
+                        </div>
+                        
                         <hr />
                         <p>Height:</p>
                         <input type="text" id="txtButtonTkheight" name="height" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
@@ -525,6 +533,9 @@
 
 
         </div>
+
+        
+        
 
 
         <%--<asp:Button ID="btnTop" runat="server" Text=">>" OnClick="btnTop_Click" />--%>
