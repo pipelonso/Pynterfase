@@ -1503,8 +1503,8 @@ lienzodivpanel.addEventListener("click", function (event) {
                 txtYbuttonTk.value = parseInt(document.getElementById("b" + id.slice(2)).style.top);
                 var txtanchorbuttonTk = document.getElementById("txtanchorbuttonTk"); //Falta agregar parametro al elemento
                 var txtBGbuttonTK = document.getElementById("txtBGbuttonTK");
-                console.log("Color de fondo: " + rgbConvertHex(document.getElementById("b" + id.slice(2)).style.backgroundColor.toString()));
-                //txtBGbuttonTK.value = document.getElementById("b" + id.slice(2)).style.backgroundColor;
+                //console.log("Color de fondo: " + rgbConvertHex(document.getElementById("b" + id.slice(2)).style.backgroundColor.toString()));
+                txtBGbuttonTK.value =  rgbConvertHex(document.getElementById("b" + id.slice(2)).style.backgroundColor.toString());
                 var txtBorderWidthbuttonTK = document.getElementById("txtBorderWidthbuttonTK");
                 txtBorderWidthbuttonTK.value = parseInt(document.getElementById("b" + id.slice(2)).style.borderWidth);
                 var comboFontBtn = document.getElementById("comboFontBtn");
@@ -1554,7 +1554,7 @@ lienzodivpanel.addEventListener("click", function (event) {
                 }
 
                 var txtButtonTkforeground = document.getElementById("txtButtonTkforeground");
-                txtButtonTkforeground.value = document.getElementById("xb" + id.slice(2)).style.color;
+                txtButtonTkforeground.value = rgbConvertHex(document.getElementById("xb" + id.slice(2)).style.color);
 
                 var txtButtonTkheight = document.getElementById("txtButtonTkheight");
                 txtButtonTkheight.value = parseInt(document.getElementById("b" + id.slice(2)).style.height);
@@ -1573,6 +1573,71 @@ lienzodivpanel.addEventListener("click", function (event) {
                 txtXButtonTK.value = parseInt(document.getElementById("b" + parseid).style.left)
                 var txtYbuttonTk = document.getElementById("txtYbuttonTk");
                 txtYbuttonTk.value = parseInt(document.getElementById("b" + parseid).style.left);
+
+                var txtanchorbuttonTk = document.getElementById("txtanchorbuttonTk"); //Falta agregar parametro al elemento
+                var txtBGbuttonTK = document.getElementById("txtBGbuttonTK");
+                //console.log("Color de fondo: " + rgbConvertHex(document.getElementById("b" + id.slice(2)).style.backgroundColor.toString()));
+                txtBGbuttonTK.value = rgbConvertHex(document.getElementById("b" + parseid).style.backgroundColor.toString());
+                var txtBorderWidthbuttonTK = document.getElementById("txtBorderWidthbuttonTK");
+                txtBorderWidthbuttonTK.value = parseInt(document.getElementById("b" + parseid).style.borderWidth);
+                var comboFontBtn = document.getElementById("comboFontBtn");
+                var getStringfont = document.getElementById("xb" + parseid).style.fontFamily;
+                console.log("fontFamily: " + document.getElementById("xb" + parseid).style.fontFamily);
+
+                if (getStringfont == "Arial") {
+
+                    comboFontBtn.value = "Arial";
+
+                }
+
+                if (getStringfont == "Helvetica") {
+
+                    comboFontBtn.value = "Helvetica";
+
+                }
+
+                if (getStringfont == "Times New Roman") { //falla
+
+                    comboFontBtn.value = "Times_New_Roman";
+
+                }
+
+                if (getStringfont == "Courier New") { //falla
+
+                    comboFontBtn.value = "Courier_New";
+
+                }
+
+                if (getStringfont == "Verdana") {
+
+                    comboFontBtn.value = "Verdana";
+
+                }
+
+                if (getStringfont == "Georgia") {
+
+                    comboFontBtn.value = "Georgia";
+
+                }
+
+                if (getStringfont == "Comic Sans MS") { //falla
+
+                    comboFontBtn.value = "Comic_Sans_MS";
+
+                }
+
+                var txtButtonTkforeground = document.getElementById("txtButtonTkforeground");
+                txtButtonTkforeground.value = rgbConvertHex(document.getElementById("xb" + parseid).style.color);
+
+                var txtButtonTkheight = document.getElementById("txtButtonTkheight");
+                txtButtonTkheight.value = parseInt(document.getElementById("b" + parseid).style.height);
+
+                var txtButtonTktext = document.getElementById("txtButtonTktext");
+                txtButtonTktext.value = document.getElementById("xb" + parseid).textContent;
+
+                var txtButtonTkwidth = document.getElementById("txtButtonTkwidth");
+                txtButtonTkwidth.value = parseInt(document.getElementById("b" + parseid).style.width); //Corregir elementos
+
 
             }
 
@@ -1648,7 +1713,7 @@ lienzodivpanel.addEventListener("click", function (event) {
     
 });
 
-const componentToHex = (c) => {
+function componentToHex(c) {
     const hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
 }
@@ -1659,15 +1724,28 @@ const rgbToHex = (r, g, b) => {
 
 function rgbConvertHex(colorDivValue) {
     console.log("color que llega: " + colorDivValue)
-    var colorValues = colorDivValue.match(/\d+/g);
-    //var colorValues = colorDivValue.replace(/[() ]/g, "").split(",");
-    console.log("color en conversion: " + colorValues)
-    var red = parseInt(colorValues[0]);
-    var green = parseInt(colorValues[1]);
-    var blue = parseInt(colorValues[2]);
+    if (colorDivValue != "" && colorDivValue != null) {
 
-    return red + green + blue
+        var colorValues = colorDivValue.match(/\d+/g);
+        //var colorValues = colorDivValue.replace(/[() ]/g, "").split(",");
+        console.log("color en conversion: " + colorValues)
+        var red = parseInt(colorValues[0]);
+        var green = parseInt(colorValues[1]);
+        var blue = parseInt(colorValues[2]);
 
+        /*return red + green + blue*/
+
+        var r = componentToHex(red);
+        var g = componentToHex(green);
+        var b = componentToHex(blue);
+
+        var finalcol = rgbToHex(r, g, b);
+
+        return finalcol;
+    }
+
+    return "#cccccc";
+   
 }
 
 

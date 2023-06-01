@@ -262,8 +262,8 @@
                         <hr />
                         <p>Foreground</p>
                         <div class="navbar">
-                            <input type="text" id="txtButtonTkforeground" name="foreground" class="col-10 txtcajas nav-item" onkeydown="return handleKeyDown(event);" />
-                            <input type="color" id="chFGButtonTk" value="#0000ff" class="nav-item col-2"/>
+                            <%--<input type="text" id="txtButtonTkforeground" name="foreground" class="col-10 txtcajas nav-item" onkeydown="return handleKeyDown(event);" />--%>
+                            <input type="color" id="txtButtonTkforeground" value="#0000ff" class="w-100 nav-item col-2"/>
                         </div>
                         
                         <hr />
