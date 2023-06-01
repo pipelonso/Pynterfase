@@ -73,8 +73,10 @@
     animation-duration: 1s; /* Duración de la animación */
     animation-delay: 0s; /* Retraso antes de comenzar la animación */
     animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
-    transition: width 0.5s ease, height 0.5s ease;
+    transition: top 0.3s ease,left 0.3s ease,width 0.5s ease, height 0.5s ease;
 }
+
+
 
 @keyframes aparecer {
     from {

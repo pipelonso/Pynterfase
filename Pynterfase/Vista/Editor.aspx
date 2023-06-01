@@ -329,12 +329,13 @@
 
                         <p>id</p>
                         <input type="text" name="name" value=""  id="txtLabelId" disabled="disabled" class="txtcajas w-100 text-white" onkeydown="return handleKeyDown(event);" />
-
-
+                        <hr />
                         <p>xz</p>
                         <input type="text" id="txtLabelTKxz" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>yz</p>
                         <input type="text" id="txtLabelTKyz" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>anchor</p>
                         <select id="txtLabelTKanchor" class="w-100 txtcajas">
                             <option value="none"></option>
@@ -347,9 +348,11 @@
                             <option value="tk.SE">tk.SE</option>
                             <option value="tk.SW">tk.SW</option> 
                         </select>
+                        <hr />
                         <%--<input type="text" id="txtLabelTKanchor" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>bg</p>
-                        <input type="text" id="txtLabelTKbg"  class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="color" id="txtLabelTKbg"  class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>cursor</p>
                         <select id="txtLabelTKcursor" class="w-100 txtcajas" >
                             <option value="none"></option>
@@ -365,6 +368,7 @@
                             <option value="size_ns">Flecha de cambio de tamaño vertical</option>
                             <option value="size_we">Flecha de cambio de tamaño horizontal</option>
                         </select>
+                        <hr />
                         <p>font</p>
                         <select id="txtLabelTKfont" class="w-100 txtcajas"> 
                             <option value="none"></option>
@@ -376,11 +380,14 @@
                             <option value="Georgia">Georgia</option>
                             <option value="Comic_Sans_MS">Comic Sans MS</option>
                         </select>
+                        <hr />
                         <%--<input type="text" id="txtLabelTKfont" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>fg</p>
-                        <input type="text" id="txtLabelTKfg" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="color" id="txtLabelTKfg" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>height</p>
                         <input type="text" id="txtLabelTKheight" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <%--<p>image</p>
                         <input type="text" id="txtLabelTKimage" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <%--<p>justify</p>
@@ -400,6 +407,7 @@
                         </select>--%>
                         <p>text</p>
                         <input type="text" id="txtLabelTKtext" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <%--<p>textvariable</p>
                         <input type="text" id="txtLabelTKtextvarible" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                        <%-- <p>underline</p>
@@ -410,6 +418,7 @@
                         </select>--%>
                         <p>width</p>
                         <input type="text" id="txtLabelTKwidth" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                        <%-- <p>wraplength</p>
                         <input type="text" id="txtLabelTKwraplength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                     </div>

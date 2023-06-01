@@ -346,6 +346,8 @@ function AddTKElement() {
         //ptext.style.top = "-55px";
 
         labelTk.style.position = "absolute"; //absolute
+        labelTk.style.left = "1px";
+        labelTk.style.top = "1px";
         divlienzo.appendChild(labelTk);
         
         labelTk.appendChild(pid);
@@ -372,6 +374,9 @@ function AddTKElement() {
         textchage.innerHTML = "---";
 
         var textbox = document.createElement("div");
+        textbox.style.left = "0px"
+        textbox.style.top = "0px"
+        
         
         var divlienzo = document.getElementById("lienzo");
 
@@ -437,14 +442,15 @@ function AddTKElement() {
         textcheck.classList.add("nav-item");
         textcheck.id = "tc" + initialid;
         textcheck.style.fontSize = "15px";
-
-
+        newckeckbox.classList.add("FadeInAnim");
+        newckeckbox.style.left = "0px";
+        newckeckbox.style.top = "0px";
         newckeckbox.appendChild(checkindicator);
         newckeckbox.appendChild(textcheck);
         
 
 
-        newckeckbox.style.width = "100px";
+        //newckeckbox.style.width = "200px";
         divlienzo.appendChild(newckeckbox);
 
 
@@ -1456,10 +1462,10 @@ lienzodivpanel.addEventListener("click", function (event) {
 
         if (id.charAt(1) == "b") { //revisa si es un hijo de boton
 
-            selectedType = id.charAt(1);            
+            selectedType = id.charAt(1);
             console.log("Tipo seleccionado: " + selectedType);
 
-        } 
+        }
 
         if (id.charAt(1) == "l") { //revisa si es un hijo de label
 
@@ -1493,7 +1499,7 @@ lienzodivpanel.addEventListener("click", function (event) {
             checkboxPropPanel.style.display = "none";
             textboxPropPanel.style.display = "none";
 
-            if (id.charAt(1) == "b") {
+            if (id.charAt(1) == "b") { //Verificación primaria de clic en hijo del boton
 
                 var txtidbutton = document.getElementById("txtButtonId");
                 txtidbutton.value = id.slice(2);
@@ -1504,13 +1510,13 @@ lienzodivpanel.addEventListener("click", function (event) {
                 var txtanchorbuttonTk = document.getElementById("txtanchorbuttonTk"); //Falta agregar parametro al elemento
                 var txtBGbuttonTK = document.getElementById("txtBGbuttonTK");
                 //console.log("Color de fondo: " + rgbConvertHex(document.getElementById("b" + id.slice(2)).style.backgroundColor.toString()));
-                txtBGbuttonTK.value =  rgbConvertHex(document.getElementById("b" + id.slice(2)).style.backgroundColor.toString());
+                txtBGbuttonTK.value = rgbConvertHex(document.getElementById("b" + id.slice(2)).style.backgroundColor.toString());
                 var txtBorderWidthbuttonTK = document.getElementById("txtBorderWidthbuttonTK");
                 txtBorderWidthbuttonTK.value = parseInt(document.getElementById("b" + id.slice(2)).style.borderWidth);
                 var comboFontBtn = document.getElementById("comboFontBtn");
                 var getStringfont = document.getElementById("xb" + id.slice(2)).style.fontFamily;
                 console.log("fontFamily: " + document.getElementById("xb" + id.slice(2)).style.fontFamily);
-                
+
                 if (getStringfont == "Arial") {
 
                     comboFontBtn.value = "Arial";
@@ -1565,7 +1571,7 @@ lienzodivpanel.addEventListener("click", function (event) {
                 var txtButtonTkwidth = document.getElementById("txtButtonTkwidth");
                 txtButtonTkwidth.value = parseInt(document.getElementById("b" + id.slice(2)).style.width); //Corregir elementos
 
-            } else {
+            } else { //contraposicion que asegura que este de aqui es un clic al div del boton
 
                 var txtidbutton = document.getElementById("txtButtonId");
                 txtidbutton.value = parseid;
@@ -1651,18 +1657,83 @@ lienzodivpanel.addEventListener("click", function (event) {
             checkboxPropPanel.style.display = "none";
             textboxPropPanel.style.display = "none";
 
-            if (id.charAt(1) == "l") {
+            if (id.charAt(1) == "l") { //Revisa si al que se le dio clic fue al hijo de un label
 
                 var txtLabelId = document.getElementById("txtLabelId");
                 txtLabelId.value = id.slice(2);
-                
 
-            } else {
+
+            } else { //Contraposicion, revisa si se le dio clic al div padre del label
 
                 var txtLabelId = document.getElementById("txtLabelId");
                 txtLabelId.value = parseid;
 
             }
+
+
+            var txtLabelTKxz = document.getElementById("txtLabelTKxz");
+            txtLabelTKxz.value = parseInt(document.getElementById("l" + txtLabelId.value).style.left);
+            var txtLabelTKyz = document.getElementById("txtLabelTKyz");
+            txtLabelTKyz.value = parseInt(document.getElementById("l" + txtLabelId.value).style.top);
+            var txtLabelTKanchor = document.getElementById("txtLabelTKanchor"); //Aun no hace nada
+            var txtLabelTKbg = document.getElementById("txtLabelTKbg");
+            txtLabelTKbg.value = rgbConvertHex(document.getElementById("l" + txtLabelId.value).style.backgroundColor.toString());
+            var txtLabelTKfont = document.getElementById("txtLabelTKfont");
+
+            var getFont = document.getElementById("xl" + txtLabelId.value).style.fontFamily;
+
+            if (getFont == "Arial") {
+
+                txtLabelTKfont.value = "Arial";
+
+            }
+
+            if (getFont == "Helvetica") {
+
+                txtLabelTKfont.value = "Helvetica";
+
+            }
+
+            if (getFont == "Times New Roman") { //falla
+
+                txtLabelTKfont.value = "Times_New_Roman";
+
+            }
+
+            if (getFont == "Courier New") { //falla
+
+                txtLabelTKfont.value = "Courier_New";
+
+            }
+
+            if (getFont == "Verdana") {
+
+                txtLabelTKfont.value = "Verdana";
+
+            }
+
+            if (getFont == "Georgia") {
+
+                txtLabelTKfont.value = "Georgia";
+
+            }
+
+            if (getFont == "Comic Sans MS") { //falla
+
+                txtLabelTKfont.value = "Comic_Sans_MS";
+
+            }
+
+            var txtLabelTKfg = document.getElementById("txtLabelTKfg");
+            txtLabelTKfg.value = rgbConvertHex(document.getElementById("xl" + txtLabelId.value).style.color);
+            var txtLabelTKheight = document.getElementById("txtLabelTKheight");
+            txtLabelTKheight.value = parseInt(document.getElementById("l" + txtLabelId.value).style.height);
+            var txtLabelTKtext = document.getElementById("txtLabelTKtext");
+            txtLabelTKtext.value = document.getElementById("xl" + txtLabelId.value).textContent;
+            var txtLabelTKwidth = document.getElementById("txtLabelTKwidth");
+            txtLabelTKwidth.value = parseInt(document.getElementById("l" + txtLabelId.value).style.width);
+
+
 
         } else if (selectedType == "x" || selectedType.slice(1) == "x") {
 
@@ -1684,8 +1755,18 @@ lienzodivpanel.addEventListener("click", function (event) {
 
             }
 
+            var txtTextboxTKX = document.getElementById("txtTextboxTKX");
+            txtTextboxTKX.value = parseInt(document.getElementById("x" + txtTextboxTKidTextbox.value).style.left);
+            var txtTextboxTKY = document.getElementById("txtTextboxTKY");
+            txtTextboxTKY.value = parseInt(document.getElementById("x" + txtTextboxTKidTextbox.value).style.top);
+            var txtTextboxTKText = document.getElementById("txtTextboxTKText");
+            txtTextboxTKText.value = document.getElementById("px" + txtTextboxTKidTextbox.value).textContent;
+            var txtTextboxTKWidth = document.getElementById("txtTextboxTKWidth");
+            txtTextboxTKWidth.value = parseInt(document.getElementById("x" + txtTextboxTKidTextbox.value).style.width);
+            var txtTextboxTKHeight = document.getElementById("txtTextboxTKHeight");
+            txtTextboxTKHeight.value = parseInt(document.getElementById("x" + txtTextboxTKidTextbox.value).style.height);
 
-
+            //Aqui faltan algunos elementos
 
         } else if (selectedType == "c" || selectedType.slice(1) == "c") {
 
@@ -1706,6 +1787,21 @@ lienzodivpanel.addEventListener("click", function (event) {
                 txtCheckboxTKidCheckbox.value = parseid;
 
             }
+
+            var txtCheckboxTKx = document.getElementById("txtCheckboxTKx");
+            txtCheckboxTKx.value = parseInt(document.getElementById("c" + txtCheckboxTKidCheckbox.value).style.left);
+            var txtCheckboxTKy = document.getElementById("txtCheckboxTKy");
+            txtCheckboxTKy.value = parseInt(document.getElementById("c" + txtCheckboxTKidCheckbox.value).style.top);
+            var txtCheckboxTKChecked = document.getElementById("txtCheckboxTKChecked");
+            if (document.getElementById("c" + txtCheckboxTKidCheckbox.value).className == "checkindicatorActive") {
+
+
+            }//falta checkindicatorInactive
+            var txtCheckboxTKText = document.getElementById("txtCheckboxTKText");
+            txtCheckboxTKText.value = document.getElementById("tc" + txtCheckboxTKidCheckbox.value).textContent;
+            //falta state
+
+
 
         }
 
