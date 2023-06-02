@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 using System.Text.Json;
 using Pynterfase.TkElements;
 using Pynterfase.Entidades;
+using System.Xml.Linq;
 
 
 namespace Pynterfase.Vista
@@ -198,7 +199,16 @@ namespace Pynterfase.Vista
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("~/Vista/Proyectos.aspx");
+            //Response.Redirect("~/Vista/Proyectos.aspx");
+            //HtmlGenericControl divID = (HtmlGenericControl)Page.FindControl("idControl");
+
+            //if (divID != null)
+            //{
+
+            //    string ultimaid = divID.Attributes["ultimaid"];
+
+
+            //}
 
 
         }

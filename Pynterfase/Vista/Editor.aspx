@@ -101,8 +101,10 @@
                 <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
             </div>
             <br />
-            <asp:TextBox ID="txtBGColor" runat="server" placeholder="####" CssClass="txtcajas my-2 mx-3"></asp:TextBox>
-            <input type="button" name="btnShowColorPalete" value="Elegir" class="botones my-2 mx-3" />
+            <p>Color de fondo de la ventana</p>
+            <input type="color" name="name" value="" id="ChBGColor" class="botones my-2 mx-3 w-25"/>
+            <%--<asp:TextBox ID="txtBGColor" runat="server" placeholder="####" CssClass="txtcajas my-2 mx-3"></asp:TextBox>--%>
+            <input type="button" name="btnShowColorPalete" value="Elegir" id="BtnsetBgColor" class="botones my-2 mx-3" onclick="setBGColor();"/>
 
 
 
@@ -128,7 +130,7 @@
                 <p id="lblSelected" class="text-light text-center"> --- </p>
                 <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width: 150px;" onclick="AddTKElement();" />
                 <br />
-                <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2 " style="width: 150px;" />
+                <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2 " style="width: 150px;" onclick="DeleteElement();"/>
                 <br />
                 <input type="button" name="name" value="Aplicar" class="botones mx-2 my-1" style="width:150px;" onclick="applyChanges();" />
 
@@ -430,28 +432,37 @@
                         
                         <p>idTextbox</p>
                         <input type="text" id="txtTextboxTKidTextbox" class="w-100 txtcajas  text-white" disabled="disabled" />
+                        <hr />
                         <p>X</p>
                         <input type="text" id="txtTextboxTKX" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);"/>
+                        <hr />
                         <p>y</p>
                         <input type="text" id="txtTextboxTKY" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);"/>
+                        <hr />
                         <p>Text</p>
                         <input type="text" id="txtTextboxTKText" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>Width</p>
                         <input type="text" id="txtTextboxTKWidth" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>Height</p>
                         <input type="text" id="txtTextboxTKHeight" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>MaxLength</p>
                         <input type="text" id="txtTextboxTKMaxLength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>Multiline</p>
                         <select id="txtTextboxTKMultiline" class="w-100 txtcajas"  >
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
+                        <hr />
                         <p>ReadOnly</p>
                         <select id="txtTextboxTKReadOnly" class="w-100 txtcajas" >
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
+                        <hr />
                         <%--<p>WordWrap</p>
                         <select id="txtTextboxTKWordWrap" class="w-100 txtcajas" >
                             <option value="true">true</option>
@@ -476,12 +487,14 @@
                         <input type="text" id="txtTextboxTKSelectionStart" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>SelectionLength</p>
                         <input type="text" id="txtTextboxTKSelectionLength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
+                        <hr />
                         <p>ScrollBars</p>
                         <select id="txtTextboxTKScrollBars" class="w-100 txtcajas" >
                             <option value="none"></option>
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
+                        <hr />
                     </div>
 
                     <div id="checkboxPropPanel" class="container-fluid text-light">
@@ -490,23 +503,29 @@
 
                         <p>idCheckbox</p>
                         <input type="text" id="txtCheckboxTKidCheckbox" class="w-100 txtcajas text-white" disabled="disabled"/>
+                        <hr />
                         <p>x</p>
                         <input type="text" id="txtCheckboxTKx" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>y</p>
                         <input type="text" id="txtCheckboxTKy" class="w-100 txtcajas"  onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>Checked</p>
                         <select id="txtCheckboxTKChecked" class="w-100 txtcajas" >
                             <option value="none"></option>
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
+                        <hr />
                         <p>Text</p>
                         <input type="text" id="txtCheckboxTKText" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <hr />
                         <p>State</p>
                         <select id="txtCheckboxTKState" class="w-100 txtcajas" >
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
+                        <hr />
                         <%--<p>OnValue</p>
                         <input type="text" id="txtCheckboxTKOnValue" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>OffValue</p>
@@ -552,6 +571,7 @@
         <script src="../Scripts/sweetalert.min.js"></script>
         <script src="Editor.js"></script>
         <script src="alertManager.js"></script>
+        <div id="idControl" ultimaid=""> </div>
     </form>
 </body>
 </html>

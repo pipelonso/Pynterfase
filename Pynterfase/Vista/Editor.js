@@ -21,7 +21,13 @@ function startsall() {
     var checkboxPropPanel = document.getElementById("checkboxPropPanel");
     var btnAddTk = document.getElementById("btnAddTk");
 
+
+
+
     btnAddTk.disabled = true;
+
+    var btnDeleteTk = document.getElementById("btnDeleteTk");
+    btnDeleteTk.disabled = true;
 
     
     propertiesPanel.style.display = "none";
@@ -208,6 +214,9 @@ function setSelectedCheckbox() {
 
 var botontk;
 
+
+
+
 function AddTKElement() {
 
     var panelButtonProp = document.getElementById("buttonPropPanel");
@@ -215,6 +224,9 @@ function AddTKElement() {
     var textboxPropPanel = document.getElementById("textboxPropPanel");
     var checkboxPropPanel = document.getElementById("checkboxPropPanel");
 
+    var btnDeleteTk = document.getElementById("btnDeleteTk");
+    btnDeleteTk.disabled = false;
+    var idControl = document.getElementById("idControl");
 
     if (selectedItem == 1) {
 
@@ -227,7 +239,7 @@ function AddTKElement() {
         textboxPropPanel.style.display = "none";
 
         //Creacion del boton
-        
+                
 
         botontk = document.createElement("div");
         var divlienzo = document.getElementById("lienzo");
@@ -249,7 +261,7 @@ function AddTKElement() {
         initialid += 1;
         botontk.id = "b" + initialid; //La primera letra en el padre significa el tipo de objeto que es
 
-
+        idControl.setAttribute("ultimaid",initialid);
         var txtidbutton = document.getElementById("txtButtonId"); //Aqui esta el valor que se remplaza en el panel de propiedades
 
 
@@ -275,6 +287,7 @@ function AddTKElement() {
         btnText.id = "xb" + initialid;
         btnText.textContent = "Press Me";
         btnText.style.textAlign = "center";
+        btnText.style.color = "rgb(0,0,0)";
 
         ptipo.style.display = "none";
 
@@ -343,6 +356,7 @@ function AddTKElement() {
         ptext.textContent = "---";
         ptext.style.position = "relative";
         ptext.id = "xl" + initialid;
+        ptext.style.color = "rgb(0,0,0)";
         //ptext.style.top = "-55px";
 
         labelTk.style.position = "absolute"; //absolute
@@ -1449,6 +1463,9 @@ lienzodivpanel.addEventListener("click", function (event) {
     var target = event.target;
     if (target.id != "lienzo") {
 
+        var btnDeleteTk = document.getElementById("btnDeleteTk");
+        btnDeleteTk.disabled = false;
+
         var panelButtonProp = document.getElementById("buttonPropPanel");
         var labelPropPanel = document.getElementById("labelPropPanel");
         var textboxPropPanel = document.getElementById("textboxPropPanel");
@@ -1844,5 +1861,60 @@ function rgbConvertHex(colorDivValue) {
    
 }
 
+function setBGColor() {
+
+    var ChBGColor = document.getElementById("ChBGColor");
+    var lienzobg = document.getElementById("lienzo");
+    lienzobg.style.backgroundColor = ChBGColor.value;
 
 
+}
+
+function DeleteElement() {
+
+    var lienzodivgen = document.getElementById("lienzo");
+
+    var btnDeleteTk = document.getElementById("btnDeleteTk");
+    btnDeleteTk.disabled = true;
+
+    if (selectedType == "b" || selectedType.slice(1) == "b") {
+        var txtButtonId = document.getElementById("txtButtonId");
+        var elemento = document.getElementById("b" + txtButtonId.value);
+        
+        if (elemento != null) {
+            console.log(elemento.id);
+            lienzodivgen.removeChild(elemento);
+        }
+               
+    } else if (selectedType == "l" || selectedType.slice(1) == "l") {
+        var txtLabelId = document.getElementById("txtLabelId");
+        var elemento = document.getElementById("l" + txtLabelId.value);
+        
+        if (elemento != null) {
+            console.log(elemento.id);
+            lienzodivgen.removeChild(elemento);
+        }
+
+    } else if (selectedType == "x" || selectedType.slice(1) == "x") {
+        var txtTextboxTKidTextbox = document.getElementById("txtTextboxTKidTextbox");
+        var elemento = document.getElementById("x" + txtTextboxTKidTextbox.value);
+        
+        if (elemento != null) {
+            console.log(elemento.id);
+            lienzodivgen.removeChild(elemento);
+        }
+
+    } else if (selectedType == "c" || selectedType.slice(1) == "c" ) {
+        var txtCheckboxTKidCheckbox = document.getElementById("txtCheckboxTKidCheckbox");
+        var elemento = document.getElementById("c" + txtCheckboxTKidCheckbox.value);
+        
+        if (elemento != null) {
+            console.log(elemento.id);
+            lienzodivgen.removeChild(elemento);
+        }
+
+    }
+
+
+
+}
