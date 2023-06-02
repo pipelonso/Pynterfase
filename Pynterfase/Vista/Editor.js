@@ -138,8 +138,8 @@ function setCanvasHeight() {
     superbar.style.height = "auto";
     var alturasupbar = superbar.style.height;
     console.log("altura barSup: " + alturasupbar);
-    contenedorlienzo.style.height = parseInt(altura) - 300 + "px";
-    contenedorpropiedades.style.height = parseInt(altura) - 300 + "px";
+    contenedorlienzo.style.height = ((parseInt(altura) / 3) * 2) + "px";
+    contenedorpropiedades.style.height = ((parseInt(altura) / 3) * 2) + "px";
     console.log(altura + " --- " + contenedorlienzo.style.height);
     
 
@@ -295,6 +295,7 @@ function AddTKElement() {
         botontk.style.top = "-1px";
         botontk.style.left = "-1px";
         botontk.appendChild(pid);
+        //botontk.setAttribute("runat" , "server");
         botontk.appendChild(btnText);
         botontk.appendChild(ptipo);
         divlienzo.appendChild(botontk);
@@ -1866,7 +1867,7 @@ function setBGColor() {
     var ChBGColor = document.getElementById("ChBGColor");
     var lienzobg = document.getElementById("lienzo");
     lienzobg.style.backgroundColor = ChBGColor.value;
-
+    
 
 }
 
@@ -1915,6 +1916,91 @@ function DeleteElement() {
 
     }
 
+}
+
+function onSaveChanges() {
+
+    var listapantalla = [];
+    var listaButtons = [];
+    var listaLabels = [];
+    var listaTextbox = [];
+    var listaCheckbox = [];
+    var listaElementos = [];
+
+    for (var i = 1; i < initialid + 1; i++) {
+
+        var elementoBoton = document.getElementById("b" + i);
+        var elementoLabel = document.getElementById("l" + i);
+        var elementoTextbox = document.getElementById("x" + i);
+        var elementoCheckbox = document.getElementById("c" + i);
+
+        if (elementoBoton != null) {
+
+            console.log("encontrado y analizando: " + "b" + i);
+
+            var xleft = parseInt(document.getElementById("b" + i).style.left);
+            var ytop = parseInt(document.getElementById("b" + i).style.top);
+
+            //var txtXbuttonTK = document.getElementById("txtXButtonTK");
+            //var txtIDbutton = document.getElementById("txtButtonId");
+            //var txtYbuttonTk = document.getElementById("txtYbuttonTk");
+            //var txtanchorbuttonTk = document.getElementById("txtanchorbuttonTk");
+            //var txtBGbuttonTK = document.getElementById("txtBGbuttonTK");
+            //var ComboBitmap = document.getElementById("ComboBitmap");
+            //var txtBorderWidthbuttonTK = document.getElementById("txtBorderWidthbuttonTK");
+            //var comboCompound = document.getElementById("comboCompound");
+            //var comboCursor = document.getElementById("comboCursor");
+            //var comboFontBtn = document.getElementById("comboFontBtn");
+            //var txtButtonTkforeground = document.getElementById("txtButtonTkforeground");
+            //var txtButtonTkheight = document.getElementById("txtButtonTkheight");
+            //var txtButtonTkstate = document.getElementById("txtButtonTkstate"); 
+            //var txtButtonTktext = document.getElementById("txtButtonTktext");
+            //var txtButtonTkwidth = document.getElementById("txtButtonTkwidth");
+
+            var data = {
+
+                id : "b" + i,
+                x : xleft,
+                y : ytop
+
+
+            }
+
+            console.log("Atributos: " + "| id: " +  data.id + " | x: " + data.x + "| y: " + data.y);
+
+            listaButtons.push(data);
+
+
+        } else if (elementoLabel != null) {
+
+            console.log("encontrado y analizando: " + "l" + i);
+
+        } else if (elementoTextbox != null) {
+
+            console.log("encontrado y analizando: " + "x" + i);
+
+        } else if (elementoCheckbox != null) {
+
+            console.log("encontrado y analizando: " + "c" + i);
+
+        } else {
+
+            console.log("No existe ningun elemento con ese id ni tipo, puede que halla sido eliminado por el usuario -- Codigos generados : b" + i + " -- l" + i + "--x" + i  + "--c" + i);
+
+        }
+
+        listaElementos.push(listapantalla);
+        listaElementos.push(listaButtons);
+        listaElementos.push(listaLabels);
+        listaElementos.push(listaTextbox);
+        listaElementos.push(listaCheckbox);
+
+    }
+
+
 
 
 }
+
+
+

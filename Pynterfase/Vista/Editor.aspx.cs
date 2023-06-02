@@ -199,13 +199,13 @@ namespace Pynterfase.Vista
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            //Response.Redirect("~/Vista/Proyectos.aspx");
-            //HtmlGenericControl divID = (HtmlGenericControl)Page.FindControl("idControl");
+            ////Response.Redirect("~/Vista/Proyectos.aspx");
+            //HtmlGenericControl divID = (HtmlGenericControl)FindControl("b1");
 
             //if (divID != null)
             //{
 
-            //    string ultimaid = divID.Attributes["ultimaid"];
+            //    string ultimaid = divID.Style["left"];
 
 
             //}

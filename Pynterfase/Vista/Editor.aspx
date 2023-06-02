@@ -138,7 +138,13 @@
 
             <div class="col-lg-2 col-md-2 col-sm-12 nav-item" id="espaciadosSupBar"></div>
             <div id="controlesGuardar">
-                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="botones mx-2" OnClick="btnGuardar_Click" />
+                <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="botones mx-2" OnClick="btnGuardar_Click" />
+                    </ContentTemplate>
+                </asp:UpdatePanel>--%>
+                <input type="button" name="name" value="GUARDAR" class="botones mx-2" onclick="onSaveChanges();" />
                 <img src="imagenes/cloud-check-fill.svg" alt="onsaveFileimg" class="mx-2" style="height: 30px" />
             </div>
         </div>
