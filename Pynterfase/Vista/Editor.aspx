@@ -65,14 +65,18 @@
 
         </div>
 
-        <div class="container-fluid bg-light cajasanim" id="editWindowSizePanel" >
+        <div class="container-fluid bg-dark cajasanim text-white" id="editWindowSizePanel" >
             <input type="button" name="name" value="" class="closebtn my-2" onclick="CloseEditWindowSizePanel();" />
+            <hr />
             <p class="mx-2 my-2 text-center">Ancho de la ventana</p>
-            <input type="text" name="txtAnchoH" value="" id="txtAnchoH" class="w-100 txtcajas" />
+            <input type="text" name="txtAnchoH" value="" id="txtAnchoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
             <p class="mx-2 text-center">Alto de la ventana</p>
-            <input type="text" name="txtAnchoH" value="" id="txtAltoH" class="w-100 txtcajas" />
+            <input type="text" name="txtAnchoH" value="" id="txtAltoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
             <input type="button" name="name" value="Cambiar tamaño de la ventana" class="my-2 w-100 botones" onclick="IntoResizeCanvas();" />
-
+            <hr />
+            <p class="text-center">Selecciona un nombre para tu ventana</p>
+            <input type="text" name="name" value="" class="my-2 w-100 txtcajas" id="txtlienzoname" onkeydown="return handleKeyDown(event);"  />
+            <input type="button" name="name" value="Colocar nombre a la ventana" class="w-100 botones" />
             <div class="container navbar">
                 <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
                 <div class="container-fluid nav-item col-12 col-sm-12 col-md-10 col-lg-6 checkscontainer">
@@ -105,9 +109,7 @@
             <input type="color" name="name" value="" id="ChBGColor" class="botones my-2 mx-3 w-25"/>
             <%--<asp:TextBox ID="txtBGColor" runat="server" placeholder="####" CssClass="txtcajas my-2 mx-3"></asp:TextBox>--%>
             <input type="button" name="btnShowColorPalete" value="Elegir" id="BtnsetBgColor" class="botones my-2 mx-3" onclick="setBGColor();"/>
-
-
-
+            <hr />
         </div>
 
 

@@ -2097,12 +2097,107 @@ function onSaveChanges() {
 
         }
 
+        var lienzo = document.getElementById("lienzo");
+        var altolienzo = parseInt(lienzo.style.height);
+        var ancholienzo = parseInt(lienzo.style.width);
+
+
+        var idLienzo = "1";                
+        var Lgeometry =  altolienzo + "x" + ancholienzo;  //Tamaño inicial  de la ventana
+        var LTitle = document.getElementById("txtlienzoname").value; // Obtiene o establece el título de la ventana.
+        var LWidth = ancholienzo; // Obtiene o establece el ancho de la ventana.
+        var LHeight = altolienzo; // Obtiene o establece la altura de la ventana.
+        var LX = "0px"; // Obtiene o establece la posición horizontal de la ventana en la pantalla.
+        var LY = "0px";  // Obtiene o establece la posición vertical de la ventana en la pantalla.
+
+        var LResizable; // Obtiene o establece si la ventana se puede redimensionar.
+        if (document.getElementById("Chkeditresizable").checked) {
+            LResizable = "true";
+        } else {
+            LResizable = "false";
+        }
+        var LMaximizable; // Obtiene o establece si la ventana se puede maximizar.
+        if (document.getElementById("ChkeditMaximizable").checked) {
+            LMaximizable = "true";
+        } else {
+            LMaximizable = "false";
+        }
+        var LMinimizable; // Obtiene o establece si la ventana se puede minimizar.
+        if (document.getElementById("ChkeditMinimizable").checked) {
+            LMinimizable = "true";
+        } else {
+            LMinimizable = "false";
+        }
+        var LFullscreen; // Obtiene o establece si la ventana se muestra en modo de pantalla completa.
+        if (document.getElementById("ChkeditFullScrean").checked) {
+            LFullscreen = "true";
+        } else {
+            LFullscreen = "false";
+        }      
+        var LShowInTaskbar; // Obtiene o establece si la ventana se muestra en la barra de tareas.
+        if (document.getElementById("ChkeditShowTaskbar").checked) {
+            LShowInTaskbar = "true";
+        } else {
+            LShowInTaskbar = "false";
+        }
+        var LTransparency; // Obtiene o establece si la ventana tiene transparencia.
+        if (document.getElementById("ChkeditTransparent").checked) {
+            LTransparency = "true";
+        } else {
+            LTransparency = "false";
+        }
+        var LBackgroundColor = rgbConvertHex(lienzo.style.backgroundColor); // Obtiene o establece el color de fondo de la ventana.
+        var LAlwaysOnTop; // Obtiene o establece si la ventana siempre se muestra en la parte superior de otras ventanas.
+        if (document.getElementById("ChkeditAlwaysInFront").checked) {
+            LAlwaysOnTop = "true";
+        } else {
+            LAlwaysOnTop = "false";
+        }
+        var LCursorVisible; // Obtiene o establece si el cursor es visible en la ventana.
+        if (document.getElementById("ChkeditShowCursor").checked) {
+            LCursorVisible = "true";
+        } else {
+            LCursorVisible = "false"
+        }
+        var LTakeFocus; // Obtiene o establece si la ventana toma el enfoque cuando se muestra.
+        if (document.getElementById("ChkeditTakeFocus").checked) {
+            LTakeFocus = "true";
+        } else {
+            LTakeFocus = "false";
+        }
+        var LAutoMeasures; // Obtiene o establece si se ajustan automáticamente las dimensiones de la ventana en función de su contenido.
+        if (document.getElementById("ChkeditAutoMeasure").checked) {
+            LAutoMeasures = "true";
+        } else {
+            LAutoMeasures = "false";
+        }
+        
+
         var datapantalla = {
 
-
-
+            id: idLienzo,
+            geometry: Lgeometry,
+            title: LTitle,
+            width: LWidth,
+            height: LHeight,
+            x: LX,
+            y: LY,
+            Resizable: LResizable,
+            Maximizable: LMaximizable,
+            Minimizable: LMinimizable,
+            Fullscreen: LFullscreen,
+            ShowInTaskbar: LShowInTaskbar,
+            Transparency: LTransparency,
+            BackgroundColor: LBackgroundColor,
+            CursorVisible: LCursorVisible,
+            TakeFocus: LTakeFocus,
+            AutoMeasures: LAutoMeasures
 
         }
+
+        listapantalla.push(datapantalla);
+
+        
 
 
         listaElementos.push(listapantalla);
