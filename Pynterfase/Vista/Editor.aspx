@@ -71,17 +71,17 @@
             <p class="mx-2 my-2 text-center">Ancho de la ventana</p>
             <input type="text" name="txtAnchoH" value="" id="txtAnchoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
             <p class="mx-2 text-center">Alto de la ventana</p>
-            <input type="text" name="txtAnchoH" value="" id="txtAltoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+            <input type="text" name="txtAltoH" value="" id="txtAltoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
             <input type="button" name="name" value="Cambiar tamaño de la ventana" class="my-2 w-100 botones" onclick="IntoResizeCanvas();" />
             <hr />
             <p class="text-center">Selecciona un nombre para tu ventana</p>
-            <input type="text" name="name" value="" class="my-2 w-100 txtcajas" id="txtlienzoname" onkeydown="return handleKeyDown(event);"  />
-            <input type="button" name="name" value="Colocar nombre a la ventana" class="w-100 botones" />
+            <input type="text" name="name" value="" class="my-2 w-100 txtcajas" id="txtlienzoname" onkeydown="return handleKeyDown(event);" placeholder="Nombre"  />
+            <%--<input type="button" name="name" value="Colocar nombre a la ventana" class="w-100 botones" />--%>
             <div class="container navbar">
                 <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
                 <div class="container-fluid nav-item col-12 col-sm-12 col-md-10 col-lg-6 checkscontainer">
 
-                    <asp:CheckBox ID="Chkeditresizable" runat="server" Text="Tamaño de pantalla escalable" CssClass=" my-1 w-100 chekers" />
+                    <asp:CheckBox ID="Chkeditresizable" runat="server" Text="Tamaño de pantalla escalable" CssClass=" my-1 w-100 chekers"  />
 
                     <asp:CheckBox ID="ChkeditMaximizable" runat="server" Text="Ventana Maximizable" CssClass="my-1 w-100 chekers" />
 
@@ -119,14 +119,17 @@
                 <asp:Label ID="LlblProjectName" runat="server" Text="---" CssClass="text-white mx-2"></asp:Label>
             </div>
             <div id="ElementsPanel" class="nav-item navbar tkcontainerElements col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="nav-item">
-                    <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 mx-2" onclick="setselectedButton();" />
-                    <input type="button" name="btnBotonTk" value="" id="btnTKLabel" class="tkLabelbtn tkbutton my-1 mx-2" onclick="setselectedLabel();" />
-                    <input type="button" name="btnBotonTk" value="" id="btnTKTextBox" class="tkTextboxbtn tkbutton my-1 mx-2" onclick="setselectedTextbox();" />
-                    <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 mx-2" onclick="setSelectedCheckbox();" />
+                <div class="nav-item mx-2 bg-dark navbar">
+                    <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 nav-item mx-1" onclick="setselectedButton();" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKLabel" class="tkLabelbtn tkbutton my-1 nav-item mx-1" onclick="setselectedLabel();" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKTextBox" class="tkTextboxbtn tkbutton my-1 nav-item mx-1" onclick="setselectedTextbox();" />
+                    <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 nav-item mx-1" onclick="setSelectedCheckbox();" />                    
                 </div>
-                <br />
-                <input type="button" name="editcanvasProp" value="EDITAR PROPIEDADES DE LA VENTANA" class="botones my-2 mx-2 nav-item" onclick="OpenEditWindowSizePanel();" />
+                <div class="container-fluid">
+                    <input type="button" name="editcanvasProp" value="EDITAR PROPIEDADES DE LA VENTANA" class="botones my-2 nav-item w-100" onclick="OpenEditWindowSizePanel();" />
+                </div>
+                
+                
             </div>
             <div class="nav-item" id="controlPanelSupbar">
                 <p id="lblSelected" class="text-light text-center"> --- </p>

@@ -211,6 +211,7 @@
     <Content Include="Vista\mycss\login.css" />
     <Content Include="Vista\Verification.js" />
     <Content Include="Vista\Visor.aspx" />
+    <Content Include="Vista\WriteJson.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -322,6 +323,13 @@
     </Compile>
     <Compile Include="Vista\Visor.aspx.designer.cs">
       <DependentUpon>Visor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\WriteJson.aspx.cs">
+      <DependentUpon>WriteJson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\WriteJson.aspx.designer.cs">
+      <DependentUpon>WriteJson.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

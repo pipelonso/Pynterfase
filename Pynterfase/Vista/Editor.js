@@ -2,7 +2,291 @@
 var selectdID = 0;
 var initialid = 0;
 var selectedType = "";
+var projectID = 0;
+var currentJson = "";
 
+function loadstart() {
+
+    if (currentJson != "" || currentJson != null ) {
+
+        var stringJson = JSON.stringify(currentJson);
+
+        var isparsedJson = JSON.parse(stringJson);
+
+        //console.log(isparsedJson[0]);
+        var listalienzo = isparsedJson[0];
+        var listabotones = isparsedJson[1];
+        var listalabel = isparsedJson[2];
+        var listatextbox = isparsedJson[3];
+        var listacheckbox = isparsedJson[4];
+
+        //cargar primero propiedades del lienzo
+        var ongeneratelienzo = document.getElementById("lienzo");
+        var textAnchoLienzo = document.getElementById("txtAnchoH");
+        var textAltoLienzo = document.getElementById("txtAltoH");
+        var txtlienzoname = document.getElementById("txtlienzoname");
+        var ChBGColor = document.getElementById("ChBGColor");
+
+        ongeneratelienzo.style.height = listalienzo[0].height + "px";
+        ongeneratelienzo.style.width = listalienzo[0].width + "px";
+        textAnchoLienzo.value = listalienzo[0].width;
+        textAltoLienzo.value = listalienzo[0].height;
+        ongeneratelienzo.style.backgroundColor = listalienzo[0].BackgroundColor;
+        var ChBGColor = document.getElementById("ChBGColor");
+        ChBGColor.value = listalienzo[0].BackgroundColor;
+        txtlienzoname.value = listalienzo[0].title;
+
+        var LX = listalienzo[0].x; 
+        var LY = listalienzo[0].y; 
+
+        var LResizable = document.getElementById("Chkeditresizable");
+        LResizable.checked = listalienzo[0].Resizable;
+        var LMaximizable = document.getElementById("ChkeditMaximizable");
+        LMaximizable.checked = listalienzo[0].Maximizable;
+        var ChkeditMinimizable = document.getElementById("ChkeditMinimizable");
+        ChkeditMinimizable.checked = listalienzo[0].Minimizable;
+        var ChkeditFullScrean = document.getElementById("ChkeditFullScrean");
+        ChkeditFullScrean.checked = listalienzo[0].Fullscreen;
+        var ChkeditShowTaskbar = document.getElementById("ChkeditShowTaskbar");
+        ChkeditShowTaskbar.checked = listalienzo[0].ShowInTaskbar;
+        var ChkeditTransparent = document.getElementById("ChkeditTransparent");
+        ChkeditTransparent.checked = listalienzo[0].Transparency;
+        var ChkeditAlwaysInFront = document.getElementById("ChkeditAlwaysInFront");
+        ChkeditAlwaysInFront.checked = listalienzo[0].alwaysinfront;
+        var ChkeditShowCursor = document.getElementById("ChkeditShowCursor");
+        ChkeditShowCursor.checked = listalienzo[0].CursorVisible;
+        var ChkeditTakeFocus = document.getElementById("ChkeditTakeFocus");
+        ChkeditTakeFocus.checked = listalienzo[0].TakeFocus;
+        var ChkeditAutoMeasure = document.getElementById("ChkeditAutoMeasure");
+        ChkeditAutoMeasure.checked = listalienzo[0].AutoMeasures;
+
+        var divlienzo = document.getElementById("lienzo");
+
+        //Aqui comienza el algoritmo para los botones
+        
+
+        for (var i = 0; i < listabotones.length; i++) {
+
+            botontk = document.createElement("div");
+            
+
+
+            
+            
+            botontk.style.padding = "0px";
+            botontk.style.margin = "0px";
+            botontk.style.marginBottom = "0px";
+            botontk.classList.add("TKbuttonBase");
+            botontk.classList.add("FadeInAnim");
+
+            
+
+            var pid = document.createElement("p");
+            var ptipo = document.createElement("p");
+            //b = boton 
+            
+            botontk.id = listabotones[i].id; //La primera letra en el padre significa el tipo de objeto que es
+
+            
+            var txtidbutton = document.getElementById("txtButtonId"); //Aqui esta el valor que se remplaza en el panel de propiedades
+
+
+            pid.textContent = listabotones[i].id.slice(1);
+            pid.id = "ib" + listabotones[i].id.slice(1); //la segunda letra en un hijo significa el tipo que es su padre
+            pid.style.display = "none";
+            txtidbutton.value = pid.textContent;
+
+            pid.style.fontSize = "8px";
+            ptipo.textContent = "button";
+            ptipo.id = "tb" + listabotones[i].id.slice(1); //la segunda letra en un hijo significa el tipo que es su padre
+            ptipo.style.fontSize = "7px";
+            ptipo.style.position = "relative";
+            ptipo.style.top = "-32px";
+            ptipo.classList.add("text-center");
+
+            var btnText = document.createElement("p");
+            btnText.id = "xb" + listabotones[i].id.slice(1);
+            btnText.textContent = listabotones[i].text;
+            btnText.style.textAlign = "center";
+            btnText.style.color = listabotones[i].foreground;
+            btnText.style.fontFamily = listabotones[i].font;
+
+            ptipo.style.display = "none";
+
+            botontk.style.position = "absolute"; //absolute
+
+            
+
+            botontk.style.height = listabotones[i].height + "px";
+            if (listabotones[i].width != null && listabotones[i].width != "" && listabotones[i].width != 0) {
+                botontk.style.width = listabotones[i].width + "px";
+            }
+
+            botontk.style.left = listabotones[i].x + "px";
+            botontk.style.top = listabotones[i].y + "px";
+
+            botontk.style.backgroundColor = listabotones[i].background;
+            botontk.appendChild(pid);
+            //botontk.setAttribute("runat" , "server");
+            botontk.appendChild(btnText);
+            botontk.appendChild(ptipo);
+            divlienzo.appendChild(botontk);
+
+
+
+
+        }
+        
+        //Aqui comienza el algoritmo para el label
+
+        for (var i = 0; i < listalabel.length; i++) {
+
+
+            var labelTk = document.createElement("div");
+            
+
+            labelTk.style.height = listalabel[i].height + "px";
+            if (listalabel[i].width != null || listalabel[i].width != "" || listalabel[i].width != 0) {
+                labelTk.style.width = listalabel[i].width + "px";
+            }            
+            labelTk.classList.add("FadeInAnim");
+            labelTk.id = listalabel[i].id;
+
+
+            console.log(listalabel[i].background);
+
+
+            var ptipo = document.createElement("p");
+            var pid = document.createElement("p");
+            var ptext = document.createElement("p");
+
+            labelTk.classList.add("TkLabelBase");
+
+            ptipo.textContent = "label";
+            ptipo.style.fontSize = "7px";
+            ptipo.id = "tl" + listalabel[i].id.slice(1);
+            ptipo.style.position = "relative";
+            ptipo.style.top = "-32px";
+            ptipo.classList.add("text-center");
+            ptipo.style.display = "none";
+
+            pid.textContent = listalabel[i].id.slice(1);
+            pid.id = "il" + listalabel[i].id.slice(1);
+            pid.style.fontSize = "8px";
+            pid.style.display = "none";
+
+
+            var txtidLabel = document.getElementById("txtLabelId");  //asignación del id al lienzo -------------------------------------
+            txtidLabel.value = pid.textContent;
+
+            ptext.textContent = listalabel[i].text;
+            ptext.style.color = listalabel[i].foreground;
+            ptext.style.position = "relative";
+            ptext.id = "xl" + listalabel[i].id.slice(1);
+            ptext.style.color = listalabel[i].foreground;
+            ptext.style.fontFamily = listalabel[i].font;
+            
+            //ptext.style.top = "-55px";
+
+            labelTk.style.position = "absolute"; //absolute
+            labelTk.style.left = listalabel[i].x + "px";
+            labelTk.style.top = listalabel[i].y + "px";
+            labelTk.style.backgroundColor = listalabel[i].background;
+            divlienzo.appendChild(labelTk);
+
+            labelTk.appendChild(pid);
+            labelTk.appendChild(ptipo);
+            labelTk.appendChild(ptext);
+
+        }
+
+        //Aqui comienza el algoritmo del textbox
+
+        for (var i = 0; i < listatextbox.length; i++) {
+
+            var textbox = document.createElement("div");
+            textbox.style.left = listatextbox[i].x + "px";
+            textbox.style.top = listatextbox[i].y + "px";
+
+            
+
+            var txtTextboxTKidTextbox = document.getElementById("txtTextboxTKidTextbox");  //asignación del id al lienzo -------------------------------------
+            txtTextboxTKidTextbox.value = listatextbox[i].id.slice(1);
+
+
+            textbox.id = "x" + listatextbox[i].id.slice(1);
+            textbox.classList.add("FadeInAnim");
+            textbox.classList.add("TKtextboxBase");
+            textbox.style.width = listatextbox[i].width;
+            textbox.style.height = listatextbox[i].height;
+            textbox.style.position = "absolute";
+            var ptext = document.createElement("p");
+            ptext.id = "px" + listatextbox[i].id.slice(1);
+            ptext.textContent = listatextbox[i].text;
+
+            textbox.appendChild(ptext);
+            divlienzo.appendChild(textbox);
+
+        }
+
+        //Aqui comienza el algoritmo del checkbox
+
+        for (var i = 0; i < listacheckbox.length; i++) {
+
+            var newckeckbox = document.createElement("div");
+            
+
+            newckeckbox.id = "c" + listacheckbox[i].id.slice(1);
+
+            var txtCheckboxTKidCheckbox = document.getElementById("txtCheckboxTKidCheckbox");  //asignación del id al lienzo -------------------------------------
+            txtCheckboxTKidCheckbox.value = listacheckbox[i].id.slice(1);
+
+            newckeckbox.classList.add("navbar")
+            newckeckbox.classList.add("chekers");
+            newckeckbox.style.padding = "0px";
+            newckeckbox.style.margin = "0px";
+            newckeckbox.style.position = "absolute";
+            var checkindicator = document.createElement("div");
+            if (listacheckbox[i].width != null && listacheckbox[i].width != "" || listacheckbox[i].width != 0) {
+                checkindicator.style.width = listacheckbox[i].width + "px";
+            }            
+            checkindicator.style.height = "15px";
+            checkindicator.style.width = "15px";
+            if (listacheckbox[i].checked == true) {
+                checkindicator.classList.add("checkindicatorActive");
+            } else {
+                checkindicator.classList.add("checkindicatorInactive");
+            }            
+            checkindicator.classList.add("nav-item");
+            checkindicator.id = "sc" + listacheckbox[i].id.slice(1);
+            checkindicator.style.padding = "0px";
+
+
+            var textcheck = document.createElement("p");
+            textcheck.textContent = listacheckbox[i].text;
+            textcheck.classList.add("nav-item");
+            textcheck.id = "tc" + listacheckbox[i].id.slice(1);
+            textcheck.style.fontSize = "15px";
+            newckeckbox.classList.add("FadeInAnim");
+            newckeckbox.style.left = listacheckbox[i].x + "px";
+            newckeckbox.style.top = listacheckbox[i].y + "px";
+            newckeckbox.appendChild(checkindicator);
+            newckeckbox.appendChild(textcheck);
+
+
+
+            //newckeckbox.style.width = "200px";
+            divlienzo.appendChild(newckeckbox);
+
+
+
+
+        }
+
+
+    }
+
+}
 
 
 
@@ -1956,7 +2240,7 @@ function onSaveChanges() {
             var btnborderwidth = parseInt(document.getElementById("b" + i).style.borderWidth);
             var btncompound = null;
             var btncursor = null;
-            var fontbtn = rgbConvertHex(document.getElementById("xb" + i).style.fontFamily);
+            var fontbtn = document.getElementById("xb" + i).style.fontFamily;
             var btnForeground = rgbConvertHex(document.getElementById("xb" + i).style.color);
             var btnheight = parseInt(document.getElementById("b" + i).style.height);
             var btnState = null;
@@ -2009,7 +2293,7 @@ function onSaveChanges() {
             }            
             var lblFg = rgbConvertHex(document.getElementById("xl" + i).style.color);
             var lblheight = parseInt(document.getElementById("l" + i).style.height);
-            var lbltext = document.getElementById("l" + i).textContent; //Revision l2Label
+            var lbltext = document.getElementById("xl" + i).textContent; //Revision l2Label
             var lblwidth = parseInt(document.getElementById("l" + i).style.width);
 
             var data = {
@@ -2072,13 +2356,13 @@ function onSaveChanges() {
             var chx = parseInt(document.getElementById("c" + i).style.left);
             var chy = parseInt(document.getElementById("c" + i).style.top);
             var chCheked = null;
-            if (elementoCheckbox.className == "checkindicatorActive") {
+            if (document.getElementById("sc" + i).className == "checkindicatorActive") {
 
-                chCheked = "true";
+                chCheked = true;
 
             } else {
 
-                chCheked = "false";
+                chCheked = false;
 
             }
 
@@ -2121,64 +2405,64 @@ function onSaveChanges() {
 
     var LResizable; // Obtiene o establece si la ventana se puede redimensionar.
     if (document.getElementById("Chkeditresizable").checked) {
-        LResizable = "true";
+        LResizable = true;
     } else {
-        LResizable = "false";
+        LResizable = false;
     }
     var LMaximizable; // Obtiene o establece si la ventana se puede maximizar.
     if (document.getElementById("ChkeditMaximizable").checked) {
-        LMaximizable = "true";
+        LMaximizable = true;
     } else {
-        LMaximizable = "false";
+        LMaximizable = false;
     }
     var LMinimizable; // Obtiene o establece si la ventana se puede minimizar.
     if (document.getElementById("ChkeditMinimizable").checked) {
-        LMinimizable = "true";
+        LMinimizable = true;
     } else {
-        LMinimizable = "false";
+        LMinimizable = false;
     }
     var LFullscreen; // Obtiene o establece si la ventana se muestra en modo de pantalla completa.
     if (document.getElementById("ChkeditFullScrean").checked) {
-        LFullscreen = "true";
+        LFullscreen = true;
     } else {
-        LFullscreen = "false";
+        LFullscreen = false;
     }
     var LShowInTaskbar; // Obtiene o establece si la ventana se muestra en la barra de tareas.
     if (document.getElementById("ChkeditShowTaskbar").checked) {
-        LShowInTaskbar = "true";
+        LShowInTaskbar = true;
     } else {
-        LShowInTaskbar = "false";
+        LShowInTaskbar = false;
     }
     var LTransparency; // Obtiene o establece si la ventana tiene transparencia.
     if (document.getElementById("ChkeditTransparent").checked) {
-        LTransparency = "true";
+        LTransparency = true;
     } else {
-        LTransparency = "false";
+        LTransparency = false;
     }
     var LBackgroundColor = rgbConvertHex(lienzo.style.backgroundColor); // Obtiene o establece el color de fondo de la ventana.
     var LAlwaysOnTop; // Obtiene o establece si la ventana siempre se muestra en la parte superior de otras ventanas.
     if (document.getElementById("ChkeditAlwaysInFront").checked) {
-        LAlwaysOnTop = "true";
+        LAlwaysOnTop = true;
     } else {
-        LAlwaysOnTop = "false";
+        LAlwaysOnTop = false;
     }
     var LCursorVisible; // Obtiene o establece si el cursor es visible en la ventana.
     if (document.getElementById("ChkeditShowCursor").checked) {
-        LCursorVisible = "true";
+        LCursorVisible = true;
     } else {
-        LCursorVisible = "false"
+        LCursorVisible = false;
     }
     var LTakeFocus; // Obtiene o establece si la ventana toma el enfoque cuando se muestra.
     if (document.getElementById("ChkeditTakeFocus").checked) {
-        LTakeFocus = "true";
+        LTakeFocus = true;
     } else {
-        LTakeFocus = "false";
+        LTakeFocus = false;
     }
     var LAutoMeasures; // Obtiene o establece si se ajustan automáticamente las dimensiones de la ventana en función de su contenido.
     if (document.getElementById("ChkeditAutoMeasure").checked) {
-        LAutoMeasures = "true";
+        LAutoMeasures = true;
     } else {
-        LAutoMeasures = "false";
+        LAutoMeasures = false;
     }
 
 
@@ -2197,6 +2481,7 @@ function onSaveChanges() {
         Fullscreen: LFullscreen,
         ShowInTaskbar: LShowInTaskbar,
         Transparency: LTransparency,
+        alwaysinfront: LAlwaysOnTop,
         BackgroundColor: LBackgroundColor,
         CursorVisible: LCursorVisible,
         TakeFocus: LTakeFocus,
@@ -2212,9 +2497,25 @@ function onSaveChanges() {
     listaElementos.push(listaTextbox);
     listaElementos.push(listaCheckbox);
 
-    var json = JSON.stringify(listaElementos);
+    var jsonData = JSON.stringify(listaElementos);
+    console.log("Json Generado");
+    console.log("---------------------------------------");
+    console.log(jsonData);
+    console.log("---------------------------------------");
 
-    console.log(json);
+    var nombreArchivo = projectID + ".json";
+
+    var formData = new FormData();
+    formData.append('archivo', new Blob([jsonData], { type: 'application/json' }),  nombreArchivo);
+    formData.append("fileName" , nombreArchivo)
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'WriteJson.aspx', true);
+
+    //confguraciòn de encabezado de peticiòn
+    xhr.setRequestHeader('Accept', 'application/json');
+
+    xhr.send(formData);
 
 }
 
