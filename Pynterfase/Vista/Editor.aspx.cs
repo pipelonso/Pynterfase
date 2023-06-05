@@ -167,35 +167,35 @@ namespace Pynterfase.Vista
         protected void btnGenerarLienzo_Click(object sender, EventArgs e)
         {
 
-            if (txtAlto.Text.Trim() != "") {
+            //if (txtAlto.Text.Trim() != "") {
 
-                if (txtAncho.Text.Trim() != "") {
+            //    if (txtAncho.Text.Trim() != "") {
 
-                    Proyecto objProyecto = new Proyecto();
-                    List<Lienzo> listalienzo = new List<Lienzo>();
+            //        Proyecto objProyecto = new Proyecto();
+            //        List<Lienzo> listalienzo = new List<Lienzo>();
 
-                    Lienzo objlienzo = new Lienzo();
-                    objlienzo.xz = txtAncho.Text;
-                    objlienzo.yz = txtAlto.Text;
-                    objlienzo.geometry = txtAlto.Text + "X" + txtAncho.Text;
-                    objlienzo.Title = txtTitle.Text;
+            //        Lienzo objlienzo = new Lienzo();
+            //        objlienzo.xz = txtAncho.Text;
+            //        objlienzo.yz = txtAlto.Text;
+            //        objlienzo.geometry = txtAlto.Text + "X" + txtAncho.Text;
+            //        objlienzo.Title = txtTitle.Text;
 
-                    listalienzo.Add(objlienzo);
+            //        listalienzo.Add(objlienzo);
 
-                    objProyecto.listalienzo = listalienzo;
+            //        objProyecto.listalienzo = listalienzo;
 
-                    string iPr = Request.QueryString["iPr"];
+            //        string iPr = Request.QueryString["iPr"];
 
-                    string json = JsonSerializer.Serialize(objProyecto);
-                    string rutaarchivo = Server.MapPath("~/Users/Projects/" + iPr + ".json");
-                    StreamWriter escritor = new StreamWriter(rutaarchivo);
-                    escritor.Write(json);
-                    escritor.Close();
+            //        string json = JsonSerializer.Serialize(objProyecto);
+            //        string rutaarchivo = Server.MapPath("~/Users/Projects/" + iPr + ".json");
+            //        StreamWriter escritor = new StreamWriter(rutaarchivo);
+            //        escritor.Write(json);
+            //        escritor.Close();
 
 
-                }
+            //    }
 
-            }         
+            //}         
 
         }
 

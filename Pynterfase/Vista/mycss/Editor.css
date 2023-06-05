@@ -23,6 +23,8 @@
     background-image: url('../imagenes/editorsupbar.svg');
     background-size: cover;
     height : 150px;
+    border-bottom-style : double;
+    border-bottom-color : red;
 }
 
 
@@ -106,7 +108,8 @@
     border: solid;
     border-color: lightgray;
     border-width: 3px;
-    background-color: white;
+    background-color: black;
+    color:white;
 }
 
     .botones:hover {
@@ -176,4 +179,12 @@
     to {
         opacity: 1; /* Termina completamente visible */
     }
+}
+
+.outputbox{
+
+    border:solid;
+    border-color : red;
+    border-width : 1px;
+    color : lightgreen;
 }

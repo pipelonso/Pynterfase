@@ -366,6 +366,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Users\Generated\" />
     <Folder Include="Users\Projects\" />
   </ItemGroup>
   <PropertyGroup>

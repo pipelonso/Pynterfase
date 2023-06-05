@@ -5,6 +5,46 @@ var selectedType = "";
 var projectID = 0;
 var currentJson = "";
 
+function ValidateStart() {
+
+    var txtAncho = document.getElementById("txtAncho");
+    var txtAlto = document.getElementById("txtAlto");
+    var txtTitle = document.getElementById("txtTitle");
+
+    var txtAnchoH = document.getElementById("txtAnchoH");
+    var txtAltoH = document.getElementById("txtAltoH");
+    var txtlienzoname = document.getElementById("txtlienzoname");
+
+    if (txtAlto.value != null || txtAlto.value != "") {
+
+        if (txtAncho.value != null || txtAncho.value != "") {
+
+            if (txtTitle.value != null || txtTitle.value != "") {
+
+                txtAltoH.value = txtAlto.value;
+                txtAnchoH.value = txtAncho.value;
+                txtlienzoname.value = txtTitle.value;
+
+                var canvasDimPanel = document.getElementById("canvasDimPanel").style.display = "none";
+
+                ResizeCanvas(txtAnchoH.value, txtAltoH.value);
+                //setCanvasHeight();
+                startEditor();
+                onSaveChanges();
+                location.reload();
+
+
+            }
+
+        }
+
+    }
+
+
+}
+
+
+
 function loadstart() {
 
     if (currentJson != "" || currentJson != null ) {
@@ -62,6 +102,9 @@ function loadstart() {
 
         var divlienzo = document.getElementById("lienzo");
 
+        var idsCollector = [];
+
+
         //Aqui comienza el algoritmo para los botones
         
 
@@ -70,7 +113,7 @@ function loadstart() {
             botontk = document.createElement("div");
             
 
-
+            idsCollector.push(listabotones[i].id.slice(1));
             
             
             botontk.style.padding = "0px";
@@ -143,7 +186,7 @@ function loadstart() {
 
 
             var labelTk = document.createElement("div");
-            
+            idsCollector.push(listalabel[i].id.slice(1));
 
             labelTk.style.height = listalabel[i].height + "px";
             if (listalabel[i].width != null || listalabel[i].width != "" || listalabel[i].width != 0) {
@@ -208,7 +251,7 @@ function loadstart() {
             textbox.style.left = listatextbox[i].x + "px";
             textbox.style.top = listatextbox[i].y + "px";
 
-            
+            idsCollector.push(listatextbox[i].id.slice(1));
 
             var txtTextboxTKidTextbox = document.getElementById("txtTextboxTKidTextbox");  //asignación del id al lienzo -------------------------------------
             txtTextboxTKidTextbox.value = listatextbox[i].id.slice(1);
@@ -234,7 +277,7 @@ function loadstart() {
         for (var i = 0; i < listacheckbox.length; i++) {
 
             var newckeckbox = document.createElement("div");
-            
+            idsCollector.push(listacheckbox[i].id.slice(1));
 
             newckeckbox.id = "c" + listacheckbox[i].id.slice(1);
 
@@ -283,7 +326,14 @@ function loadstart() {
 
         }
 
-
+        //obtension de ultima id
+        
+        initialid = Math.max(...idsCollector);
+        if (initialid == -Infinity || initialid == Infinity) {
+            initialid = 0;
+        }
+        console.log(idsCollector);
+        console.log(initialid);
     }
 
 }
@@ -2095,10 +2145,13 @@ lienzodivpanel.addEventListener("click", function (event) {
             var txtCheckboxTKy = document.getElementById("txtCheckboxTKy");
             txtCheckboxTKy.value = parseInt(document.getElementById("c" + txtCheckboxTKidCheckbox.value).style.top);
             var txtCheckboxTKChecked = document.getElementById("txtCheckboxTKChecked");
-            if (document.getElementById("c" + txtCheckboxTKidCheckbox.value).className == "checkindicatorActive") {
+            if (document.getElementById("sc" + txtCheckboxTKidCheckbox.value).classList.contains("checkindicatorActive")) {
 
+                txtCheckboxTKChecked.value = "true";
 
-            }//falta checkindicatorInactive
+            } else {
+                txtCheckboxTKChecked.value = "false";
+            }
             var txtCheckboxTKText = document.getElementById("txtCheckboxTKText");
             txtCheckboxTKText.value = document.getElementById("tc" + txtCheckboxTKidCheckbox.value).textContent;
             //falta state
@@ -2356,7 +2409,7 @@ function onSaveChanges() {
             var chx = parseInt(document.getElementById("c" + i).style.left);
             var chy = parseInt(document.getElementById("c" + i).style.top);
             var chCheked = null;
-            if (document.getElementById("sc" + i).className == "checkindicatorActive") {
+            if (document.getElementById("sc" + i).classList.contains("checkindicatorActive")) {
 
                 chCheked = true;
 
@@ -2396,7 +2449,7 @@ function onSaveChanges() {
     var ancholienzo = parseInt(lienzo.style.width);
 
     var idLienzo = "1";
-    var Lgeometry = altolienzo + "x" + ancholienzo;  //Tamaño inicial  de la ventana
+    var Lgeometry = ancholienzo + "x" + altolienzo;  //Tamaño inicial  de la ventana
     var LTitle = document.getElementById("txtlienzoname").value; // Obtiene o establece el título de la ventana.
     var LWidth = ancholienzo; // Obtiene o establece el ancho de la ventana.
     var LHeight = altolienzo; // Obtiene o establece la altura de la ventana.
@@ -2517,7 +2570,108 @@ function onSaveChanges() {
 
     xhr.send(formData);
 
+    location.reload();
+
 }
 
+function GeneratePython() {
 
+    if (currentJson != null || currentJson != "") {
+
+
+
+        var stringJson = JSON.stringify(currentJson);
+
+
+
+        var isparsedJson = JSON.parse(stringJson);
+        var listalienzo = isparsedJson[0];
+        
+
+        var txtpyGenerated = document.getElementById("txtpyGenerated");
+
+        var generatedScript = "";
+
+        generatedScript = "import tkinter as tk \nventana = tk.Tk() \n";
+
+        generatedScript += "ventana.title(\"" + listalienzo[0].title + "\")\n";
+
+        generatedScript += "ventana.geometry(\"" + listalienzo[0].geometry + "\")\n" 
+
+        generatedScript += "ventana.configure(bg=\"" + listalienzo[0].BackgroundColor + "\")\n"
+
+        if (listalienzo[0].Resizable == false)
+        {
+            generatedScript += "ventana.resizable(False, False)\n"
+        }
+        if (listalienzo[0].Fullscreen == false) {
+            generatedScript += "ventana.attributes(\"-fullscreen\", False)\n"
+        } else {
+            generatedScript += "ventana.attributes(\"-fullscreen\", True)\n"
+        }
+        if (listalienzo[0].Maximizable == true) {
+            generatedScript += "ventana.state('zoomed') \n"
+        } else {
+            //generatedScript += "ventana.state('zoomed')\n"
+        }
+        if (listalienzo[0].Minimizable == true) {
+            //generatedScript += "ventana.attributes('+minimized', True)\n"
+        }
+        if (listalienzo[0].Transparency == true) {
+            generatedScript += "ventana.attributes(\"-alpha\", 0.5) #Puedes editar la transparencia de la ventana aqui \n";
+        }
+        if (listalienzo[0].alwaysinfront == true) {
+            generatedScript += "ventana.attributes(\"-topmost\", True)\n";
+        }
+        if (listalienzo[0].CursorVisible == false) {
+            generatedScript += "ventana.config(cursor=\"none\")\n"
+        } 
+        if (listalienzo[0].TakeFocus == true) {
+            generatedScript += "ventana.grab_set()\n"
+        }
+        if (listalienzo[0].AutoMeasures == true) {
+            //generatedScript += "def adjust_window_size():\n";
+            //generatedScript += "    Wwidth = root.winfo_reqwidth()\n";
+            //generatedScript += "    Wheight = root.winfo_reqheight()\n";
+            //generatedScript += "    ventana.geometry(\"'\" + Wwidth + \"x\" + Wheight + \"'\")\n";
+            //generatedScript += "adjust_window_size()\n";
+
+        }
+
+        //Algoritmo para generar el script del boton
+
+        var listabotones = isparsedJson[1];
+
+        for (var i = 0; i < listabotones.length; i++) {
+
+            generatedScript += listabotones[i].id + "= tk.Button(ventana,";
+            generatedScript += "text=\"" + listabotones[i].text + "\",";
+            generatedScript += "background = \"" + listabotones[i].background + "\","  ;
+            generatedScript += "foreground = \"" + listabotones[i].foreground + "\",";
+            if (listabotones[i].font != "") {
+                generatedScript += "font = (\"" + listabotones[i].font + "\", 12),";
+            }
+            generatedScript += "height = " + (listabotones[i].height / 10)  + ",";
+            if (listabotones[i].width != "" && listabotones[i].width != null && listabotones[i].width != 0) {
+                generatedScript += "width = " + (listabotones[i].width / 10) + ",";
+            }
+            generatedScript += "cursor = \"hand2\"";
+            generatedScript += ")\n"
+
+            generatedScript +=  listabotones[i].id + ".place(x=" + listabotones[i].x + ", y =" + listabotones[i].y + ")\n" ;
+
+        }
+
+
+        generatedScript += "ventana.mainloop()";
+
+        txtpyGenerated.value = generatedScript;
+
+
+    } 
+
+
+
+
+}
 

@@ -12,17 +12,20 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server"  >
-        
+    <form id="form1" runat="server">
+
         <div id="canvasDimPanel" class="bg-light cajasanim">
             <h4 class="m-2">Fila la resolución del lienzo para poder trabajar</h4>
             <div class="container-fluid">
                 <p>Ancho de la ventana</p>
-                <asp:TextBox ID="txtAncho" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>
+                <%--<asp:TextBox ID="txtAncho" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>--%>
+                <input type="text" name="name" value="" id="txtAncho" class="w-100 txtcajas" />
                 <p>Alto de la ventana</p>
-                <asp:TextBox ID="txtAlto" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>
+                <%--<asp:TextBox ID="txtAlto" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>--%>
+                <input type="text" name="name" value="" id="txtAlto" class="w-100 txtcajas" />
                 <p>Titulo de la ventana</p>
-                <asp:TextBox ID="txtTitle" runat="server" placeholder="Titulo" CssClass="w-100 txtcajas"></asp:TextBox>
+                <%--<asp:TextBox ID="txtTitle" runat="server" placeholder="Titulo" CssClass="w-100 txtcajas"></asp:TextBox>--%>
+                <input type="text" name="name" value="" id="txtTitle" class="w-100 txtcajas" />
             </div>
 
             <br />
@@ -60,12 +63,13 @@
             <input type="button" name="btnShowColorPalete" value="Elegir" class="botones my-2 mx-3" />--%>
 
             <div class="container-fluid">
-                <asp:Button ID="btnGenerarLienzo" runat="server" Text="CREAR LIENZO" OnClick="btnGenerarLienzo_Click" CssClass="w-100 botones my-2" />
+                <input type="button" name="" value="COMENZAR A TRABAJAR" class="w-100 botones my-2" onclick="ValidateStart();" />
+                <%--<asp:Button ID="btnGenerarLienzo" runat="server" Text="CREAR LIENZO" OnClick="btnGenerarLienzo_Click" CssClass="w-100 botones my-2" />--%>
             </div>
 
         </div>
 
-        <div class="container-fluid bg-dark cajasanim text-white" id="editWindowSizePanel" >
+        <div class="container-fluid bg-dark cajasanim text-white" id="editWindowSizePanel">
             <input type="button" name="name" value="" class="closebtn my-2" onclick="CloseEditWindowSizePanel();" />
             <hr />
             <p class="mx-2 my-2 text-center">Ancho de la ventana</p>
@@ -75,13 +79,13 @@
             <input type="button" name="name" value="Cambiar tamaño de la ventana" class="my-2 w-100 botones" onclick="IntoResizeCanvas();" />
             <hr />
             <p class="text-center">Selecciona un nombre para tu ventana</p>
-            <input type="text" name="name" value="" class="my-2 w-100 txtcajas" id="txtlienzoname" onkeydown="return handleKeyDown(event);" placeholder="Nombre"  />
+            <input type="text" name="name" value="" class="my-2 w-100 txtcajas" id="txtlienzoname" onkeydown="return handleKeyDown(event);" placeholder="Nombre" />
             <%--<input type="button" name="name" value="Colocar nombre a la ventana" class="w-100 botones" />--%>
             <div class="container navbar">
                 <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
                 <div class="container-fluid nav-item col-12 col-sm-12 col-md-10 col-lg-6 checkscontainer">
 
-                    <asp:CheckBox ID="Chkeditresizable" runat="server" Text="Tamaño de pantalla escalable" CssClass=" my-1 w-100 chekers"  />
+                    <asp:CheckBox ID="Chkeditresizable" runat="server" Text="Tamaño de pantalla escalable" CssClass=" my-1 w-100 chekers" />
 
                     <asp:CheckBox ID="ChkeditMaximizable" runat="server" Text="Ventana Maximizable" CssClass="my-1 w-100 chekers" />
 
@@ -106,9 +110,9 @@
             </div>
             <br />
             <p>Color de fondo de la ventana</p>
-            <input type="color" name="name" value="" id="ChBGColor" class="botones my-2 mx-3 w-25"/>
+            <input type="color" name="name" value="" id="ChBGColor" class="botones my-2 mx-3 w-25" />
             <%--<asp:TextBox ID="txtBGColor" runat="server" placeholder="####" CssClass="txtcajas my-2 mx-3"></asp:TextBox>--%>
-            <input type="button" name="btnShowColorPalete" value="Elegir" id="BtnsetBgColor" class="botones my-2 mx-3" onclick="setBGColor();"/>
+            <input type="button" name="btnShowColorPalete" value="Elegir" id="BtnsetBgColor" class="botones my-2 mx-3" onclick="setBGColor();" />
             <hr />
         </div>
 
@@ -123,21 +127,21 @@
                     <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 nav-item mx-1" onclick="setselectedButton();" />
                     <input type="button" name="btnBotonTk" value="" id="btnTKLabel" class="tkLabelbtn tkbutton my-1 nav-item mx-1" onclick="setselectedLabel();" />
                     <input type="button" name="btnBotonTk" value="" id="btnTKTextBox" class="tkTextboxbtn tkbutton my-1 nav-item mx-1" onclick="setselectedTextbox();" />
-                    <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 nav-item mx-1" onclick="setSelectedCheckbox();" />                    
+                    <input type="button" name="btnBotonTk" value="" id="btnTKCheckbox" class="tkCheckboxbtn tkbutton my-1 nav-item mx-1" onclick="setSelectedCheckbox();" />
                 </div>
                 <div class="container-fluid">
                     <input type="button" name="editcanvasProp" value="EDITAR PROPIEDADES DE LA VENTANA" class="botones my-2 nav-item w-100" onclick="OpenEditWindowSizePanel();" />
                 </div>
-                
-                
+
+
             </div>
             <div class="nav-item" id="controlPanelSupbar">
-                <p id="lblSelected" class="text-light text-center"> --- </p>
+                <p id="lblSelected" class="text-light text-center">--- </p>
                 <input type="button" name="btnAddH" value="Añadir" id="btnAddTk" class="my-1 botones mx-2" style="width: 150px;" onclick="AddTKElement();" />
                 <br />
-                <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2 " style="width: 150px;" onclick="DeleteElement();"/>
+                <input type="button" name="btnDeleteH" value="Eliminar selección" id="btnDeleteTk" class="my-1 botones mx-2 " style="width: 150px;" onclick="DeleteElement();" />
                 <br />
-                <input type="button" name="name" value="Aplicar" class="botones mx-2 my-1" style="width:150px;" onclick="applyChanges();" />
+                <input type="button" name="name" value="Aplicar" class="botones mx-2 my-1" style="width: 150px;" onclick="applyChanges();" />
 
             </div>
 
@@ -163,10 +167,10 @@
                 <div class="w-100 bg-dark" style="">
 
                     <div id="buttonPropPanel" class="container-fluid text-light">
-                        <p style="background-color : darkorange" class="text-center w-100">Propiedades Boton</p>
+                        <p style="background-color: darkorange" class="text-center w-100">Propiedades Boton</p>
                         <hr />
                         <p>Id</p>
-                        <input type="text" name="name" value="" id="txtButtonId" disabled="disabled" class="txtcajas w-100 text-white"  />
+                        <input type="text" name="name" value="" id="txtButtonId" disabled="disabled" class="txtcajas w-100 text-white" />
                         <hr />
                         <p>X</p>
                         <input type="text" id="txtXButtonTK" name="txtXbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
@@ -188,16 +192,16 @@
                             <option value="tk.NE">tk.NE</option>
                             <option value="tk.NW">tk.NW</option>
                             <option value="tk.SE">tk.SE</option>
-                            <option value="tk.SW">tk.SW</option>                            
+                            <option value="tk.SW">tk.SW</option>
                         </select>
                         <hr />
                         <%--<input type="text" id="txtanchorbuttonTk" name="txtanchorbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>Background</p>
                         <div class="navbar">
                             <%--<input type="text" id="txtBGbuttonTK" name="txtBGbuttonTK" value="" class="col-10 txtcajas nav-item" onkeydown="return handleKeyDown(event);" />--%>
-                            <input type="color" id="txtBGbuttonTK" value="#0000ff" class="nav-item w-100"/>
+                            <input type="color" id="txtBGbuttonTK" value="#0000ff" class="nav-item w-100" />
                         </div>
-                        
+
                         <hr />
                         <p>Bitmap</p>
                         <select id="ComboBitmap" class="txtcajas w-100">
@@ -276,9 +280,9 @@
                         <p>Foreground</p>
                         <div class="navbar">
                             <%--<input type="text" id="txtButtonTkforeground" name="foreground" class="col-10 txtcajas nav-item" onkeydown="return handleKeyDown(event);" />--%>
-                            <input type="color" id="txtButtonTkforeground" value="#0000ff" class="w-100 nav-item col-2"/>
+                            <input type="color" id="txtButtonTkforeground" value="#0000ff" class="w-100 nav-item col-2" />
                         </div>
-                        
+
                         <hr />
                         <p>Height:</p>
                         <input type="text" id="txtButtonTkheight" name="height" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
@@ -338,10 +342,10 @@
 
                     <div id="labelPropPanel" class="container-fluid text-light">
 
-                        <p style="background-color : darkslateblue" class="text-center w-100">Propiedades de Label</p>
+                        <p style="background-color: darkslateblue" class="text-center w-100">Propiedades de Label</p>
 
                         <p>id</p>
-                        <input type="text" name="name" value=""  id="txtLabelId" disabled="disabled" class="txtcajas w-100 text-white" onkeydown="return handleKeyDown(event);" />
+                        <input type="text" name="name" value="" id="txtLabelId" disabled="disabled" class="txtcajas w-100 text-white" onkeydown="return handleKeyDown(event);" />
                         <hr />
                         <p>xz</p>
                         <input type="text" id="txtLabelTKxz" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
@@ -359,15 +363,15 @@
                             <option value="tk.NE">tk.NE</option>
                             <option value="tk.NW">tk.NW</option>
                             <option value="tk.SE">tk.SE</option>
-                            <option value="tk.SW">tk.SW</option> 
+                            <option value="tk.SW">tk.SW</option>
                         </select>
                         <hr />
                         <%--<input type="text" id="txtLabelTKanchor" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <p>bg</p>
-                        <input type="color" id="txtLabelTKbg"  class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                        <input type="color" id="txtLabelTKbg" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <hr />
                         <p>cursor</p>
-                        <select id="txtLabelTKcursor" class="w-100 txtcajas" >
+                        <select id="txtLabelTKcursor" class="w-100 txtcajas">
                             <option value="none"></option>
                             <option value="arrow">Flecha estándar</option>
                             <option value="hand2">Mano indicando que se puede hacer clic</option>
@@ -383,7 +387,7 @@
                         </select>
                         <hr />
                         <p>font</p>
-                        <select id="txtLabelTKfont" class="w-100 txtcajas"> 
+                        <select id="txtLabelTKfont" class="w-100 txtcajas">
                             <option value="none"></option>
                             <option value="Arial">Arial</option>
                             <option value="Helvetica">Helvetica</option>
@@ -411,7 +415,7 @@
                         <input type="text" id="txtLabelTKpady" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <p>relief</p>
                         <select id="txtLabelTKrelief" class="w-100 txtcajas" >--%>
-                         <%--   <option value="flat">flat</option>
+                        <%--   <option value="flat">flat</option>
                             <option value="sunken">sunken</option>
                             <option value="raised">raised</option>
                             <option value="groove">groove</option>
@@ -423,7 +427,7 @@
                         <hr />
                         <%--<p>textvariable</p>
                         <input type="text" id="txtLabelTKtextvarible" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
-                       <%-- <p>underline</p>
+                        <%-- <p>underline</p>
                         <select id="txtLabelTKunderline" class="w-100 txtcajas" >
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -432,23 +436,23 @@
                         <p>width</p>
                         <input type="text" id="txtLabelTKwidth" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <hr />
-                       <%-- <p>wraplength</p>
+                        <%-- <p>wraplength</p>
                         <input type="text" id="txtLabelTKwraplength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                     </div>
 
                     <div id="textboxPropPanel" class="container-fluid text-light">
 
-                        <p style="background-color : darkseagreen" class="text-center w-100">Propiedades de TextBox</p>
+                        <p style="background-color: darkseagreen" class="text-center w-100">Propiedades de TextBox</p>
 
-                        
+
                         <p>idTextbox</p>
                         <input type="text" id="txtTextboxTKidTextbox" class="w-100 txtcajas  text-white" disabled="disabled" />
                         <hr />
                         <p>X</p>
-                        <input type="text" id="txtTextboxTKX" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);"/>
+                        <input type="text" id="txtTextboxTKX" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <hr />
                         <p>y</p>
-                        <input type="text" id="txtTextboxTKY" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);"/>
+                        <input type="text" id="txtTextboxTKY" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <hr />
                         <p>Text</p>
                         <input type="text" id="txtTextboxTKText" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
@@ -463,13 +467,13 @@
                         <input type="text" id="txtTextboxTKMaxLength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <hr />
                         <p>Multiline</p>
-                        <select id="txtTextboxTKMultiline" class="w-100 txtcajas"  >
+                        <select id="txtTextboxTKMultiline" class="w-100 txtcajas">
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
                         <hr />
                         <p>ReadOnly</p>
-                        <select id="txtTextboxTKReadOnly" class="w-100 txtcajas" >
+                        <select id="txtTextboxTKReadOnly" class="w-100 txtcajas">
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
@@ -500,7 +504,7 @@
                         <input type="text" id="txtTextboxTKSelectionLength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                         <hr />
                         <p>ScrollBars</p>
-                        <select id="txtTextboxTKScrollBars" class="w-100 txtcajas" >
+                        <select id="txtTextboxTKScrollBars" class="w-100 txtcajas">
                             <option value="none"></option>
                             <option value="true">true</option>
                             <option value="false">false</option>
@@ -510,19 +514,19 @@
 
                     <div id="checkboxPropPanel" class="container-fluid text-light">
 
-                        <p style="background-color : darkslategrey" class="text-center w-100">Propiedades Checkbox</p>
+                        <p style="background-color: darkslategrey" class="text-center w-100">Propiedades Checkbox</p>
 
                         <p>idCheckbox</p>
-                        <input type="text" id="txtCheckboxTKidCheckbox" class="w-100 txtcajas text-white" disabled="disabled"/>
+                        <input type="text" id="txtCheckboxTKidCheckbox" class="w-100 txtcajas text-white" disabled="disabled" />
                         <hr />
                         <p>x</p>
                         <input type="text" id="txtCheckboxTKx" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <hr />
                         <p>y</p>
-                        <input type="text" id="txtCheckboxTKy" class="w-100 txtcajas"  onkeydown="return handleKeyDown(event);" />
+                        <input type="text" id="txtCheckboxTKy" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <hr />
                         <p>Checked</p>
-                        <select id="txtCheckboxTKChecked" class="w-100 txtcajas" >
+                        <select id="txtCheckboxTKChecked" class="w-100 txtcajas">
                             <option value="none"></option>
                             <option value="true">true</option>
                             <option value="false">false</option>
@@ -532,7 +536,7 @@
                         <input type="text" id="txtCheckboxTKText" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                         <hr />
                         <p>State</p>
-                        <select id="txtCheckboxTKState" class="w-100 txtcajas" >
+                        <select id="txtCheckboxTKState" class="w-100 txtcajas">
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
@@ -552,19 +556,18 @@
                         </select>--%>
                     </div>
 
-                    
+
 
                 </div>
 
             </div>
 
-            
+
             <%-- ------------------------------------------------------------------------------------------------------------------------------ --%>
             <%-- Esta porqueria horrible de aqui es el lienzo principal del editor --%>
             <div class="nav-item col-lg-9 col-md-12 col-sm-12 col-12 limitlienzo mx-2" id="limiteslienzo">
-                
+
                 <div id="lienzo" class="canvaslayer justify-content-center" style="width: 2px; height: 2px;" runat="server">
-                    
                 </div>
 
             </div>
@@ -573,8 +576,8 @@
 
         </div>
 
-        
-        
+
+
 
 
         <%--<asp:Button ID="btnTop" runat="server" Text=">>" OnClick="btnTop_Click" />--%>
@@ -582,7 +585,29 @@
         <script src="../Scripts/sweetalert.min.js"></script>
         <script src="Editor.js"></script>
         <script src="alertManager.js"></script>
-        <div id="idControl" ultimaid=""> </div>
+        <div id="idControl" ultimaid=""></div>
+        <div class="bg-dark">
+
+            <div class="container-fluid navbar">
+                <div class="container-fluid nav-item col-12 col-sm-12 col-md-6 col-lg-4" id="outputDiv">
+                    <p class="text-center text-white w-100">Salida del Editor</p>
+                    <textarea rows="4" cols="50" id="txtOutuputpy" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" readonly=""></textarea>
+                    <%--<input type="text" name="name" value="" id="txtOutuputpy" readonly="true" aria-multiline="true" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" />--%>
+                </div>
+                <div class="container-fluid nav-item col-12 col-sm-12 col-md-6 col-lg-4">
+                    <p class="text-center text-white w-100">Codigo Generado</p>
+                    <%--<input type="textarea" name="name" value="" id="txtpyGenerated" readonly="true" aria-multiline="true" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" />--%>
+                    <textarea rows="4" cols="50" id="txtpyGenerated" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" readonly=""  ></textarea>
+                </div>
+                <div class="container-fluid nav-item col-12 col-sm-12 col-md-2 col-lg-4" id="exportDiv">
+                    <input type="button" name="name" value="GENERAR CODIGO" id="btnGenCode" class="w-100 botones my-3" onclick="GeneratePython();"/>
+                    <input type="button" name="name" value="DESCARGAR CODIGO" id="btnDownloadCode" class="w-100 botones my-3" />
+                </div>
+            </div>
+
+        </div>
+
+
     </form>
 </body>
 </html>
