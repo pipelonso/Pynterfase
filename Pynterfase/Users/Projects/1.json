@@ -1,1 +1,87 @@
-[[{"id":"1","geometry":"600x600","title":"Lechuga Cosmica","width":600,"height":600,"x":"0px","y":"0px","Resizable":false,"Maximizable":false,"Minimizable":false,"Fullscreen":false,"ShowInTaskbar":false,"Transparency":false,"alwaysinfront":false,"BackgroundColor":"#ffffff","CursorVisible":true,"TakeFocus":true,"AutoMeasures":false}],[{"id":"b14","x":30,"y":20,"anchor":null,"background":"#d2c1c1","bitmap":null,"borderwidth":null,"compound":null,"cursor":null,"font":"","foreground":"#000000","height":30,"state":null,"text":"Boton Generado con pynterfase","width":null},{"id":"b18","x":0,"y":0,"anchor":null,"background":"#cccccc","bitmap":null,"borderwidth":null,"compound":null,"cursor":null,"font":"","foreground":"#000000","height":20,"state":null,"text":"Alejandra","width":300}],[{"id":"l15","x":300,"y":300,"anchor":null,"background":"#cccccc","cursor":null,"font":"\"Times New Roman\"","foreground":"#000000","height":30,"text":"texto generado con pynterfase","width":null}],[{"id":"x17","x":100,"y":60,"text":"","width":150,"height":25,"maxlenght":null,"multiline":null,"readonly":null,"scrollbars":null}],[{"id":"c13","x":30,"y":80,"checked":true,"text":"Este es un checkbox generado con pynterfase","state":null}]]
+[
+  [
+    {
+      "id": "1",
+      "geometry": "600x600",
+      "title": "Lechuga Cosmica",
+      "width": 600,
+      "height": 600,
+      "x": "0px",
+      "y": "0px",
+      "Resizable": false,
+      "Maximizable": false,
+      "Minimizable": false,
+      "Fullscreen": false,
+      "ShowInTaskbar": false,
+      "Transparency": false,
+      "alwaysinfront": false,
+      "BackgroundColor": "#462a93",
+      "CursorVisible": true,
+      "TakeFocus": true,
+      "AutoMeasures": false
+    }
+  ],
+  [
+    {
+      "id": "b20",
+      "x": 100,
+      "y": 100,
+      "anchor": null,
+      "background": "#b33737",
+      "bitmap": null,
+      "borderwidth": null,
+      "compound": null,
+      "cursor": null,
+      "font": "",
+      "foreground": "#ff0a0a",
+      "height": 30,
+      "state": null,
+      "text": "kewin",
+      "width": 300
+    },
+    {
+      "id": "b21",
+      "x": 300,
+      "y": -1,
+      "anchor": null,
+      "background": "#cccccc",
+      "bitmap": null,
+      "borderwidth": null,
+      "compound": null,
+      "cursor": null,
+      "font": "",
+      "foreground": "#000000",
+      "height": 30,
+      "state": null,
+      "text": "Press Me",
+      "width": null
+    }
+  ],
+  [
+    {
+      "id": "l22",
+      "x": 1,
+      "y": 100,
+      "anchor": null,
+      "background": "#cccccc",
+      "cursor": null,
+      "font": "",
+      "foreground": "#000000",
+      "height": 30,
+      "text": "Hola a todos",
+      "width": null
+    }
+  ],
+  [
+  ],
+  [
+    {
+      "id": "c23",
+      "x": 0,
+      "y": 0,
+      "checked": false,
+      "text": "Holaaaa",
+      "state": null
+    }
+  ]
+]

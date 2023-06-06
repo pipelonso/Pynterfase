@@ -2757,6 +2757,7 @@ function DownLoad() {
     ruta = document.getElementById("txtpyGenerated").value;
     var link = document.getElementById("DownloadLink");
     link.setAttribute("download", ruta);
+    
     link.click();
 
 
