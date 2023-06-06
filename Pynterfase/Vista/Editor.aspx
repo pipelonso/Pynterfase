@@ -600,6 +600,7 @@
                     <textarea rows="4" cols="50" id="txtpyGenerated" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" readonly=""  ></textarea>
                 </div>
                 <div class="container-fluid nav-item col-12 col-sm-12 col-md-2 col-lg-4" id="exportDiv">
+                    <p class="text-center text-white">Ten en cuenta que se generara codigo del la ultima version guardada y cargada en el editor, por lo que si no te aparece actualizado deberias recargar la pagina.</p>
                     <input type="button" name="name" value="GENERAR CODIGO" id="btnGenCode" class="w-100 botones my-3" onclick="GeneratePython();"/>
                     <input type="button" name="name" value="DESCARGAR CODIGO" id="btnDownloadCode" class="w-100 botones my-3" />
                 </div>

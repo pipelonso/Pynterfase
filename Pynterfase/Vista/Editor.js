@@ -260,8 +260,8 @@ function loadstart() {
             textbox.id = "x" + listatextbox[i].id.slice(1);
             textbox.classList.add("FadeInAnim");
             textbox.classList.add("TKtextboxBase");
-            textbox.style.width = listatextbox[i].width;
-            textbox.style.height = listatextbox[i].height;
+            textbox.style.width = listatextbox[i].width + "px";
+            textbox.style.height = listatextbox[i].height + "px";
             textbox.style.position = "absolute";
             var ptext = document.createElement("p");
             ptext.id = "px" + listatextbox[i].id.slice(1);
@@ -2376,8 +2376,8 @@ function onSaveChanges() {
             var txtx = parseInt(document.getElementById("x" + i).style.left);
             var txty = parseInt(document.getElementById("x" + i).style.top);
             var txttext = document.getElementById("px" + i).textContent;
-            var txtwidth = document.getElementById("x" + i).style.width;
-            var txtheight = document.getElementById("x" + i).style.height;
+            var txtwidth = parseInt(document.getElementById("x" + i).style.width);
+            var txtheight = parseInt(document.getElementById("x" + i).style.height);
             var txtmaxlength = null;
             var txtmultiline = null;
             var txtreadonly = null;
@@ -2648,17 +2648,93 @@ function GeneratePython() {
             generatedScript += "text=\"" + listabotones[i].text + "\",";
             generatedScript += "background = \"" + listabotones[i].background + "\","  ;
             generatedScript += "foreground = \"" + listabotones[i].foreground + "\",";
-            if (listabotones[i].font != "") {
+            if (listabotones[i].font != "" && listabotones[i].font != null) {
                 generatedScript += "font = (\"" + listabotones[i].font + "\", 12),";
             }
-            generatedScript += "height = " + (listabotones[i].height / 10)  + ",";
+            generatedScript += "height = " + parseInt((listabotones[i].height / 100))  + ",";
             if (listabotones[i].width != "" && listabotones[i].width != null && listabotones[i].width != 0) {
-                generatedScript += "width = " + (listabotones[i].width / 10) + ",";
+                generatedScript += "width = " + parseInt((listabotones[i].width / 9)) + ",";
             }
             generatedScript += "cursor = \"hand2\"";
             generatedScript += ")\n"
 
-            generatedScript +=  listabotones[i].id + ".place(x=" + listabotones[i].x + ", y =" + listabotones[i].y + ")\n" ;
+            generatedScript += listabotones[i].id + ".place(x=" + listabotones[i].x + ", y =" + listabotones[i].y + ")\n";
+
+            
+
+
+        }
+
+        //Algoritmo para labels
+
+        var listalabels = isparsedJson[2];
+
+        for (var i = 0; i < listalabels.length; i++) {
+
+            generatedScript += listalabels[i].id + "= tk.Label(ventana,";
+            if (listalabels[i].background != "#cccccc") {
+                generatedScript += "background = \"" + listalabels[i].background + "\",";
+            }            
+            generatedScript += "foreground = \"" + listalabels[i].foreground + "\",";
+            if (listalabels[i].font != null && listalabels[i].font != "" && listalabels[i].font != "\"Times New Roman\"" && listalabels[i].font != "\"Comic Sans MS\"" && listalabels[i].font != "\"Courier New\"") {
+                generatedScript += "font = \"" + listalabels[i].font + "\"12,";
+            }            
+            if (listalabels[i].height != null && listalabels[i].height != NaN && listalabels[i].height != "") {
+                generatedScript += "height = " + parseInt(listalabels[i].height / 100) + ",";
+            }
+            if (listalabels[i].width != null && listalabels[i].width != NaN && listalabels[i].width != "") {
+                generatedScript += "width = " + parseInt(listalabels[i].width / 9) + ",";
+            }
+            generatedScript += "text = \"" + listalabels[i].text + "\"";
+            generatedScript += ")\n";
+
+
+            generatedScript += listalabels[i].id + ".place(x=" + listalabels[i].x + ", y =" + listalabels[i].y + ")\n";
+        }
+
+        //Algoritmo para textbox
+        var listatextboxs = isparsedJson[3];
+
+        for (var i = 0; i < listatextboxs.length; i++) {
+
+            generatedScript += listatextboxs[i].id + "= tk.Entry(ventana,";
+            if (listatextboxs[i].height != null && listatextboxs[i].height != "NaN" && listatextboxs[i].height != "" && listatextboxs[i].height != NaN ) {
+                generatedScript += "font = (\"Arial\"," + parseInt(listatextboxs[i].height / 2) + ")," ;
+            }
+            if (listatextboxs[i].width != null && listatextboxs[i].width != "NaN" && listatextboxs[i].width != "" && listatextboxs[i].width != NaN) {
+                generatedScript += "width = " + parseInt( (parseInt(listatextboxs[i].width) / parseInt((parseInt(listatextboxs[i].height) / 2 ))) ) + " ,";
+            }
+
+
+
+
+            generatedScript += "text = (\"1.0\",\"" + listatextboxs[i].text + "\")" ;
+
+
+
+            generatedScript += ")\n";
+
+            generatedScript += listatextboxs[i].id + ".place(x=" + listatextboxs[i].x + ", y =" + listatextboxs[i].y + ")\n";
+
+        }
+
+        //Algoritmo para checkbox
+
+        var listacheckbox = isparsedJson[4];
+
+        for (var i = 0; i < listacheckbox.length; i++) {
+
+
+            generatedScript += listacheckbox[i].id + " = tk.Checkbutton(ventana,";
+            if (listacheckbox[i].checked == true) {
+                generatedScript += "variable=tk.BooleanVar(value=True),";
+            }
+            generatedScript += "text =\"" + listacheckbox[i].text + "\"";
+            
+            generatedScript += ")\n";
+
+            generatedScript += listacheckbox[i].id + ".place(x=" + listacheckbox[i].x + ", y =" + listacheckbox[i].y + ")\n";
+
 
         }
 
