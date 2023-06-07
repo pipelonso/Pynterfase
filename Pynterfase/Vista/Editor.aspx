@@ -146,15 +146,12 @@
             </div>
 
             <div class="col-lg-2 col-md-2 col-sm-12 nav-item" id="espaciadosSupBar"></div>
-            <div id="controlesGuardar">
-                <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="botones mx-2" OnClick="btnGuardar_Click" />
-                    </ContentTemplate>
-                </asp:UpdatePanel>--%>
+            <div id="controlesGuardar">                
                 <input type="button" name="name" value="GUARDAR" class="botones mx-2" onclick="onSaveChanges();" />
-                <img src="imagenes/cloud-check-fill.svg" alt="onsaveFileimg" class="mx-2" style="height: 30px" />
+                <img src="imagenes/cloud-check-fill.svg" alt="onsaveFileimg" class="mx-2" style="height: 30px" id="saveIndicatorIMG"/>
+            </div>
+            <div> 
+                <input type="button" name="name" value="EXPORTAR" class="botones mx-2" onclick="showExportPanel();" />
             </div>
         </div>
 
@@ -588,13 +585,13 @@
         <div id="idControl" ultimaid=""></div>
         <div class="bg-dark">
 
-            <div class="container-fluid navbar">
+            <div class="container-fluid navbar" id="exportPanel">
                 <div class="container-fluid nav-item col-12 col-sm-12 col-md-6 col-lg-4" id="outputDiv">
                     <p class="text-center text-white w-100">Salida del Editor</p>
                     <textarea rows="4" cols="50" id="txtOutuputpy" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" readonly=""></textarea>
                     <%--<input type="text" name="name" value="" id="txtOutuputpy" readonly="true" aria-multiline="true" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" />--%>
                 </div>
-                <div class="container-fluid nav-item col-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="container-fluid nav-item col-12 col-sm-12 col-md-6 col-lg-4" id="GeneratedPyDiv">
                     <p class="text-center text-white w-100">Codigo Generado</p>
                     <%--<input type="textarea" name="name" value="" id="txtpyGenerated" readonly="true" aria-multiline="true" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" />--%>
                     <textarea rows="4" cols="50" id="txtpyGenerated" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" readonly=""  ></textarea>
@@ -604,7 +601,7 @@
                     <input type="button" name="name" value="GENERAR CODIGO" id="btnGenCode" class="w-100 botones my-3" onclick="GeneratePython();"/>
                     <input type="button" name="name" value="DESCARGAR CODIGO" id="btnDownloadCode" class="w-100 botones my-3" onclick="DownLoad()" />
                     <%--<a href="DownLoad();" id="ADownload" >Descargar Codigo</a>--%>
-                    <a href="#" download="" style="display:none;" id="DownloadLink">---</a>
+                    
                     
                 </div>
             </div>

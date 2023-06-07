@@ -5,6 +5,8 @@ var selectedType = "";
 var projectID = 0;
 var currentJson = "";
 
+var saveIndicatorIMG = document.getElementById("saveIndicatorIMG");
+
 function ValidateStart() {
 
     var txtAncho = document.getElementById("txtAncho");
@@ -50,6 +52,9 @@ function loadstart() {
     if (currentJson != "" || currentJson != null ) {
 
         var stringJson = JSON.stringify(currentJson);
+
+        var txtOutuputpy = document.getElementById("txtOutuputpy");
+        txtOutuputpy.value = stringJson;
 
         var isparsedJson = JSON.parse(stringJson);
 
@@ -355,7 +360,15 @@ function startsall() {
     var checkboxPropPanel = document.getElementById("checkboxPropPanel");
     var btnAddTk = document.getElementById("btnAddTk");
 
+    var exportPanel = document.getElementById("exportPanel");
 
+    var outputDiv = document.getElementById("outputDiv");
+    var GeneratedPyDiv = document.getElementById("GeneratedPyDiv");
+    var exportDiv = document.getElementById("exportDiv");
+
+    outputDiv.style.display = "none";
+    GeneratedPyDiv.style.display = "none";
+    exportDiv.style.display = "none";
 
 
     btnAddTk.disabled = true;
@@ -423,6 +436,8 @@ function HideCreateCanvas() {
 
 function ResizeCanvas(x , y) {
 
+    saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
+
     document.getElementById("lienzo").style.width = x + "px";
     document.getElementById("lienzo").style.height = y + "px";
 
@@ -430,6 +445,7 @@ function ResizeCanvas(x , y) {
 
 function IntoResizeCanvas() {
 
+    saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
     var textboxAltura = document.getElementById("txtAltoH");
     var textboxAncho = document.getElementById("txtAnchoH");
 
@@ -476,7 +492,7 @@ function setCanvasHeight() {
     contenedorpropiedades.style.height = ((parseInt(altura) / 3) * 2) + "px";
     console.log(altura + " --- " + contenedorlienzo.style.height);
     
-
+    
 
 }
 
@@ -552,6 +568,9 @@ var botontk;
 
 
 function AddTKElement() {
+
+    saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
+
 
     var panelButtonProp = document.getElementById("buttonPropPanel");
     var labelPropPanel = document.getElementById("labelPropPanel");
@@ -834,6 +853,8 @@ function handleKeyDown(event) {
 
 
 function applyChanges() {
+
+    saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
 
     if (selectedType == "b" || selectedType.slice(1) == "b") { //verifica si el valor seleccionado es un boton
 
@@ -2210,6 +2231,8 @@ function setBGColor() {
 
 function DeleteElement() {
 
+    saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
+
     var lienzodivgen = document.getElementById("lienzo");
 
     var btnDeleteTk = document.getElementById("btnDeleteTk");
@@ -2256,6 +2279,8 @@ function DeleteElement() {
 }
 
 function onSaveChanges() {
+
+    saveIndicatorIMG.src = "imagenes/cloud-check-fill.svg";
 
     var listapantalla = [];
     var listaButtons = [];
@@ -2753,13 +2778,35 @@ function GeneratePython() {
 
 function DownLoad() {
 
+    var txtpyGenerated = document.getElementById("txtpyGenerated");
 
-    ruta = document.getElementById("txtpyGenerated").value;
-    var link = document.getElementById("DownloadLink");
-    link.setAttribute("download", ruta);
+    var pythonCode = txtpyGenerated.value;
+
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(pythonCode));
+    element.setAttribute('download',  projectID + '.py');
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+
+
+
+}
+
+function showExportPanel() {
+
     
-    link.click();
+    var outputDiv = document.getElementById("outputDiv");
+    var GeneratedPyDiv = document.getElementById("GeneratedPyDiv");
+    var exportDiv = document.getElementById("exportDiv");
 
+    outputDiv.style.display = "block";
+    GeneratedPyDiv.style.display = "block";
+    exportDiv.style.display = "block";
 
 
 }
