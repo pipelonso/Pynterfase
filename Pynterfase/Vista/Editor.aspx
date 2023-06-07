@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Editor.aspx.cs" Inherits="Pynterfase.Vista.Editor" %>
+﻿<%@ Page EnableEventValidation="true" Language="C#" AutoEventWireup="true" CodeBehind="Editor.aspx.cs" Inherits="Pynterfase.Vista.Editor"  %>
 
 <!DOCTYPE html>
 
@@ -116,54 +116,65 @@
             <hr />
         </div>
 
-        <div id="PrivacyPanel" class="container-fluid border-2 border-danger">
-
-            <input type="button" name="name" value="" id="btnclosePrivacy" class="my-2 closebtn" />
-            <p class="text-center text-white">CAMBIAR PRIVACIDAD DEL PROYECTO</p>
-            <asp:DropDownList ID="ddlPrivacyProps" runat="server" CssClass="my-2 botones w-100"></asp:DropDownList>
+        <div class="container-fluid">
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
-                    <asp:Button ID="btnChangePrivacy" runat="server" Text="APLICAR CAMBIOS" CssClass="botones w-100 my-2" />
-                </ContentTemplate>
-            </asp:UpdatePanel>
-
-
-        </div>
-
-        <div id="ProjectUsersPanel">
-
-            <p class="text-white text-center">Quien tiene acceso al proyecto</p>
-            
-            
-            <div class="container-fluid" style="overflow:auto; height:300px;">                             
-                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                    <ContentTemplate>
-                        <div class="navbar">
-                            <p class="nav-item mx-2 text-white col-1">Agregar usuario por correo</p>
-                            <div class="nav-item col-10 navbar">
-                                <asp:TextBox ID="txtSearchCorreo" runat="server" CssClass="w-75 txtcajas nav-item"></asp:TextBox>
-                                <asp:Button ID="btnAddUser" runat="server" Text="" CssClass="btnAddUser nav-item" />
-                            </div>                            
-                        </div>                        
-                        <asp:Repeater ID="RPUsers" runat="server">
-                            <ItemTemplate>
-                                <div class="navbar  isuserbox container-fluid">
-                                    <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
-                                        <asp:Label ID="lblNombreUserRP" runat="server" Text='<%# Eval("nombre") %>' CssClass="nav-item mx-2 text-white" ></asp:Label>
-                                        <asp:Label ID="lblCorreoRp" runat="server" Text='<%# Eval("correo") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
-                                        <asp:Image ID="imgUserRP" runat="server" ImageUrl='<%# Eval("imagenUsuario") %>' CssClass="nav-item mx-2 imgUser" Height="40px" Width="40px"/>
-                                    </div>                     
-                                    <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1" />
+            <div class="navbar col-12">
+              
+                <div id="ProjectUsersPanel" class="nav-item col-6 col-sm-12 col-lg-6 col-md-6 ">
+                    <p class="text-white text-center">Quien tiene acceso al proyecto</p>
+                    <div class="container-fluid" style="overflow: auto; height: 300px;">
+                        
+                                <div class="navbar">
+                                    <p class="nav-item mx-2 text-white col-1">Agregar usuario por correo</p>
+                                    <div class="nav-item col-10 navbar">
+                                        <asp:TextBox ID="txtSearchCorreo" runat="server" CssClass="w-75 txtcajas nav-item"></asp:TextBox>
+                                        <asp:Button ID="btnAddUser" runat="server" Text="" CssClass="btnAddUser nav-item" OnClick="btnAddUser_Click" />
+                                    </div>
                                 </div>
-                            </ItemTemplate>
-                        </asp:Repeater>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                                <asp:Repeater ID="RPUsers" runat="server" OnItemCommand="RPUsers_ItemCommand">
+                                    <ItemTemplate>
+                                        <div class="navbar  isuserbox container-fluid my-2">
+                                            <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
+                                                <asp:Label ID="lblNombreUserRP" runat="server" Text='<%# Eval("nombre") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
+                                                <asp:Label ID="lblCorreoRp" runat="server" Text='<%# Eval("correo") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
+                                                <asp:Image ID="imgUserRP" runat="server" ImageUrl='<%# Eval("imagenUsuario") %>' CssClass="nav-item mx-2 imgUser" Height="40px" Width="40px" />
+                                            </div>
+                                            <asp:CheckBox ID="chkEditableUser" runat="server" CssClass="nav-item mx-2 col-sm-1 col-md-1 col-lg-1 text-white" Text="Puede editar" Checked='<%# Eval("editable") %>'  />
+                                            
+                                            <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1"  />
+                                            <asp:Button ID="btnUpdateUser" runat="server" Text="Actualizar" CssClass="botones col-sm-12 col-md-12 col-lg-12"/>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                        
+                    </div>
+                </div>
+
+                <div id="PrivacyPanel" class="nav-item container-fluid col-6 col-sm-12 col-lg-6 col-md-6">
+                    <%--<input type="button" name="name" value="" id="btnclosePrivacy" class="my-2 closebtn" />--%>
+                    <p class="text-center text-white w-100">CAMBIAR PRIVACIDAD DEL PROYECTO</p>
+                    <asp:DropDownList ID="ddlPrivacyProps" runat="server" CssClass="my-2 botones w-100"></asp:DropDownList>
+                    
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <div class="w-100">
+                                <asp:Button ID="btnChangePrivacy" runat="server" Text="APLICAR CAMBIOS" CssClass="botones w-100" />
+                            </div>                            
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+
+
+
+
             </div>
 
 
+
         </div>
+        
+
+
 
 
         <div class="cajasanim container-fluid navbar superiorBar" id="supBar" style="height: 150px;">

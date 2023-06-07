@@ -48,7 +48,7 @@ namespace Pynterfase.Vista
 
                         rpProyectos.DataSource = ListaProyectos;
                         rpProyectos.DataBind();
-
+                        
                     }
 
 

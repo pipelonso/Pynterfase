@@ -11,12 +11,12 @@ namespace Pynterfase.Logica
     public class ClProyectoL
     {
 
-        public List<ClproyectoE> mtdGetAllByUser(string iduser) { 
-        
+        public List<ClproyectoE> mtdGetAllByUser(string iduser) {
+
             ClProyectoD obProyD = new ClProyectoD();
             List<ClproyectoE> listaproyectos = obProyD.mtdGetAllProjects(iduser);
             return listaproyectos;
-        
+
         }
 
         public int mtdAddProject(ClproyectoE objProyecto) {
@@ -33,7 +33,7 @@ namespace Pynterfase.Logica
             ClProyectoD objProyectoD = new ClProyectoD();
             ClproyectoE objProyecto = objProyectoD.mtdGetRecentProjectIdByMail(correo);
             return objProyecto;
-        
+
         }
 
         public ClproyectoE mtdGetProjectById(string id) {
@@ -44,13 +44,21 @@ namespace Pynterfase.Logica
 
         }
 
-        public List<ClUsuarioE> mtdGetAllUserInProject(string idProyecto)
+        public List<ClCompartirUserInfo> mtdGetAllUserInProject(string idProyecto)
         {
 
             ClProyectoD objProjD = new ClProyectoD();
-            List<ClUsuarioE> listaUsuarios = objProjD.mtdGetAllusersInProject(idProyecto);
+            List<ClCompartirUserInfo> listaUsuarios = objProjD.mtdGetAllusersInProject(idProyecto);
             return listaUsuarios;
 
+        }
+
+        public int mtdAddUserToProject(string idProject, string correo) {
+
+            ClProyectoD objProjD = new ClProyectoD();
+            int proceso = objProjD.mtdAddUserToProject(idProject,correo);
+            return proceso;
+        
         }
 
 

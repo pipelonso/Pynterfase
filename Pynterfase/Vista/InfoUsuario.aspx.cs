@@ -28,6 +28,7 @@ namespace Pynterfase.Vista
                 imgUser.ImageUrl = objUSE.imagenUsuario;
 
 
+
             }
                 
 

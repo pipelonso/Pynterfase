@@ -225,6 +225,8 @@
     <Compile Include="Datos\ClProyectoD.cs" />
     <Compile Include="Datos\ClusuarioD.cs" />
     <Compile Include="Datos\Procedimientos.cs" />
+    <Compile Include="Entidades\ClCompartirE.cs" />
+    <Compile Include="Entidades\ClCompartirUserInfo.cs" />
     <Compile Include="Entidades\ClEstadoE.cs" />
     <Compile Include="Entidades\ClproyectoE.cs" />
     <Compile Include="Entidades\ClRecuperacionE.cs" />
