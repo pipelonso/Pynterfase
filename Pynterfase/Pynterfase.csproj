@@ -129,6 +129,11 @@
     <Content Include="Vista\imagenes\cloud-arrow-up.svg" />
     <Content Include="Vista\imagenes\cloud-check-fill.svg" />
     <Content Include="Vista\imagenes\code-square.svg" />
+    <Content Include="Vista\imagenes\EditorPrivacySection\dash-circle.svg" />
+    <Content Include="Vista\imagenes\EditorPrivacySection\globe.svg" />
+    <Content Include="Vista\imagenes\EditorPrivacySection\globe_not.svg" />
+    <Content Include="Vista\imagenes\EditorPrivacySection\person-fill-add.svg" />
+    <Content Include="Vista\imagenes\EditorPrivacySection\plus-circle.svg" />
     <Content Include="Vista\imagenes\EditorSupBar.svg" />
     <Content Include="Vista\imagenes\editor_back.svg" />
     <Content Include="Vista\imagenes\eye-slash.svg" />

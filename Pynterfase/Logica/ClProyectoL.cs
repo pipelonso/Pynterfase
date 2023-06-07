@@ -44,7 +44,14 @@ namespace Pynterfase.Logica
 
         }
 
+        public List<ClUsuarioE> mtdGetAllUserInProject(string idProyecto)
+        {
 
+            ClProyectoD objProjD = new ClProyectoD();
+            List<ClUsuarioE> listaUsuarios = objProjD.mtdGetAllusersInProject(idProyecto);
+            return listaUsuarios;
+
+        }
 
 
 

@@ -116,12 +116,64 @@
             <hr />
         </div>
 
+        <div id="PrivacyPanel" class="container-fluid border-2 border-danger">
+
+            <input type="button" name="name" value="" id="btnclosePrivacy" class="my-2 closebtn" />
+            <p class="text-center text-white">CAMBIAR PRIVACIDAD DEL PROYECTO</p>
+            <asp:DropDownList ID="ddlPrivacyProps" runat="server" CssClass="my-2 botones w-100"></asp:DropDownList>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:Button ID="btnChangePrivacy" runat="server" Text="APLICAR CAMBIOS" CssClass="botones w-100 my-2" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+
+        </div>
+
+        <div id="ProjectUsersPanel">
+
+            <p class="text-white text-center">Quien tiene acceso al proyecto</p>
+            
+            
+            <div class="container-fluid" style="overflow:auto; height:300px;">                             
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <div class="navbar">
+                            <p class="nav-item mx-2 text-white col-1">Agregar usuario por correo</p>
+                            <div class="nav-item col-10 navbar">
+                                <asp:TextBox ID="txtSearchCorreo" runat="server" CssClass="w-75 txtcajas nav-item"></asp:TextBox>
+                                <asp:Button ID="btnAddUser" runat="server" Text="" CssClass="btnAddUser nav-item" />
+                            </div>                            
+                        </div>                        
+                        <asp:Repeater ID="RPUsers" runat="server">
+                            <ItemTemplate>
+                                <div class="navbar  isuserbox container-fluid">
+                                    <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
+                                        <asp:Label ID="lblNombreUserRP" runat="server" Text='<%# Eval("nombre") %>' CssClass="nav-item mx-2 text-white" ></asp:Label>
+                                        <asp:Label ID="lblCorreoRp" runat="server" Text='<%# Eval("correo") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
+                                        <asp:Image ID="imgUserRP" runat="server" ImageUrl='<%# Eval("imagenUsuario") %>' CssClass="nav-item mx-2 imgUser" Height="40px" Width="40px"/>
+                                    </div>                     
+                                    <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1" />
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+
+
+        </div>
 
 
         <div class="cajasanim container-fluid navbar superiorBar" id="supBar" style="height: 150px;">
             <div class="col-lg-2 col-md-2 col-sm-12 nav-item infobox mx-1" id="infobox">
                 <asp:Label ID="LlblProjectName" runat="server" Text="---" CssClass="text-white mx-2"></asp:Label>
+
             </div>
+
+
+
             <div id="ElementsPanel" class="nav-item navbar tkcontainerElements col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="nav-item mx-2 bg-dark navbar">
                     <input type="button" name="btnBotonTk" value="" id="btnTKButton" class="tkButtonbtn tkbutton my-1 nav-item mx-1" onclick="setselectedButton();" />
@@ -145,12 +197,15 @@
 
             </div>
 
-            <div class="col-lg-2 col-md-2 col-sm-12 nav-item" id="espaciadosSupBar"></div>
-            <div id="controlesGuardar">                
-                <input type="button" name="name" value="GUARDAR" class="botones mx-2" onclick="onSaveChanges();" />
-                <img src="imagenes/cloud-check-fill.svg" alt="onsaveFileimg" class="mx-2" style="height: 30px" id="saveIndicatorIMG"/>
+            <div class="col-lg-2 col-md-2 col-sm-12 nav-item" id="espaciadosSupBar">
+                <input type="button" name="name" value="" id="btnShowAddUsers" style="height: 40px; background-color: none; width: 40px; border: none; background: none; background-image: url('imagenes/EditorPrivacySection/person-fill-add.svg'); background-size: cover;" class="mx-2" />
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Vista/imagenes/EditorPrivacySection/globe.svg" CssClass="mx-2" Height="40px" Width="40px" />
             </div>
-            <div> 
+            <div id="controlesGuardar">
+                <input type="button" name="name" value="GUARDAR" class="botones mx-2" onclick="onSaveChanges();" />
+                <img src="imagenes/cloud-check-fill.svg" alt="onsaveFileimg" class="mx-2" style="height: 30px" id="saveIndicatorIMG" />
+            </div>
+            <div>
                 <input type="button" name="name" value="EXPORTAR" class="botones mx-2" onclick="showExportPanel();" />
             </div>
         </div>
@@ -585,24 +640,25 @@
         <div id="idControl" ultimaid=""></div>
         <div class="bg-dark">
 
+
+
+
             <div class="container-fluid navbar" id="exportPanel">
                 <div class="container-fluid nav-item col-12 col-sm-12 col-md-6 col-lg-4" id="outputDiv">
                     <p class="text-center text-white w-100">Salida del Editor</p>
-                    <textarea rows="4" cols="50" id="txtOutuputpy" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" readonly=""></textarea>
+                    <textarea rows="4" cols="50" id="txtOutuputpy" style="height: 500px; overflow: auto;" class="w-100 bg-black outputbox" readonly=""></textarea>
                     <%--<input type="text" name="name" value="" id="txtOutuputpy" readonly="true" aria-multiline="true" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" />--%>
                 </div>
                 <div class="container-fluid nav-item col-12 col-sm-12 col-md-6 col-lg-4" id="GeneratedPyDiv">
                     <p class="text-center text-white w-100">Codigo Generado</p>
                     <%--<input type="textarea" name="name" value="" id="txtpyGenerated" readonly="true" aria-multiline="true" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" />--%>
-                    <textarea rows="4" cols="50" id="txtpyGenerated" style="height: 500px; overflow:auto;" class="w-100 bg-black outputbox" readonly=""  ></textarea>
+                    <textarea rows="4" cols="50" id="txtpyGenerated" style="height: 500px; overflow: auto;" class="w-100 bg-black outputbox" readonly=""></textarea>
                 </div>
                 <div class="container-fluid nav-item col-12 col-sm-12 col-md-2 col-lg-4" id="exportDiv">
                     <p class="text-center text-white">Ten en cuenta que se generara codigo del la ultima version guardada y cargada en el editor, por lo que si no te aparece actualizado deberias recargar la pagina.</p>
-                    <input type="button" name="name" value="GENERAR CODIGO" id="btnGenCode" class="w-100 botones my-3" onclick="GeneratePython();"/>
+                    <input type="button" name="name" value="GENERAR CODIGO" id="btnGenCode" class="w-100 botones my-3" onclick="GeneratePython();" />
                     <input type="button" name="name" value="DESCARGAR CODIGO" id="btnDownloadCode" class="w-100 botones my-3" onclick="DownLoad()" />
                     <%--<a href="DownLoad();" id="ADownload" >Descargar Codigo</a>--%>
-                    
-                    
                 </div>
             </div>
 

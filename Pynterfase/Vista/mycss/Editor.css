@@ -3,17 +3,17 @@
     background-size: cover;
 }
 
-.canvaslayer{
-
-    position : relative;
-    top : 0px;
-    height : 600px;
-    width : 600px;
-    background-color : lightgray;
-    border-style : double;
-    border-color : black;
-    border-width : 2px;
-    border-radius : 0px;
+.canvaslayer {
+    position: relative;
+    top: 0px;
+    height: 600px;
+    width: 600px;
+    background-color: lightgray;
+    border-style: double;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 0px;
+    
 }
 
 .superiorBar {
@@ -188,4 +188,47 @@
     border-width : 1px;
     color : lightgreen;
     border-radius : 10px;
+}
+
+
+.btnDeleteUser {
+    background: none;
+    background-image: url('../imagenes/editorprivacysection/dash-circle.svg');
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    border: none;
+}
+
+.btnAddUser {
+    background:none;
+    background-image: url('../imagenes/editorprivacysection/plus-circle.svg');
+    background-size:cover;
+    height:30px;
+    width:30px;
+    border:none;
+}
+
+.imgUser{
+
+    border:none;
+    border-radius: 50%;
+
+}
+
+.isuserbox{
+
+    background-color : rgb(36, 36, 36);
+    border-color : red;
+    border:solid;
+    border-radius:5px;
+    border-width : 1px;
+    
+
+}
+
+.isuserbox:hover {
+    background-color: rgb(81, 81, 81);
+    border-color: green;
+    
 }

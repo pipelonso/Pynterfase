@@ -20,8 +20,13 @@ namespace Pynterfase.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            ddlPrivacyProps.Items.Add("Publico");
+            ddlPrivacyProps.Items.Add("Privado");
+
             
-            
+
+
             
             //Button myButton = new Button();
             //myButton.ID = "myButton";
@@ -35,6 +40,12 @@ namespace Pynterfase.Vista
 
             string iPr = Request.QueryString["iPr"];
             ClProyectoL objProyectoL = new ClProyectoL();
+
+            List<ClUsuarioE> listaUsuariosProj = objProyectoL.mtdGetAllUserInProject(iPr);
+
+            RPUsers.DataSource = listaUsuariosProj;
+            RPUsers.DataBind();
+
             ClproyectoE objProyecto = objProyectoL.mtdGetProjectById(iPr);
 
             LlblProjectName.Text = objProyecto.nombreProyecto;

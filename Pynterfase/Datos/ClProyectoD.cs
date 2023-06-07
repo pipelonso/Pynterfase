@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Web;
 
@@ -56,6 +57,35 @@ namespace Pynterfase.Datos
             return objProyecto;
 
         }
+
+        public List<ClUsuarioE> mtdGetAllusersInProject(string idProyecto) {
+
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            string consulta = "SELECT Usuario.* FROM Usuario , compartir WHERE compartir.idUsuarioCompatir = Usuario.IdUsuario AND compartir.idProyecto = " + idProyecto;
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            List<ClUsuarioE> listaUsuarios = new List<ClUsuarioE>();
+
+            for (int i = 0; i < datos.Rows.Count; i++)
+            {
+                ClUsuarioE objUSE = new ClUsuarioE();
+
+                objUSE.IdUsuario = int.Parse(datos.Rows[i]["IdUsuario"].ToString());
+                objUSE.IdRol = int.Parse(datos.Rows[i]["IdRol"].ToString());
+                objUSE.nombre = datos.Rows[i]["nombre"].ToString();
+                objUSE.correo = datos.Rows[i]["correo"].ToString();
+                objUSE.password = datos.Rows[i]["password"].ToString();
+                objUSE.imagenUsuario = datos.Rows[i]["imagenUsuario"].ToString();
+                
+                listaUsuarios.Add(objUSE);
+
+            }
+
+            return listaUsuarios;
+
+        }
+
+
 
 
     }
