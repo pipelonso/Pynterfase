@@ -76,7 +76,7 @@ namespace Pynterfase.Datos
                 objUSE.correo = datos.Rows[i]["correo"].ToString();
                 objUSE.password = datos.Rows[i]["password"].ToString();
                 objUSE.imagenUsuario = datos.Rows[i]["imagenUsuario"].ToString();
-                if (datos.Rows[i]["editable"].ToString() == "true")
+                if (datos.Rows[i]["editable"].ToString() == "True")
                 {
                     objUSE.editable = true;
                 }
@@ -110,7 +110,7 @@ namespace Pynterfase.Datos
                 objCompartirE.IdOwner = int.Parse(datos.Rows[i]["IdOwner"].ToString());
                 objCompartirE.IdUsuarioCompartir = int.Parse(datos.Rows[i]["IdUsuarioCompartir"].ToString());
                 objCompartirE.IdProyecto = int.Parse(datos.Rows[i]["IdProyecto"].ToString());
-                if (datos.Rows[i]["editable"].ToString() == "true")
+                if (datos.Rows[i]["editable"].ToString() == "True")
                 {
                     objCompartirE.editable = true;
                 }
@@ -147,26 +147,94 @@ namespace Pynterfase.Datos
         
         }
 
+        public int mtdUserExistOnProjectById(string correo, string ProjectID)
+        {
+
+            
+            ClusuarioD objUSD = new ClusuarioD();
+            ClUsuarioE objUSE = objUSD.mtdGetAllUser(correo);
+
+            string consulta = "SELECT * FROM Compartir WHERE idUsuarioCompartir = "+ objUSE.IdUsuario +" AND idProyecto = " + ProjectID;
+            ClProcesosSQL ObjSQL = new ClProcesosSQL();
+            DataTable datos = ObjSQL.mtdconsultar(consulta);
+
+            return datos.Rows.Count;
+
+        }
 
         public int mtdAddUserToProject(string idProyecto, string correo) {
 
-            ClUsuarioE objUSuarioE = new ClUsuarioE();
-            objUSuarioE = mtdGetProjectOwner(idProyecto);
-            ClusuarioD objUSD = new ClusuarioD();
-            ClUsuarioE objUsuarioECompartir = objUSD.mtdGetAllUser(correo);
+            int existeEnProyecto = mtdUserExistOnProjectById(correo,idProyecto);
 
-            string insert = "INSERT INTO Compartir (idOwner , idUsuarioCompartir, idProyecto, editable) VALUES ("+objUSuarioE.IdUsuario+","+objUsuarioECompartir.IdUsuario+","+idProyecto+",1)";
-            
-            ClProcesosSQL objSQL = new ClProcesosSQL();
-            int res = objSQL.mtdInsert(insert);
+            if (existeEnProyecto == 0) {
 
-            return res;
-            
+                ClUsuarioE objUSuarioE = new ClUsuarioE();
+                objUSuarioE = mtdGetProjectOwner(idProyecto);
+                ClusuarioD objUSD = new ClusuarioD();
+                ClUsuarioE objUsuarioECompartir = objUSD.mtdGetAllUser(correo);
+
+                string insert = "INSERT INTO Compartir (idOwner , idUsuarioCompartir, idProyecto, editable) VALUES (" + objUSuarioE.IdUsuario + "," + objUsuarioECompartir.IdUsuario + "," + idProyecto + ",'True')";
+
+                ClProcesosSQL objSQL = new ClProcesosSQL();
+                int res = objSQL.mtdInsert(insert);
+
+                return res;
+
+            }
+            else
+            {
+
+                return 0;   
+
+            }
+                        
         }
 
-        
+        public int mtdUpdateEditableUserByMail(string correo, string editable)
+        {
+
+            ClusuarioD objUSD = new ClusuarioD();
+            ClUsuarioE objUSE = objUSD.mtdGetAllUser(correo);
+
+
+            string actualizar = "UPDATE Compartir SET editable ='" + editable + "' WHERE idUsuarioCompartir =" + objUSE.IdUsuario;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            int res = objSQL.mtdInsert(actualizar);
+            return res;
+
+        }
+
+        public int mtdDeleteUserOnProjectByMail(string correo)
+        {
+
+            ClusuarioD objUSD = new ClusuarioD();
+            ClUsuarioE objUSE = objUSD.mtdGetAllUser(correo);
+
+            string deletestatement = "DELETE FROM Compartir WHERE idUsuarioCompartir =" + objUSE.IdUsuario;
+
+            ClProcesosSQL objProcesos = new ClProcesosSQL();
+            int res = objProcesos.mtdInsert(deletestatement);
+
+            return res;
+
+            
+
+
+        }
+
+        public int mtdUpdateProjectVisibilityById(string idProj , string visibility)
+        {
+
+            string updates = "UPDATE Proyecto SET visibilidad = '" + visibility + "' WHERE IdProyecto =" + idProj;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            int res = objSQL.mtdInsert(updates);
+            return res;
+
+        }
+
 
 
 
     }
+
 }

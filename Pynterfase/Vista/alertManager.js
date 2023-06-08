@@ -128,3 +128,21 @@ function NoImgUpload() {
         type: 'error'
     });
 }
+
+function cantAddUser() {
+    swal({
+        title: 'No se a podido agregar a este usuario',
+        text: 'Es probable que este usuario ya este agregado a tu proyecto o no se encuentre disponible',
+        type: 'error'
+    });
+}
+
+
+function UpdatedAccessUser() {
+    swal({
+        title: 'El acceso del proyecto del usuario a sido actualizado',
+        text: 'Ahora el podra ejercer el rol asignado',
+        type: 'success'
+    });
+}
+

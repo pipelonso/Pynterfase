@@ -21,8 +21,7 @@ namespace Pynterfase.Vista
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ddlPrivacyProps.Items.Add("Publico");
-            ddlPrivacyProps.Items.Add("Privado");
+            
 
             
 
@@ -42,9 +41,14 @@ namespace Pynterfase.Vista
             ClProyectoL objProyectoL = new ClProyectoL();
 
             List<ClCompartirUserInfo> listaUsuariosProj = objProyectoL.mtdGetAllUserInProject(iPr);
+            if (!IsPostBack) {
+                RPUsers.DataSource = listaUsuariosProj;
+                RPUsers.DataBind();
 
-            RPUsers.DataSource = listaUsuariosProj;
-            RPUsers.DataBind();
+                ddlPrivacyProps.Items.Add("Publico");
+                ddlPrivacyProps.Items.Add("Privado");
+            }
+            
 
             ClproyectoE objProyecto = objProyectoL.mtdGetProjectById(iPr);
 
@@ -136,12 +140,19 @@ namespace Pynterfase.Vista
                     RPUsers.DataBind();
 
                 }
+                else
+                {
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "NoFindUser", "cantAddUser();", true);
+
+                }
 
             }
             else
             {
 
                 //mostrar Alerta de usuario no encontrado
+                ScriptManager.RegisterStartupScript(this, GetType(), "NoFindUser", "cantAddUser();", true);
 
             }
 
@@ -153,17 +164,7 @@ namespace Pynterfase.Vista
 
         
 
-        protected void btnUpdateUser_Click(object sender, EventArgs e)
-        {
-
-            Button chkEditableUser = (Button)sender;
-            Repeater item = (Repeater)chkEditableUser.NamingContainer;
-
-            Label lblCorreo = (Label)FindControl("lblCorreoRp");
-
-            string correo = lblCorreo.Text;
-
-        }
+        
 
         protected void RPUsers_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -174,6 +175,76 @@ namespace Pynterfase.Vista
 
         protected void btnDeleteUserRp_Click1(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnUpdateUser_Click1(object sender, EventArgs e)
+        {
+            Button btnUpdate = (Button)sender;
+            RepeaterItem item = (RepeaterItem)btnUpdate.NamingContainer;
+
+            Label lblCorreo = (Label)item.FindControl("lblCorreoRp");
+            CheckBox check = (CheckBox)item.FindControl("chkEditableUser");
+
+            string correo = lblCorreo.Text;
+            bool ischeked = check.Checked;
+
+            ClProyectoL objProjL = new ClProyectoL();
+            int res = objProjL.mtdUpdateEditableUserByMail(correo, ischeked.ToString());
+
+            if (res == 1)
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActualizarAccesoDeUsuario", "UpdatedAccessUser();", true);
+
+            }
+
+
+        }
+
+        protected void RPUsers_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+        }
+
+        protected void btnDeleteUserRp_Click(object sender, EventArgs e)
+        {
+
+            Button btnUpdate = (Button)sender;
+            RepeaterItem item = (RepeaterItem)btnUpdate.NamingContainer;
+
+            Label lblCorreo = (Label)item.FindControl("lblCorreoRp");
+            string correo = lblCorreo.Text;
+
+            ClProyectoL objProjL = new ClProyectoL();
+            int res = objProjL.mtdDeleteUserOnProjectByMail(correo);
+
+
+            if (res == 1) {
+
+                string iPr = Request.QueryString["iPr"];
+                ClProyectoL objProyectoL = new ClProyectoL();
+
+                List<ClCompartirUserInfo> listaUsuariosProj = objProyectoL.mtdGetAllUserInProject(iPr);
+                
+                
+                    RPUsers.DataSource = listaUsuariosProj;
+                    RPUsers.DataBind();
+                
+
+
+            } 
+
+        }
+
+        protected void btnChangePrivacy_Click(object sender, EventArgs e)
+        {
+            string iPr = Request.QueryString["iPr"];
+            string selected = ddlPrivacyProps.SelectedValue;
+            ClProyectoL objProjL = new ClProyectoL();
+            int res = objProjL.mtdUpdateVisibilityById(iPr,selected);
+
+
 
         }
     }

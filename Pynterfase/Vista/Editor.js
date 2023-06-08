@@ -47,6 +47,8 @@ function ValidateStart() {
 
 
 
+
+
 function loadstart() {
 
     if (currentJson != "" || currentJson != null ) {
@@ -369,6 +371,8 @@ function startsall() {
     outputDiv.style.display = "none";
     GeneratedPyDiv.style.display = "none";
     exportDiv.style.display = "none";
+
+
 
 
     btnAddTk.disabled = true;

@@ -61,6 +61,32 @@ namespace Pynterfase.Logica
         
         }
 
+        public int mtdUpdateEditableUserByMail(string correo , string editable) {
+
+            ClProyectoD objProjD = new ClProyectoD();
+            int res = objProjD.mtdUpdateEditableUserByMail(correo, editable);
+            return res;
+        
+        }
+
+        public int mtdDeleteUserOnProjectByMail(string email)
+        {
+
+            ClProyectoD objProJD = new ClProyectoD();
+            int res = objProJD.mtdDeleteUserOnProjectByMail(email);
+            return res;
+
+        }
+
+        public int mtdUpdateVisibilityById(string idProj, string visibility)
+        {
+
+            ClProyectoD objProjD =new ClProyectoD();    
+            int res = objProjD.mtdUpdateProjectVisibilityById(idProj,visibility);
+            return res;
+
+
+        }
 
 
     }

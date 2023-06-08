@@ -1,4 +1,4 @@
-﻿<%@ Page EnableEventValidation="true" Language="C#" AutoEventWireup="true" CodeBehind="Editor.aspx.cs" Inherits="Pynterfase.Vista.Editor"  %>
+﻿<%@ Page  Language="C#" AutoEventWireup="true" CodeBehind="Editor.aspx.cs" Inherits="Pynterfase.Vista.Editor" EnableEventValidation="true" %>
 
 <!DOCTYPE html>
 
@@ -119,8 +119,8 @@
         <div class="container-fluid">
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <div class="navbar col-12">
-              
-                <div id="ProjectUsersPanel" class="nav-item col-6 col-sm-12 col-lg-6 col-md-6 ">
+                
+                <div id="ProjectUsersPanel" class="nav-item col-12 col-sm-12 col-lg-6 col-md-6 ">
                     <p class="text-white text-center">Quien tiene acceso al proyecto</p>
                     <div class="container-fluid" style="overflow: auto; height: 300px;">
                         
@@ -131,7 +131,7 @@
                                         <asp:Button ID="btnAddUser" runat="server" Text="" CssClass="btnAddUser nav-item" OnClick="btnAddUser_Click" />
                                     </div>
                                 </div>
-                                <asp:Repeater ID="RPUsers" runat="server" OnItemCommand="RPUsers_ItemCommand">
+                                <asp:Repeater ID="RPUsers" runat="server" OnItemCommand="RPUsers_ItemCommand" OnItemDataBound="RPUsers_ItemDataBound" ValidateRequestMode="Disabled">
                                     <ItemTemplate>
                                         <div class="navbar  isuserbox container-fluid my-2">
                                             <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
@@ -141,16 +141,17 @@
                                             </div>
                                             <asp:CheckBox ID="chkEditableUser" runat="server" CssClass="nav-item mx-2 col-sm-1 col-md-1 col-lg-1 text-white" Text="Puede editar" Checked='<%# Eval("editable") %>'  />
                                             
-                                            <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1"  />
-                                            <asp:Button ID="btnUpdateUser" runat="server" Text="Actualizar" CssClass="botones col-sm-12 col-md-12 col-lg-12"/>
+                                            <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1" OnClick="btnDeleteUserRp_Click" />
+                                            <asp:Button ID="btnUpdateUser" runat="server" Text="Actualizar" CssClass="botones col-sm-12 col-md-12 col-lg-12" OnClick="btnUpdateUser_Click1"/>
                                         </div>
+                                        
                                     </ItemTemplate>
                                 </asp:Repeater>
                         
                     </div>
                 </div>
 
-                <div id="PrivacyPanel" class="nav-item container-fluid col-6 col-sm-12 col-lg-6 col-md-6">
+                <div id="PrivacyPanel" class="nav-item container-fluid col-12 col-sm-12 col-lg-6 col-md-6">
                     <%--<input type="button" name="name" value="" id="btnclosePrivacy" class="my-2 closebtn" />--%>
                     <p class="text-center text-white w-100">CAMBIAR PRIVACIDAD DEL PROYECTO</p>
                     <asp:DropDownList ID="ddlPrivacyProps" runat="server" CssClass="my-2 botones w-100"></asp:DropDownList>
@@ -158,7 +159,7 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <div class="w-100">
-                                <asp:Button ID="btnChangePrivacy" runat="server" Text="APLICAR CAMBIOS" CssClass="botones w-100" />
+                                <asp:Button ID="btnChangePrivacy" runat="server" Text="APLICAR CAMBIOS" CssClass="botones w-100" OnClick="btnChangePrivacy_Click" />
                             </div>                            
                         </ContentTemplate>
                     </asp:UpdatePanel>
@@ -644,11 +645,7 @@
 
 
         <%--<asp:Button ID="btnTop" runat="server" Text=">>" OnClick="btnTop_Click" />--%>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="../Scripts/sweetalert.min.js"></script>
-        <script src="Editor.js"></script>
-        <script src="alertManager.js"></script>
-        <div id="idControl" ultimaid=""></div>
+        
         <div class="bg-dark">
 
 
@@ -675,7 +672,13 @@
 
         </div>
 
+        <script src="js/bootstrap.min.js"></script>
+        <script src="../Scripts/sweetalert.min.js"></script>
+        <script src="Editor.js"></script>
+        <script src="alertManager.js"></script>
+        <div id="idControl" ultimaid=""></div>
 
+        
     </form>
 </body>
 </html>
