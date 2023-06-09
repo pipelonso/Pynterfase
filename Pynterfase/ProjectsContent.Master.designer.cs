@@ -33,6 +33,15 @@ namespace Pynterfase.Vista
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control btnHome.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnHome;
+
+        /// <summary>
         /// Control LinkButton1.
         /// </summary>
         /// <remarks>
@@ -51,13 +60,22 @@ namespace Pynterfase.Vista
         protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
 
         /// <summary>
-        /// Control btnHome.
+        /// Control btnShared.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnHome;
+        protected global::System.Web.UI.WebControls.LinkButton btnShared;
+
+        /// <summary>
+        /// Control btnSaved.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnSaved;
 
         /// <summary>
         /// Control ContentPlaceHolder1.

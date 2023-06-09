@@ -11,3 +11,34 @@
     background-color : rgb(33, 33, 33);
 
 }
+
+.onlink {
+    
+    background-color: rgb(33, 33, 33);
+    padding: 5px;
+
+
+}
+
+    .onlink:hover {
+        animation: onlinks;
+        animation-delay: 0s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+
+@keyframes onlinks{
+
+    0% {
+        background-color: rgb(33, 33, 33);
+        border-radius : 0px;
+    }
+    100% {
+        background-color: rgb(66, 66, 66);
+        border-radius : 5px;
+    }
+
+
+
+}

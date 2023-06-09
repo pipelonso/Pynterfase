@@ -116,7 +116,8 @@
             <hr />
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid bg-dark">
+            <input type="button" name="name" value="" class="closebtn my-2" id="closePrivacy" onclick="ClosePrivacyPanel();"/>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <div class="navbar col-12">
                 
@@ -210,8 +211,8 @@
             </div>
 
             <div class="col-lg-2 col-md-2 col-sm-12 nav-item" id="espaciadosSupBar">
-                <input type="button" name="name" value="" id="btnShowAddUsers" style="height: 40px; background-color: none; width: 40px; border: none; background: none; background-image: url('imagenes/EditorPrivacySection/person-fill-add.svg'); background-size: cover;" class="mx-2" />
-                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Vista/imagenes/EditorPrivacySection/globe.svg" CssClass="mx-2" Height="40px" Width="40px" />
+                <input type="button" name="name" value="" id="btnShowAddUsers" style="height: 40px; background-color: none; width: 80px; border: none; background: none; background-image: url('imagenes/EditorPrivacySection/globe.svg'); background-size: cover;" class="mx-2" onclick="ShowPrivacyPanel();"/>
+                <%--<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Vista/imagenes/EditorPrivacySection/globe.svg" CssClass="mx-2" Height="40px" Width="40px" />--%>
             </div>
             <div id="controlesGuardar">
                 <input type="button" name="name" value="GUARDAR" class="botones mx-2" onclick="onSaveChanges();" />

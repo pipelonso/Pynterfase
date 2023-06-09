@@ -115,6 +115,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Principal.js" />
     <Content Include="Vista\Create.aspx" />
+    <Content Include="Vista\Documentation.aspx" />
     <Content Include="Vista\Editor.aspx" />
     <Content Include="Vista\Editor.js" />
     <Content Include="Vista\forgotpassword.aspx" />
@@ -124,6 +125,8 @@
     <Content Include="Vista\imagenes\backreglogin.gif" />
     <Content Include="Vista\imagenes\bignite.svg" />
     <Content Include="Vista\imagenes\box-arrow-in-right.svg" />
+    <Content Include="Vista\imagenes\btnSavedOff.svg" />
+    <Content Include="Vista\imagenes\btnSavedOn.svg" />
     <Content Include="Vista\imagenes\checkIdentityFalse.svg" />
     <Content Include="Vista\imagenes\checkIdentityTrue.svg" />
     <Content Include="Vista\imagenes\cloud-arrow-up.svg" />
@@ -150,6 +153,7 @@
     <Content Include="Vista\imagenes\projectsBack.svg" />
     <Content Include="Vista\imagenes\regbox.svg" />
     <Content Include="Vista\imagenes\regImg.svg" />
+    <Content Include="Vista\imagenes\SharedWithMe.svg" />
     <Content Include="Vista\imagenes\sunshine-2250.gif" />
     <Content Include="Vista\imagenes\TkButtons\btnBaseTk.svg" />
     <Content Include="Vista\imagenes\TkButtons\btnButton.svg" />
@@ -178,6 +182,8 @@
     <Content Include="Vista\mycss\tkStyles.css" />
     <Content Include="Vista\mycss\Verificacion.css" />
     <Content Include="Vista\mycss\Visor.css" />
+    <Content Include="Vista\ProjSaved.aspx" />
+    <Content Include="Vista\ProjSharedWithMe.aspx" />
     <Content Include="Vista\Proyectos.aspx" />
     <Content Include="Vista\Pynterfase avatars\1.png" />
     <Content Include="Vista\Pynterfase avatars\2.png" />
@@ -282,6 +288,13 @@
     <Compile Include="Vista\Create.aspx.designer.cs">
       <DependentUpon>Create.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Documentation.aspx.cs">
+      <DependentUpon>Documentation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Documentation.aspx.designer.cs">
+      <DependentUpon>Documentation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Editor.aspx.cs">
       <DependentUpon>Editor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,6 +315,20 @@
     </Compile>
     <Compile Include="Vista\InfoUsuario.aspx.designer.cs">
       <DependentUpon>InfoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ProjSaved.aspx.cs">
+      <DependentUpon>ProjSaved.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\ProjSaved.aspx.designer.cs">
+      <DependentUpon>ProjSaved.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ProjSharedWithMe.aspx.cs">
+      <DependentUpon>ProjSharedWithMe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\ProjSharedWithMe.aspx.designer.cs">
+      <DependentUpon>ProjSharedWithMe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Proyectos.aspx.cs">
       <DependentUpon>Proyectos.aspx</DependentUpon>

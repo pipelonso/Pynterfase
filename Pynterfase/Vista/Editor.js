@@ -372,14 +372,18 @@ function startsall() {
     GeneratedPyDiv.style.display = "none";
     exportDiv.style.display = "none";
 
+    var PrivacyPanel = document.getElementById("PrivacyPanel");
+    var ProjectUsersPanel = document.getElementById("ProjectUsersPanel");
 
-
+    PrivacyPanel.style.display = "none";
+    ProjectUsersPanel.style.display = "none";
+    var closePrivacy = document.getElementById("closePrivacy");
+    closePrivacy.style.display = "none";
 
     btnAddTk.disabled = true;
 
     var btnDeleteTk = document.getElementById("btnDeleteTk");
     btnDeleteTk.disabled = true;
-
     
     propertiesPanel.style.display = "none";
     limitlienzo.style.display = "none";
@@ -396,6 +400,32 @@ function startsall() {
 
 
 }
+
+function ShowPrivacyPanel() {
+
+    var PrivacyPanel = document.getElementById("PrivacyPanel");
+    var ProjectUsersPanel = document.getElementById("ProjectUsersPanel");
+    var closePrivacy = document.getElementById("closePrivacy");
+
+    PrivacyPanel.style.display = "block";
+    ProjectUsersPanel.style.display = "block";
+    closePrivacy.style.display = "block";
+
+}
+
+function ClosePrivacyPanel() {
+
+    var PrivacyPanel = document.getElementById("PrivacyPanel");
+    var ProjectUsersPanel = document.getElementById("ProjectUsersPanel");
+    var closePrivacy = document.getElementById("closePrivacy");
+
+
+    PrivacyPanel.style.display = "none";
+    ProjectUsersPanel.style.display = "none";
+    closePrivacy.style.display = "none";
+
+}
+
 
 function startEditor() {
 

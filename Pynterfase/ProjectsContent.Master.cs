@@ -33,5 +33,29 @@ namespace Pynterfase.Vista
             Response.Redirect("~/Inicio.aspx");
 
         }
+
+        //protected void btnShared_Click(object sender, EventArgs e)
+        //{
+
+        //    Response.Redirect("~/Vista/ProjSharedWithMe.aspx");
+
+        //}
+
+        //protected void btnSaved_Click(object sender, EventArgs e)
+        //{
+
+        //    Response.Redirect("~/Vista/ProjSaved.aspx");
+
+        //}
+
+        protected void btnShared_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/ProjSharedWithMe.aspx");
+        }
+
+        protected void btnSaved_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/ProjSaved.aspx");
+        }
     }
 }
