@@ -232,6 +232,31 @@ namespace Pynterfase.Datos
 
         }
 
+        public List<ClCompartirProj> mtdGetSharedProjectsByUserId(string id)
+        {
+
+            string select = "SELECT Compartir.idProyecto, Usuario.nombre , Proyecto.nombreProyecto, Proyecto.visibilidad FROM Compartir , Usuario, Proyecto WHERE Usuario.IdUsuario = Proyecto.idUsuario AND Usuario.IdUsuario = Compartir.idOwner AND Proyecto.IdProyecto = Compartir.idProyecto AND Compartir.idUsuarioCompartir = " + id;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            DataTable datos = objSQL.mtdconsultar(select);
+
+            List<ClCompartirProj> listaSharedProjs = new List<ClCompartirProj>();
+
+            for (int i = 0; i < datos.Rows.Count; i++)
+            {
+
+                ClCompartirProj objCompProj = new ClCompartirProj();
+                objCompProj.idProyecto = int.Parse(datos.Rows[i]["idProyecto"].ToString());
+                objCompProj.nombreProyecto = datos.Rows[i]["nombreProyecto"].ToString();
+                objCompProj.nombre = datos.Rows[i]["nombre"].ToString();
+                objCompProj.visibilidad = datos.Rows[i]["visibilidad"].ToString();
+
+                listaSharedProjs.Add(objCompProj);
+
+            }
+            
+            return listaSharedProjs;
+
+        }
 
 
 

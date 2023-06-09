@@ -1,0 +1,43 @@
+﻿body {
+    background-image: url('../imagenes/SharedWithMeBack.svg');
+    background-size:cover;
+}
+
+
+.cajaProj {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    position: relative;
+    top: 0px;
+}
+
+.cajaProj:hover{
+
+    animation : cajaProjHover;
+    animation-duration : 0.5s;
+    animation-fill-mode : forwards;
+}
+
+
+
+@keyframes cajaProjHover {
+
+    0% {
+        border-color: black;
+        border-style: solid;
+        position: relative;
+        top: 0px;
+    }
+    100% {
+        border-color: lightblue;
+        border-style: double;
+        position: relative;
+        top: -10px;
+    }
+
+
+
+
+
+}

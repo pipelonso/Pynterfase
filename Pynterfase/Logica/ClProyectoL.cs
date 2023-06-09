@@ -88,6 +88,16 @@ namespace Pynterfase.Logica
 
         }
 
+        public List<ClCompartirProj> mtdGetSharedProjectsByUserId(string id)
+        {
+
+            ClProyectoD objProjD = new ClProyectoD();
+            List<ClCompartirProj> listaproj = objProjD.mtdGetSharedProjectsByUserId(id);
+            return listaproj;
+
+        }
+
+
 
     }
 }
