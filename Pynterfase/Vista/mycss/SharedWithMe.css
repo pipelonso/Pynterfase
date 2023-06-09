@@ -41,3 +41,29 @@
 
 
 }
+
+
+.NotVisible {
+    display: none;
+}
+
+.botones {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: gray;
+}
+
+    .botones:hover {
+        border: double;
+        border-color: dimgray;
+        border-width: 3px;
+        background-color: lightslategray;
+    }
+
+.txtcajas {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+}
+

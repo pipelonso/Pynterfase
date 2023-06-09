@@ -17,12 +17,16 @@ namespace Pynterfase.Vista
 
             ClusuarioL objUSL = new ClusuarioL();
             ClUsuarioE objUSD = objUSL.mtdGetAllUser(Session["usuario"].ToString());
+            if (!IsPostBack) {
 
-            ClProyectoL objProjL = new ClProyectoL();
-            List<ClCompartirProj> listacompartir = objProjL.mtdGetSharedProjectsByUserId(objUSD.IdUsuario.ToString());
+                ClProyectoL objProjL = new ClProyectoL();
+                List<ClCompartirProj> listacompartir = objProjL.mtdGetSharedProjectsByUserId(objUSD.IdUsuario.ToString());
 
-            RpProyectos.DataSource = listacompartir;
-            RpProyectos.DataBind();
+                RpProyectos.DataSource = listacompartir;
+                RpProyectos.DataBind();
+
+            }
+            
 
 
 
