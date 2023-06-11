@@ -32,6 +32,9 @@ namespace Pynterfase.Vista
             ScriptManager.RegisterStartupScript(this, GetType(), "HideEditor", "startsall();", true);
             
 
+
+
+
             string iPr = Request.QueryString["iPr"];
             ClProyectoL objProyectoL = new ClProyectoL();
 
@@ -42,12 +45,87 @@ namespace Pynterfase.Vista
 
                 ddlPrivacyProps.Items.Add("Publico");
                 ddlPrivacyProps.Items.Add("Privado");
+
+
             }
             
 
             ClproyectoE objProyecto = objProyectoL.mtdGetProjectById(iPr);
 
             LlblProjectName.Text = objProyecto.nombreProyecto;
+
+            if (!IsPostBack) {
+
+                if (objProyecto.visibilidad == "Publico")
+                {
+
+                    ddlPrivacyProps.SelectedIndex = 0;
+
+                }
+                else
+                {
+
+                    ddlPrivacyProps.SelectedIndex = 1;
+
+                }
+
+            }
+
+            ClusuarioL objUSL = new ClusuarioL();
+            ClUsuarioE objUSE = objUSL.mtdGetAllUser(Session["usuario"].ToString());
+
+            int IsOwner = objProyectoL.mtdCheckIfUserIsOwner(objUSE.IdUsuario.ToString(), iPr);
+            int userInProject = objProyectoL.mtdCheckIfUserIsOnProjectById(objUSE.IdUsuario.ToString());
+
+
+
+            if (IsOwner != 1) { //Si No el dueño del proyecto
+            
+                if (userInProject != 1) { //Usuario No pertenece al proyecto
+
+                    
+
+                    if (objProyecto.visibilidad != "Publico")
+                    {
+
+                        //llevar a pagina de error
+
+                        Response.Redirect("~/Vista/Error.aspx");
+
+                    }
+                    else
+                    {
+
+                        //Llevar al visor
+                        Response.Redirect("~/Vista/Visor.aspx");
+
+                    }
+
+                }
+                else //Usuario pertenece al proyecto
+                {
+                    
+                    ClCompartirE objCompE = objProyectoL.mtdGetUserOnCompartirById(objUSE.IdUsuario.ToString(),iPr);
+
+                    if (objCompE.editable == true) {
+
+                        //dejar en el editor                        
+
+                    }
+                    else
+                    {
+
+                        //llevar a visor
+                        Response.Redirect("~/Vista/Visor.aspx");
+
+                    }
+
+
+                }
+
+            }
+
+
 
             ScriptManager.RegisterStartupScript(this, GetType(), "SetProjId", "projectID = "+ iPr +";", true);
 
@@ -121,23 +199,42 @@ namespace Pynterfase.Vista
             ClusuarioL objUSL = new ClusuarioL();
             int existe = objUSL.mtdCheckUserExist(txtSearchCorreo.Text);
 
-            if (existe == 1) {
+            ClUsuarioE objUSE = objUSL.mtdGetAllUser(Session["usuario"].ToString());
 
-                ClProyectoL objProJL = new ClProyectoL();
-                int insertres = objProJL.mtdAddUserToProject(iPr,txtSearchCorreo.Text);
+            ClProyectoL objProjL = new ClProyectoL();
+            int isOwner = objProjL.mtdCheckIfUserIsOwner(objUSE.IdUsuario.ToString(), iPr); //verifica si es el dueño del proyecto
 
-                if (insertres == 1) {
 
-                    //Mostrar alerta de usuario encontrado y agregado
-                    List<ClCompartirUserInfo> listaUsuariosProj = objProJL.mtdGetAllUserInProject(iPr);
+            if (isOwner == 1) {
 
-                    RPUsers.DataSource = listaUsuariosProj;
-                    RPUsers.DataBind();
+                if (existe == 1)
+                {
+
+                    ClProyectoL objProJL = new ClProyectoL();
+                    int insertres = objProJL.mtdAddUserToProject(iPr, txtSearchCorreo.Text);
+
+                    if (insertres == 1)
+                    {
+
+                        //Mostrar alerta de usuario encontrado y agregado
+                        List<ClCompartirUserInfo> listaUsuariosProj = objProJL.mtdGetAllUserInProject(iPr);
+
+                        RPUsers.DataSource = listaUsuariosProj;
+                        RPUsers.DataBind();
+
+                    }
+                    else
+                    {
+
+                        ScriptManager.RegisterStartupScript(this, GetType(), "NoFindUser", "cantAddUser();", true);
+
+                    }
 
                 }
                 else
                 {
 
+                    //mostrar Alerta de usuario no encontrado
                     ScriptManager.RegisterStartupScript(this, GetType(), "NoFindUser", "cantAddUser();", true);
 
                 }
@@ -146,10 +243,11 @@ namespace Pynterfase.Vista
             else
             {
 
-                //mostrar Alerta de usuario no encontrado
-                ScriptManager.RegisterStartupScript(this, GetType(), "NoFindUser", "cantAddUser();", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "AccesoDenegado", "AccessDenied();", true);
 
             }
+
+            
 
 
 
@@ -185,14 +283,31 @@ namespace Pynterfase.Vista
             bool ischeked = check.Checked;
 
             ClProyectoL objProjL = new ClProyectoL();
-            int res = objProjL.mtdUpdateEditableUserByMail(correo, ischeked.ToString());
+            ClusuarioL objUSL = new ClusuarioL();
+            string iPr = Request.QueryString["iPr"];
+            ClUsuarioE objUSE = objUSL.mtdGetAllUser(Session["usuario"].ToString());
+            
+            int isOwner = objProjL.mtdCheckIfUserIsOwner(objUSE.IdUsuario.ToString(), iPr); //verifica si es el dueño del proyecto
 
-            if (res == 1)
+            if (isOwner == 1) {
+                int res = objProjL.mtdUpdateEditableUserByMail(correo, ischeked.ToString());
+
+                if (res == 1)
+                {
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ActualizarAccesoDeUsuario", "UpdatedAccessUser();", true);
+
+                }
+            }
+            else
             {
 
-                ScriptManager.RegisterStartupScript(this, GetType(), "ActualizarAccesoDeUsuario", "UpdatedAccessUser();", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "AccesoDenegado", "AccessDenied();", true);
 
             }
+            
+
+            
 
 
         }
@@ -204,31 +319,45 @@ namespace Pynterfase.Vista
 
         protected void btnDeleteUserRp_Click(object sender, EventArgs e)
         {
-
+            string iPr = Request.QueryString["iPr"];
             Button btnUpdate = (Button)sender;
             RepeaterItem item = (RepeaterItem)btnUpdate.NamingContainer;
 
             Label lblCorreo = (Label)item.FindControl("lblCorreoRp");
             string correo = lblCorreo.Text;
 
-            ClProyectoL objProjL = new ClProyectoL();
-            int res = objProjL.mtdDeleteUserOnProjectByMail(correo);
+            ClProyectoL objProjL = new ClProyectoL();            
+            ClusuarioL objUSL = new ClusuarioL();
+            ClUsuarioE objUSE = objUSL.mtdGetAllUser(Session["usuario"].ToString());
+            int isOwner = objProjL.mtdCheckIfUserIsOwner(objUSE.IdUsuario.ToString(), iPr); //verifica si es el dueño del proyecto
+
+            if (isOwner == 1) {
+
+                int res = objProjL.mtdDeleteUserOnProjectByMail(correo);
+
+                if (res == 1)
+                {
+
+                    
+                    ClProyectoL objProyectoL = new ClProyectoL();
+
+                    List<ClCompartirUserInfo> listaUsuariosProj = objProyectoL.mtdGetAllUserInProject(iPr);
 
 
-            if (res == 1) {
-
-                string iPr = Request.QueryString["iPr"];
-                ClProyectoL objProyectoL = new ClProyectoL();
-
-                List<ClCompartirUserInfo> listaUsuariosProj = objProyectoL.mtdGetAllUserInProject(iPr);
-                
-                
                     RPUsers.DataSource = listaUsuariosProj;
                     RPUsers.DataBind();
-                
 
+                }
 
-            } 
+            }
+            else
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "AccesoDenegado", "AccessDenied();", true);
+
+            }
+
+            
 
         }
 

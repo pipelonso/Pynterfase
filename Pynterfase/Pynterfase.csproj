@@ -118,6 +118,7 @@
     <Content Include="Vista\Documentation.aspx" />
     <Content Include="Vista\Editor.aspx" />
     <Content Include="Vista\Editor.js" />
+    <Content Include="Vista\Error.aspx" />
     <Content Include="Vista\forgotpassword.aspx" />
     <Content Include="Vista\forgotpassword.js" />
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
@@ -305,6 +306,13 @@
     </Compile>
     <Compile Include="Vista\Editor.aspx.designer.cs">
       <DependentUpon>Editor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\forgotpassword.aspx.cs">
       <DependentUpon>forgotpassword.aspx</DependentUpon>

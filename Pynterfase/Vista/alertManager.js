@@ -146,3 +146,12 @@ function UpdatedAccessUser() {
     });
 }
 
+function AccessDenied() {
+    swal({
+        title: 'No tienes permisos para esto',
+        text: 'No se pudo ejecutar la acción',
+        type: 'error'
+    });
+}
+
+

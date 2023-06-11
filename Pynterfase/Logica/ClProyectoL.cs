@@ -4,6 +4,7 @@ using Pynterfase.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Web;
 
 namespace Pynterfase.Logica
@@ -97,7 +98,30 @@ namespace Pynterfase.Logica
 
         }
 
+        public int mtdCheckIfUserIsOnProjectById(string id)
+        {
 
+            ClProyectoD objProjD = new ClProyectoD();
+            int res = objProjD.mtdChekIfUserIsOnProjectById(id);
+            return res;
+        }
+
+        public int mtdCheckIfUserIsOwner(string UserID, string ProjectId) {
+
+            ClProyectoD objProjD = new ClProyectoD();
+            int res = objProjD.mtdCheckIfUserIsOwner(UserID , ProjectId);
+            return res;
+
+        }
+
+        public ClCompartirE mtdGetUserOnCompartirById(string userID , String ProjectID)
+        {
+
+            ClProyectoD objProjD = new ClProyectoD();
+            ClCompartirE objCompE = objProjD.mtdGetUserOnCompartirByID(userID , ProjectID);
+            return objCompE;
+
+        }
 
     }
 }

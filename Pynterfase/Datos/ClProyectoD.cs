@@ -1,38 +1,39 @@
-﻿using Pynterfase.Entidades;
-using System;
+﻿using Org.BouncyCastle.Asn1.Mozilla;
+using Pynterfase.Entidades;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using System.Web;
+using System.Web.UI.WebControls;
 
 namespace Pynterfase.Datos
 {
     public class ClProyectoD
     {
-        public List<ClproyectoE> mtdGetAllProjects(string idUsuario) {
-            
+        public List<ClproyectoE> mtdGetAllProjects(string idUsuario)
+        {
+
             Procedimientos proc = new Procedimientos();
             List<ClproyectoE> listaProyectos = proc.mtdGetAllProjects(idUsuario);
             return listaProyectos;
 
         }
 
-        public int mtdAddProject(ClproyectoE objProyecto) {
+        public int mtdAddProject(ClproyectoE objProyecto)
+        {
 
             ClProcesosSQL objSQL = new ClProcesosSQL();
-            string insert = "INSERT INTO Proyecto (idUsuario , nombreProyecto , visibilidad) VALUES ("+objProyecto.idUsuarioP+",'"+objProyecto.nombreProyecto+"','"+objProyecto.visibilidad+"')";
+            string insert = "INSERT INTO Proyecto (idUsuario , nombreProyecto , visibilidad) VALUES (" + objProyecto.idUsuarioP + ",'" + objProyecto.nombreProyecto + "','" + objProyecto.visibilidad + "')";
             int res = objSQL.mtdInsert(insert);
 
             return res;
-        
+
         }
 
-        public ClproyectoE mtdGetRecentProjectIdByMail(string correo) {
+        public ClproyectoE mtdGetRecentProjectIdByMail(string correo)
+        {
 
             ClProcesosSQL objSQL = new ClProcesosSQL();
-            string consulta = "select MAX(idProyecto) as idProyecto FROM Proyecto , Usuario WHERE Usuario.correo = '"+correo+"' AND Proyecto.idUsuario = Usuario.IdUsuario";
+            string consulta = "select MAX(idProyecto) as idProyecto FROM Proyecto , Usuario WHERE Usuario.correo = '" + correo + "' AND Proyecto.idUsuario = Usuario.IdUsuario";
             DataTable datos = objSQL.mtdconsultar(consulta);
 
             ClproyectoE objProyecto = new ClproyectoE();
@@ -42,7 +43,8 @@ namespace Pynterfase.Datos
         }
 
 
-        public ClproyectoE mtdGetProjectById(string id) {
+        public ClproyectoE mtdGetProjectById(string id)
+        {
 
             ClProcesosSQL objSQL = new ClProcesosSQL();
             string consulta = "SELECT * FROM Proyecto WHERE IdProyecto = " + id;
@@ -58,7 +60,8 @@ namespace Pynterfase.Datos
 
         }
 
-        public List<ClCompartirUserInfo> mtdGetAllusersInProject(string idProyecto) {
+        public List<ClCompartirUserInfo> mtdGetAllusersInProject(string idProyecto)
+        {
 
             ClProcesosSQL objSQL = new ClProcesosSQL();
             string consulta = "SELECT Usuario.* , Compartir.editable FROM Usuario , Compartir WHERE compartir.idUsuarioCompartir = Usuario.IdUsuario AND Compartir.idProyecto = " + idProyecto;
@@ -84,7 +87,7 @@ namespace Pynterfase.Datos
                 {
                     objUSE.editable = false;
                 }
-                
+
 
                 listaUsuarios.Add(objUSE);
 
@@ -123,17 +126,18 @@ namespace Pynterfase.Datos
                 listacompartir.Add(objCompartirE);
 
             }
-            
+
             return listacompartir;
 
         }
 
 
-        public ClUsuarioE mtdGetProjectOwner(string idProyecto) {
+        public ClUsuarioE mtdGetProjectOwner(string idProyecto)
+        {
             ClProcesosSQL objSQL = new ClProcesosSQL();
-            string consulta = "SELECT Usuario.* FROM Usuario , Proyecto WHERE Usuario.IdUsuario = Proyecto.idUsuario AND Proyecto.IdProyecto =" + idProyecto;            
+            string consulta = "SELECT Usuario.* FROM Usuario , Proyecto WHERE Usuario.IdUsuario = Proyecto.idUsuario AND Proyecto.IdProyecto =" + idProyecto;
             DataTable datos = objSQL.mtdconsultar(consulta);
-            
+
             ClUsuarioE objUSE = new ClUsuarioE();
 
             objUSE.IdUsuario = int.Parse(datos.Rows[0]["IdUsuario"].ToString());
@@ -144,17 +148,17 @@ namespace Pynterfase.Datos
             objUSE.imagenUsuario = datos.Rows[0]["imagenUsuario"].ToString();
 
             return objUSE;
-        
+
         }
 
         public int mtdUserExistOnProjectById(string correo, string ProjectID)
         {
 
-            
+
             ClusuarioD objUSD = new ClusuarioD();
             ClUsuarioE objUSE = objUSD.mtdGetAllUser(correo);
 
-            string consulta = "SELECT * FROM Compartir WHERE idUsuarioCompartir = "+ objUSE.IdUsuario +" AND idProyecto = " + ProjectID;
+            string consulta = "SELECT * FROM Compartir WHERE idUsuarioCompartir = " + objUSE.IdUsuario + " AND idProyecto = " + ProjectID;
             ClProcesosSQL ObjSQL = new ClProcesosSQL();
             DataTable datos = ObjSQL.mtdconsultar(consulta);
 
@@ -162,11 +166,13 @@ namespace Pynterfase.Datos
 
         }
 
-        public int mtdAddUserToProject(string idProyecto, string correo) {
+        public int mtdAddUserToProject(string idProyecto, string correo)
+        {
 
-            int existeEnProyecto = mtdUserExistOnProjectById(correo,idProyecto);
+            int existeEnProyecto = mtdUserExistOnProjectById(correo, idProyecto);
 
-            if (existeEnProyecto == 0) {
+            if (existeEnProyecto == 0)
+            {
 
                 ClUsuarioE objUSuarioE = new ClUsuarioE();
                 objUSuarioE = mtdGetProjectOwner(idProyecto);
@@ -184,10 +190,10 @@ namespace Pynterfase.Datos
             else
             {
 
-                return 0;   
+                return 0;
 
             }
-                        
+
         }
 
         public int mtdUpdateEditableUserByMail(string correo, string editable)
@@ -217,12 +223,12 @@ namespace Pynterfase.Datos
 
             return res;
 
-            
+
 
 
         }
 
-        public int mtdUpdateProjectVisibilityById(string idProj , string visibility)
+        public int mtdUpdateProjectVisibilityById(string idProj, string visibility)
         {
 
             string updates = "UPDATE Proyecto SET visibilidad = '" + visibility + "' WHERE IdProyecto =" + idProj;
@@ -253,12 +259,61 @@ namespace Pynterfase.Datos
                 listaSharedProjs.Add(objCompProj);
 
             }
-            
+
             return listaSharedProjs;
 
         }
 
+        public int mtdChekIfUserIsOnProjectById(string id)
+        {
 
+            string consulta = "SELECT * FROM Compartir WHERE idUsuarioCompartir = " + id;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            return datos.Rows.Count;
+
+        }
+
+        public int mtdCheckIfUserIsOwner(string userID, string ProjectID)
+        {
+
+            string select = "SELECT * FROM Proyecto WHERE IdProyecto = " + ProjectID + " AND idUsuario =" + userID ;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            DataTable datos = objSQL.mtdconsultar(select);            
+            return datos.Rows.Count;
+
+        }
+
+        public ClCompartirE mtdGetUserOnCompartirByID(string UserID, string ProjID) {
+
+            string consulta = "SELECT * FROM Compartir WHERE idUsuarioCompartir = " + UserID + " AND idProyecto =" + ProjID;
+            ClProcesosSQL objSql = new ClProcesosSQL();
+            DataTable datos = objSql.mtdconsultar(consulta);
+            
+            ClCompartirE objCompartirE = new ClCompartirE();
+
+            objCompartirE.IdCompartir = int.Parse(datos.Rows[0]["IdCompartir"].ToString());
+            objCompartirE.IdOwner = int.Parse(datos.Rows[0]["IdOwner"].ToString());
+            objCompartirE.IdUsuarioCompartir = int.Parse(datos.Rows[0]["idUsuarioCompartir"].ToString());
+            objCompartirE.IdProyecto = int.Parse(datos.Rows[0]["IdProyecto"].ToString());
+            if (datos.Rows[0]["editable"].ToString() == "True" )
+            {
+
+                objCompartirE.editable = true;
+
+            }
+            else
+            {
+
+                objCompartirE.editable = false;
+
+            }
+            
+            return objCompartirE;
+
+
+        }
 
     }
 
