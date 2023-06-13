@@ -75,7 +75,7 @@ namespace Pynterfase.Vista
             ClUsuarioE objUSE = objUSL.mtdGetAllUser(Session["usuario"].ToString());
 
             int IsOwner = objProyectoL.mtdCheckIfUserIsOwner(objUSE.IdUsuario.ToString(), iPr);
-            int userInProject = objProyectoL.mtdCheckIfUserIsOnProjectById(objUSE.IdUsuario.ToString());
+            int userInProject = objProyectoL.mtdCheckIfUserIsOnProjectById(objUSE.IdUsuario.ToString(), iPr);
 
 
 
@@ -333,7 +333,7 @@ namespace Pynterfase.Vista
 
             if (isOwner == 1) {
 
-                int res = objProjL.mtdDeleteUserOnProjectByMail(correo);
+                int res = objProjL.mtdDeleteUserOnProjectByMail(correo, iPr);
 
                 if (res == 1)
                 {

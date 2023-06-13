@@ -70,11 +70,11 @@ namespace Pynterfase.Logica
         
         }
 
-        public int mtdDeleteUserOnProjectByMail(string email)
+        public int mtdDeleteUserOnProjectByMail(string email, string idProyecto)
         {
 
             ClProyectoD objProJD = new ClProyectoD();
-            int res = objProJD.mtdDeleteUserOnProjectByMail(email);
+            int res = objProJD.mtdDeleteUserOnProjectByMail(email , idProyecto);
             return res;
 
         }
@@ -98,11 +98,11 @@ namespace Pynterfase.Logica
 
         }
 
-        public int mtdCheckIfUserIsOnProjectById(string id)
+        public int mtdCheckIfUserIsOnProjectById(string id, string projectID)
         {
 
             ClProyectoD objProjD = new ClProyectoD();
-            int res = objProjD.mtdChekIfUserIsOnProjectById(id);
+            int res = objProjD.mtdChekIfUserIsOnProjectById(id,projectID);
             return res;
         }
 

@@ -210,13 +210,13 @@ namespace Pynterfase.Datos
 
         }
 
-        public int mtdDeleteUserOnProjectByMail(string correo)
+        public int mtdDeleteUserOnProjectByMail(string correo, string idProyecto)
         {
 
             ClusuarioD objUSD = new ClusuarioD();
             ClUsuarioE objUSE = objUSD.mtdGetAllUser(correo);
 
-            string deletestatement = "DELETE FROM Compartir WHERE idUsuarioCompartir =" + objUSE.IdUsuario;
+            string deletestatement = "DELETE FROM Compartir WHERE idUsuarioCompartir =" + objUSE.IdUsuario + " AND idProyecto = " + idProyecto;
 
             ClProcesosSQL objProcesos = new ClProcesosSQL();
             int res = objProcesos.mtdInsert(deletestatement);
@@ -264,10 +264,10 @@ namespace Pynterfase.Datos
 
         }
 
-        public int mtdChekIfUserIsOnProjectById(string id)
+        public int mtdChekIfUserIsOnProjectById(string id, string projectID)
         {
 
-            string consulta = "SELECT * FROM Compartir WHERE idUsuarioCompartir = " + id;
+            string consulta = "SELECT * FROM Compartir WHERE idUsuarioCompartir = " + id + "AND idProyecto = " + projectID;
             ClProcesosSQL objSQL = new ClProcesosSQL();
             DataTable datos = objSQL.mtdconsultar(consulta);
 

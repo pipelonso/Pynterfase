@@ -78,6 +78,21 @@
 
                         </li>
 
+                        <li class="nav-item m-2" id="liAdmin">
+
+                            <div id="AdminDiv">
+
+                                <asp:LinkButton ID="btnAdmin" runat="server" CssClass="link-underline text-white text-decoration-none onlink">
+                                    <img src="/Vista/imagenes/AdminIcon.svg" alt="AdminIcon" style="height:16px;"  class="bi bi-layout-sidebar-inset"/>
+                                    Administrador
+                                </asp:LinkButton>
+
+                            </div>
+
+
+                        </li>
+
+
                     </ol>
 
                 </div>
@@ -89,7 +104,7 @@
             </asp:ContentPlaceHolder>
 
         </div>
-
+        <script src="/ProjectsContent.js"></script>
     </form>
 </body>
 </html>

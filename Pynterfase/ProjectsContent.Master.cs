@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Pynterfase.Entidades;
+using Pynterfase.Logica;
+
 
 namespace Pynterfase.Vista
 {
@@ -11,6 +14,34 @@ namespace Pynterfase.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            ClusuarioL objUSL = new ClusuarioL();
+            ClUsuarioE objUsuario = objUSL.mtdGetAllUser(Session["usuario"].ToString());
+
+            ClRolL objRolL = new ClRolL();
+            List<ClRolE> listaRoles = objRolL.mtdGetAllRolById(objUsuario.IdRol.ToString());
+
+            var rolname = listaRoles[0].nombre;
+            ScriptManager.RegisterStartupScript(this, GetType(), "AparecerAdmin", "thisThinksStarts();", true);
+            
+
+
+            if (rolname == "Usuario" || rolname == "usuario")
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "AparecerAdmin", "thisThinksStarts();", true);
+
+
+            }
+            else if(rolname == "Administrador")
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "AparecerAdmin", "IsAdmin();", true);
+
+
+            }        
+           
+
 
         }
 

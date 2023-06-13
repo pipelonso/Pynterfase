@@ -32,5 +32,18 @@ namespace Pynterfase.Vista
 
 
         }
+
+        protected void btnOpenProj_Click(object sender, EventArgs e)
+        {
+
+            Button btn = (Button)sender;
+            RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+            Label lblId = (Label)item.FindControl("lblId");
+            int idProyecto = Convert.ToInt32(lblId.Text);
+
+            Response.Redirect("~/Vista/Editor.aspx?iPr=" + idProyecto);
+
+
+        }
     }
 }

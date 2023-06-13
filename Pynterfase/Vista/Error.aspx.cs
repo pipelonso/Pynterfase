@@ -13,5 +13,10 @@ namespace Pynterfase.Vista
         {
 
         }
+
+        protected void btnGotoHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Inicio.aspx");
+        }
     }
 }
