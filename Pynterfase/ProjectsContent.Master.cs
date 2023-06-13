@@ -22,7 +22,7 @@ namespace Pynterfase.Vista
             List<ClRolE> listaRoles = objRolL.mtdGetAllRolById(objUsuario.IdRol.ToString());
 
             var rolname = listaRoles[0].nombre;
-            ScriptManager.RegisterStartupScript(this, GetType(), "AparecerAdmin", "thisThinksStarts();", true);
+            //ScriptManager.RegisterStartupScript(this, GetType(), "AparecerAdmin", "thisThinksStarts();", true);
             
 
 
@@ -87,6 +87,11 @@ namespace Pynterfase.Vista
         protected void btnSaved_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Vista/ProjSaved.aspx");
+        }
+
+        protected void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/Admin.aspx");
         }
     }
 }

@@ -115,6 +115,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Principal.js" />
     <Content Include="ProjectsContent.js" />
+    <Content Include="Vista\Admin.aspx" />
     <Content Include="Vista\Create.aspx" />
     <Content Include="Vista\Documentation.aspx" />
     <Content Include="Vista\Editor.aspx" />
@@ -294,6 +295,13 @@
     <Compile Include="TkElements\Proyecto.cs" />
     <Compile Include="TkElements\Receptor.cs" />
     <Compile Include="TkElements\Textboxs.cs" />
+    <Compile Include="Vista\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -82,7 +82,7 @@
 
                             <div id="AdminDiv">
 
-                                <asp:LinkButton ID="btnAdmin" runat="server" CssClass="link-underline text-white text-decoration-none onlink">
+                                <asp:LinkButton ID="btnAdmin" runat="server" CssClass="link-underline text-white text-decoration-none onlink" OnClick="btnAdmin_Click">
                                     <img src="/Vista/imagenes/AdminIcon.svg" alt="AdminIcon" style="height:16px;"  class="bi bi-layout-sidebar-inset"/>
                                     Administrador
                                 </asp:LinkButton>
