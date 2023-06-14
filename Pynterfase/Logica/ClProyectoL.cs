@@ -20,6 +20,16 @@ namespace Pynterfase.Logica
 
         }
 
+        public List<ClproyectoE> mtdGetAllProjectsInApp()
+        {
+
+            ClProyectoD objProjD = new ClProyectoD();
+            List<ClproyectoE> listaproyectos = objProjD.mtdGetAllProjectsInApp();
+            return listaproyectos;
+
+        }
+
+
         public int mtdAddProject(ClproyectoE objProyecto) {
 
             ClProyectoD objProyectoD = new ClProyectoD();

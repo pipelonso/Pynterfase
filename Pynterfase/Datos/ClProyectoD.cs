@@ -3,6 +3,7 @@ using Pynterfase.Entidades;
 using System.Collections.Generic;
 using System.Data;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.Xml;
 using System.Web.UI.WebControls;
 
 namespace Pynterfase.Datos
@@ -17,6 +18,33 @@ namespace Pynterfase.Datos
             return listaProyectos;
 
         }
+
+        public List<ClproyectoE> mtdGetAllProjectsInApp()
+        {
+
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            string consulta = "SELECT * FROM Proyecto";
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            List<ClproyectoE> listaProyectos = new List<ClproyectoE>();
+
+
+            for (int i = 0; i < datos.Rows.Count; i++)
+            {
+
+                ClproyectoE objProjE = new ClproyectoE();
+                objProjE.IdProyecto = int.Parse(datos.Rows[i]["IdProyecto"].ToString());
+                objProjE.IdUsuario = int.Parse(datos.Rows[i]["idUsuario"].ToString());
+                objProjE.nombreProyecto = datos.Rows[i]["nombreProyecto"].ToString();
+                objProjE.visibilidad = datos.Rows[i]["visibilidad"].ToString();
+
+                listaProyectos.Add(objProjE);
+            }
+
+            return listaProyectos;
+
+        }
+
 
         public int mtdAddProject(ClproyectoE objProyecto)
         {

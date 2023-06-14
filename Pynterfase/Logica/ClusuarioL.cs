@@ -56,6 +56,17 @@ namespace Pynterfase.Logica
         
         }
 
+        public List<ClUsuarioE> mtdGetAllUsersInApp()
+        {
+
+            ClusuarioD objUSD = new ClusuarioD();
+            List<ClUsuarioE> listaUsuarios = objUSD.mtdGetAllUsersInApp();
+            return listaUsuarios;
+
+
+        }
+
+
         public ClVerificacionE mtdGetVerificationCode(string correo) { 
             
             ClusuarioD objUsuarioD = new ClusuarioD();
