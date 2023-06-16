@@ -125,8 +125,8 @@
                     <p>Restablecer Foto de perfil :: Solo puedes establecer la imagen a una por defecto, por la seguridad del usuario</p>
                     <asp:Button ID="btnRestablecerFoto" runat="server" Text="Restablecer Foto" CssClass="botones" Enabled="true" OnClick="btnRestablecerFoto_Click"/>
                     <hr />
-                    <p>Borrar usuario :: ADVERTENCIA --- ESTA ACCIÓN SERA IRREVERSIBLE</p>
-                    <asp:Button ID="btnDeleteUser" runat="server" Text="☠ ELIMINAR USUARIO ☠" CssClass="Deletebtn" Enabled="true"/>
+                    <p>Borrar usuario :: ADVERTENCIA --- ESTA ACCIÓN SERA IRREVERSIBLE (Sus proyectos seran eliminados)</p>
+                    <asp:Button ID="btnDeleteUser" runat="server" Text="☠ ELIMINAR USUARIO ☠" CssClass="Deletebtn" Enabled="true" OnClick="btnDeleteUser_Click"/>
 
                 </div>
 

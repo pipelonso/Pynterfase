@@ -37,7 +37,15 @@ namespace Pynterfase.Datos
 
         }
 
+        public int mtdDeleteUserById(string idUser)
+        {
 
+            string killer = "DeleteUser " + idUser;
+            ClProcesosSQL objSQL = new ClProcesosSQL(); 
+            int res = objSQL.mtdInsert(killer);
+            return res;
+
+        }
 
     }
 }

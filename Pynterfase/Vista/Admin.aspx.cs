@@ -211,5 +211,24 @@ namespace Pynterfase.Vista
 
 
         }
+
+        protected void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+
+            ClusuarioL objUSL = new ClusuarioL();
+            int res = objUSL.mtdDeleteUserByidKiller(lblIdUser.Text);
+            
+            if (res >= 1) {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionSuccess", "successalert();", true);
+
+            }
+            else{
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionFailed", "Errorgen();", true);
+
+            }
+
+        }
     }
 }

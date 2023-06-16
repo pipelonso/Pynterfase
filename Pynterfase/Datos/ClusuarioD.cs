@@ -303,7 +303,13 @@ namespace Pynterfase.Datos
 
         }
 
+        public int mtdDeleteUserbyIDKiller(string id) {
+
+            Procedimientos objPROC = new Procedimientos();
+            int res = objPROC.mtdDeleteUserById(id);
+            return res;
         
+        }
 
 
 

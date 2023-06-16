@@ -144,5 +144,14 @@ namespace Pynterfase.Logica
 
         }
 
+        public int mtdDeleteUserByidKiller(string id)
+        {
+
+            ClusuarioD objUSD = new ClusuarioD();
+            int res = objUSD.mtdDeleteUserbyIDKiller(id);
+            return res;
+
+        }
+
     }
 }
