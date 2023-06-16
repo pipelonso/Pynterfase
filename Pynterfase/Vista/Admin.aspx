@@ -29,9 +29,11 @@
                             <div class="w-100 navbar selection px-2 onratio my-2">
 
                                 <h5 class="nav-item"> <%# Eval("nombre") %> </h5>
+                                <asp:Label ID="lblCorreoUserRP" runat="server" Text='<%# Eval("correo") %>'></asp:Label>
                                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("imagenUsuario")  %>' Height="120px" CssClass="nav-item onratio" /> 
                                 <asp:Label ID="lblUserID" runat="server" Text='<%# Eval("IdUsuario") %>' CssClass="NotVisible"></asp:Label>
-                                <asp:LinkButton ID="lblInspeccionarUser" runat="server" CssClass="w-100 text-decoration-none text-white btnIns my-1 p-2">                                    
+                                
+                                <asp:LinkButton ID="lblInspeccionarUser" runat="server" CssClass="w-100 text-decoration-none text-white btnIns my-1 p-2" OnClick="lblInspeccionarUser_Click">                                    
                                     <img src="imagenes/engrane.svg" alt="Engrane" />
                                     INSPECCIONAR
                                 </asp:LinkButton>
@@ -95,13 +97,16 @@
 
                     <h4>Usuario Seleccionado</h4>
 
-                    <asp:Image ID="Image2" runat="server" CssClass="onratio" ImageUrl="~/Vista/Pynterfase avatars/1.png" Height="150px" Width="150px"/>
-                    <asp:Label ID="lblUserNameF" runat="server" Text="NN" Font-Size="20px" CssClass="my-2 py-2"></asp:Label>
-                    <br />
+                    <asp:Image ID="userPickImg" runat="server" CssClass="onratio" ImageUrl="~/Vista/Pynterfase avatars/1.png" Height="150px" Width="150px"/>
+                    <asp:Label ID="lblUserNameF" runat="server" Text="NN" Font-Size="20px" CssClass="my-2 py-2 mx-2"></asp:Label>
+                    <hr />
+                    <p>Id de Usuario</p>
                     <asp:Label ID="lblIdUser" runat="server" Text="--id--" CssClass="my-3 py-2"></asp:Label>
-                    <br />
+                    <hr />
+                    <p>Correo</p>
                     <asp:Label ID="lblUserMail" runat="server" Text="--Mail--" CssClass="my-3 py-2"></asp:Label>
-                    <br />
+                    <hr />
+                    <p>Verificado</p>
                     <asp:Label ID="lblVerificado" runat="server" Text="--Verify--" CssClass="my-3 py-2"></asp:Label>
 
                 </div>
@@ -111,17 +116,17 @@
 
                     <p>Estado :: Si el usuario a cometido alguna infracción puede ser suspendido</p>
                     <asp:DropDownList ID="ddlEstado" runat="server" CssClass="txtcajas"></asp:DropDownList>
-                    <asp:Button ID="btnApplyState" runat="server" Text="Aplicar estado" CssClass="botones" />
+                    <asp:Button ID="btnApplyState" runat="server" Text="Aplicar estado" CssClass="botones" OnClick="btnApplyState_Click" Enabled="false"/>
                     <hr />
                     <p>Cambiar nombre :: Solo has esto si el usuario tiene un nombre en contra de las politicas</p>
                     <asp:TextBox ID="txtUserName" runat="server" CssClass="txtcajas"></asp:TextBox>
+                    <asp:Button ID="btnChangeUserName" runat="server" Text="APLICAR CAMBIO DE NOMBRE" CssClass="botones" Enabled="false"/>
                     <hr />
                     <p>Restablecer Foto de perfil :: Solo puedes establecer la imagen a una por defecto, por la seguridad del usuario</p>
-                    <asp:Button ID="btnRestablecerFoto" runat="server" Text="Restablecer Foto" CssClass="botones"/>
+                    <asp:Button ID="btnRestablecerFoto" runat="server" Text="Restablecer Foto" CssClass="botones" Enabled="false"/>
                     <hr />
                     <p>Borrar usuario :: ADVERTENCIA --- ESTA ACCIÓN SERA IRREVERSIBLE</p>
-                    <asp:Button ID="btnDeleteUser" runat="server" Text="☠ ELIMINAR USUARIO ☠" CssClass="Deletebtn"/>
-
+                    <asp:Button ID="btnDeleteUser" runat="server" Text="☠ ELIMINAR USUARIO ☠" CssClass="Deletebtn" Enabled="false"/>
 
                 </div>
 
@@ -156,7 +161,19 @@
 
                         <ItemTemplate>
 
-                            <asp:Label ID="lblUserOnProject" runat="server" Text='<%# Eval("correo") %>'></asp:Label>
+                            <div class="navbar  isuserbox container-fluid my-2">
+                                            <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
+                                                <asp:Label ID="lblNombreUserRP" runat="server" Text='<%# Eval("nombre") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
+                                                <asp:Label ID="lblCorreoRp" runat="server" Text='<%# Eval("correo") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
+                                                <asp:Image ID="imgUserRP" runat="server" ImageUrl='<%# Eval("imagenUsuario") %>' CssClass="nav-item mx-2 imgUser" Height="40px" Width="40px" />
+                                            </div>
+                                            <asp:CheckBox ID="chkEditableUser" runat="server" CssClass="nav-item mx-2 col-sm-1 col-md-1 col-lg-1 text-white" Text="Puede editar" Checked='<%# Eval("editable") %>'  />
+                                            
+                                            <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1"  />
+                                            <asp:Button ID="btnUpdateUser" runat="server" Text="Actualizar" CssClass="botones col-sm-12 col-md-12 col-lg-12" />
+                                        </div>
+
+
 
 
                         </ItemTemplate>

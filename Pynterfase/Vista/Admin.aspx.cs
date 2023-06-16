@@ -44,6 +44,15 @@ namespace Pynterfase.Vista
 
             }
 
+            if (!IsPostBack) {
+
+                ddlEstado.Items.Add("Activo");
+                ddlEstado.Items.Add("Inactivo");
+
+            }
+            
+
+
 
 
 
@@ -78,6 +87,53 @@ namespace Pynterfase.Vista
                 RPProjects.DataBind();
 
             }
+
+
+        }
+
+        protected void lblInspeccionarUser_Click(object sender, EventArgs e)
+        {
+
+            LinkButton btn = (LinkButton)sender;
+            RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+            Label lblCorreo = (Label)item.FindControl("lblCorreoUserRP");
+            var usermail = lblCorreo.Text;
+
+
+            ClusuarioL objUSL = new ClusuarioL();   
+            ClUsuarioE objUsuario = objUSL.mtdGetAllUser(usermail);
+
+            lblIdUser.Text = objUsuario.IdUsuario.ToString();
+            lblUserNameF.Text = objUsuario.nombre;
+            lblUserMail.Text = objUsuario.correo;
+            
+
+            int vefirified = objUSL.mtdCheckVerification(usermail);
+
+            if (vefirified == 1) {
+
+                lblVerificado.Text = "Si";
+
+            }
+            else
+            {
+
+                lblVerificado.Text = "No";
+
+            }
+
+            userPickImg.ImageUrl = objUsuario.imagenUsuario;
+
+        }
+
+        protected void btnApplyState_Click(object sender, EventArgs e)
+        {
+
+            //Control del estado de actividad
+
+
+
+
 
 
         }

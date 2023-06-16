@@ -303,6 +303,15 @@ namespace Pynterfase.Datos
 
         }
 
+        public void mtdUpdateStatus()
+        {
+
+            string updated = "UPDATE INTO Estado ";
+
+
+
+        }
+
 
 
     }

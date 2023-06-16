@@ -69,13 +69,13 @@ namespace Pynterfase.Vista
         protected global::System.Web.UI.WebControls.Repeater RPProjects;
 
         /// <summary>
-        /// Control Image2.
+        /// Control userPickImg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
+        protected global::System.Web.UI.WebControls.Image userPickImg;
 
         /// <summary>
         /// Control lblUserNameF.
@@ -139,6 +139,15 @@ namespace Pynterfase.Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUserName;
+
+        /// <summary>
+        /// Control btnChangeUserName.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnChangeUserName;
 
         /// <summary>
         /// Control btnRestablecerFoto.

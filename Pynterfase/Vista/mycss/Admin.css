@@ -50,7 +50,7 @@
 .botones {
     border: solid;
     border-color: lightgray;
-    border-width: 3px;
+    border-width: 2px;
     background-color: black;
     color: white;
 }
@@ -58,7 +58,7 @@
     .botones:hover {
         border: double;
         border-color: dimgray;
-        border-width: 3px;
+        border-width: 2px;
         background-color: lightslategray;
     }
 

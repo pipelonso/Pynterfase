@@ -241,6 +241,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\ClConexion.cs" />
+    <Compile Include="Datos\ClEstadoD.cs" />
     <Compile Include="Datos\ClProcesosSQL.cs" />
     <Compile Include="Datos\ClProyectoD.cs" />
     <Compile Include="Datos\ClRolD.cs" />
