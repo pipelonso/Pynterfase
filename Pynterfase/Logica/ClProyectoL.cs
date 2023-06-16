@@ -133,5 +133,16 @@ namespace Pynterfase.Logica
 
         }
 
+        public List<ClproyectoE> mtdSearchProjectsByName(string nombre)
+        {
+
+            ClProyectoD objProjD = new ClProyectoD();
+            List<ClproyectoE> listaProj = objProjD.mtdSearchAllProjectByName(nombre);
+            return listaProj;
+
+        }
+
+
+
     }
 }

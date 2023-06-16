@@ -1,0 +1,101 @@
+﻿body {
+    background-image: url('../imagenes/adminback.svg');
+    background-size:cover;
+    
+}
+
+.searchbox{
+
+    border : solid;
+    border-width : 1px;
+    border-color : white;
+
+
+}
+
+.selection {
+    background-image: url('../imagenes/backselection.svg');
+    background-size: cover;
+    border : solid;
+    border-width : 1px;
+    border-color : white;
+}
+
+.selection:hover {
+    background-image: url('../imagenes/backselection.svg');
+    background-size: cover;
+    border: solid;
+    border-width: 1px;
+    border-color: greenyellow;
+}
+
+
+.onratio{
+
+    border-radius : 5px;
+
+
+}
+
+.btnIns{
+
+    background : none;
+
+}
+
+.btnIns:hover {
+    background: rgb(42, 42, 42);
+}
+
+.botones {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: black;
+    color: white;
+}
+
+    .botones:hover {
+        border: double;
+        border-color: dimgray;
+        border-width: 3px;
+        background-color: lightslategray;
+    }
+
+.txtcajas {
+    background-color : rgb(25, 25, 25);
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    color : white;
+}
+
+.NotVisible{
+
+    display:none;
+
+}
+
+.Deletebtn {
+    border: solid;
+    border-color: black;
+    border-width: 3px;
+    background-color: red;
+    color: white;
+}
+
+.Deletebtn:hover {
+    border: solid;
+    border-color: black;
+    border-width: 3px;
+    background-color: indianred;
+    color: white;
+}
+
+.controles{
+
+    border-radius : 5px;
+    background-color : rgb(0, 0, 0);
+    
+
+}

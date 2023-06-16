@@ -343,6 +343,34 @@ namespace Pynterfase.Datos
 
         }
 
+        public List<ClproyectoE> mtdSearchAllProjectByName (string nombre)
+        {
+
+            string consulta = "SELECT * FROM Proyecto WHERE nombreProyecto LIKE '%"+ nombre +"%'";
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            List<ClproyectoE> listaProyectos = new List<ClproyectoE>();
+
+
+            for (int i = 0; i < datos.Rows.Count; i++)
+            {
+
+                ClproyectoE objProjE = new ClproyectoE();
+                objProjE.IdProyecto = int.Parse(datos.Rows[i]["IdProyecto"].ToString());
+                objProjE.IdUsuario = int.Parse(datos.Rows[i]["idUsuario"].ToString());
+                objProjE.nombreProyecto = datos.Rows[i]["nombreProyecto"].ToString();
+                objProjE.visibilidad = datos.Rows[i]["visibilidad"].ToString();
+
+                listaProyectos.Add(objProjE);
+            }
+
+            return listaProyectos;
+
+
+        }
+
+
     }
 
 }

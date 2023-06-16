@@ -124,11 +124,13 @@
     <Content Include="Vista\Error.js" />
     <Content Include="Vista\forgotpassword.aspx" />
     <Content Include="Vista\forgotpassword.js" />
+    <Content Include="Vista\imagenes\AdminBack.svg" />
     <Content Include="Vista\imagenes\AdminIcon.svg" />
     <Content Include="Vista\imagenes\AnimError.gif" />
     <Content Include="Vista\imagenes\back1 %281%29.gif" />
     <Content Include="Vista\imagenes\back1.gif" />
     <Content Include="Vista\imagenes\backreglogin.gif" />
+    <Content Include="Vista\imagenes\backselection.svg" />
     <Content Include="Vista\imagenes\bignite.svg" />
     <Content Include="Vista\imagenes\box-arrow-in-right.svg" />
     <Content Include="Vista\imagenes\btnSavedOff.svg" />
@@ -145,6 +147,7 @@
     <Content Include="Vista\imagenes\EditorPrivacySection\plus-circle.svg" />
     <Content Include="Vista\imagenes\EditorSupBar.svg" />
     <Content Include="Vista\imagenes\editor_back.svg" />
+    <Content Include="Vista\imagenes\engrane.svg" />
     <Content Include="Vista\imagenes\eye-slash.svg" />
     <Content Include="Vista\imagenes\eye.svg" />
     <Content Include="Vista\imagenes\giphy.gif" />
@@ -181,6 +184,7 @@
     <Content Include="Vista\imagenes\x-circle.svg" />
     <Content Include="Vista\InfoUsuario.aspx" />
     <Content Include="Vista\InfoUsuario.js" />
+    <Content Include="Vista\mycss\Admin.css" />
     <Content Include="Vista\mycss\create.css" />
     <Content Include="Vista\mycss\Editor.css" />
     <Content Include="Vista\mycss\InfoUser.css" />

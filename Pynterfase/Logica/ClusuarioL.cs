@@ -136,7 +136,13 @@ namespace Pynterfase.Logica
         
         }
 
+        public List<ClUsuarioE> mtdSearchUserByName(string nombre) {
 
+            ClusuarioD objUSD = new ClusuarioD();
+            List<ClUsuarioE> listaUsuarios = objUSD.mtdSearchUsersByName(nombre);
+            return listaUsuarios;
+
+        }
 
     }
 }

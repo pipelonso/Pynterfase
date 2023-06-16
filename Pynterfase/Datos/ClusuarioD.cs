@@ -273,7 +273,35 @@ namespace Pynterfase.Datos
 
         }
 
+        public List<ClUsuarioE> mtdSearchUsersByName(string nombre)
+        {
 
+            string consulta = "SELECT * FROM usuario WHERE nombre LIKE '%"+ nombre +"%'";
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            List<ClUsuarioE> listaUsuario = new List<ClUsuarioE>();
+
+            for (int i = 0; i < datos.Rows.Count; i++)
+            {
+
+                ClUsuarioE objUSE = new ClUsuarioE();
+                objUSE.IdUsuario = int.Parse(datos.Rows[i]["IdUsuario"].ToString());
+                objUSE.IdRol = int.Parse(datos.Rows[i]["IdRol"].ToString());
+                objUSE.nombre = datos.Rows[i]["nombre"].ToString();
+                objUSE.correo = datos.Rows[i]["correo"].ToString();
+                objUSE.password = datos.Rows[i]["password"].ToString();
+                objUSE.imagenUsuario = datos.Rows[i]["imagenUsuario"].ToString();
+
+                listaUsuario.Add(objUSE);
+
+            }
+
+            return listaUsuario;
+
+
+
+        }
 
 
 

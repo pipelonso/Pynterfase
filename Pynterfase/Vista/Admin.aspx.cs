@@ -48,5 +48,38 @@ namespace Pynterfase.Vista
 
 
         }
+
+        protected void btnBuscarUser_Click(object sender, EventArgs e)
+        {
+
+            if (txtSearchUser.Text != "" && txtSearchUser.Text.Trim() != "")
+            {
+
+                ClusuarioL objUSL = new ClusuarioL();
+                List<ClUsuarioE> listaUsuarios = objUSL.mtdSearchUserByName(txtSearchUser.Text);
+
+                RPUsuarios.DataSource= listaUsuarios;
+                RPUsuarios.DataBind();
+
+            }
+
+
+        }
+
+        protected void btnSearchProj_Click(object sender, EventArgs e)
+        {
+
+            if (txtSearchProj.Text != "" && txtSearchProj.Text.Trim() != "") { 
+            
+                ClProyectoL objProjL = new ClProyectoL();
+                List<ClproyectoE> listaprojs = objProjL.mtdSearchProjectsByName(txtSearchProj.Text);
+
+                RPProjects.DataSource= listaprojs;
+                RPProjects.DataBind();
+
+            }
+
+
+        }
     }
 }

@@ -120,9 +120,12 @@
     }
 
 .txtcajas {
+    color : white;
     border: solid;
     border-color: lightgray;
     border-width: 3px;
+    background-color : rgb(25, 25, 25);
+    border-radius : 5px;
 }
 
 .checkscontainer{
