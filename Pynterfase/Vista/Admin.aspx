@@ -116,17 +116,17 @@
 
                     <p>Estado :: Si el usuario a cometido alguna infracción puede ser suspendido</p>
                     <asp:DropDownList ID="ddlEstado" runat="server" CssClass="txtcajas"></asp:DropDownList>
-                    <asp:Button ID="btnApplyState" runat="server" Text="Aplicar estado" CssClass="botones" OnClick="btnApplyState_Click" Enabled="false"/>
+                    <asp:Button ID="btnApplyState" runat="server" Text="Aplicar estado" CssClass="botones" OnClick="btnApplyState_Click" Enabled="true"/>
                     <hr />
                     <p>Cambiar nombre :: Solo has esto si el usuario tiene un nombre en contra de las politicas</p>
                     <asp:TextBox ID="txtUserName" runat="server" CssClass="txtcajas"></asp:TextBox>
-                    <asp:Button ID="btnChangeUserName" runat="server" Text="APLICAR CAMBIO DE NOMBRE" CssClass="botones" Enabled="false"/>
+                    <asp:Button ID="btnChangeUserName" runat="server" Text="APLICAR CAMBIO DE NOMBRE" CssClass="botones" Enabled="true" OnClick="btnChangeUserName_Click"/>
                     <hr />
                     <p>Restablecer Foto de perfil :: Solo puedes establecer la imagen a una por defecto, por la seguridad del usuario</p>
-                    <asp:Button ID="btnRestablecerFoto" runat="server" Text="Restablecer Foto" CssClass="botones" Enabled="false"/>
+                    <asp:Button ID="btnRestablecerFoto" runat="server" Text="Restablecer Foto" CssClass="botones" Enabled="true" OnClick="btnRestablecerFoto_Click"/>
                     <hr />
                     <p>Borrar usuario :: ADVERTENCIA --- ESTA ACCIÓN SERA IRREVERSIBLE</p>
-                    <asp:Button ID="btnDeleteUser" runat="server" Text="☠ ELIMINAR USUARIO ☠" CssClass="Deletebtn" Enabled="false"/>
+                    <asp:Button ID="btnDeleteUser" runat="server" Text="☠ ELIMINAR USUARIO ☠" CssClass="Deletebtn" Enabled="true"/>
 
                 </div>
 
@@ -151,6 +151,7 @@
                     <br />
                     <asp:Label ID="lblAutorProj" runat="server" Text="--Autor--"></asp:Label>
                     <br />
+                  
                     <asp:Label ID="lblVisibilidad" runat="server" Text="--Visibilty--"></asp:Label>
 
                 </div>

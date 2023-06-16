@@ -40,6 +40,39 @@ namespace Pynterfase.Datos
 
         }
 
+        public ClEstadoE mtdGetUserStatusbyId(string id)
+        {
+
+            string select = "SELECT * FROM Estado , Usuario WHERE correo = " + id + " AND Estado.IdUsuario = Usuario.IdUsuario";
+
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+
+            DataTable datos = objSQL.mtdconsultar(select);
+
+            ClEstadoE objEstadoE = new ClEstadoE();
+
+            objEstadoE.IdEstado = int.Parse(datos.Rows[0]["Idestado"].ToString());
+            objEstadoE.idUsuario = int.Parse(datos.Rows[0]["IdUsuario"].ToString());
+            objEstadoE.estado = datos.Rows[0]["estado"].ToString();
+
+            return objEstadoE;
+
+
+
+        }
+
+        public int mtdUpdateUserStatusByID(string idUser , string status) {
+
+            string updated = "UPDATE Estado SET estado = '"+ status +"' WHERE idUsuario = " + idUser;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            int res = objSQL.mtdInsert(updated);
+
+            return res;
+        
+                
+        } 
+
+
 
 
 

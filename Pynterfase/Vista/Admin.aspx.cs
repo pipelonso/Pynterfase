@@ -130,10 +130,84 @@ namespace Pynterfase.Vista
         {
 
             //Control del estado de actividad
+            ClEstadoL objEstadoL = new ClEstadoL();
+
+            string newstate = ddlEstado.SelectedValue;
+
+            string currentId = lblIdUser.Text;
+
+            int changed = objEstadoL.mtdUpdateUserStatusByMail(currentId, newstate);
+
+            if (changed == 1)
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionSuccess", "successalert();", true);
+
+            }
+            else
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionFailed", "Errorgen();", true);
+
+            }
+
+        }
+
+        protected void btnChangeUserName_Click(object sender, EventArgs e)
+        {
+
+            string correo = lblUserMail.Text;
+
+            ClusuarioL objUSL = new ClusuarioL();
+
+            if (txtUserName.Text.Trim() != "") {
+
+                int changed = objUSL.mtdUpdateName(txtUserName.Text, correo);
+
+                if (changed == 1) {
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ActionSuccess", "successalert();", true);
+
+                }
+                else {
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ActionFailed", "Errorgen();", true);
+
+                }
+
+
+            }
+            else
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "VoidSpaces", "voidall();", true);
+            }
 
 
 
 
+
+
+        }
+
+        protected void btnRestablecerFoto_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int randompicnum = rnd.Next(1, 6);
+            ClusuarioL objUsuarioL = new ClusuarioL();
+            int randompicture = objUsuarioL.UpdatePic("~/Vista/Pynterfase avatars/" + randompicnum.ToString() + ".png", lblUserMail.Text);
+            
+            if (randompicnum >= 1) {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionSuccess", "successalert();", true);
+
+            }
+            else
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionFailed", "Errorgen();", true);
+
+            }
 
 
         }

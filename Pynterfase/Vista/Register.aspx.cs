@@ -51,6 +51,11 @@ namespace Pynterfase
 
                     int randompicnum = rnd.Next(1,6);
 
+                    ClUsuarioE newUserobj = objUsuarioL.mtdGetAllUser(txtEmail.Text);
+
+                    ClEstadoL objEstadoL = new ClEstadoL();
+                    int resEstado = objEstadoL.mtRegisterStatus(newUserobj.IdUsuario.ToString(), "Activo");
+
 
                     int randompicture = objUsuarioL.UpdatePic("~/Vista/Pynterfase avatars/" + randompicnum.ToString() + ".png" ,txtEmail.Text); 
 

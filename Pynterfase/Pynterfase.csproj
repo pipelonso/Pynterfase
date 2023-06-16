@@ -266,6 +266,7 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logica\ClEstadoL.cs" />
     <Compile Include="Logica\ClProyectoL.cs" />
     <Compile Include="Logica\ClRandomCodeGen.cs" />
     <Compile Include="Logica\ClRolL.cs" />
