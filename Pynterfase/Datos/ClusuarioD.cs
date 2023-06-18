@@ -53,7 +53,7 @@ namespace Pynterfase.Datos
         }
 
         public ClUsuarioE mtdGetAllUser(string email) {
-            string consulta = "SELECT * FROM Usuario WHERE correo = '"+email+"'";
+            string consulta = "SELECT * FROM Usuario WHERE correo = '" + email + "'";
             ClProcesosSQL objSQL = new ClProcesosSQL();
             DataTable datos = objSQL.mtdconsultar(consulta);
 
@@ -67,6 +67,26 @@ namespace Pynterfase.Datos
 
 
             return objUsuarioE;
+        }
+
+        public ClUsuarioE mtdGetAllUserByID(string id)
+        {
+            string consulta = "SELECT * FROM Usuario WHERE IdUsuario = " + id + "";
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            ClUsuarioE objUsuarioE = new ClUsuarioE();
+            objUsuarioE.IdUsuario = int.Parse(datos.Rows[0]["IdUsuario"].ToString());
+            objUsuarioE.IdRol = int.Parse(datos.Rows[0]["IdRol"].ToString());
+            objUsuarioE.nombre = datos.Rows[0]["nombre"].ToString();
+            objUsuarioE.correo = datos.Rows[0]["correo"].ToString();
+            objUsuarioE.password = datos.Rows[0]["password"].ToString();
+            objUsuarioE.imagenUsuario = datos.Rows[0]["imagenUsuario"].ToString();
+
+
+            return objUsuarioE;
+
+
         }
 
         public List<ClUsuarioE> mtdGetAllUsersInApp()

@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="mycss/ProjectsPanel.css" rel="stylesheet" />
+    <link href="../Content/animate.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/bootstrap.min.js"></script>
@@ -10,7 +11,7 @@
     <asp:Button ID="btnNewProject" runat="server" Text="CREAR NUEVO PROYECTO" CssClass="w-100 botones" OnClick="btnNewProject_Click"/>
     </div>
     
-    <h1 class="m-2 text-white " style="background-image : url('imagenes/OnBar.svg'); padding : 10px; border-radius : 5px;">TUS PROYECTOS</h1>
+    <h1 class="m-2 text-white " style="background-image : url('imagenes/OnBar.svg'); padding : 10px; border-radius : 5px; animation : fadeInUp; animation-duration : 1s;">TUS PROYECTOS</h1>
     <div class="container-fluid">
         <%--<asp:ListBox ID="lbListaProyectos" runat="server" CssClass="col-xxl-9 col-xl-8 col-lg-7 col-md-12 col-sm-12 flex-column myLista"></asp:ListBox>--%>
         

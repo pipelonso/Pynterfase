@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Asn1.Mozilla;
+﻿using Microsoft.SqlServer.Server;
+using Org.BouncyCastle.Asn1.Mozilla;
 using Pynterfase.Entidades;
 using System.Collections.Generic;
 using System.Data;
@@ -68,6 +69,14 @@ namespace Pynterfase.Datos
             objProyecto.IdProyecto = int.Parse(datos.Rows[0]["idProyecto"].ToString());
             return objProyecto;
 
+        }
+
+        public int mtdUpdateProjectNamebyId(string projectID , string NewName)
+        {
+            string udpated = "UPDATE Proyecto SET nombreProyecto = '"+NewName+"' WHERE IdProyecto = " +  projectID   ;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            int res = objSQL.mtdInsert(udpated);
+            return res;
         }
 
 
@@ -367,6 +376,14 @@ namespace Pynterfase.Datos
 
             return listaProyectos;
 
+
+        }
+
+        public int mtdDeleteProjectByid(string id) { 
+        
+            Procedimientos proc  = new Procedimientos();
+            int res = proc.mtdDeleteProject(id);
+            return res;
 
         }
 

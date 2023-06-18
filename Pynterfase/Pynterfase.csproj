@@ -108,6 +108,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\animate.min.css" />
     <Content Include="Datos.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -116,6 +118,7 @@
     <Content Include="Principal.js" />
     <Content Include="ProjectsContent.js" />
     <Content Include="Vista\Admin.aspx" />
+    <Content Include="Vista\Admin.js" />
     <Content Include="Vista\Create.aspx" />
     <Content Include="Vista\Documentation.aspx" />
     <Content Include="Vista\Editor.aspx" />

@@ -1,4 +1,5 @@
-﻿using Pynterfase.Entidades;
+﻿using Org.BouncyCastle.Asn1.Mozilla;
+using Pynterfase.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -46,6 +47,17 @@ namespace Pynterfase.Datos
             return res;
 
         }
+
+        public int mtdDeleteProject(string id)
+        {
+
+            string killer = "DeleteProject " + id;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            int res = objSQL.mtdInsert(killer);
+            return res;
+
+        }
+
 
     }
 }

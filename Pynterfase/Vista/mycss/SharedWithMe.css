@@ -42,6 +42,26 @@
 
 }
 
+.cajasanim {
+    opacity: 0; /* Inicialmente oculto */
+    animation-name: aparecer;
+    animation-duration: 2s; /* Duración de la animación */
+    animation-delay: 0.5s; /* Retraso antes de comenzar la animación */
+    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Comienza completamente transparente */
+    }
+
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}
+
+
 
 .NotVisible {
     display: none;

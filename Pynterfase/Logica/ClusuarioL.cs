@@ -56,6 +56,15 @@ namespace Pynterfase.Logica
         
         }
 
+        public ClUsuarioE mtdGetAllUserByID(string id)
+        {
+
+            ClusuarioD objUsuarioD = new ClusuarioD();
+            ClUsuarioE objUsuarioE = objUsuarioD.mtdGetAllUserByID(id);
+            return objUsuarioE;
+
+        }
+
         public List<ClUsuarioE> mtdGetAllUsersInApp()
         {
 

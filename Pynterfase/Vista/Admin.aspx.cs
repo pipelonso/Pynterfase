@@ -1,4 +1,5 @@
-﻿using Pynterfase.Entidades;
+﻿using Pynterfase.Datos;
+using Pynterfase.Entidades;
 using Pynterfase.Logica;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,9 @@ namespace Pynterfase.Vista
             List<ClRolE> listaRoles = objRolL.mtdGetAllRolById(objUsuario.IdRol.ToString());
 
             var rolname = listaRoles[0].nombre;
-            
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "startAll", "startAll();", true);
+
             if (rolname == "Usuario" || rolname == "usuario")
             {
 
@@ -41,6 +44,10 @@ namespace Pynterfase.Vista
                 List<ClproyectoE> listaProyectos = objProjL.mtdGetAllProjectsInApp();
                 RPProjects.DataSource = listaProyectos;
                 RPProjects.DataBind();
+
+                ddlProjectPrivacy.Items.Add("Publico");
+                ddlProjectPrivacy.Items.Add("Privado");
+                
 
             }
 
@@ -93,6 +100,8 @@ namespace Pynterfase.Vista
 
         protected void lblInspeccionarUser_Click(object sender, EventArgs e)
         {
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowUsers", "ShowUsers();", true);
 
             LinkButton btn = (LinkButton)sender;
             RepeaterItem item = (RepeaterItem)btn.NamingContainer;
@@ -228,6 +237,161 @@ namespace Pynterfase.Vista
                 ScriptManager.RegisterStartupScript(this, GetType(), "ActionFailed", "Errorgen();", true);
 
             }
+
+        }
+
+        protected void lblInspeccionarProj_Click(object sender, EventArgs e)
+        {
+
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "openProj", "ShowProjects();", true);
+
+            LinkButton btn = (LinkButton)sender;
+            RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+            Label lblIDProj = (Label)item.FindControl("lblIDProj");
+            var projID = lblIDProj.Text;
+
+            ClProyectoL objProyectoL = new ClProyectoL();
+
+            ClproyectoE objProjE  = objProyectoL.mtdGetProjectById(projID);
+            lblNombreProjRP.Text = objProjE.nombreProyecto.ToString();   
+            lblIdProj.Text = objProjE.IdProyecto.ToString();
+
+            ClUsuarioE objUSE = objProyectoL.mtdGetProjectOwner(projID);
+
+            lblAutorProj.Text = objUSE.nombre;
+
+            lblVisibilidad.Text = objProjE.visibilidad;
+
+            //inspeccionar proyecto
+
+            List<ClCompartirUserInfo> listaUsuariosProj = objProyectoL.mtdGetAllUserInProject(projID);
+
+            RpUsersOnProj.DataSource = listaUsuariosProj;
+            RpUsersOnProj.DataBind();
+
+            txtEditNameProj.Text = objProjE.nombreProyecto;
+
+            if (objProjE.visibilidad == "Publico") {
+
+                ddlProjectPrivacy.SelectedIndex = 0;
+
+            }
+            else
+            {
+
+                ddlProjectPrivacy.SelectedIndex = 1;
+
+            }
+
+        }
+
+        protected void btnDeleteUserRp_Click(object sender, EventArgs e)
+        {
+
+            Button btnUpdate = (Button)sender;
+            RepeaterItem item = (RepeaterItem)btnUpdate.NamingContainer;
+
+            Label lblCorreo = (Label)item.FindControl("lblCorreoRp");
+            string correo = lblCorreo.Text;
+
+            ClProyectoL objProjL = new ClProyectoL();
+            int res = objProjL.mtdDeleteUserOnProjectByMail(correo, lblIdProj.Text);
+
+            if (res == 1)
+            {
+
+
+                ClProyectoL objProyectoL = new ClProyectoL();
+
+                List<ClCompartirUserInfo> listaUsuariosProj = objProyectoL.mtdGetAllUserInProject(lblIdProj.Text);
+
+
+                RpUsersOnProj.DataSource = listaUsuariosProj;
+                RpUsersOnProj.DataBind();
+
+            }
+
+
+        }
+
+        protected void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+
+            Button btnUpdate = (Button)sender;
+            RepeaterItem item = (RepeaterItem)btnUpdate.NamingContainer;
+
+            Label lblCorreo = (Label)item.FindControl("lblCorreoRp");
+            CheckBox check = (CheckBox)item.FindControl("chkEditableUser");
+
+            string correo = lblCorreo.Text;
+            bool ischeked = check.Checked;
+            ClProyectoL objProjL = new ClProyectoL();
+            int res = objProjL.mtdUpdateEditableUserByMail(correo, ischeked.ToString());
+
+            if (res == 1)
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActualizarAccesoDeUsuario", "UpdatedAccessUser();", true);
+
+            }
+
+        }
+
+        protected void btnUpdateProjName_Click(object sender, EventArgs e)
+        {
+
+            if (txtEditNameProj.Text.Trim() != "")
+            {
+
+                ClProyectoL objPROJL = new ClProyectoL();
+                int res = objPROJL.mtdEditProjectNameById(lblIdProj.Text, txtEditNameProj.Text);
+
+                if (res == 1)
+                {
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ActionSuccess", "successalert();", true);
+
+                }
+                else
+                {
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ActionFailed", "Errorgen();", true);
+
+                }
+
+            }
+
+        }
+
+        protected void btnUpdateProjetPrivacy_Click(object sender, EventArgs e)
+        {
+
+            string selected = ddlProjectPrivacy.SelectedValue;
+            ClProyectoL objProjL = new ClProyectoL();
+            int res = objProjL.mtdUpdateVisibilityById(lblIdProj.Text, selected);
+
+
+        }
+
+        protected void btnDeleteProject_Click(object sender, EventArgs e)
+        {
+
+            ClProyectoL projL = new ClProyectoL();
+            int res = projL.mtdDeleteProjectKiller(lblIdProj.Text);
+
+            if (res < 1) {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionFailed", "Errorgen();", true);
+
+            }
+            else
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionSuccess", "successalert();", true);
+
+            }
+
 
         }
     }

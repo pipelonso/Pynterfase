@@ -168,13 +168,13 @@ namespace Pynterfase.Vista
         protected global::System.Web.UI.WebControls.Button btnDeleteUser;
 
         /// <summary>
-        /// Control lblNumbreProj.
+        /// Control lblNombreProjRP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumbreProj;
+        protected global::System.Web.UI.WebControls.Label lblNombreProjRP;
 
         /// <summary>
         /// Control lblIdProj.
@@ -202,6 +202,51 @@ namespace Pynterfase.Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVisibilidad;
+
+        /// <summary>
+        /// Control txtEditNameProj.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditNameProj;
+
+        /// <summary>
+        /// Control btnUpdateProjName.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateProjName;
+
+        /// <summary>
+        /// Control ddlProjectPrivacy.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProjectPrivacy;
+
+        /// <summary>
+        /// Control btnUpdateProjetPrivacy.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateProjetPrivacy;
+
+        /// <summary>
+        /// Control btnDeleteProject.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteProject;
 
         /// <summary>
         /// Control RpUsersOnProj.

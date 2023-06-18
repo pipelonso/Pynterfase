@@ -2,14 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <link href="mycss/SharedWithMe.css" rel="stylesheet" />
-
+    <link href="../Content/animate.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid"> 
 
-        <h1 class="text-white my-2" style="background-image : url('imagenes/OnBar.svg'); padding : 10px; border-radius : 5px;">COMPARTIDOS CONTIGO</h1>
+        <h1 class="text-white my-2" style="background-image : url('imagenes/OnBar.svg'); padding : 10px; border-radius : 5px; animation : fadeInUp; animation-duration : 1s;">COMPARTIDOS CONTIGO</h1>
         
-        <div class="navbar nav-collapse"> 
+        <div class="navbar nav-collapse cajasanim"> 
             <asp:Repeater ID="RpProyectos" runat="server">
                 <ItemTemplate>
 

@@ -3,6 +3,7 @@ using Pynterfase.Datos;
 using Pynterfase.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting;
 using System.Web;
@@ -39,6 +40,13 @@ namespace Pynterfase.Logica
 
         }
 
+        public int mtdEditProjectNameById(string id, string NewName)
+        {
+            ClProyectoD objPROJD = new ClProyectoD();
+            int res = objPROJD.mtdUpdateProjectNamebyId(id, NewName);
+            return res;
+        }
+
         public ClproyectoE mtdGetRecentProjectIdByMail(string correo) {
 
             ClProyectoD objProyectoD = new ClProyectoD();
@@ -46,6 +54,15 @@ namespace Pynterfase.Logica
             return objProyecto;
 
         }
+
+        public ClUsuarioE mtdGetProjectOwner(String id)
+        {
+
+            ClProyectoD objPROJD = new ClProyectoD();
+            ClUsuarioE objEDD = objPROJD.mtdGetProjectOwner(id);
+            return objEDD;
+        }
+
 
         public ClproyectoE mtdGetProjectById(string id) {
 
@@ -142,7 +159,14 @@ namespace Pynterfase.Logica
 
         }
 
+        public int mtdDeleteProjectKiller(string id)
+        {
 
+            ClProyectoD objProjD = new ClProyectoD();
+            int res = objProjD.mtdDeleteProjectByid(id);
+            return res;
+            
+        }
 
     }
 }

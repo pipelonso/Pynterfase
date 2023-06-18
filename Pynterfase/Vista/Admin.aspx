@@ -3,14 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../Styles/sweetalert.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/animate.min.css" rel="stylesheet" /> 
     <link href="mycss/Admin.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
 
-        <h1 class="text-white my-2" style="background-image : url('imagenes/OnBar.svg'); padding : 10px; border-radius : 5px;" >Administración</h1>
+        <h1 class="text-white my-2   " style="background-image : url('imagenes/OnBar.svg'); padding : 10px; border-radius : 5px; animation : fadeInUp; animation-duration : 1s; " >Administración</h1>
 
-        <div class="navbar">
+        <div class="navbar cajasanim">
 
             <div class="nav-item col-12 col-sm-12 col-md-5 col-lg-6 p-2 text-white">
                 <h4>Busqueda de usuarios</h4>
@@ -20,7 +21,7 @@
                     <asp:Button ID="btnBuscarUser" runat="server" Text="Buscar" OnClick="btnBuscarUser_Click" CssClass="botones my-2" />
                 </div>
 
-                <div class="w-100 p-2 searchbox onratio" style="overflow : auto; height:400px;">
+                <div class="w-100 p-2 searchbox onratio" style="overflow : auto; height:200px;">
 
                     <asp:Repeater ID="RPUsuarios" runat="server">
 
@@ -50,7 +51,7 @@
 
             </div>
 
-            <div class="nav-item col-12 col-sm-12 col-md-5 col-lg-6 p-2 text-white">
+            <div class="nav-item col-12 col-sm-12 col-md-5 col-lg-6 p-2 text-white cajasanim">
 
                 <h4>Busqueda de proyectos</h4>
 
@@ -60,7 +61,7 @@
                     <asp:Button ID="btnSearchProj" runat="server" Text="Buscar" OnClick="btnSearchProj_Click" CssClass="botones my-2"/>
                 </div>
 
-                <div class="w-100 p-2 searchbox onratio" style="overflow : auto; height:400px;">
+                <div class="w-100 p-2 searchbox onratio" style="overflow : auto; height:200px;">
 
                     <asp:Repeater ID="RPProjects" runat="server" >
 
@@ -68,7 +69,7 @@
                             <div class="selection my-2 px-2 onratio navbar">
                                 <h5 class="nav-item"> <%# Eval("nombreProyecto")  %></h5>
                                 <asp:Label ID="lblIDProj" runat="server" Text='<%# Eval("IdProyecto") %>' CssClass="NotVisible"></asp:Label>
-                                <asp:LinkButton ID="lblInspeccionarProj" runat="server" CssClass=" text-decoration-none text-white nav-item btnIns p-2">                                    
+                                <asp:LinkButton ID="lblInspeccionarProj" runat="server" CssClass=" text-decoration-none text-white nav-item btnIns p-2" OnClick="lblInspeccionarProj_Click">                                    
                                     <img src="imagenes/engrane.svg" alt="Engrane" />
                                     INSPECCIONAR
                                 </asp:LinkButton>
@@ -90,9 +91,9 @@
         </div>
 
 
-        <div >
+        <div id="UserSector">
 
-            <div class="text-white searchbox onratio p-2 my-2">
+            <div class="text-white searchbox onratio p-2 my-2 cajasanim">
                 <div class="selection p-2 onratio my-2">
 
                     <h4>Usuario Seleccionado</h4>
@@ -137,68 +138,81 @@
 
         </div>
 
-        <div>
+        <div id="ProjSection">
 
-            <div class="text-white searchbox onratio p-2 my-2">
+            <div class="text-white searchbox onratio p-2 my-2 cajasanim">
                
                 <div class="selection p-2">
 
                     <h4>Proyecto seleccionado</h4>
                     
-                    <asp:Label ID="lblNumbreProj" runat="server" Text="--Nombre--"></asp:Label>
-                    <br />
+                    <p>Nombre del proyecto</p>
+                    <asp:Label ID="lblNombreProjRP" runat="server" Text="--Nombre--"></asp:Label>
+                    <hr />
+                    <p>Id del proyecto</p>
                     <asp:Label ID="lblIdProj" runat="server" Text="--Id--"></asp:Label>
-                    <br />
+                    <hr />
+                    <p>Autor del proyecto</p>
                     <asp:Label ID="lblAutorProj" runat="server" Text="--Autor--"></asp:Label>
-                    <br />
-                  
+                    <hr />
+                    <p></p>
+                    <p>Visibilidad de proyecto</p>
                     <asp:Label ID="lblVisibilidad" runat="server" Text="--Visibilty--"></asp:Label>
 
                 </div>
 
                 <div class="controles p-2">
 
-                    <asp:Repeater ID="RpUsersOnProj" runat="server">
-
-                        <ItemTemplate>
-
-                            <div class="navbar  isuserbox container-fluid my-2">
-                                            <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
-                                                <asp:Label ID="lblNombreUserRP" runat="server" Text='<%# Eval("nombre") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
-                                                <asp:Label ID="lblCorreoRp" runat="server" Text='<%# Eval("correo") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
-                                                <asp:Image ID="imgUserRP" runat="server" ImageUrl='<%# Eval("imagenUsuario") %>' CssClass="nav-item mx-2 imgUser" Height="40px" Width="40px" />
-                                            </div>
-                                            <asp:CheckBox ID="chkEditableUser" runat="server" CssClass="nav-item mx-2 col-sm-1 col-md-1 col-lg-1 text-white" Text="Puede editar" Checked='<%# Eval("editable") %>'  />
-                                            
-                                            <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1"  />
-                                            <asp:Button ID="btnUpdateUser" runat="server" Text="Actualizar" CssClass="botones col-sm-12 col-md-12 col-lg-12" />
-                                        </div>
+                    <p>Cambiar nombre del proyecto :: Solo has esto si tiene un nombre que no cumpla con las normativas</p>
+                    <asp:TextBox ID="txtEditNameProj" runat="server" CssClass="txtcajas"></asp:TextBox>
+                    <asp:Button ID="btnUpdateProjName" runat="server" Text="Actualizar nombre del proyecto" OnClick="btnUpdateProjName_Click" CssClass="botones"/>
+                    <hr />
+                    <p>Visibilidad del proyecto :: cambia la visibilidad del proyecto</p>
+                    <asp:DropDownList ID="ddlProjectPrivacy" runat="server" CssClass="txtcajas"></asp:DropDownList>
+                    <asp:Button ID="btnUpdateProjetPrivacy" runat="server" Text="Actualizar privacidad del proyecto" OnClick="btnUpdateProjetPrivacy_Click" CssClass="botones"/>
+                    <hr />
+                    <p>Borrar proyecto :: Esta acción es irreversible</p>
+                    <asp:Button ID="btnDeleteProject" runat="server" Text="☠ ELIMINAR PROYECTO ☠" OnClick="btnDeleteProject_Click" CssClass="Deletebtn"/>
 
 
 
+                    <div  class="ProjUserSection">
 
-                        </ItemTemplate>
+                        <h4 class="text-white text-center">Usuarios en este proyecto</h4>
 
-                    </asp:Repeater>
+                        <asp:Repeater ID="RpUsersOnProj" runat="server">
+
+                            <ItemTemplate>
+
+                                <div class="navbar  isuserbox container-fluid my-2  px-2">
+                                    <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
+                                        <asp:Label ID="lblNombreUserRP" runat="server" Text='<%# Eval("nombre") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
+                                        <asp:Label ID="lblCorreoRp" runat="server" Text='<%# Eval("correo") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
+                                        <asp:Image ID="imgUserRP" runat="server" ImageUrl='<%# Eval("imagenUsuario") %>' CssClass="nav-item mx-2 imgUser" Height="40px" Width="40px" />
+                                    </div>
+                                    <asp:CheckBox ID="chkEditableUser" runat="server" CssClass="nav-item mx-2 col-sm-1 col-md-1 col-lg-1 text-white" Text="Puede editar" Checked='<%# Eval("editable") %>' />
+
+                                    <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1" Height="30px" Width="30px" OnClick="btnDeleteUserRp_Click"/>
+                                    <asp:Button ID="btnUpdateUser" runat="server" Text="Actualizar" CssClass="botones col-sm-12 col-md-12 col-lg-12" OnClick="btnUpdateUser_Click"/>
+                                </div>
 
 
+
+
+                            </ItemTemplate>
+
+                        </asp:Repeater>
+                    </div>
 
                 </div>
 
-
             </div>
-
 
         </div>
 
-
-
-
-
-
     </div>
 
-
+    <script src="Admin.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="alertManager.js"></script>
     <script src="../Scripts/sweetalert.min.js"></script>
