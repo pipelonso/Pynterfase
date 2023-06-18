@@ -1,12 +1,68 @@
 ﻿body {
-    background-image: url('../imagenes/leave.svg');
-    background-size : cover;
+    background-image: url('../imagenes/visorback.svg');
+    background-size: cover;
 }
-
-
 
 .titlediv {
     background-image: url('../imagenes/OnBar.svg');
     background-size: cover;
     height: 50px;
+}
+
+.canvas{
+
+    border:solid;
+    border-width : 2px;
+    border-color : white;
+    border-radius : 5px
+
+}
+
+.TKbuttonBase {
+    border: outset;
+    border-width: 2px;
+    color: black;
+    background-color: lightgray;
+}
+
+
+    .TKbuttonBase:hover {
+        border: outset;
+        border-width: 2px;
+        color: black;
+        background-color: lightsalmon;
+    }
+
+
+.botones {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: black;
+    color: white;
+}
+
+    .botones:hover {
+        border: double;
+        border-color: dimgray;
+        border-width: 3px;
+        background-color: lightslategray;
+    }
+
+.txtcajas {
+    color: white;
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: rgb(25, 25, 25);
+    border-radius: 5px;
+}
+
+.outputbox {
+    border: solid;
+    border-color: red;
+    border-width: 1px;
+    color: lightgreen;
+    border-radius: 10px;
+    background-color : black;
 }

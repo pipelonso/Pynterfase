@@ -134,7 +134,7 @@
                                 </div>
                                 <asp:Repeater ID="RPUsers" runat="server" OnItemCommand="RPUsers_ItemCommand" OnItemDataBound="RPUsers_ItemDataBound" ValidateRequestMode="Disabled">
                                     <ItemTemplate>
-                                        <div class="navbar  isuserbox container-fluid my-2">
+                                        <div class="navbar  isuserbox container-fluid my-2 p-2">
                                             <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
                                                 <asp:Label ID="lblNombreUserRP" runat="server" Text='<%# Eval("nombre") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
                                                 <asp:Label ID="lblCorreoRp" runat="server" Text='<%# Eval("correo") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
@@ -164,6 +164,15 @@
                             </div>                            
                         </ContentTemplate>
                     </asp:UpdatePanel>
+                    <div id="shareSection" class="">
+                        <p class=" text-white text-center">COPIAR URL</p>                                                
+                        <div class="navbar justify-content-center w-100">
+                        <input type="button" name="name" value="" class="btnshare my-2  mx-2 p-2 nav-item" onclick="copyURL();"/>    
+                        </div>
+                        
+                    </div>
+                    
+
                 </div>
 
 
@@ -182,7 +191,16 @@
         <div class="cajasanim container-fluid navbar superiorBar" id="supBar" style="height: 150px;">
             <div class="col-lg-2 col-md-2 col-sm-12 nav-item infobox mx-1" id="infobox">
                 <asp:Label ID="LlblProjectName" runat="server" Text="---" CssClass="text-white mx-2"></asp:Label>
-
+                <input type="button" name="btnSalir" value="SALIR" class="botones" onclick="onExit();"/>
+                <div id="noSavedPanel">
+                    <div  class="bg-dark p-2" >
+                    <p class="text-white">Cambios nor cuardados</p>
+                    <asp:Button ID="btnDischarChanges" runat="server" Text="Descartar Cambios" CssClass="botones w-100" OnClick="btnDischarChanges_Click"/>
+                    
+                    <input type="button" name="name" value="Cancelar" class="botones w-100 " onclick="CancelExit();"/>
+                </div>
+                </div>
+                
             </div>
 
 

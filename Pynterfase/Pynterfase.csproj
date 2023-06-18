@@ -165,6 +165,7 @@
     <Content Include="Vista\imagenes\projectsBack.svg" />
     <Content Include="Vista\imagenes\regbox.svg" />
     <Content Include="Vista\imagenes\regImg.svg" />
+    <Content Include="Vista\imagenes\share-fill.svg" />
     <Content Include="Vista\imagenes\SharedBox.svg" />
     <Content Include="Vista\imagenes\SharedWithMe.svg" />
     <Content Include="Vista\imagenes\SharedWithMeBack.svg" />
@@ -202,6 +203,7 @@
     <Content Include="Vista\ProjSaved.aspx" />
     <Content Include="Vista\ProjSharedWithMe.aspx" />
     <Content Include="Vista\Proyectos.aspx" />
+    <Content Include="Vista\Proyectos.js" />
     <Content Include="Vista\Pynterfase avatars\1.png" />
     <Content Include="Vista\Pynterfase avatars\2.png" />
     <Content Include="Vista\Pynterfase avatars\3.png" />
@@ -239,6 +241,8 @@
     <Content Include="Vista\mycss\login.css" />
     <Content Include="Vista\Verification.js" />
     <Content Include="Vista\Visor.aspx" />
+    <Content Include="Vista\Visor.js" />
+    <Content Include="Vista\imagenes\VisorBack.svg" />
     <Content Include="Vista\WriteJson.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

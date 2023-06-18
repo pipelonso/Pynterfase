@@ -45,13 +45,15 @@ namespace Pynterfase.Vista
 
                 ddlPrivacyProps.Items.Add("Publico");
                 ddlPrivacyProps.Items.Add("Privado");
-
-
             }
             
 
             ClproyectoE objProyecto = objProyectoL.mtdGetProjectById(iPr);
+            if (objProyecto.IdProyecto == 0) {
 
+                Response.Redirect("~/Vista/Error.aspx");
+            
+            }
             LlblProjectName.Text = objProyecto.nombreProyecto;
 
             if (!IsPostBack) {
@@ -97,7 +99,7 @@ namespace Pynterfase.Vista
                     {
 
                         //Llevar al visor
-                        Response.Redirect("~/Vista/Visor.aspx");
+                        Response.Redirect("~/Vista/Visor.aspx?iPr=" + iPr );
 
                     }
 
@@ -372,7 +374,9 @@ namespace Pynterfase.Vista
 
         }
 
-
-
+        protected void btnDischarChanges_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/Proyectos.aspx");
+        }
     }
 }

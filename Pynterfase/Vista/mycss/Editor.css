@@ -235,3 +235,24 @@
     border-color: green;
     
 }
+
+
+.btnshare {
+    background : none;
+    background-image: url('../imagenes/share-fill.svg');
+    background-size : cover;
+    height : 30px;
+    width : 30px;
+    background-color : none;
+    border : none;
+}
+
+.btnshare:hover {
+    
+    background-image: url('../imagenes/share-fill.svg');
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(25, 25, 25);
+    border: none;
+}

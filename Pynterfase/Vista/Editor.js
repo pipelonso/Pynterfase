@@ -4,6 +4,8 @@ var initialid = 0;
 var selectedType = "";
 var projectID = 0;
 var currentJson = "";
+var saveindicator = "Save";
+
 
 var saveIndicatorIMG = document.getElementById("saveIndicatorIMG");
 
@@ -398,6 +400,10 @@ function startsall() {
     textboxPropPanel.style.display = "none";
     checkboxPropPanel.style.display = "none";
 
+    var noSavedPanel = document.getElementById("noSavedPanel");
+    noSavedPanel.style.display = "none";
+
+
 
 }
 
@@ -469,7 +475,7 @@ function HideCreateCanvas() {
 
 
 function ResizeCanvas(x , y) {
-
+    saveindicator = "NotSave";
     saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
 
     document.getElementById("lienzo").style.width = x + "px";
@@ -478,7 +484,7 @@ function ResizeCanvas(x , y) {
 }
 
 function IntoResizeCanvas() {
-
+    saveindicator = "NotSave";
     saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
     var textboxAltura = document.getElementById("txtAltoH");
     var textboxAncho = document.getElementById("txtAnchoH");
@@ -602,7 +608,7 @@ var botontk;
 
 
 function AddTKElement() {
-
+    saveindicator = "NotSave";
     saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
 
 
@@ -887,7 +893,7 @@ function handleKeyDown(event) {
 
 
 function applyChanges() {
-
+    saveindicator = "NotSave";
     saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
 
     if (selectedType == "b" || selectedType.slice(1) == "b") { //verifica si el valor seleccionado es un boton
@@ -2264,7 +2270,7 @@ function setBGColor() {
 }
 
 function DeleteElement() {
-
+    var saveindicator = "NotSave";
     saveIndicatorIMG.src = "imagenes/cloud-arrow-up.svg";
 
     var lienzodivgen = document.getElementById("lienzo");
@@ -2315,7 +2321,7 @@ function DeleteElement() {
 function onSaveChanges() {
 
     saveIndicatorIMG.src = "imagenes/cloud-check-fill.svg";
-
+    saveindicator = "Save";
     var listapantalla = [];
     var listaButtons = [];
     var listaLabels = [];
@@ -2841,6 +2847,45 @@ function showExportPanel() {
     outputDiv.style.display = "block";
     GeneratedPyDiv.style.display = "block";
     exportDiv.style.display = "block";
+
+
+}
+
+function onExit() {
+
+
+
+    if (saveindicator == "NotSave") {
+
+        var noSavedPanel = document.getElementById("noSavedPanel");
+        noSavedPanel.style.display = "block";
+
+    } else {
+
+        window.location.href = "/Vista/Proyectos.aspx"
+
+    }
+
+}
+
+function CancelExit() {
+
+    var noSavedPanel = document.getElementById("noSavedPanel");
+    noSavedPanel.style.display = "none";
+    
+
+}
+
+function copyURL() {
+
+    
+    var input = document.createElement("input");  
+    input.value = window.location.href;
+    document.body.appendChild(input);    
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);   
+    alert("La url ha sido copiada al portapapeles");
 
 
 }

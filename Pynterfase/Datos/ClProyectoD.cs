@@ -88,11 +88,14 @@ namespace Pynterfase.Datos
             DataTable datos = objSQL.mtdconsultar(consulta);
 
             ClproyectoE objProyecto = new ClproyectoE();
-            objProyecto.IdProyecto = int.Parse(datos.Rows[0]["IdProyecto"].ToString());
-            objProyecto.idUsuarioP = int.Parse(datos.Rows[0]["IdUsuario"].ToString());
-            objProyecto.nombreProyecto = datos.Rows[0]["nombreProyecto"].ToString();
-            objProyecto.visibilidad = datos.Rows[0]["visibilidad"].ToString();
 
+            if (datos.Rows.Count != 0)
+            {                
+                objProyecto.IdProyecto = int.Parse(datos.Rows[0]["IdProyecto"].ToString());
+                objProyecto.idUsuarioP = int.Parse(datos.Rows[0]["IdUsuario"].ToString());
+                objProyecto.nombreProyecto = datos.Rows[0]["nombreProyecto"].ToString();
+                objProyecto.visibilidad = datos.Rows[0]["visibilidad"].ToString();
+            }
             return objProyecto;
 
         }
