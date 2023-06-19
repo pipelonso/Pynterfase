@@ -1,0 +1,110 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    
+    background-image: url('../imagenes/inicio/inicioback.svg');
+    background-size: cover;
+}
+
+.selection {
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+    .selection:hover {
+        animation-name: selectedBox;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+    }
+
+@keyframes selectedBox {
+
+    from {
+        border-color: black;
+    }
+
+    to {
+        border-color: red;
+    }
+}
+
+
+
+.isInitialHiden{
+
+    /*opacity : 0%;*/
+
+}
+
+
+.TitleBack {
+    
+    background-image: url('../imagenes/inicio/pynterfase_title_back.svg');
+    background-size : cover;
+    border-bottom-color : red;
+    border-bottom-width : 2px;
+    border-bottom-style : solid;
+}
+
+.intoTitleBack {
+    background-image: url('../imagenes/inicio/title2back.svg');
+}
+
+
+.TransMint {
+    background-image: url('../imagenes/inicio/trasnmintdeg.svg');
+    background-size : cover;
+}
+
+.TransPink {
+    background-image: url('../imagenes/inicio/trasnpinkdeg.svg');
+    background-size: cover;
+}
+
+.TransBlue {
+    background-image: url('../imagenes/inicio/trasnbluedeg.svg');
+    background-size: cover;
+}
+
+.cajasanim {
+    opacity: 0;  /*Inicialmente oculto */
+    animation-name: aparecer;
+    animation-duration: 2s; /* Duración de la animación */
+    animation-delay: 0.5s; /* Retraso antes de comenzar la animación */
+    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Comienza completamente transparente */
+    }
+
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}
+
+
+.cajasHide {
+    opacity: 100; /*Inicialmente oculto */
+    animation-name: Desaparecer;
+    animation-duration: 2s; /* Duración de la animación */
+    animation-delay: 0.5s; /* Retraso antes de comenzar la animación */
+    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+@keyframes Desaparecer {
+    from {
+        opacity:100; /* Comienza completamente transparente */
+    }
+
+    to {
+        opacity: 0; /* Termina completamente visible */
+    }
+}
+

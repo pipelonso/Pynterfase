@@ -1,7 +1,8 @@
 ﻿body {
     /*background: rgb(255, 255, 255);*/
     /*background-image: url('../imagenes/sunshine-2250.gif');*/
-    background-image: url('../imagenes/backreglogin.gif');
+    /*background-image: url('../imagenes/backreglogin.gif');*/
+    background-image: url('../imagenes/back1 (1).gif');
     background-size: cover;
 }
 
@@ -30,27 +31,28 @@
 
 .txtcajas{
 
+    background-color : rgb(22, 22, 22);
     border : solid;
     border-color : lightgray;
     border-width : 3px;
-
+    color : white;
 
 }
 
 p{
 
-    color : gray;
+    color : white;
 
 }
 
 h1{
 
-    color : gray;
+    color : lightblue;
 
 }
 
 .ongray {
-    color: gray;
+    color: lightblue;
 }
 
 .onbtn:hover{

@@ -114,6 +114,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Inicio.aspx" />
+    <Content Include="Inicio.js" />
     <Content Include="Login.aspx" />
     <Content Include="Principal.js" />
     <Content Include="ProjectsContent.js" />
@@ -158,6 +159,17 @@
     <Content Include="Vista\imagenes\hexagon.svg" />
     <Content Include="Vista\imagenes\house.svg" />
     <Content Include="Vista\imagenes\Incircle.svg" />
+    <Content Include="Vista\imagenes\Inicio\Cap1Editor.png" />
+    <Content Include="Vista\imagenes\Inicio\CapAddPeople.png" />
+    <Content Include="Vista\imagenes\Inicio\CapCompartidos.png" />
+    <Content Include="Vista\imagenes\Inicio\CapProjects.png" />
+    <Content Include="Vista\imagenes\Inicio\capSaved.png" />
+    <Content Include="Vista\imagenes\Inicio\InicioBack.svg" />
+    <Content Include="Vista\imagenes\Inicio\pynterfase_title_back.svg" />
+    <Content Include="Vista\imagenes\Inicio\title2back.svg" />
+    <Content Include="Vista\imagenes\Inicio\TrasnBlueDeg.svg" />
+    <Content Include="Vista\imagenes\Inicio\TrasnPinkDeg.svg" />
+    <Content Include="Vista\imagenes\Inicio\TrasnMintDeg.svg" />
     <Content Include="Vista\imagenes\leave.svg" />
     <Content Include="Vista\imagenes\normProj.svg" />
     <Content Include="Vista\imagenes\OnBar.svg" />
@@ -195,6 +207,7 @@
     <Content Include="Vista\mycss\create.css" />
     <Content Include="Vista\mycss\Editor.css" />
     <Content Include="Vista\mycss\InfoUser.css" />
+    <Content Include="Vista\mycss\Inicio.css" />
     <Content Include="Vista\mycss\PrincipalMaster.css" />
     <Content Include="Vista\mycss\ProjectsMaster.css" />
     <Content Include="Vista\mycss\ProjectsPanel.css" />

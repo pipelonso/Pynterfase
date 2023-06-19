@@ -11,6 +11,7 @@
    sodipodi:docname="window_base.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -25,8 +26,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2"
-     inkscape:cx="57.25"
-     inkscape:cy="92.5"
+     inkscape:cx="107.25"
+     inkscape:cy="111.5"
      inkscape:window-width="1366"
      inkscape:window-height="745"
      inkscape:window-x="-8"
@@ -38,14 +39,57 @@
        id="grid3625" />
   </sodipodi:namedview>
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1995">
+      <stop
+         style="stop-color:#0f0f0f;stop-opacity:1;"
+         offset="0"
+         id="stop1991" />
+      <stop
+         style="stop-color:#0f0f0f;stop-opacity:0.68773234;"
+         offset="1"
+         id="stop1993" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1987">
+      <stop
+         style="stop-color:#100d0d;stop-opacity:1;"
+         offset="0"
+         id="stop1983" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0.40892193;"
+         offset="1"
+         id="stop1985" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1987"
+       id="linearGradient1989"
+       x1="0"
+       y1="29.557989"
+       x2="61.08667"
+       y2="29.557989"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1995"
+       id="linearGradient1997"
+       x1="0"
+       y1="2.3044882"
+       x2="61.08667"
+       y2="2.3044882"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Capa 2"
      transform="scale(1.0011964,1.0006435)">
     <rect
-       style="fill:#f1eded;fill-opacity:1;stroke:none;stroke-width:0.871934;stroke-linecap:round"
+       style="fill:url(#linearGradient1989);fill-opacity:1;stroke:none;stroke-width:0.871934;stroke-linecap:round"
        id="rect955"
        width="61.08667"
        height="49.898026"
@@ -53,7 +97,7 @@
        y="4.6089764"
        ry="0" />
     <rect
-       style="fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:round"
+       style="fill:url(#linearGradient1997);fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:round"
        id="rect298"
        width="61.08667"
        height="4.6089764"
