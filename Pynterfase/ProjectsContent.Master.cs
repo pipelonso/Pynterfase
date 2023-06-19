@@ -18,6 +18,15 @@ namespace Pynterfase.Vista
             ClusuarioL objUSL = new ClusuarioL();
             ClUsuarioE objUsuario = objUSL.mtdGetAllUser(Session["usuario"].ToString());
 
+            ClEstadoL objEstadoL = new ClEstadoL();
+            ClEstadoE objEstadoE = objEstadoL.mtdGetUserStatusByMail(Session["usuario"].ToString());
+            if (objEstadoE.estado != "Activo") {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "AparecerAdmin", "alert('Tu cuenta esta bloqueda');", true);
+                Response.Redirect("~/Login.aspx");
+
+            }
+
             ClRolL objRolL = new ClRolL();
             List<ClRolE> listaRoles = objRolL.mtdGetAllRolById(objUsuario.IdRol.ToString());
 
