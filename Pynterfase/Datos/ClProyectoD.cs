@@ -2,7 +2,9 @@
 using Org.BouncyCastle.Asn1.Mozilla;
 using Pynterfase.Entidades;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.Xml;
 using System.Web.UI.WebControls;
@@ -390,6 +392,67 @@ namespace Pynterfase.Datos
 
         }
 
+        public int mtdSaveProject(string idCreador, string userMail, string idPRoj)
+        {
+
+            ClusuarioD  objUSD = new ClusuarioD();
+            ClUsuarioE objUSE = objUSD.mtdGetAllUser(userMail);
+
+            string idUser = objUSE.IdUsuario.ToString();
+            string insert = "INSERT INTO Guardado (IdCreador , idUsuario , idProyecto) VALUES ("+ idCreador +" , "+ idUser +" , "+ idPRoj +")";
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+
+            int res = objSQL.mtdInsert(insert);
+            return res;
+
+
+        }
+
+        public int mtdVerifyIfIsSaved(string userMail, string projID)
+        {
+
+            string select = "SELECT Guardado.* FROM Guardado , Usuario WHERE Usuario.IdUsuario = Guardado.idUsuario AND Guardado.idProyecto = "+ projID +" AND Usuario.correo = '"+ userMail +"'";
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            DataTable datos = objSQL.mtdconsultar(select);
+            return datos.Rows.Count;
+
+        }
+
+        public int mtdDeleteFromSaved(string userid, string ProjID)
+        {
+
+            string DELETE = "DELETE FROM Guardado WHERE idUsuario = " + userid + " AND idProyecto = " + ProjID;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            int res = objSQL.mtdInsert(DELETE);
+            return res;
+
+        }
+
+        public List<ClSavedProjE> mtdGetsavedProjectsByUserId(string id)
+        {
+
+            string consulta = "SELECT Usuario.nombre , Proyecto.IdProyecto , Proyecto.nombreProyecto , Proyecto.visibilidad FROM Usuario , Proyecto , Guardado WHERE Proyecto.IdProyecto = Guardado.idProyecto AND Guardado.IdCreador = Usuario.IdUsuario AND Guardado.idUsuario = " + id;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            DataTable datos = objSQL.mtdconsultar(consulta);
+
+            List<ClSavedProjE> listaGuardados = new List<ClSavedProjE>();
+
+            for (int i = 0; i < datos.Rows.Count; i++)
+            {
+
+                ClSavedProjE objSaved = new ClSavedProjE();
+                objSaved.IdProyecto = int.Parse(datos.Rows[i]["IdProyecto"].ToString());
+                objSaved.nombre = datos.Rows[i]["nombre"].ToString();
+                objSaved.nombreProyecto = datos.Rows[i]["nombreProyecto"].ToString();
+                objSaved.visibilidad = datos.Rows[i]["visibilidad"].ToString();
+                
+                listaGuardados.Add(objSaved);
+
+            }
+
+            return listaGuardados;
+
+        }
 
     }
 

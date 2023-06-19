@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pynterfase.Entidades;
+using Pynterfase.Logica;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,6 +29,57 @@ namespace Pynterfase.Vista
 
 
             }
+
+            ClProyectoL objPROJL = new ClProyectoL();
+            int itsSaved = objPROJL.mtdVerifyIfIsSaved(Session["usuario"].ToString(), iPr);
+
+            if (itsSaved == 1) {
+
+                imgsaved.ImageUrl = "~/Vista/imagenes/btnSavedOn.svg";
+
+            }
+
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string iPr = Request.QueryString["iPr"];
+            
+            if (imgsaved.ImageUrl != "~/Vista/imagenes/btnSavedOn.svg") {
+
+                ClProyectoL objPROJL = new ClProyectoL();
+                ClproyectoE objPROJE = objPROJL.mtdGetProjectById(iPr);
+
+                int res = objPROJL.mtdSaveProject(objPROJE.idUsuarioP.ToString(), Session["usuario"].ToString(), iPr);
+
+                if (res == 1)
+                {
+
+                    imgsaved.ImageUrl = "~/Vista/imagenes/btnSavedOn.svg";
+
+                }
+
+            }
+            else
+            {
+
+                ClusuarioL objUSL = new ClusuarioL();
+                ClUsuarioE objUSE = objUSL.mtdGetAllUser(Session["usuario"].ToString());
+
+                ClProyectoL objPROJL = new ClProyectoL();
+                int res = objPROJL.mtdDeleteFromSaved(objUSE.IdUsuario.ToString(), iPr);
+
+                if (res == 1)
+                {
+
+                    imgsaved.ImageUrl = "~/Vista/imagenes/btnSavedOff.svg";
+
+                } 
+
+
+            }
+            
+
         }
     }
 }

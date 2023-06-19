@@ -1,0 +1,56 @@
+﻿body {
+    background-image: url('../imagenes/savedback.svg');
+    background-size : cover;
+}
+
+.NotVisible {
+    display: none;
+}
+
+.projBox {
+    border : solid;
+    border-width : 1px;
+    border-color : black;
+    background-image: url('../imagenes/savedbox.svg');
+    background-size : cover;
+}
+
+.projBox:hover{
+
+    border-color : red;
+
+}
+
+
+.botones {
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: gray;
+}
+
+    .botones:hover {
+        border: double;
+        border-color: dimgray;
+        border-width: 3px;
+        background-color: lightslategray;
+    }
+
+.cajasanim {
+    opacity: 0; /* Inicialmente oculto */
+    animation-name: aparecer;
+    animation-duration: 2s; /* Duración de la animación */
+    animation-delay: 0.5s; /* Retraso antes de comenzar la animación */
+    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Comienza completamente transparente */
+    }
+
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}

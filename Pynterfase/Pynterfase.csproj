@@ -143,6 +143,7 @@
     <Content Include="Vista\imagenes\cloud-arrow-up.svg" />
     <Content Include="Vista\imagenes\cloud-check-fill.svg" />
     <Content Include="Vista\imagenes\code-square.svg" />
+    <Content Include="Vista\imagenes\cuadricula.svg" />
     <Content Include="Vista\imagenes\EditorPrivacySection\dash-circle.svg" />
     <Content Include="Vista\imagenes\EditorPrivacySection\globe.svg" />
     <Content Include="Vista\imagenes\EditorPrivacySection\globe_not.svg" />
@@ -165,6 +166,8 @@
     <Content Include="Vista\imagenes\projectsBack.svg" />
     <Content Include="Vista\imagenes\regbox.svg" />
     <Content Include="Vista\imagenes\regImg.svg" />
+    <Content Include="Vista\imagenes\SavedBack.svg" />
+    <Content Include="Vista\imagenes\Savedbox.svg" />
     <Content Include="Vista\imagenes\share-fill.svg" />
     <Content Include="Vista\imagenes\SharedBox.svg" />
     <Content Include="Vista\imagenes\SharedWithMe.svg" />
@@ -196,6 +199,7 @@
     <Content Include="Vista\mycss\ProjectsMaster.css" />
     <Content Include="Vista\mycss\ProjectsPanel.css" />
     <Content Include="Vista\mycss\Register.css" />
+    <Content Include="Vista\mycss\SavedBack.css" />
     <Content Include="Vista\mycss\SharedWithMe.css" />
     <Content Include="Vista\mycss\tkStyles.css" />
     <Content Include="Vista\mycss\Verificacion.css" />
@@ -261,6 +265,7 @@
     <Compile Include="Entidades\ClproyectoE.cs" />
     <Compile Include="Entidades\ClRecuperacionE.cs" />
     <Compile Include="Entidades\ClRolE.cs" />
+    <Compile Include="Entidades\ClSavedProjE.cs" />
     <Compile Include="Entidades\ClUsuarioE.cs" />
     <Compile Include="Entidades\ClVerificacionE.cs" />
     <Compile Include="Global.asax.cs">

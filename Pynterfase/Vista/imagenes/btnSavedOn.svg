@@ -7,7 +7,7 @@
    viewBox="0 0 16 16"
    version="1.1"
    id="svg4"
-   sodipodi:docname="bookmark-plus-fill.svg"
+   sodipodi:docname="btnSavedOn.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,8 +26,8 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="35.3125"
-     inkscape:cx="7.4053097"
-     inkscape:cy="8.0141593"
+     inkscape:cx="6.8106195"
+     inkscape:cy="8.0424779"
      inkscape:window-width="1366"
      inkscape:window-height="745"
      inkscape:window-x="-8"
@@ -36,7 +36,8 @@
      inkscape:current-layer="svg4" />
   <path
      fill-rule="evenodd"
-     d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"
+     d="M 2,15.5 V 2 C 2,0.8954305 2.8954305,0 4,0 h 8 c 1.104569,0 2,0.8954305 2,2 v 13.5 c 2.78e-4,0.37998 -0.406656,0.62139 -0.74,0.439 L 8,13.069 2.74,15.939 C 2.4066557,16.12139 1.999722,15.87998 2,15.5 Z M 8.5,6 h -1 V 6 H 6 C 5.3333336,6 5.3333336,7 6,7 h 1.5 v 0 h 1 V 7 H 10 c 0.666666,0 0.666666,-1 0,-1 z"
      id="path2"
-     style="fill:#c9c9c9;fill-opacity:1" />
+     style="fill:#c9c9c9;fill-opacity:1"
+     sodipodi:nodetypes="csssscccccsscsscsscsscs" />
 </svg>

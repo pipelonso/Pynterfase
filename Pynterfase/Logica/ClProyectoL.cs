@@ -168,5 +168,43 @@ namespace Pynterfase.Logica
             
         }
 
+        public int mtdSaveProject(string idCreador, string userMail, string idPRoj)
+        {
+
+            ClProyectoD objPROJD = new ClProyectoD();
+            int res = objPROJD.mtdSaveProject(idCreador, userMail, idPRoj);
+            return res;
+
+        }
+
+        public int mtdVerifyIfIsSaved(string userMail, string projID)
+        {
+
+            ClProyectoD objPROJD = new ClProyectoD();
+            int counter = objPROJD.mtdVerifyIfIsSaved(userMail, projID);
+            return counter;
+
+        }
+
+        public int mtdDeleteFromSaved(string userid, string ProjID)
+        {
+
+            ClProyectoD objPROJD = new ClProyectoD();
+            int res = objPROJD.mtdDeleteFromSaved(userid, ProjID);
+            return res;
+
+        }
+
+        public List<ClSavedProjE> mtdGetsavedProjectsByUSerId(string id)
+        {
+
+            ClProyectoD objPROJD = new ClProyectoD();
+            List<ClSavedProjE> listaSaved = objPROJD.mtdGetsavedProjectsByUserId(id);
+            return listaSaved;
+
+        }
+
+
+
     }
 }

@@ -31,8 +31,10 @@
             
 
             <div class="nav-item container-fluid col-sm-12 col-12 col-md-2 col-lg-2"> 
-
-                <input type="button" name="name" value="" id="btnSave" class="w-100 my-2" />
+                <asp:LinkButton ID="btnSave" CssClass="text-decoration-none text-white" runat="server" OnClick="btnSave_Click">
+                    <asp:Image ID="imgsaved" runat="server" ImageUrl="~/Vista/imagenes/btnSavedOff.svg" Height="30px" Width="30px"/>
+                    Guardar</asp:LinkButton>
+                <%--<input type="button" name="name" value="" id="btnSave" class="w-100 my-2" />--%>
                 <input type="button" name="name" value="Generar codigo" class="w-100 my-2 botones" onclick="GeneratePython();"/>
                 <input type="button" name="name" value="Descargar" class="w-100 my-2 botones" onclick="DownLoad();" />
 
