@@ -15,7 +15,7 @@
     .selection:hover {
         animation-name: selectedBox;
         animation-duration: 1s;
-        animation-delay: 1s;
+        animation-delay: 0s;
         animation-direction: normal;
         animation-fill-mode: forwards;
     }
@@ -27,7 +27,7 @@
     }
 
     to {
-        border-color: red;
+        border-color: white;
     }
 }
 
@@ -58,17 +58,30 @@
     background-image: url('../imagenes/inicio/trasnmintdeg.svg');
     background-size : cover;
 }
+    .TransMint:hover {
+        background-image: url('../imagenes/inicio/trasnmintdegdet.svg');
+        background-size: cover;
+    }
 
 .TransPink {
     background-image: url('../imagenes/inicio/trasnpinkdeg.svg');
     background-size: cover;
 }
+    .TransPink:hover {
+        background-image: url('../imagenes/inicio/trasnpinkdegdet.svg');
+        background-size: cover;
+    }
 
 .TransBlue {
     background-image: url('../imagenes/inicio/trasnbluedeg.svg');
     background-size: cover;
 }
 
+
+    .TransBlue:hover {
+        background-image: url('../imagenes/inicio/trasnbluedegdet.svg');
+        background-size: cover;
+    }
 .cajasanim {
     opacity: 0;  /*Inicialmente oculto */
     animation-name: aparecer;

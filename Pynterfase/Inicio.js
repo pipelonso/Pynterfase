@@ -13,43 +13,39 @@ function detectarScroll() {
     
     const posicionScroll = window.scrollY || window.pageYOffset;
 
-    console.log(alturaPagina + " --- " + posicionScroll);
+    //console.log(alturaPagina + " --- " + posicionScroll);
 
-    if (posicionScroll >= 312) {
+    if (posicionScroll <= 200) {
 
-        titleBack.classList.add("cajasHide");
-        titleBack.classList.remove("cajasanim");
-
-    } else {
-
-        titleBack.classList.remove("cajasHide");
-        titleBack.classList.add("cajasanim");
-
+        titleBack.style.opacity = "100%";
+    
     }
 
-    //if (posicionScroll >= 208) {
+    if (posicionScroll <= 210) {
 
-    //    oneBox.classList.remove("cajasHide");
-    //    oneBox.classList.add("cajasanim");
+        titleBack.style.opacity = "80%";
 
-    //} else {
+    }
+    if (posicionScroll >= 220) {
 
-        
-    //    oneBox.classList.remove("cajasanim");
-    //    oneBox.classList.add("cajasHide");
+        titleBack.style.opacity = "60%";
 
-    //}
+    }
+    if (posicionScroll >= 230) {
 
-    //if (posicionScroll >= 300) {
+        titleBack.style.opacity = "50%";
 
-    //    twoBox.classList.remove("cajasHide");
-    //    twoBox.classList.add("cajasanim");
-    //}
-    //else
-    //{
-    //    twoBox.classList.remove("cajasanim");
-    //    twoBox.classList.add("cajasHide");
-    //}
+    }
+    if (posicionScroll >= 250) {
+
+        titleBack.style.opacity = "25%";
+
+    }
+    if (posicionScroll >= 312) {
+
+        titleBack.style.opacity = "0%";
+
+    }
 
     
 }

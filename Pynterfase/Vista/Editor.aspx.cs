@@ -20,8 +20,15 @@ namespace Pynterfase.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                    
-            
+
+
+            if (Session["usuario"].ToString() == null || Session["usuario"].ToString() == "")
+            {
+
+                Response.Redirect("~/Login.aspx");
+
+            }
+
             //Button myButton = new Button();
             //myButton.ID = "myButton";
             //myButton.Text = "Haz clic aquí";
@@ -118,7 +125,7 @@ namespace Pynterfase.Vista
                     {
 
                         //llevar a visor
-                        Response.Redirect("~/Vista/Visor.aspx");
+                        Response.Redirect("~/Vista/Visor.aspx?iPr=" + iPr);
 
                     }
 

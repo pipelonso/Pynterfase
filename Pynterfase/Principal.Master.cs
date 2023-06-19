@@ -47,5 +47,19 @@ namespace Pynterfase
         {
             Response.Redirect("~/Vista/Proyectos.aspx");
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("~/Inicio.aspx");
+
+        }
+
+        protected void btnDocumentación_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("~/Documentation.aspx");
+
+        }
     }
 }

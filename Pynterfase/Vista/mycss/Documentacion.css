@@ -1,0 +1,67 @@
+﻿body {
+    background-image: url('../imagenes/documentación/docuaback.svg');
+    background-size: cover;
+}
+
+
+.TransMint {
+    background-image: url('../imagenes/inicio/trasnmintdeg.svg');
+    background-size: cover;
+    margin-top : 10px;
+    
+}
+
+    .TransMint:hover {
+        background-image: url('../imagenes/inicio/trasnmintdegdet.svg');
+        background-size: cover;
+    }
+
+.TransPink {
+    background-image: url('../imagenes/inicio/trasnpinkdeg.svg');
+    background-size: cover;
+    margin-top: 10px;
+}
+
+    .TransPink:hover {
+        background-image: url('../imagenes/inicio/trasnpinkdegdet.svg');
+        background-size: cover;
+    }
+
+.TransBlue {
+    background-image: url('../imagenes/inicio/trasnbluedeg.svg');
+    background-size: cover;
+    margin-top: 10px;
+}
+
+
+    .TransBlue:hover {
+        background-image: url('../imagenes/inicio/trasnbluedegdet.svg');
+        background-size: cover;
+    }
+
+
+.selection {
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius : 15px;
+}
+
+    .selection:hover {
+        animation-name: selectedBox;
+        animation-duration: 1s;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+    }
+
+@keyframes selectedBox {
+
+    from {
+        border-color: black;
+    }
+
+    to {
+        border-color: white;
+    }
+}

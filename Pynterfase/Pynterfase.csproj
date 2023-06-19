@@ -111,6 +111,7 @@
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Datos.txt" />
+    <Content Include="Documentation.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Inicio.aspx" />
@@ -145,6 +146,25 @@
     <Content Include="Vista\imagenes\cloud-check-fill.svg" />
     <Content Include="Vista\imagenes\code-square.svg" />
     <Content Include="Vista\imagenes\cuadricula.svg" />
+    <Content Include="Vista\imagenes\Documentación\addCheckbox.png" />
+    <Content Include="Vista\imagenes\Documentación\AddElement.png" />
+    <Content Include="Vista\imagenes\Documentación\addInput.png" />
+    <Content Include="Vista\imagenes\Documentación\AddLabel.png" />
+    <Content Include="Vista\imagenes\Documentación\AddUsers.png" />
+    <Content Include="Vista\imagenes\Documentación\bacnkeditor.png" />
+    <Content Include="Vista\imagenes\Documentación\btnCheckbox.png" />
+    <Content Include="Vista\imagenes\Documentación\btnInput.png" />
+    <Content Include="Vista\imagenes\Documentación\btnLabel.png" />
+    <Content Include="Vista\imagenes\Documentación\ButtonButton.png" />
+    <Content Include="Vista\imagenes\Documentación\ChangePrivacy.png" />
+    <Content Include="Vista\imagenes\Documentación\createdBTN.png" />
+    <Content Include="Vista\imagenes\Documentación\CreatedCheckbox.png" />
+    <Content Include="Vista\imagenes\Documentación\CreatedInput.png" />
+    <Content Include="Vista\imagenes\Documentación\CreatedLalbe.png" />
+    <Content Include="Vista\imagenes\Documentación\CreateProc.png" />
+    <Content Include="Vista\imagenes\Documentación\DocuaBack.svg" />
+    <Content Include="Vista\imagenes\Documentación\SetDimensions.png" />
+    <Content Include="Vista\imagenes\Documentación\TkWindow.png" />
     <Content Include="Vista\imagenes\EditorPrivacySection\dash-circle.svg" />
     <Content Include="Vista\imagenes\EditorPrivacySection\globe.svg" />
     <Content Include="Vista\imagenes\EditorPrivacySection\globe_not.svg" />
@@ -167,10 +187,14 @@
     <Content Include="Vista\imagenes\Inicio\InicioBack.svg" />
     <Content Include="Vista\imagenes\Inicio\pynterfase_title_back.svg" />
     <Content Include="Vista\imagenes\Inicio\title2back.svg" />
+    <Content Include="Vista\imagenes\Inicio\TrasnBlueDegDet.svg" />
     <Content Include="Vista\imagenes\Inicio\TrasnBlueDeg.svg" />
+    <Content Include="Vista\imagenes\Inicio\TrasnMintDegDet.svg" />
+    <Content Include="Vista\imagenes\Inicio\TrasnPinkDegDet.svg" />
     <Content Include="Vista\imagenes\Inicio\TrasnPinkDeg.svg" />
     <Content Include="Vista\imagenes\Inicio\TrasnMintDeg.svg" />
     <Content Include="Vista\imagenes\leave.svg" />
+    <Content Include="Vista\imagenes\LogRegBack3.gif" />
     <Content Include="Vista\imagenes\normProj.svg" />
     <Content Include="Vista\imagenes\OnBar.svg" />
     <Content Include="Vista\imagenes\pencil-fill.svg" />
@@ -205,6 +229,7 @@
     <Content Include="Vista\InfoUsuario.js" />
     <Content Include="Vista\mycss\Admin.css" />
     <Content Include="Vista\mycss\create.css" />
+    <Content Include="Vista\mycss\Documentacion.css" />
     <Content Include="Vista\mycss\Editor.css" />
     <Content Include="Vista\mycss\InfoUser.css" />
     <Content Include="Vista\mycss\Inicio.css" />
@@ -271,6 +296,13 @@
     <Compile Include="Datos\ClRolD.cs" />
     <Compile Include="Datos\ClusuarioD.cs" />
     <Compile Include="Datos\Procedimientos.cs" />
+    <Compile Include="Documentation.aspx.cs">
+      <DependentUpon>Documentation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Documentation.aspx.designer.cs">
+      <DependentUpon>Documentation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\ClCompartirE.cs" />
     <Compile Include="Entidades\ClCompartirProj.cs" />
     <Compile Include="Entidades\ClCompartirUserInfo.cs" />

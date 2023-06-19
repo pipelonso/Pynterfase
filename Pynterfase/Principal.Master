@@ -18,10 +18,10 @@
             <div class="navbar barra" id="barra">
                 <div class="navbar nav-item my-0">
                     <div class="nav-item">
-                        <asp:LinkButton ID="btnHome" runat="server" CssClass="btn navbar text-decoration-none text-white onbtn mx-2"> <img src="Vista/imagenes/house.svg" alt="Home Icon" class="nav-item mx-2" style="height:20px;" /><p class="nav-item mx-2" style="position:relative; top:10px;" >Inicio</p></asp:LinkButton>
+                        <asp:LinkButton ID="btnHome" runat="server" CssClass="btn navbar text-decoration-none text-white onbtn mx-2" OnClick="btnHome_Click"> <img src="Vista/imagenes/house.svg" alt="Home Icon" class="nav-item mx-2" style="height:20px;" /><p class="nav-item mx-2" style="position:relative; top:10px;" >Inicio</p></asp:LinkButton>
                     </div>
                     <div class="nav-item">
-                        <asp:LinkButton ID="btnDocumentación" runat="server" CssClass="btn navbar text-decoration-none text-white onbtn mx-2"> <img src="Vista/imagenes/code-square.svg" alt="Doc Icon" class="nav-item mx-2" style="height:20px;"/><p class="nav-item mx-2" style="position:relative; top:10px;">Documentación</p></asp:LinkButton>
+                        <asp:LinkButton ID="btnDocumentación" OnClick="btnDocumentación_Click" runat="server" CssClass="btn navbar text-decoration-none text-white onbtn mx-2"> <img src="Vista/imagenes/code-square.svg" alt="Doc Icon" class="nav-item mx-2" style="height:20px;"/><p class="nav-item mx-2" style="position:relative; top:10px;">Documentación</p></asp:LinkButton>
 
                     </div>
                 </div>

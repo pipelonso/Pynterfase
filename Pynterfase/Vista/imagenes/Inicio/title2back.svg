@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="4.0266554"
-     inkscape:cx="40.852763"
-     inkscape:cy="50.662393"
+     inkscape:zoom="2.8472753"
+     inkscape:cx="23.355662"
+     inkscape:cy="34.41887"
      inkscape:window-width="1366"
      inkscape:window-height="745"
      inkscape:window-x="-8"
@@ -38,15 +38,5 @@
   <g
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <path
-       style="fill:none;stroke:#f8f8f8;stroke-width:0.261;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.263768"
-       d="m 13.239239,10.139977 v 6.43938"
-       id="path29809" />
-    <path
-       style="fill:none;stroke:#f8f8f8;stroke-width:0.261;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.263768"
-       d="m 10.019549,13.359667 h 6.43938"
-       id="path29811"
-       sodipodi:nodetypes="cc" />
-  </g>
+     id="layer1" />
 </svg>
