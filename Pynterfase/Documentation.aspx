@@ -41,7 +41,7 @@
                     <a href="#divPrivacy">Privacidad de contenido</a>
                 </li>
                 <li>
-                    <a href="#">Compartir proyectos</a>
+                    <a href="#divShare">Compartir proyectos</a>
                 </li>
             </ul>
 
