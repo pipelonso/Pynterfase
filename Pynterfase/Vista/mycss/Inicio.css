@@ -44,7 +44,7 @@
     
     background-image: url('../imagenes/inicio/pynterfase_title_back.svg');
     background-size : cover;
-    border-bottom-color : red;
+    border-bottom-color : white;
     border-bottom-width : 2px;
     border-bottom-style : solid;
 }
