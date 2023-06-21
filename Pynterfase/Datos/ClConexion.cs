@@ -12,34 +12,37 @@ namespace Pynterfase.Datos
     public class ClConexion
     {
 
-        SqlConnection con = null;
+        
         public SqlConnection mtdConexion() {
-            int intentosMaximos = 3;
-            int intentosRealizados = 0;
-           
-            while (intentosRealizados < intentosMaximos)
-            {
-
-                try
-                {
-
-                    con = new SqlConnection("Data Source=.;Initial Catalog=dbPynterfase;Integrated Security=True");
-                    con.Open();
-                    return con;
-                }
-                catch (Exception ex)
-                {
-
-                    intentosRealizados++;
-
-                    Thread.Sleep(3000); // Esperar 3 segundos antes de intentar nuevamente
-
-
-                }
-
-            }
-            
+            //int intentosMaximos = 3;
+            //int intentosRealizados = 0;
+            SqlConnection con = null;
+            con = new SqlConnection("Data Source=.;Initial Catalog=dbPynterfase;Integrated Security=True;Max Pool Size = 100;");
+            con.Open();
             return con;
+
+
+            //while (intentosRealizados < intentosMaximos)
+            //{
+
+            //    try
+            //    {
+
+                    
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //        intentosRealizados++;
+
+            //        Thread.Sleep(3000); // Esperar 3 segundos antes de intentar nuevamente
+
+
+            //    }
+
+            //}
+            
+            //return con;
             
 
         }

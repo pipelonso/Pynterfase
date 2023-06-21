@@ -17,13 +17,15 @@ namespace Pynterfase.Datos
         /// <returns>INT 1 - 0 (falso - verdadero)</returns>
         public int mtdInsert(string insert) { 
             
-            ClConexion conexion = new ClConexion(); 
-            SqlCommand comando = new SqlCommand(insert,conexion.mtdConexion());
-            int res = comando.ExecuteNonQuery();
-            conexion.mtdConexion().Close();
-            return res;
-        
-        
+            ClConexion conexion = new ClConexion();
+            using (SqlConnection con = conexion.mtdConexion())
+            {
+                SqlCommand comando = new SqlCommand(insert, con);
+                int res = comando.ExecuteNonQuery();
+                conexion.mtdConexion().Close();
+                return res;
+            }
+                           
         }
         /// <summary>
         /// Ejecuta cualquier consulta
@@ -33,12 +35,16 @@ namespace Pynterfase.Datos
         public DataTable mtdconsultar(string consulta) {
             
             ClConexion conexion = new ClConexion();
-            SqlDataAdapter adaptador = new SqlDataAdapter(consulta,conexion.mtdConexion());
-            DataTable datos = new DataTable();
-            adaptador.Fill(datos);
-            conexion.mtdConexion().Close();
-            return datos;
-        
+            using (SqlConnection con = conexion.mtdConexion()) {
+
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, con);
+                DataTable datos = new DataTable();
+                adaptador.Fill(datos);
+                conexion.mtdConexion().Close();
+                return datos;
+
+            }
+                    
         }
 
 
