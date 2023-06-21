@@ -142,7 +142,7 @@
                                             </div>
                                             <asp:CheckBox ID="chkEditableUser" runat="server" CssClass="nav-item mx-2 col-sm-1 col-md-1 col-lg-1 text-white" Text="Puede editar" Checked='<%# Eval("editable") %>'  />
                                             
-                                            <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1" OnClick="btnDeleteUserRp_Click" />
+                                            <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1 my-2" OnClick="btnDeleteUserRp_Click" />
                                             <asp:Button ID="btnUpdateUser" runat="server" Text="Actualizar" CssClass="botones col-sm-12 col-md-12 col-lg-12" OnClick="btnUpdateUser_Click1"/>
                                         </div>
                                         
