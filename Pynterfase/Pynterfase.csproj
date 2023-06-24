@@ -323,6 +323,7 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logica\ClEncript.cs" />
     <Compile Include="Logica\ClEstadoL.cs" />
     <Compile Include="Logica\ClProyectoL.cs" />
     <Compile Include="Logica\ClRandomCodeGen.cs" />

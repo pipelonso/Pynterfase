@@ -15,6 +15,8 @@ namespace Pynterfase.Logica
         public void mtdRegister(ClUsuarioE objUserE) { 
         
             ClusuarioD objUserD = new ClusuarioD();
+            ClEncript Encriptador = new ClEncript();
+            objUserE.password = Encriptador.mtdCript(objUserE.password);
             objUserD.mtdRegisterUser(objUserE);
             
         
@@ -22,7 +24,11 @@ namespace Pynterfase.Logica
         public int mtdLogin(string correo, string clave) { 
             
             ClusuarioD objUsuarioD = new ClusuarioD();
-            int res = objUsuarioD.mtdLogin(correo, clave);
+
+            ClEncript Encriptador = new ClEncript();
+            string Passcript = Encriptador.mtdCript(clave);
+
+            int res = objUsuarioD.mtdLogin(correo, Passcript);
 
             return res;
         
@@ -120,7 +126,9 @@ namespace Pynterfase.Logica
         public int mtdUpdatePassword(string correo , string newpass) {
 
             ClusuarioD objUSD = new ClusuarioD();
-            int operacion = objUSD.mtdUpdatePassword(correo , newpass);
+            ClEncript Encriptador = new ClEncript();
+            string newpassCript = Encriptador.mtdCript(newpass);
+            int operacion = objUSD.mtdUpdatePassword(correo , newpassCript);
             return operacion;
 
         
