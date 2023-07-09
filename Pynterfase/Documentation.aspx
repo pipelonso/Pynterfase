@@ -12,7 +12,7 @@
 
     <div class="p-2" id="divIndice">
 
-        <div class="p-2 text-white bg-black rounded-3" style="border: double; border-color: white;">
+        <div class="p-2 text-white bg-dark rounded-3" style="border: double; border-color: white;">
             <h4 class="text-white">Tabla de contenido</h4>
 
             <ul>
@@ -285,7 +285,7 @@
                     </div>
                 </div>
 
-        <div class="p-2 bg-dark" id="divPrivacy">
+        <div class="p-2 bg-dark rounded-2" id="divPrivacy">
 
             <div class="p-2 text-white">
 

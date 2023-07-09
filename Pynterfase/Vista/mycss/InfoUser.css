@@ -49,16 +49,16 @@
 
 
 .imgselector {
-    border: none;
-    border-color: white;
     background-image: url('../imagenes/userback.svg');
     background-size: cover;
-    border-width : 1px;
+    border : solid;
+    border-color: black;
+    border-width: 1px;
 }
 
 .imgselector:hover{
 
-    border-color : black;
+    border-color : white;
 
 
 }
@@ -98,21 +98,27 @@
 .botones {
     border: solid;
     border-color: lightgray;
-    border-width: 3px;
-    background-color: white;
+    border-width: 1px;
+    background-image: url('../imagenes/buttons/btn_base_1.svg');
+    background-size: cover;
+    color : white;
+    /*background-color: white;*/
 }
 
     .botones:hover {
         border: double;
         border-color: dimgray;
-        border-width: 3px;
-        background-color: lightblue;
+        border-width: 1px;
+        background-size: cover;
+        background-image: url('../imagenes/buttons/btn_base_hover_1.svg');
+        /*background-color: lightblue;*/
     }
 
 .uploadimgbox {
     border: solid;
     border-color: lightgray;
-    border-width: 2px;
+    border-width: 1px;
+    background-color : rgb(26, 26, 26);
 }
 
 .cajasanim {

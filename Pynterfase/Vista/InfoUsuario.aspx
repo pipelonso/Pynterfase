@@ -41,7 +41,7 @@
                     <div class="uploadimgbox my-2 mx-2 w-90">
 
                         <p class="mx-2">¿No te gusto ninguno? Selecciona una imagen de tu dispositivo</p>
-                        <asp:FileUpload ID="FlUpimgUser" runat="server" CssClass="mx-2 btn-light btn w-90" />
+                        <asp:FileUpload ID="FlUpimgUser" runat="server" CssClass="mx-2 btn-dark btn w-90" />
                         <asp:Button ID="btnUploadImg" runat="server" Text="Confirmar selección" CssClass="botones w-90 mx-2 my-2" OnClick="btnUploadImg_Click" />
                         
                     </div>

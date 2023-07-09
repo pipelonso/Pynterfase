@@ -140,6 +140,8 @@
     <Content Include="Vista\imagenes\box-arrow-in-right.svg" />
     <Content Include="Vista\imagenes\btnSavedOff.svg" />
     <Content Include="Vista\imagenes\btnSavedOn.svg" />
+    <Content Include="Vista\imagenes\Buttons\btn_base_1.svg" />
+    <Content Include="Vista\imagenes\Buttons\btn_base_hover_1.svg" />
     <Content Include="Vista\imagenes\checkIdentityFalse.svg" />
     <Content Include="Vista\imagenes\checkIdentityTrue.svg" />
     <Content Include="Vista\imagenes\cloud-arrow-up.svg" />
@@ -186,7 +188,13 @@
     <Content Include="Vista\imagenes\Inicio\capSaved.png" />
     <Content Include="Vista\imagenes\Inicio\InicioBack.svg" />
     <Content Include="Vista\imagenes\Inicio\pynterfase_title_back.svg" />
+    <Content Include="Vista\imagenes\Inicio\StarsBG.svg" />
     <Content Include="Vista\imagenes\Inicio\title2back.svg" />
+    <Content Include="Vista\imagenes\Inicio\TransBlueDegAnim\TrasnBlueDegDet1.svg" />
+    <Content Include="Vista\imagenes\Inicio\TransBlueDegAnim\TrasnBlueDegDet2.svg" />
+    <Content Include="Vista\imagenes\Inicio\TransBlueDegAnim\TrasnBlueDegDet3.svg" />
+    <Content Include="Vista\imagenes\Inicio\TransBlueDegAnim\TrasnBlueDegDet4.svg" />
+    <Content Include="Vista\imagenes\Inicio\TransBlueDegAnim\TrasnBlueDegDet5.svg" />
     <Content Include="Vista\imagenes\Inicio\TrasnBlueDegDet.svg" />
     <Content Include="Vista\imagenes\Inicio\TrasnBlueDeg.svg" />
     <Content Include="Vista\imagenes\Inicio\TrasnMintDegDet.svg" />
@@ -208,6 +216,7 @@
     <Content Include="Vista\imagenes\SharedBox.svg" />
     <Content Include="Vista\imagenes\SharedWithMe.svg" />
     <Content Include="Vista\imagenes\SharedWithMeBack.svg" />
+    <Content Include="Vista\imagenes\StartNAv.svg" />
     <Content Include="Vista\imagenes\StylizedErrorBack.svg" />
     <Content Include="Vista\imagenes\sunshine-2250.gif" />
     <Content Include="Vista\imagenes\TkButtons\btnBaseTk.svg" />

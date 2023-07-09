@@ -10,18 +10,25 @@
 }
 
 .botones {
+    color: white;
     border: solid;
     border-color: lightgray;
-    border-width: 3px;
-    background-color : gray;
+    border-width: 1px;
+    background-image: url('../imagenes/buttons/btn_base_1.svg');
+    background-size: cover;
+    /*background-color : gray;*/
+    border-radius : 3px;
 }
 
-.botones:hover {
-    border: double;
-    border-color: dimgray;
-    border-width: 3px;
-    background-color: lightslategray;
-}
+    .botones:hover {
+        color : white;
+        border: double;
+        border-color: dimgray;
+        border-width: 1px;
+        background-image: url('../imagenes/buttons/btn_base_hover_1.svg');
+        background-size : cover;
+        /*background-color: lightslategray;*/
+    }
 
 .txtcajas {
     border: solid;

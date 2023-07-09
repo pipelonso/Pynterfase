@@ -5,7 +5,7 @@
     <link href="Vista/css/bootstrap.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="">
+    <div class="divgen">
         
         <div style="height: 200px; position : sticky; top:0px; z-index : 100000;" class="TitleBack" id="titleBack">
             <div class="intoTitleBack" style="height:200px;">
@@ -30,7 +30,7 @@
             </div>                  
         </div>
 
-        <div class="TransBlue m-2 p-2 rounded-3 selection isInitialHiden" id="2Box">
+        <div class="selection TransBlue m-2 p-2 rounded-3  isInitialHiden onrotation boom" id="2Box">
                 <div class="rounded-3 bg-dark p-2">
                     <h4 class="text-white">Comparte Proyectos</h4>
                 </div>

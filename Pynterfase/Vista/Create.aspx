@@ -7,8 +7,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
-        <div class="titlediv container-fluid">
-            <h5 class="text-white my-3">Crear proyecto nuevo</h5>
+        <div class="m-2">
+            <h5 class="text-white titlediv">Crear proyecto nuevo</h5>
         </div>
         <div class="navbar">
 

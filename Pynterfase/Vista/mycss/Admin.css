@@ -50,23 +50,27 @@
 .botones {
     border: solid;
     border-color: lightgray;
-    border-width: 2px;
-    background-color: black;
+    border-width: 1px;
+    /*background-color: black;*/
     color: white;
+    background-image: url('../imagenes/buttons/btn_base_1.svg');
+    background-size: cover;
 }
 
     .botones:hover {
         border: double;
         border-color: dimgray;
-        border-width: 2px;
-        background-color: lightslategray;
+        border-width: 1px;
+        /*background-color: lightslategray;*/
+        background-image: url('../imagenes/buttons/btn_base_hover_1.svg');
+        background-size: cover;
     }
 
 .txtcajas {
     background-color : rgb(25, 25, 25);
     border: solid;
     border-color: lightgray;
-    border-width: 3px;
+    border-width: 1px;
     color : white;
 }
 

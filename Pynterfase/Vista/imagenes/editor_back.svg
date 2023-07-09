@@ -26,8 +26,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.71181884"
-     inkscape:cx="605.49114"
-     inkscape:cy="172.79678"
+     inkscape:cx="375.79786"
+     inkscape:cy="292.20918"
      inkscape:window-width="1366"
      inkscape:window-height="745"
      inkscape:window-x="-8"
@@ -64,7 +64,7 @@
        inkscape:collect="always"
        id="linearGradient21323">
       <stop
-         style="stop-color:#000000;stop-opacity:1;"
+         style="stop-color:#0a0f0a;stop-opacity:1;"
          offset="0"
          id="stop21319" />
       <stop
@@ -147,6 +147,19 @@
        x2="41.601906"
        y2="48.731283"
        gradientTransform="matrix(1.067035,0,0,1.067035,0,40.303103)" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1071"
+       x="-0.45191579"
+       y="-0.44444282"
+       width="1.9038316"
+       height="1.8888856">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="10.358599"
+         id="feGaussianBlur1073" />
+    </filter>
   </defs>
   <g
      inkscape:label="Capa 1"
@@ -160,6 +173,13 @@
        height="158.75"
        x="-1.3877788e-15"
        y="-0.41816294" />
+    <ellipse
+       style="opacity:0.436508;fill:#f5d0c5;stroke-width:0.701;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1071);fill-opacity:1"
+       id="path1069"
+       cx="52.553429"
+       cy="52.410793"
+       rx="27.505829"
+       ry="27.968319" />
     <path
        style="fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.752999;stroke-opacity:0.262821;fill:url(#linearGradient22919)"
        d="M 0,76.591349 41.601906,34.989444 V 20.871217 L 0,62.473122 Z"
@@ -178,5 +198,12 @@
        d="M 0,142.13202 66.938317,75.193712 V 62.573425 L 0,129.51174 Z"
        id="path22948"
        sodipodi:nodetypes="ccccc" />
+    <ellipse
+       style="opacity:0.436508;fill:#eaed99;fill-opacity:1;stroke-width:0.701;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1071)"
+       id="ellipse1075"
+       cx="101.98958"
+       cy="102.35272"
+       rx="27.505829"
+       ry="27.968319" />
   </g>
 </svg>

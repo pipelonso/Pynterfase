@@ -1,9 +1,14 @@
 ﻿body {
     margin: 0px;
     padding: 0px;
-    
-    background-image: url('../imagenes/inicio/inicioback.svg');
+    /*background-image: url('../imagenes/inicio/inicioback.svg');*/
+    background-image: url('../imagenes/inicio/starsbg.svg');
     background-size: cover;
+}
+
+divgen {
+    background-image: url('../imagenes/inicio/starsbg.svg');
+    background-size : cover;
 }
 
 .selection {
@@ -75,11 +80,30 @@
 .TransBlue {
     background-image: url('../imagenes/inicio/trasnbluedeg.svg');
     background-size: cover;
+    
 }
+
+onrotation{
+
+
+
+}
+
+    onrotation:hover {
+        animation: onrotate;
+        animation-duration: 1s;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+    }
+
 
 
     .TransBlue:hover {
-        background-image: url('../imagenes/inicio/trasnbluedegdet.svg');
+        /*background-image: url('../imagenes/inicio/trasnbluedegdet.svg');*/
+        animation : blueAnim;
+        animation-duration : 0.5s;
+        animation-direction : normal;
+        animation-fill-mode : forwards;
         background-size: cover;
     }
 .cajasanim {
@@ -121,3 +145,39 @@
     }
 }
 
+@keyframes blueAnim{
+
+    0% {
+        background-image: url('../imagenes/inicio/trasnbluedeg.svg');
+        border-color: black;
+       
+    }
+    20% {
+        background-image: url('../imagenes/inicio/transbluedeganim/trasnbluedegdet1.svg');
+    }
+    40% {
+        background-image: url('../imagenes/inicio/transbluedeganim/trasnbluedegdet2.svg');
+    }
+    60% {
+        background-image: url('../imagenes/inicio/transbluedeganim/trasnbluedegdet3.svg');
+    }
+    80% {
+        background-image: url('../imagenes/inicio/transbluedeganim/trasnbluedegdet4.svg');
+    }
+    100% {
+        background-image: url('../imagenes/inicio/transbluedeganim/trasnbluedegdet5.svg');
+        border-color: white;
+        
+    }
+
+}
+
+@keyframes onrotate{
+
+    from {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+    to {
+        transform: rotate3d(0, 1, 0, 15deg);
+    }
+}

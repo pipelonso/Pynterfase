@@ -9,6 +9,10 @@
     background-image: url('../imagenes/Incircle.svg');
     background-size : cover;
     height : 500px;
+    border : solid;
+    border-radius : 10px;
+    border-color : lightcoral;
+    border-width : 1px;
    
 }
 
@@ -21,31 +25,42 @@
 }
 
 .titlediv {
+    padding : 15px;
+    text-align : center;    
     background-image: url('../imagenes/OnBar.svg');
     background-size : cover;
     height : 50px;
-    
+    border-radius : 5px;
 }
 
 
 .botones {
     border: solid;
     border-color: lightgray;
-    border-width: 3px;
-    background-color: white;
+    border-width: 2px;
+    /*background-color: white;*/
+    color: white;
+    background-image: url('../imagenes/buttons/btn_base_1.svg');
+    background-size : cover;
 }
 
     .botones:hover {
         border: double;
         border-color: dimgray;
-        border-width: 3px;
-        background-color: lightslategray;
+        border-width: 2px;
+        background-image: url('../imagenes/buttons/btn_base_hover_1.svg');
+        background-size: cover;
+        /*background-color: lightslategray;*/
     }
 
 .txtcajas {
+    background : gray;
     border: solid;
     border-color: lightgray;
     border-width: 3px;
+    background-image: url('../imagenes/buttons/btn_base_1.svg');
+    background-size: cover;
+    color : white;
 }
 
 

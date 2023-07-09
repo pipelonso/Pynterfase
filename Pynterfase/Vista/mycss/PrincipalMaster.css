@@ -35,8 +35,9 @@ body {
 }
 
 .barra {
-    background-color: rgb(9, 9, 9);
-    
+    /*background-color: rgb(9, 9, 9);*/
+    background-image: url('../imagenes/startnav.svg');
+    background-size:cover;
 }
 
 @keyframes botones {
