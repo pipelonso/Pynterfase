@@ -2742,7 +2742,7 @@ function GeneratePython() {
             }            
             generatedScript += "foreground = \"" + listalabels[i].foreground + "\",";
             if (listalabels[i].font != null && listalabels[i].font != "" && listalabels[i].font != "\"Times New Roman\"" && listalabels[i].font != "\"Comic Sans MS\"" && listalabels[i].font != "\"Courier New\"") {
-                generatedScript += "font = \"" + listalabels[i].font + "\"12,";
+                generatedScript += "font = \"" + listalabels[i].font + " 12\",";
             }            
             if (listalabels[i].height != null && listalabels[i].height != NaN && listalabels[i].height != "") {
                 generatedScript += "height = " + parseInt(listalabels[i].height / 100) + ",";
