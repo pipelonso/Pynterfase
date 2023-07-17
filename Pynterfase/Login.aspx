@@ -22,14 +22,14 @@
                 <h1 class="ongray">LOGIN</h1>
                 <br />
                 <p>CORREO</p>
-                <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass=" w-100 form-text text-center align-content-center txtcajas"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass=" w-100 form-text text-center align-content-center txtcajas text-white"></asp:TextBox>
                 <br />
                 <br />
                 <p>CONTRASEÑA</p>
-                <asp:TextBox ID="txtPassword" runat="server" placeholder="Contraseña" CssClass="w-100 text-center txtcajas" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" placeholder="Contraseña" CssClass="w-100 text-center txtcajas text-white" TextMode="Password"></asp:TextBox>
                 <br />
                 <br />
-                <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" CssClass="btn-light w-100 txtcajas ongray h2 onbtn" OnClick="btnIngresar_Click"/>
+                <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" CssClass="btn-light w-100 isbtn ongray h2 onbtn text-white" OnClick="btnIngresar_Click"/>
                 <br />
                 <br />
                 <div class="container-fluid" style="position:relative; top:-20px;">

@@ -17,6 +17,14 @@ namespace Pynterfase.Vista
 
             ScriptManager.RegisterStartupScript(this, GetType(), "ResizeCanvas", "onResizeCambas();", true);
             string iPr = Request.QueryString["iPr"];
+
+            if (iPr == null || iPr == "")
+            {
+
+                Response.Redirect("~/Vista/Error.aspx");
+
+            }
+
             string path = Server.MapPath("~/Users/Projects/" + iPr + ".json");
 
             if (File.Exists(path))
@@ -45,6 +53,14 @@ namespace Pynterfase.Vista
         {
             string iPr = Request.QueryString["iPr"];
             
+            if (Session["usuario"].ToString() == "")
+            {
+
+                Response.Redirect("~/Login.aspx");
+
+            }
+
+
             if (imgsaved.ImageUrl != "~/Vista/imagenes/btnSavedOn.svg") {
 
                 ClProyectoL objPROJL = new ClProyectoL();

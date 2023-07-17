@@ -29,6 +29,8 @@ namespace Pynterfase.Vista
 
             }
 
+
+
             //Button myButton = new Button();
             //myButton.ID = "myButton";
             //myButton.Text = "Haz clic aquí";
@@ -43,6 +45,15 @@ namespace Pynterfase.Vista
 
 
             string iPr = Request.QueryString["iPr"];
+
+            if (iPr == null || iPr == "")
+            {
+
+                Response.Redirect("~/Vista/Error.aspx");
+
+            }
+
+
             ClProyectoL objProyectoL = new ClProyectoL();
 
             List<ClCompartirUserInfo> listaUsuariosProj = objProyectoL.mtdGetAllUserInProject(iPr);

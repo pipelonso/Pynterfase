@@ -13,7 +13,11 @@ namespace Pynterfase
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["usuario"].ToString() != "") {
 
+                Response.Redirect("~/Vista/Proyectos.aspx");
+            
+            }
 
 
 

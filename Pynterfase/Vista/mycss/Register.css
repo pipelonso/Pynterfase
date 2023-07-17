@@ -27,10 +27,18 @@ body {
 
 
 .txtcajas {
-    background-color : rgb(16, 16, 16);
-    border: solid;
+    background-color : rgb(29, 29, 29);
+    border: none;
+    border-bottom : solid;
     border-color: lightgray;
-    border-width: 3px;
+    border-width: 1px;
+}
+
+.isbtn {
+    background-color: rgb(29, 29, 29);
+    border: solid;    
+    border-color: lightgray;
+    border-width: 1px;
 }
 
 .onbtn:hover {
