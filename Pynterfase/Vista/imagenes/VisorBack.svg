@@ -25,16 +25,30 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.35590942"
-     inkscape:cx="271.1364"
-     inkscape:cy="598.46688"
-     inkscape:window-width="1366"
-     inkscape:window-height="745"
+     inkscape:cx="98.339628"
+     inkscape:cy="601.27658"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter910"
+       x="-0.32644059"
+       y="-0.32644059"
+       width="1.6528812"
+       height="1.6528812">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="15.571722"
+         id="feGaussianBlur912" />
+    </filter>
+  </defs>
   <g
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
@@ -74,6 +88,12 @@
        height="148.5"
        x="0"
        y="0" />
+    <circle
+       style="opacity:0.423529;fill:#a0c599;stroke-width:0.0264583;stroke-linecap:round;stroke-linejoin:bevel;filter:url(#filter910)"
+       id="path300"
+       cx="90.694885"
+       cy="81.774086"
+       r="57.241859" />
     <rect
        style="fill:#404040;fill-opacity:1;stroke-width:0.136879;stroke-linecap:round;stroke-linejoin:round"
        id="rect4696"
@@ -123,6 +143,13 @@
        height="99.606857"
        x="0"
        y="197.39314" />
+    <circle
+       style="opacity:0.423529;fill:#c599bf;fill-opacity:1;stroke-width:0.0264583;stroke-linecap:round;stroke-linejoin:bevel;filter:url(#filter910)"
+       id="circle914"
+       cx="90.694885"
+       cy="204.4352"
+       r="57.241859"
+       transform="matrix(1.2278587,0,0,1.0942864,14.274217,-11.841443)" />
     <rect
        style="fill:#494949;fill-opacity:1;stroke-width:0.121926;stroke-linecap:round;stroke-linejoin:round"
        id="rect12493"
