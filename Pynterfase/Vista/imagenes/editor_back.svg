@@ -25,17 +25,33 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.71181884"
-     inkscape:cx="375.79786"
-     inkscape:cy="292.20918"
-     inkscape:window-width="1366"
-     inkscape:window-height="745"
+     inkscape:zoom="1.0066639"
+     inkscape:cx="438.08069"
+     inkscape:cy="330.79563"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient908">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="0"
+         id="stop904" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0.5"
+         id="stop1060" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop906" />
+    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient22917">
@@ -160,6 +176,45 @@
          stdDeviation="10.358599"
          id="feGaussianBlur1073" />
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient908"
+       id="linearGradient910"
+       x1="16.333448"
+       y1="126.03681"
+       x2="55.485359"
+       y2="86.349197"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient908"
+       id="linearGradient1118"
+       gradientUnits="userSpaceOnUse"
+       x1="16.333448"
+       y1="126.03681"
+       x2="55.485359"
+       y2="86.349197"
+       gradientTransform="translate(-13.535841,-6.3079646)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient908"
+       id="linearGradient1122"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-11.038938,-35.482301)"
+       x1="16.333448"
+       y1="126.03681"
+       x2="55.485359"
+       y2="86.349197" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient908"
+       id="linearGradient1126"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-13.176215,-52.301743)"
+       x1="16.333448"
+       y1="126.03681"
+       x2="55.485359"
+       y2="86.349197" />
   </defs>
   <g
      inkscape:label="Capa 1"
@@ -205,5 +260,21 @@
        cy="102.35272"
        rx="27.505829"
        ry="27.968319" />
+    <path
+       style="fill:none;stroke:url(#linearGradient910);stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 14.85,127.1867 57.888716,84.147987"
+       id="path325" />
+    <path
+       style="fill:none;stroke:url(#linearGradient1118);stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 1.3141592,120.87874 44.352875,77.840022"
+       id="path1116" />
+    <path
+       style="fill:none;stroke:url(#linearGradient1122);stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 3.8110619,91.704404 46.849778,48.665686"
+       id="path1120" />
+    <path
+       style="fill:none;stroke:url(#linearGradient1126);stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 1.6737847,74.884962 44.712501,31.846244"
+       id="path1124" />
   </g>
 </svg>
