@@ -1,6 +1,7 @@
 ﻿window.addEventListener("resize", function () {
 
-    console.log("Me estoy cambiando  de tamaño");
+    var altura = this.document.body.clientHeigh;
+    console.log(altura);
 
 
 
