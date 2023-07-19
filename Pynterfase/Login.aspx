@@ -16,9 +16,9 @@
     
     <form id="form1" runat="server">
         
-        <div class="row">
-            <div class="col-sm"></div>
-            <div class="col-lg-6 col-sm-12 myalingY myadjust loginbg">
+        <div class="navbar p-2">
+            <div class="nav-item col-12 col-sm-12 col-md-1 col-lg-2"></div>
+            <div class="nav-item loginbg col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 p-3">
                 <h1 class="ongray">LOGIN</h1>
                 <br />
                 <p>CORREO</p>
@@ -39,13 +39,14 @@
                 </div>
                 
             </div>
-            <div class="col-sm">
+            <div class="nav-item col-12 col-sm-12 col-md-1 col-lg-2">
 
                 
             </div>
             <script src="Scripts/sweetalert.min.js"></script>
             <script src="Vista/alertManager.js"></script>
         </div>
+        <script src="Login.js"></script>
         <script src="Vista/js/bootstrap.min.js"></script>
         
     </form>

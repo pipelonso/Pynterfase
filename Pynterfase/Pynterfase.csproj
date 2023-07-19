@@ -117,6 +117,7 @@
     <Content Include="Inicio.aspx" />
     <Content Include="Inicio.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Login.js" />
     <Content Include="Principal.js" />
     <Content Include="ProjectsContent.js" />
     <Content Include="Vista\Admin.aspx" />
@@ -148,6 +149,7 @@
     <Content Include="Vista\imagenes\cloud-check-fill.svg" />
     <Content Include="Vista\imagenes\code-square.svg" />
     <Content Include="Vista\imagenes\cuadricula.svg" />
+    <Content Include="Vista\imagenes\Cuadricula2.svg" />
     <Content Include="Vista\imagenes\Documentación\addCheckbox.png" />
     <Content Include="Vista\imagenes\Documentación\AddElement.png" />
     <Content Include="Vista\imagenes\Documentación\addInput.png" />
@@ -208,6 +210,7 @@
     <Content Include="Vista\imagenes\pencil-fill.svg" />
     <Content Include="Vista\imagenes\person-badge.svg" />
     <Content Include="Vista\imagenes\projectsBack.svg" />
+    <Content Include="Vista\imagenes\Propbar.svg" />
     <Content Include="Vista\imagenes\regbox.svg" />
     <Content Include="Vista\imagenes\regImg.svg" />
     <Content Include="Vista\imagenes\SavedBack.svg" />

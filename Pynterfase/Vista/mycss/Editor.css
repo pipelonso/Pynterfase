@@ -104,12 +104,19 @@
 
 }
 
+.panelEditor {
+    background-image: url('../imagenes/Propbar.svg');
+    background-size : cover;
+}
+
 .limitlienzo {
+    background-image: url('../imagenes/Cuadricula2.svg');
+    background-size: cover;
     overflow: auto;
     height: 500px;
-    border-style : solid;
-    border-width : 2px;
-    border-color : darkred;
+    border-style: solid;
+    border-width: 2px;
+    border-color: darkred;
 }
 
 .botones {
@@ -133,10 +140,12 @@
     }
 
 .txtcajas {
+
     color : white;
-    border: solid;
+    border: none;
+    border-bottom : solid;
     border-color: lightgray;
-    border-width: 3px;
+    border-width: 1px;
     background-color : rgb(25, 25, 25);
     border-radius : 5px;
 }
@@ -198,11 +207,11 @@
 }
 
 .outputbox{
-
+    background-color : darkslategray;
     border:solid;
-    border-color : red;
+    border-color : green;
     border-width : 1px;
-    color : lightgreen;
+    color : white;
     border-radius : 10px;
 }
 
