@@ -18,8 +18,8 @@
         
         <div class="navbar p-2">
             <div class="nav-item col-12 col-sm-12 col-md-1 col-lg-2"></div>
-            <div class="nav-item loginbg col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 p-3">
-                <h1 class="ongray">LOGIN</h1>
+            <div class="nav-item loginbg col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 p-3" id="loginbox">
+                <h1 class="ongray" style="position:relative; top:-15px;">LOGIN</h1>
                 <br />
                 <p>CORREO</p>
                 <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass=" w-100 form-text text-center align-content-center txtcajas text-white"></asp:TextBox>

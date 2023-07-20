@@ -15,7 +15,7 @@ body {
 
 .regbox {
     position: relative;
-    top: 50px;
+    /*top: 50px;*/
     height: 600px;
     background-image: url('../imagenes/regbox.svg');
     background-size : cover;

@@ -13,13 +13,13 @@
 <body>
     <script src="js/bootstrap.min.js"></script>
     <form id="form1" runat="server">
-        <div class="row">
-            <div class="container-sm col-sm-12 col-md-5 col-lg-6">
-                <div class="regbox ">
-                    <div class="row">
-                        <div class="col-2"></div>
-                        <div class="col-8">
-                            <h1 class="text-center">REGISTRO</h1>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <div class="navbar p-3">
+                        <div class="nav-item col-sm-12 col-md-2 col-lg-3 col-12"></div>
+                        <div class="nav-item col-sm-12 col-md-8 col-lg-6 col-12 regbox p-2" id="regbox">
+                            <h1 class="text-center" style ="position:relative; top : -10px;">REGISTRO</h1>
                             <br />
                             <br />
                             <p>CORREO ELECTRONICO</p>
@@ -41,7 +41,7 @@
                             <br />
                             <asp:LinkButton ID="lbtnAlreadyRegister" runat="server" CssClass="ongray my-3" OnClick="lbtnAlreadyRegister_Click">Ya estoy registrado</asp:LinkButton>
                         </div>
-                        <div class="col-2"></div>
+                        <div class="nav-item col-sm-12 col-md-2 col-lg-3 col-12"></div>
                     </div>
 
                 </div>
@@ -49,7 +49,7 @@
             </div>
 
         </div>
-        
+        <script src="Register.js"></script>
         <script src="../Scripts/sweetalert.min.js"></script>
         <script src="alertManager.js"></script>
         
