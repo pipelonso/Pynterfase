@@ -54,6 +54,15 @@ namespace Pynterfase.Logica
 
         }
 
+        public int mtdForceVerification(int userID)
+        {
+
+            ClusuarioD objUSD = new ClusuarioD();
+            int res = objUSD.mtdForceVerifyUser(userID);
+            return res;
+
+        }
+
         public ClUsuarioE mtdGetAllUser(string correo) { 
         
             ClusuarioD objUsuarioD = new ClusuarioD();
@@ -166,6 +175,23 @@ namespace Pynterfase.Logica
 
             ClusuarioD objUSD = new ClusuarioD();
             int res = objUSD.mtdDeleteUserbyIDKiller(id);
+            return res;
+
+        }
+
+        public int mtdGrantAdmin(int userID, string adminMail)
+        {
+
+            ClusuarioD USD = new ClusuarioD();
+            int res = USD.mtdGrantAdmin(userID, adminMail);
+            return res;
+
+        }
+
+        public int mtdRevokeAdmin(int userID, string adminMail) {
+
+            ClusuarioD USD = new ClusuarioD();
+            int res = USD.mtdRevokeAdmin(userID, adminMail);
             return res;
 
         }

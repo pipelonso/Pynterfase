@@ -17,7 +17,7 @@ namespace Pynterfase.Datos
             //int intentosMaximos = 3;
             //int intentosRealizados = 0;
             SqlConnection con = null;
-            con = new SqlConnection("Data Source=.;Initial Catalog=dbPynterfase;Integrated Security=True;Max Pool Size = 100;");
+            con = new SqlConnection("Data Source=.;Initial Catalog=dbPynterfase;User ID=pipelonso;Password=lolxd24");
             con.Open();
             return con;
 

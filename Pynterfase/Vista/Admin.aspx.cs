@@ -116,6 +116,19 @@ namespace Pynterfase.Vista
             lblUserNameF.Text = objUsuario.nombre;
             lblUserMail.Text = objUsuario.correo;
             
+            if (objUsuario.IdRol == 1)
+            {
+
+                btnAlternateAdmin.Text = "Conceder";
+
+            }
+
+            if (objUsuario.IdRol == 2)
+            {
+
+                btnAlternateAdmin.Text = "Revocar";
+
+            }
 
             int vefirified = objUSL.mtdCheckVerification(usermail);
 
@@ -392,6 +405,65 @@ namespace Pynterfase.Vista
 
             }
 
+
+        }
+
+        protected void btnVerifyUSer_Click(object sender, EventArgs e)
+        {
+            ClusuarioL objUSL = new ClusuarioL();
+            int res = objUSL.mtdForceVerification(int.Parse(lblIdUser.Text));
+
+            if (res >= 1)
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionSuccess", "successalert();", true);
+
+            }
+            else
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionFailed", "Errorgen();", true);
+
+            }
+
+
+
+
+        }
+
+        protected void btnAlternateAdmin_Click(object sender, EventArgs e)
+        {
+            ClusuarioL objUSL = new ClusuarioL();
+
+            int res = 0;
+
+            if (btnAlternateAdmin.Text == "Conceder")
+            {
+
+                res = objUSL.mtdGrantAdmin(int.Parse(lblIdUser.Text), Session["Usuario"].ToString());
+
+            }
+
+            if (btnAlternateAdmin.Text == "Revocar")
+            {
+
+                res = objUSL.mtdRevokeAdmin(int.Parse(lblIdUser.Text), Session["Usuario"].ToString());
+
+            } 
+
+            if (res >= 1) {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionSuccess", "successalert();", true);
+
+            }
+            else
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActionFailed", "Errorgen();", true);
+
+            }
+
+            
 
         }
     }

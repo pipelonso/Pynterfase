@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.SymbolStore;
 using System.Globalization;
 using System.Linq;
 using System.Web;
@@ -125,18 +126,10 @@ namespace Pynterfase.Datos
             DataTable datos = objSQL.mtdconsultar(consulta);
             int res = 0;
 
-
-            
-
                 if (datos.Rows[0][3].ToString() == "Si")
                 {
                     res = 1;
                 }
-
-            
-
-            
-
 
             return res;
         
@@ -194,6 +187,17 @@ namespace Pynterfase.Datos
             return res;
 
         }
+
+        public int mtdForceVerifyUser(int userID)
+        {
+
+            string updated = "UPDATE Verificacion SET estado = 'Si' WHERE IdUsuario = " + userID;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            int res = objSQL.mtdInsert(updated);
+            return res;
+
+        }
+
 
         public int mtdCheckUserExist(string correo) {
 
@@ -326,12 +330,54 @@ namespace Pynterfase.Datos
         public int mtdDeleteUserbyIDKiller(string id) {
 
             Procedimientos objPROC = new Procedimientos();
-            int res = objPROC.mtdDeleteUserById(id);
+
+            //obtener usuario y verificar si no es admin jefe
+            ClUsuarioE usuario = mtdGetAllUserByID(id);
+            int res = 0;
+
+            if (usuario.correo != "andresfelipeibanezcuta2@gmail.com")
+            {
+                res = objPROC.mtdDeleteUserById(id);
+                return res;
+            }
+            
             return res;
         
         }
 
+        public int mtdGrantAdmin(int userID, string adminMail) {
 
+            string updated = "UPDATE Usuario SET IdRol = 2 WHERE IdUsuario = "+ userID ;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            int res = 0;
+            if (adminMail == "andresfelipeibanezcuta2@gmail.com")
+            {
+
+                res = objSQL.mtdInsert(updated);
+                return res;
+
+            }
+
+            return res;
+        }
+
+        public int mtdRevokeAdmin(int userID, string AdminMail)
+        {
+
+            string updated = "UPDATE Usuario SET IdRol = 1 WHERE idUsuario =" + userID;
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            int res = 0;
+            if (AdminMail == "andresfelipeibanezcuta2@gmail.com")
+            {
+
+                res = objSQL.mtdInsert(updated);
+                return res;
+
+            }
+            
+            return res;
+
+        }
 
     }
 }

@@ -123,8 +123,14 @@
                     <asp:TextBox ID="txtUserName" runat="server" CssClass="txtcajas"></asp:TextBox>
                     <asp:Button ID="btnChangeUserName" runat="server" Text="APLICAR CAMBIO DE NOMBRE" CssClass="botones" Enabled="true" OnClick="btnChangeUserName_Click"/>
                     <hr />
+                    <p>VERIFICAR USUARIO :: Si el sistema de correos falla <strong> por temas de red </strong> se puede verificar un usuario desde aqui </p>
+                    <asp:Button ID="btnVerifyUSer" runat="server" Text="VERIFICAR USUARIO" CssClass="botones" OnClick="btnVerifyUSer_Click"/>
+                    <hr />
                     <p>Restablecer Foto de perfil :: Solo puedes establecer la imagen a una por defecto, por la seguridad del usuario</p>
                     <asp:Button ID="btnRestablecerFoto" runat="server" Text="Restablecer Foto" CssClass="botones" Enabled="true" OnClick="btnRestablecerFoto_Click"/>
+                    <hr />
+                    <p><strong>Convertir en quitar rango de administrador :: Solo permitodo para Administrador Superior</strong></p>
+                    <asp:Button ID="btnAlternateAdmin" runat="server" Text="---" CssClass="botones" OnClick="btnAlternateAdmin_Click"/>
                     <hr />
                     <p>Borrar usuario :: ADVERTENCIA --- ESTA ACCIÓN SERA IRREVERSIBLE (Sus proyectos seran eliminados)</p>
                     <asp:Button ID="btnDeleteUser" runat="server" Text="☠ ELIMINAR USUARIO ☠" CssClass="Deletebtn" Enabled="true" OnClick="btnDeleteUser_Click"/>

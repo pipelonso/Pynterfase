@@ -19,10 +19,10 @@
             <div class="container-fluid">
                 <p>Ancho de la ventana</p>
                 <%--<asp:TextBox ID="txtAncho" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>--%>
-                <input type="text" name="name" value="" id="txtAncho" class="w-100 txtcajas" />
+                <input type="number" name="name" value="" id="txtAncho" class="w-100 txtcajas" />
                 <p>Alto de la ventana</p>
                 <%--<asp:TextBox ID="txtAlto" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>--%>
-                <input type="text" name="name" value="" id="txtAlto" class="w-100 txtcajas" />
+                <input type="number" name="name" value="" id="txtAlto" class="w-100 txtcajas" />
                 <p>Titulo de la ventana</p>
                 <%--<asp:TextBox ID="txtTitle" runat="server" placeholder="Titulo" CssClass="w-100 txtcajas"></asp:TextBox>--%>
                 <input type="text" name="name" value="" id="txtTitle" class="w-100 txtcajas" />
@@ -73,9 +73,9 @@
             <input type="button" name="name" value="" class="closebtn my-2" onclick="CloseEditWindowSizePanel();" />
             <hr />
             <p class="mx-2 my-2 text-center">Ancho de la ventana</p>
-            <input type="text" name="txtAnchoH" value="" id="txtAnchoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+            <input type="number" name="txtAnchoH" value="" id="txtAnchoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
             <p class="mx-2 text-center">Alto de la ventana</p>
-            <input type="text" name="txtAltoH" value="" id="txtAltoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+            <input type="number" name="txtAltoH" value="" id="txtAltoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
             <input type="button" name="name" value="Cambiar tamaño de la ventana" class="my-2 w-100 botones" onclick="IntoResizeCanvas();" />
             <hr />
             <p class="text-center">Selecciona un nombre para tu ventana</p>
@@ -257,10 +257,10 @@
                             <input type="text" name="name" value="" id="txtButtonId" disabled="disabled" class="txtcajas w-100 text-white" />
                             <hr />
                             <p>X</p>
-                            <input type="text" id="txtXButtonTK" name="txtXbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtXButtonTK" name="txtXbuttonTK" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>Y</p>
-                            <input type="text" id="txtYbuttonTk" name="txtYbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtYbuttonTk" name="txtYbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <%--<p>Activebackground</p>
                         <input type="text" id="txtABGbuttonTk" name="txtABGbuttonTk" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
@@ -369,7 +369,7 @@
 
                             <hr />
                             <p>Height:</p>
-                            <input type="text" id="txtButtonTkheight" name="height" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtButtonTkheight" name="height" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <%--<p>Highlight Background:</p>
                         <input type="text" id="txtButtonTkhighlightbackground" name="highlightbackground" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
@@ -418,7 +418,7 @@
                         <p>Underline:</p>
                         <input type="text" id="txtButtonTkunderline" name="underline" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
                             <p>Width:</p>
-                            <input type="text" id="txtButtonTkwidth" name="width" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtButtonTkwidth" name="width" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <%--<p>Wrap Length:</p>
                         <input type="text" id="txtButtonTkwraplength" name="wraplength" class="w-100 txtcajas my-2" onkeydown="return handleKeyDown(event);" />--%>
@@ -432,10 +432,10 @@
                             <input type="text" name="name" value="" id="txtLabelId" disabled="disabled" class="txtcajas w-100 text-white" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>xz</p>
-                            <input type="text" id="txtLabelTKxz" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtLabelTKxz" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>yz</p>
-                            <input type="text" id="txtLabelTKyz" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtLabelTKyz" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>anchor</p>
                             <select id="txtLabelTKanchor" class="w-100 txtcajas">
@@ -518,7 +518,7 @@
 
                         </select>--%>
                             <p>width</p>
-                            <input type="text" id="txtLabelTKwidth" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtLabelTKwidth" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <%-- <p>wraplength</p>
                         <input type="text" id="txtLabelTKwraplength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
@@ -533,10 +533,10 @@
                             <input type="text" id="txtTextboxTKidTextbox" class="w-100 txtcajas  text-white" disabled="disabled" />
                             <hr />
                             <p>X</p>
-                            <input type="text" id="txtTextboxTKX" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtTextboxTKX" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>y</p>
-                            <input type="text" id="txtTextboxTKY" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtTextboxTKY" name="name" value="" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>Text</p>
                             <input type="text" id="txtTextboxTKText" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
@@ -545,10 +545,10 @@
                             <input type="text" id="txtTextboxTKWidth" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>Height</p>
-                            <input type="text" id="txtTextboxTKHeight" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtTextboxTKHeight" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>MaxLength</p>
-                            <input type="text" id="txtTextboxTKMaxLength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtTextboxTKMaxLength" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>Multiline</p>
                             <select id="txtTextboxTKMultiline" class="w-100 txtcajas">
@@ -604,10 +604,10 @@
                             <input type="text" id="txtCheckboxTKidCheckbox" class="w-100 txtcajas text-white" disabled="disabled" />
                             <hr />
                             <p>x</p>
-                            <input type="text" id="txtCheckboxTKx" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtCheckboxTKx" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>y</p>
-                            <input type="text" id="txtCheckboxTKy" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                            <input type="number" id="txtCheckboxTKy" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>Checked</p>
                             <select id="txtCheckboxTKChecked" class="w-100 txtcajas">

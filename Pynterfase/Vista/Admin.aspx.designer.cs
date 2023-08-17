@@ -150,6 +150,15 @@ namespace Pynterfase.Vista
         protected global::System.Web.UI.WebControls.Button btnChangeUserName;
 
         /// <summary>
+        /// Control btnVerifyUSer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVerifyUSer;
+
+        /// <summary>
         /// Control btnRestablecerFoto.
         /// </summary>
         /// <remarks>
@@ -157,6 +166,15 @@ namespace Pynterfase.Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRestablecerFoto;
+
+        /// <summary>
+        /// Control btnAlternateAdmin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAlternateAdmin;
 
         /// <summary>
         /// Control btnDeleteUser.
