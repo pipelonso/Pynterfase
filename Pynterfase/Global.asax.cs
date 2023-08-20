@@ -18,6 +18,7 @@ namespace Pynterfase
         protected void Session_Start(object sender, EventArgs e)
         {
             Session["usuario"] = "";
+            Session["retorno"] = "";
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace Pynterfase
         protected void Session_End(object sender, EventArgs e)
         {
             Session["usuario"] = "";
+            Session["retorno"] = "";
         }
 
         protected void Application_End(object sender, EventArgs e)

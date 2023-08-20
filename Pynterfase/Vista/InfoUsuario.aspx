@@ -65,7 +65,7 @@
                     <p class="mx-2">Contraseña nueva</p>
                     <br />
                     <asp:TextBox ID="txtNewPass" runat="server" CssClass="w-90 mx-2 txtcajas" placeholder="Contraseña Nueva" TextMode="Password"></asp:TextBox>
-                    <p class="mx-2">Repite contraseña mueva</p>
+                    <p class="mx-2">Repite contraseña nueva</p>
                     <br />
                     <asp:TextBox ID="txtrepPass" runat="server" CssClass="w-90 mx-2 txtcajas" placeholder="Repetir contraseña nueva" TextMode="Password"></asp:TextBox>
                     <br />

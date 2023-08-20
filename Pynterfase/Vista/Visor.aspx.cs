@@ -15,6 +15,14 @@ namespace Pynterfase.Vista
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["usuario"].ToString() == null || Session["usuario"].ToString() == "")
+            {
+
+                Response.Redirect("~/Login.aspx");
+
+            }
+
+
             ScriptManager.RegisterStartupScript(this, GetType(), "ResizeCanvas", "onResizeCambas();", true);
             string iPr = Request.QueryString["iPr"];
 

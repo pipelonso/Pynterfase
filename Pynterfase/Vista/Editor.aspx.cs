@@ -160,6 +160,7 @@ namespace Pynterfase.Vista
                 ScriptManager.RegisterStartupScript(this, GetType(), "OcultarPanelDeLienzoCrear", "HideCreateCanvas();", true);
                 ScriptManager.RegisterStartupScript(this, GetType(), "ShowEditor", "startEditor();", true);
                 ScriptManager.RegisterStartupScript(this, GetType(), "SendJsonToJs", "currentJson = " + json + " ;", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "SetReturn", "retorno = '" + Session["retorno"].ToString() + "' ;", true);
                 ScriptManager.RegisterStartupScript(this, GetType(), "CallLoadReader", "loadstart();", true);
                 //Crear script para aplicar tamaño del json al lienzo
                 //OnResizeCanvas
@@ -238,7 +239,7 @@ namespace Pynterfase.Vista
 
                         //Mostrar alerta de usuario encontrado y agregado
                         List<ClCompartirUserInfo> listaUsuariosProj = objProJL.mtdGetAllUserInProject(iPr);
-
+                        txtSearchCorreo.Text = "";
                         RPUsers.DataSource = listaUsuariosProj;
                         RPUsers.DataBind();
 

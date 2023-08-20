@@ -21,7 +21,7 @@
                     <asp:Button ID="btnBuscarUser" runat="server" Text="Buscar" OnClick="btnBuscarUser_Click" CssClass="botones my-2" />
                 </div>
 
-                <div class="w-100 p-2 searchbox onratio" style="overflow : auto; height:200px;">
+                <div id="boxUsers" class="w-100 p-2 searchbox onratio" style="overflow : auto;">
 
                     <asp:Repeater ID="RPUsuarios" runat="server">
 
@@ -61,7 +61,7 @@
                     <asp:Button ID="btnSearchProj" runat="server" Text="Buscar" OnClick="btnSearchProj_Click" CssClass="botones my-2"/>
                 </div>
 
-                <div class="w-100 p-2 searchbox onratio" style="overflow : auto; height:200px;">
+                <div id="boxprojs" class="w-100 p-2 searchbox onratio" style="overflow : auto;">
 
                     <asp:Repeater ID="RPProjects" runat="server" >
 

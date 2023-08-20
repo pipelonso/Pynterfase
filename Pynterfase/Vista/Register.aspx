@@ -22,17 +22,17 @@
                             <h1 class="text-center" style ="position:relative; top : -10px;">REGISTRO</h1>
                             <br />
                             <br />
-                            <p>CORREO ELECTRONICO</p>
+                            <p class="text-white">CORREO ELECTRONICO</p>
 
-                            <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass="w-100 txtcajas text-white"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass="w-100 txtcajas text-white" TextMode="Email"></asp:TextBox>
 
-                            <p>Nombre de usuario</p> 
+                            <p class="text-white">Nombre de usuario</p> 
                             <asp:TextBox ID="txtName" runat="server" placeholder="Nombre de usuario" CssClass="w-100 txtcajas text-white"></asp:TextBox>
 
-                            <p>Contraseña</p>
+                            <p class="text-white">Contraseña</p>
                             <asp:TextBox ID="txtPassword" runat="server" CssClass="w-100 txtcajas text-white" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
 
-                            <p>Repetir contraseña</p>
+                            <p class="text-white">Repetir contraseña</p>
                             <asp:TextBox ID="txtRepPassword" runat="server" CssClass="w-100 txtcajas text-white" TextMode="Password" placeholder="Repetir contraseña"></asp:TextBox>
                             <br />
                             <br />

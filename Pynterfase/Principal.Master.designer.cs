@@ -51,6 +51,15 @@ namespace Pynterfase
         protected global::System.Web.UI.WebControls.LinkButton btnDocumentación;
 
         /// <summary>
+        /// Control btnGotoContacto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnGotoContacto;
+
+        /// <summary>
         /// Control btnLogin.
         /// </summary>
         /// <remarks>

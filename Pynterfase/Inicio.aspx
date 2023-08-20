@@ -3,6 +3,7 @@
     <link href="Vista/mycss/Inicio.css" rel="stylesheet" />
     <link href="Content/animate.css" rel="stylesheet" />
     <link href="Vista/css/bootstrap.min.css" rel="stylesheet" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="divgen">

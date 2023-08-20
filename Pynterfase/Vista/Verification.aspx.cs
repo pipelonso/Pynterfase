@@ -37,8 +37,14 @@ namespace Pynterfase
 
 
 
-                    
-            
+
+
+                }
+                else
+                {
+
+                    Response.Redirect("~/Login.aspx");
+
                 }
             }
 

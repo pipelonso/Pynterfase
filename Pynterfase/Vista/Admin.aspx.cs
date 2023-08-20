@@ -15,6 +15,14 @@ namespace Pynterfase.Vista
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["usuario"].ToString() == null || Session["usuario"].ToString() == "")
+            {
+
+                Response.Redirect("~/Login.aspx");
+
+            }
+
+
             ClusuarioL objUSL = new ClusuarioL();
             ClProyectoL objProjL  = new ClProyectoL();  
             ClUsuarioE objUsuario = objUSL.mtdGetAllUser(Session["usuario"].ToString());

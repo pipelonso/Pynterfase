@@ -21,7 +21,20 @@ function ValidateStart() {
 
     if (txtAlto.value != null || txtAlto.value != "") {
 
+        if (txtAlto.value < 50)
+        {
+
+            txtAlto.value = 50;
+
+        }
+
         if (txtAncho.value != null || txtAncho.value != "") {
+
+            if (txtAncho.value < 50) {
+
+                txtAncho.value = 50;
+
+            }
 
             if (txtTitle.value != null || txtTitle.value != "") {
 
@@ -409,6 +422,9 @@ function startsall() {
 
 function ShowPrivacyPanel() {
 
+    var PrivacyPanelGen = document.getElementById("PrivacyPanelGen");
+    PrivacyPanelGen.style.display = "block"
+
     var PrivacyPanel = document.getElementById("PrivacyPanel");
     var ProjectUsersPanel = document.getElementById("ProjectUsersPanel");
     var closePrivacy = document.getElementById("closePrivacy");
@@ -416,6 +432,8 @@ function ShowPrivacyPanel() {
     PrivacyPanel.style.display = "block";
     ProjectUsersPanel.style.display = "block";
     closePrivacy.style.display = "block";
+
+    
 
 }
 
@@ -425,10 +443,14 @@ function ClosePrivacyPanel() {
     var ProjectUsersPanel = document.getElementById("ProjectUsersPanel");
     var closePrivacy = document.getElementById("closePrivacy");
 
+    
 
     PrivacyPanel.style.display = "none";
     ProjectUsersPanel.style.display = "none";
     closePrivacy.style.display = "none";
+
+    var PrivacyPanelGen = document.getElementById("PrivacyPanelGen");
+    PrivacyPanelGen.style.display = "none"
 
 }
 
@@ -461,7 +483,8 @@ function ShowCreateCavas() {
 
     var panel = document.getElementById("canvasDimPanel");
     panel.style.display = "block";
-
+    var exportbtn = document.getElementById("exportbtn")
+    exportbtn.style.display = "none"
 
 }
 
@@ -469,8 +492,12 @@ function HideCreateCanvas() {
 
     var panel = document.getElementById("canvasDimPanel");
     panel.style.display = "none";
-    
-
+    var dimgenPanel = document.getElementById("dimgenPanel");
+    dimgenPanel.style.display = "none"
+    var PrivacyPanelGen = document.getElementById("PrivacyPanelGen");
+    PrivacyPanelGen.style.display = "none"
+    var editwindowsizePanelGeneral = document.getElementById("editwindowsizePanelGeneral")
+    editwindowsizePanelGeneral.style.display = "none";
 }
 
 
@@ -538,6 +565,8 @@ function setCanvasHeight() {
 
 function CloseEditWindowSizePanel()
 {
+    var editwindowsizePanelGeneral = document.getElementById("editwindowsizePanelGeneral");
+    editwindowsizePanelGeneral.style.display = "none"
     var panel = document.getElementById("editWindowSizePanel");
     panel.style.display = "none";
 
@@ -546,8 +575,12 @@ function CloseEditWindowSizePanel()
 
 function OpenEditWindowSizePanel() {
 
+    var editwindowsizePanelGeneral = document.getElementById("editwindowsizePanelGeneral");
+    editwindowsizePanelGeneral.style.display = "block"
+
     var panel = document.getElementById("editWindowSizePanel");
     panel.style.display = "block";
+    
 
 }
 
@@ -594,7 +627,8 @@ function setSelectedCheckbox() {
     selectedItem = 4;
     var textchage = document.getElementById("lblSelected");
     textchage.innerHTML = "AGREGAR CHECKBOX";
-
+    var exportbtn = document.getElementById("exportbtn")
+    exportbtn.style.display = "block"
     var btnAddTk = document.getElementById("btnAddTk");
 
     btnAddTk.disabled = false;
@@ -2851,6 +2885,9 @@ function showExportPanel() {
 
 }
 
+
+var retorno = "proj";
+
 function onExit() {
 
 
@@ -2862,7 +2899,22 @@ function onExit() {
 
     } else {
 
-        window.location.href = "/Vista/Proyectos.aspx"
+        if (retorno == "proj") {
+
+            window.location.href = "/Vista/Proyectos.aspx"
+
+        } else if (retorno == "swm") {
+
+            window.location.href = "/Vista/ProjSharedWithMe.aspx"
+
+        } else {
+
+            window.location.href = "/Vista/Proyectos.aspx"
+
+        }
+        
+
+
 
     }
 

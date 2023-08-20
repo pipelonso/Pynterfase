@@ -225,11 +225,11 @@ namespace Pynterfase.Vista
 
                                 int resultado = objSUL.mtdUpdatePassword(Session["usuario"].ToString(), txtNewPass.Text);
 
-                                if (resultado >= 1)
+                                if (resultado == 1)
                                 {
                                     //Proceso completado con exito
                                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert();", true);
-
+                                    Session["usuario"] = "";
                                     Response.Redirect("~/Login.aspx");
 
 

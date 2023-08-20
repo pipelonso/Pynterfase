@@ -122,6 +122,7 @@
     <Content Include="ProjectsContent.js" />
     <Content Include="Vista\Admin.aspx" />
     <Content Include="Vista\Admin.js" />
+    <Content Include="Contact.aspx" />
     <Content Include="Vista\Create.aspx" />
     <Content Include="Vista\Documentation.aspx" />
     <Content Include="Vista\Editor.aspx" />
@@ -209,6 +210,7 @@
     <Content Include="Vista\imagenes\OnBar.svg" />
     <Content Include="Vista\imagenes\pencil-fill.svg" />
     <Content Include="Vista\imagenes\person-badge.svg" />
+    <Content Include="Vista\imagenes\person-lines-fill.svg" />
     <Content Include="Vista\imagenes\projectsBack.svg" />
     <Content Include="Vista\imagenes\Propbar.svg" />
     <Content Include="Vista\imagenes\regbox.svg" />
@@ -240,6 +242,7 @@
     <Content Include="Vista\InfoUsuario.aspx" />
     <Content Include="Vista\InfoUsuario.js" />
     <Content Include="Vista\mycss\Admin.css" />
+    <Content Include="Vista\mycss\Contact.css" />
     <Content Include="Vista\mycss\create.css" />
     <Content Include="Vista\mycss\Documentacion.css" />
     <Content Include="Vista\mycss\Editor.css" />
@@ -302,6 +305,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\ClAdminD.cs" />
     <Compile Include="Datos\ClConexion.cs" />
     <Compile Include="Datos\ClEstadoD.cs" />
     <Compile Include="Datos\ClProcesosSQL.cs" />
@@ -320,10 +324,13 @@
     <Compile Include="Entidades\ClCompartirProj.cs" />
     <Compile Include="Entidades\ClCompartirUserInfo.cs" />
     <Compile Include="Entidades\ClEstadoE.cs" />
+    <Compile Include="Entidades\ClImagenSolicitudE.cs" />
     <Compile Include="Entidades\ClproyectoE.cs" />
     <Compile Include="Entidades\ClRecuperacionE.cs" />
     <Compile Include="Entidades\ClRolE.cs" />
     <Compile Include="Entidades\ClSavedProjE.cs" />
+    <Compile Include="Entidades\ClSolitudE.cs" />
+    <Compile Include="Entidades\ClTipoSolicitudE.cs" />
     <Compile Include="Entidades\ClUsuarioE.cs" />
     <Compile Include="Entidades\ClVerificacionE.cs" />
     <Compile Include="Global.asax.cs">
@@ -336,6 +343,7 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logica\AdminL.cs" />
     <Compile Include="Logica\ClEncript.cs" />
     <Compile Include="Logica\ClEstadoL.cs" />
     <Compile Include="Logica\ClProyectoL.cs" />
@@ -378,6 +386,13 @@
     </Compile>
     <Compile Include="Vista\Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
@@ -507,6 +522,7 @@
   <ItemGroup>
     <Folder Include="Users\Generated\" />
     <Folder Include="Users\Projects\" />
+    <Folder Include="Users\Solicitudes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

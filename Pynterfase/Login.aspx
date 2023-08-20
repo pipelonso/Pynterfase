@@ -22,7 +22,7 @@
                 <h1 class="ongray" style="position:relative; top:-15px;">LOGIN</h1>
                 <br />
                 <p>CORREO</p>
-                <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass=" w-100 form-text text-center align-content-center txtcajas text-white"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" placeholder="Correo" CssClass=" w-100 form-text text-center align-content-center txtcajas text-white" TextMode="Email"></asp:TextBox>
                 <br />
                 <br />
                 <p>CONTRASEÑA</p>

@@ -24,6 +24,10 @@
                         <asp:LinkButton ID="btnDocumentación" OnClick="btnDocumentación_Click" runat="server" CssClass="btn navbar text-decoration-none text-white onbtn mx-2"> <img src="Vista/imagenes/code-square.svg" alt="Doc Icon" class="nav-item mx-2" style="height:20px;"/><p class="nav-item mx-2" style="position:relative; top:10px;">Documentación</p></asp:LinkButton>
 
                     </div>
+                    <div class="nav-item">
+                        <asp:LinkButton ID="btnGotoContacto" OnClick="btnGotoContacto_Click" runat="server" CssClass="btn navbar text-decoration-none text-white onbtn mx-2"> <img src="Vista/imagenes/person-lines-fill.svg" alt="Doc Icon" class="nav-item mx-2" style="height:20px;"/><p class="nav-item mx-2" style="position:relative; top:10px;">Contacto</p></asp:LinkButton>
+
+                    </div>
                 </div>
 
                 <div class="nav-item navbar my-0">

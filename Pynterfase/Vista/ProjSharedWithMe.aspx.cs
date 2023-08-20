@@ -15,6 +15,14 @@ namespace Pynterfase.Vista
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["usuario"].ToString() == null || Session["usuario"].ToString() == "")
+            {
+
+                Response.Redirect("~/Login.aspx");
+
+            }
+
+
             ClusuarioL objUSL = new ClusuarioL();
             ClUsuarioE objUSD = objUSL.mtdGetAllUser(Session["usuario"].ToString());
             if (!IsPostBack) {
@@ -40,6 +48,8 @@ namespace Pynterfase.Vista
             RepeaterItem item = (RepeaterItem)btn.NamingContainer;
             Label lblId = (Label)item.FindControl("lblId");
             int idProyecto = Convert.ToInt32(lblId.Text);
+
+            Session["retorno"] = "swm";
 
             Response.Redirect("~/Vista/Editor.aspx?iPr=" + idProyecto);
 

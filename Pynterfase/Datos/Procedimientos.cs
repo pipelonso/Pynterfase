@@ -58,6 +58,24 @@ namespace Pynterfase.Datos
 
         }
 
+        public int AddContactMessage(ClSolitudE objSolicitud)
+        {
+
+            string exec = "";
+            exec += "DECLARE @newIdSolicitud INT;\n";
+            exec += "EXEC insgetSolicitud\n";
+            exec += "@idTipoSolicitud = 1,\n";
+            exec += "@Titulo = 'Floppa2',\n";
+            exec += "@Correo = 'andresfelipeibanezcuta2@gmail.com',\n";
+            exec += "@Mensaje = 'La lechuga es un buen alimento',\n";
+            exec += "@idSolicitud = @newIdSolicitud OUTPUT;\n";
+            exec += "SELECT CAST(@newIdSolicitud AS INT) AS 'id';";
+
+            ClProcesosSQL objSQL = new ClProcesosSQL();
+            DataTable datos = objSQL.mtdconsultar(exec);
+            return int.Parse(datos.Rows[0]["id"].ToString());
+
+        }
 
     }
 }

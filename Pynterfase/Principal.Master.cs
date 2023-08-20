@@ -61,5 +61,10 @@ namespace Pynterfase
             Response.Redirect("~/Documentation.aspx");
 
         }
+
+        protected void btnGotoContacto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Contact.aspx");
+        }
     }
 }

@@ -80,6 +80,8 @@ namespace Pynterfase.Vista
             Label lblIdProyecto = (Label)item.FindControl("lblIdProyecto");
             int idProyecto = Convert.ToInt32(lblIdProyecto.Text);
 
+            Session["retorno"] = "proj";
+
             Response.Redirect("~/Vista/Editor.aspx?iPr=" + idProyecto);
 
         }
