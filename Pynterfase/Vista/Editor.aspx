@@ -13,19 +13,25 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="p-4" id="dimgenPanel">
 
-        <div id="canvasDimPanel" class="bg-light cajasanim">
-            <h4 class="m-2">Fila la resolución del lienzo para poder trabajar</h4>
+        
+        <div id="canvasDimPanel" class="bg-dark cajasanim rounded-3 text-white p-2">
+            <h4 class="m-2 my-2 text-center">Fila la resolución del lienzo para poder trabajar</h4>            
             <div class="container-fluid">
+                <hr />
                 <p>Ancho de la ventana</p>
                 <%--<asp:TextBox ID="txtAncho" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>--%>
                 <input type="number" name="name" value="" id="txtAncho" class="w-100 txtcajas" />
+                <hr />
                 <p>Alto de la ventana</p>
                 <%--<asp:TextBox ID="txtAlto" runat="server" placeholder="1000" CssClass="w-100 txtcajas"></asp:TextBox>--%>
                 <input type="number" name="name" value="" id="txtAlto" class="w-100 txtcajas" />
+                <hr />
                 <p>Titulo de la ventana</p>
                 <%--<asp:TextBox ID="txtTitle" runat="server" placeholder="Titulo" CssClass="w-100 txtcajas"></asp:TextBox>--%>
                 <input type="text" name="name" value="" id="txtTitle" class="w-100 txtcajas" />
+                <hr />
             </div>
 
             <br />
@@ -69,121 +75,131 @@
 
         </div>
 
-        <div class="container-fluid bg-dark cajasanim text-white" id="editWindowSizePanel">
-            <input type="button" name="name" value="" class="closebtn my-2" onclick="CloseEditWindowSizePanel();" />
-            <hr />
-            <p class="mx-2 my-2 text-center">Ancho de la ventana</p>
-            <input type="number" name="txtAnchoH" value="" id="txtAnchoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-            <p class="mx-2 text-center">Alto de la ventana</p>
-            <input type="number" name="txtAltoH" value="" id="txtAltoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
-            <input type="button" name="name" value="Cambiar tamaño de la ventana" class="my-2 w-100 botones" onclick="IntoResizeCanvas();" />
-            <hr />
-            <p class="text-center">Selecciona un nombre para tu ventana</p>
-            <input type="text" name="name" value="" class="my-2 w-100 txtcajas" id="txtlienzoname" onkeydown="return handleKeyDown(event);" placeholder="Nombre" />
-            <%--<input type="button" name="name" value="Colocar nombre a la ventana" class="w-100 botones" />--%>
-            <div class="container navbar">
-                <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
-                <div class="container-fluid nav-item col-12 col-sm-12 col-md-10 col-lg-6 checkscontainer">
+        </div>
+        <div class="p-3" id="editwindowsizePanelGeneral">
 
-                    <asp:CheckBox ID="Chkeditresizable" runat="server" Text="Tamaño de pantalla escalable" CssClass=" my-1 w-100 chekers" />
+            <div class="container-fluid rounded-2 bg-dark cajasanim text-white" id="editWindowSizePanel">
+                <input type="button" name="name" value="" class="closebtn my-2" onclick="CloseEditWindowSizePanel();" />
+                <hr />
+                <p class="mx-2 my-2 text-center">Ancho de la ventana</p>
+                <input type="number" name="txtAnchoH" value="" id="txtAnchoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                <p class="mx-2 text-center">Alto de la ventana</p>
+                <input type="number" name="txtAltoH" value="" id="txtAltoH" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
+                <input type="button" name="name" value="Cambiar tamaño de la ventana" class="my-2 w-100 botones" onclick="IntoResizeCanvas();" />
+                <hr />
+                <p class="text-center">Selecciona un nombre para tu ventana</p>
+                <input type="text" name="name" value="" class="my-2 w-100 txtcajas" id="txtlienzoname" onkeydown="return handleKeyDown(event);" placeholder="Nombre" />
+                <%--<input type="button" name="name" value="Colocar nombre a la ventana" class="w-100 botones" />--%>
+                <div class="container navbar">
+                    <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
+                    <div class="container-fluid nav-item col-12 col-sm-12 col-md-10 col-lg-6 checkscontainer">
 
-                    <asp:CheckBox ID="ChkeditMaximizable" runat="server" Text="Ventana Maximizable" CssClass="my-1 w-100 chekers" />
+                        <asp:CheckBox ID="Chkeditresizable" runat="server" Text="Tamaño de pantalla escalable" CssClass=" my-1 w-100 chekers" />
 
-                    <asp:CheckBox ID="ChkeditMinimizable" runat="server" Text="Ventana Minimizable" CssClass="my-1 w-100 chekers" />
+                        <asp:CheckBox ID="ChkeditMaximizable" runat="server" Text="Ventana Maximizable" CssClass="my-1 w-100 chekers" />
 
-                    <asp:CheckBox ID="ChkeditFullScrean" runat="server" Text="Pantalla completa" CssClass="my-1 w-100 chekers" />
+                        <asp:CheckBox ID="ChkeditMinimizable" runat="server" Text="Ventana Minimizable" CssClass="my-1 w-100 chekers" />
 
-                    <asp:CheckBox ID="ChkeditShowTaskbar" runat="server" Text="Mostrar en barra de tareas" CssClass="my-1 w-100 chekers" />
+                        <asp:CheckBox ID="ChkeditFullScrean" runat="server" Text="Pantalla completa" CssClass="my-1 w-100 chekers" />
 
-                    <asp:CheckBox ID="ChkeditTransparent" runat="server" Text="Habilitar transparencias" CssClass="my-1 w-100 chekers" />
+                        <asp:CheckBox ID="ChkeditShowTaskbar" runat="server" Text="Mostrar en barra de tareas" CssClass="my-1 w-100 chekers" />
 
-                    <asp:CheckBox ID="ChkeditAlwaysInFront" runat="server" Text="Siempre arriba" CssClass="my-1 w-100 chekers" />
+                        <asp:CheckBox ID="ChkeditTransparent" runat="server" Text="Habilitar transparencias" CssClass="my-1 w-100 chekers" />
 
-                    <asp:CheckBox ID="ChkeditShowCursor" runat="server" Text="Mostrar Cursor del raton" Checked="True" CssClass="my-1 w-100 chekers" />
+                        <asp:CheckBox ID="ChkeditAlwaysInFront" runat="server" Text="Siempre arriba" CssClass="my-1 w-100 chekers" />
 
-                    <asp:CheckBox ID="ChkeditTakeFocus" runat="server" Text="Obtener el foco inicial" CssClass="my-1 w-100 chekers" />
+                        <asp:CheckBox ID="ChkeditShowCursor" runat="server" Text="Mostrar Cursor del raton" Checked="True" CssClass="my-1 w-100 chekers" />
 
-                    <asp:CheckBox ID="ChkeditAutoMeasure" runat="server" Text="Ajustar tamaño al contenido" Checked="True" CssClass="my-1 w-100 chekers" />
+                        <asp:CheckBox ID="ChkeditTakeFocus" runat="server" Text="Obtener el foco inicial" CssClass="my-1 w-100 chekers" />
 
+                        <asp:CheckBox ID="ChkeditAutoMeasure" runat="server" Text="Ajustar tamaño al contenido" Checked="True" CssClass="my-1 w-100 chekers" />
+
+                    </div>
+                    <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
                 </div>
-                <div class="nav-item col-12 col-sm-12 col-md-2 col-lg-3"></div>
+                <br />
+                <p>Color de fondo de la ventana</p>
+                <input type="color" name="name" value="" id="ChBGColor" class="botones my-2 mx-3 w-25" />
+                <%--<asp:TextBox ID="txtBGColor" runat="server" placeholder="####" CssClass="txtcajas my-2 mx-3"></asp:TextBox>--%>
+                <input type="button" name="btnShowColorPalete" value="Elegir" id="BtnsetBgColor" class="botones my-2 mx-3" onclick="setBGColor();" />
+               
             </div>
-            <br />
-            <p>Color de fondo de la ventana</p>
-            <input type="color" name="name" value="" id="ChBGColor" class="botones my-2 mx-3 w-25" />
-            <%--<asp:TextBox ID="txtBGColor" runat="server" placeholder="####" CssClass="txtcajas my-2 mx-3"></asp:TextBox>--%>
-            <input type="button" name="btnShowColorPalete" value="Elegir" id="BtnsetBgColor" class="botones my-2 mx-3" onclick="setBGColor();" />
-            <hr />
+
         </div>
 
-        <div class="container-fluid bg-dark">
-            <input type="button" name="name" value="" class="closebtn my-2" id="closePrivacy" onclick="ClosePrivacyPanel();" />
-            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-            <div class="navbar col-12">
+        <div class="p-4" id="PrivacyPanelGen">
 
-                <div id="ProjectUsersPanel" class="nav-item col-12 col-sm-12 col-lg-6 col-md-6 ">
-                    <p class="text-white text-center">Quien tiene acceso al proyecto</p>
-                    <div class="container-fluid" style="overflow: auto; height: 300px;">
 
-                        <div class="navbar">
-                            <p class="nav-item mx-2 text-white col-1">Agregar usuario por correo</p>
-                            <div class="nav-item col-10 navbar">
-                                <asp:TextBox ID="txtSearchCorreo" runat="server" CssClass="w-75 txtcajas nav-item"></asp:TextBox>
-                                <asp:Button ID="btnAddUser" runat="server" Text="" CssClass="btnAddUser nav-item" OnClick="btnAddUser_Click" />
-                            </div>
-                        </div>
-                        <asp:Repeater ID="RPUsers" runat="server" OnItemCommand="RPUsers_ItemCommand" OnItemDataBound="RPUsers_ItemDataBound" ValidateRequestMode="Disabled">
-                            <ItemTemplate>
-                                <div class="navbar  isuserbox container-fluid my-2 p-2">
-                                    <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
-                                        <asp:Label ID="lblNombreUserRP" runat="server" Text='<%# Eval("nombre") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
-                                        <asp:Label ID="lblCorreoRp" runat="server" Text='<%# Eval("correo") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
-                                        <asp:Image ID="imgUserRP" runat="server" ImageUrl='<%# Eval("imagenUsuario") %>' CssClass="nav-item mx-2 imgUser" Height="40px" Width="40px" />
-                                    </div>
-                                    <asp:CheckBox ID="chkEditableUser" runat="server" CssClass="nav-item mx-2 col-sm-1 col-md-1 col-lg-1 text-white" Text="Puede editar" Checked='<%# Eval("editable") %>' />
+            <div class="container-fluid bg-dark rounded-3">
+                
+                    <input type="button" name="name" value="" class="closebtn my-5" id="closePrivacy" onclick="ClosePrivacyPanel();" />
+                        
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <div class="navbar col-12">
 
-                                    <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1 my-2" OnClick="btnDeleteUserRp_Click" />
-                                    <asp:Button ID="btnUpdateUser" runat="server" Text="Actualizar" CssClass="botones col-sm-12 col-md-12 col-lg-12" OnClick="btnUpdateUser_Click1" />
+                    <div id="ProjectUsersPanel" class="nav-item col-12 col-sm-12 col-lg-6 col-md-6 ">
+                        <p class="text-white text-center">Quien tiene acceso al proyecto</p>
+                        <div class="container-fluid" style="overflow: auto; height: 300px;">
+
+                            <div class="navbar">
+                                <p class="nav-item mx-2 text-white col-1">Agregar usuario por correo</p>
+                                <div class="nav-item col-10 navbar">
+                                    <asp:TextBox ID="txtSearchCorreo" runat="server" CssClass="w-75 txtcajas nav-item"></asp:TextBox>
+                                    <asp:Button ID="btnAddUser" runat="server" Text="" CssClass="btnAddUser nav-item" OnClick="btnAddUser_Click" />
                                 </div>
-
-                            </ItemTemplate>
-                        </asp:Repeater>
-
-                    </div>
-                </div>
-
-                <div id="PrivacyPanel" class="nav-item container-fluid col-12 col-sm-12 col-lg-6 col-md-6">
-                    <%--<input type="button" name="name" value="" id="btnclosePrivacy" class="my-2 closebtn" />--%>
-                    <p class="text-center text-white w-100">CAMBIAR PRIVACIDAD DEL PROYECTO</p>
-                    <asp:DropDownList ID="ddlPrivacyProps" runat="server" CssClass="my-2 botones w-100 bg-dark"></asp:DropDownList>
-
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
-                            <div class="w-100">
-                                <asp:Button ID="btnChangePrivacy" runat="server" Text="APLICAR CAMBIOS" CssClass="botones w-100" OnClick="btnChangePrivacy_Click" />
                             </div>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                    <div id="shareSection" class="">
-                        <p class=" text-white text-center">COPIAR URL</p>
-                        <div class="navbar justify-content-center w-100">
-                            <input type="button" name="name" value="" class="btnshare my-2  mx-2 p-2 nav-item" onclick="copyURL();" />
+                            <asp:Repeater ID="RPUsers" runat="server" OnItemCommand="RPUsers_ItemCommand" OnItemDataBound="RPUsers_ItemDataBound" ValidateRequestMode="Disabled">
+                                <ItemTemplate>
+                                    <div class="navbar  isuserbox container-fluid my-2 p-2">
+                                        <div class="nav-item navbar col-sm-10 col-md-10 col-lg-10">
+                                            <asp:Label ID="lblNombreUserRP" runat="server" Text='<%# Eval("nombre") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
+                                            <asp:Label ID="lblCorreoRp" runat="server" Text='<%# Eval("correo") %>' CssClass="nav-item mx-2 text-white"></asp:Label>
+                                            <asp:Image ID="imgUserRP" runat="server" ImageUrl='<%# Eval("imagenUsuario") %>' CssClass="nav-item mx-2 imgUser" Height="40px" Width="40px" />
+                                        </div>
+                                        <asp:CheckBox ID="chkEditableUser" runat="server" CssClass="nav-item mx-2 col-sm-1 col-md-1 col-lg-1 text-white" Text="Puede editar" Checked='<%# Eval("editable") %>' />
+
+                                        <asp:Button ID="btnDeleteUserRp" runat="server" Text="" CssClass="btnDeleteUser nav-item mx-2 col-sm-1 col-md-1 col-lg-1 my-2" OnClick="btnDeleteUserRp_Click" />
+                                        <asp:Button ID="btnUpdateUser" runat="server" Text="Actualizar" CssClass="botones col-sm-12 col-md-12 col-lg-12" OnClick="btnUpdateUser_Click1" />
+                                    </div>
+
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+                        </div>
+                    </div>
+
+                    <div id="PrivacyPanel" class="nav-item container-fluid col-12 col-sm-12 col-lg-6 col-md-6">
+                        <%--<input type="button" name="name" value="" id="btnclosePrivacy" class="my-2 closebtn" />--%>
+                        <p class="text-center text-white w-100">CAMBIAR PRIVACIDAD DEL PROYECTO</p>
+                        <asp:DropDownList ID="ddlPrivacyProps" runat="server" CssClass="my-2 botones w-100 bg-dark"></asp:DropDownList>
+
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <div class="w-100">
+                                    <asp:Button ID="btnChangePrivacy" runat="server" Text="APLICAR CAMBIOS" CssClass="botones w-100" OnClick="btnChangePrivacy_Click" />
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                        <div id="shareSection" class="">
+                            <p class=" text-white text-center">COPIAR URL</p>
+                            <div class="navbar justify-content-center w-100">
+                                <input type="button" name="name" value="" class="btnshare my-2  mx-2 p-2 nav-item" onclick="copyURL();" />
+                            </div>
+
                         </div>
 
+
                     </div>
 
 
-                </div>
 
+
+                </div>
 
 
 
             </div>
-
-
-
         </div>
-
 
 
 
@@ -237,7 +253,7 @@
                 <img src="imagenes/cloud-check-fill.svg" alt="onsaveFileimg" class="mx-2" style="height: 30px" id="saveIndicatorIMG" />
             </div>
             <div>
-                <input type="button" name="name" value="EXPORTAR" class="botones mx-2" onclick="showExportPanel();" />
+                <input type="button" name="name" value="EXPORTAR" class="botones mx-2" onclick="showExportPanel();" id="exportbtn"/>
             </div>
         </div>
 
@@ -451,7 +467,7 @@
                             </select>
                             <hr />
                             <%--<input type="text" id="txtLabelTKanchor" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
-                            <p>bg</p>
+                            <p>Background</p>
                             <input type="color" id="txtLabelTKbg" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>cursor</p>
@@ -483,7 +499,7 @@
                             </select>
                             <hr />
                             <%--<input type="text" id="txtLabelTKfont" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />--%>
-                            <p>fg</p>
+                            <p>Foreground</p>
                             <input type="color" id="txtLabelTKfg" class="w-100 txtcajas" onkeydown="return handleKeyDown(event);" />
                             <hr />
                             <p>height</p>

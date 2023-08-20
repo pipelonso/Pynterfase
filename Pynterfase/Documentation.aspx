@@ -17,31 +17,31 @@
 
             <ul>
                 <li>
-                    <a href="#divIndice">Indice</a>
+                    <a href="#divIndice" class="text-white">Indice</a>
                 </li>
                 <li>
-                    <a href="#divTkinter">Tkinter</a>
+                    <a href="#divTkinter" class="text-white">Tkinter</a>
                 </li>
                 <li>
-                    <a href="#divCreate">Crear un proyecto</a>
+                    <a href="#divCreate" class="text-white">Crear un proyecto</a>
                 </li>
                 <li>
-                    <a href="#divButton">Botones</a>
+                    <a href="#divButton" class="text-white">Botones</a>
                 </li>
                 <li>
-                    <a href="#divLabel">Labels</a>
+                    <a href="#divLabel" class="text-white">Labels</a>
                 </li>
                 <li>
-                    <a href="#divInput">Entry</a>
+                    <a href="#divInput" class="text-white">Entry</a>
                 </li>
                 <li>
-                    <a href="#divCheck">Checkbox</a>
+                    <a href="#divCheck" class="text-white">Checkbox</a>
                 </li>
                 <li>
-                    <a href="#divPrivacy">Privacidad de contenido</a>
+                    <a href="#divPrivacy" class="text-white">Privacidad de contenido</a>
                 </li>
                 <li>
-                    <a href="#divShare">Compartir proyectos</a>
+                    <a href="#divShare" class="text-white">Compartir proyectos</a>
                 </li>
             </ul>
 
