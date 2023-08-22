@@ -95,7 +95,7 @@ namespace Pynterfase.Vista
 
                             List<string> rutasimg = new List<string>(); 
 
-                            for (int i = 0; i < flIMG.PostedFiles.Count; i++)
+                            for (int i = 0; i < listaImagenes.Count; i++)
                             {
 
                                 rutas = Server.MapPath("~/Users/Solicitudes/" + res + " " + i + ".png");
@@ -103,8 +103,12 @@ namespace Pynterfase.Vista
                                 rutasimg.Add(rutas);
 
                             }
+                            if (rutasimg.Count >= 1)
+                            {
+                                int resimg = objAdminL.mtdRegisterImages(listaImagenes, res, rutasimg);
+                            }
 
-                            int resimg = objAdminL.mtdRegisterImages(listaImagenes, res, rutasimg);
+                            
                             
                             
 
