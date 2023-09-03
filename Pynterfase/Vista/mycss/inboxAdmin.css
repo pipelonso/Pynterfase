@@ -1,0 +1,33 @@
+﻿body {
+    background-image: url('../imagenes/bg_inbox.svg');
+    background-size : cover;
+}
+.botones {
+    border: solid;
+    border-color: lightgray;
+    border-width: 1px;
+    /*background-color: black;*/
+    background-image: url('../imagenes/buttons/btn_base_1.svg');
+    background-size: cover;
+    color: white;
+    border-radius: 3px;
+}
+
+    .botones:hover {
+        border: double;
+        border-color: dimgray;
+        border-width: 1px;
+        /*background-color: lightslategray;*/
+        background-image: url('../imagenes/buttons/btn_base_hover_1.svg');
+        background-size: cover;
+    }
+
+.txtcajas {
+    color: white;
+    border: none;
+    border-bottom: solid;
+    border-color: lightgray;
+    border-width: 1px;
+    background-color: rgb(25, 25, 25);
+    border-radius: 5px;
+}

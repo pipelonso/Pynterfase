@@ -11,6 +11,15 @@
 
         <h1 class="text-white my-2   " style="background-image : url('imagenes/OnBar.svg'); padding : 10px; border-radius : 5px; animation : fadeInUp; animation-duration : 1s; " >Administración</h1>
 
+        <div>
+            <asp:LinkButton ID="lkbMensajes" runat="server" CssClass="text-decoration-none text-white " OnClick="lkbMensajes_Click">
+                <div class="navbar justify-content-start">
+                    <img style="height:30px;" src="imagenes/massageAdmin.svg" alt="mesaggeIcon" class="nav-item mx-2" />
+                    <p class="nav-item text-decoration-none my-2" style="font-size:20px">Ver Solicitudes</p>
+                </div>                
+            </asp:LinkButton>
+        </div>
+
         <div class="navbar cajasanim">
 
             <div class="nav-item col-12 col-sm-12 col-md-5 col-lg-6 p-2 text-white">

@@ -3,6 +3,7 @@
     <link href="Content/animate.css" rel="stylesheet" />
     <link href="Vista/css/bootstrap.min.css" rel="stylesheet" />
     <link href="Vista/mycss/Contact.css" rel="stylesheet" />
+    <link href="Styles/sweetalert.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="p-2 text-white">
@@ -24,7 +25,7 @@
             <p>Mensaje :: Expecifica tu caso, solicitud o queja</p>
             <asp:TextBox ID="txtMensaje" runat="server" TextMode="MultiLine" placeholder="Tu mensaje aqui" CssClass="w-100 txtcajas"></asp:TextBox>
             <hr />
-            <asp:FileUpload ID="flIMG" runat="server" AllowMultiple="True" CssClass="w-100 txtcajas" ValidateRequestMode="Disabled" />
+            <asp:FileUpload ID="flIMG" runat="server" AllowMultiple="false" CssClass="w-100 txtcajas" ValidateRequestMode="Disabled" />
             
 
             
@@ -32,5 +33,8 @@
             <asp:Button ID="btnEnviar" runat="server" Text="ENVIAR" CssClass="isbtn w-100" OnClick="btnEnviar_Click"/>
         </div>
 
+        <script src="Scripts/sweetalert.min.js"></script>
+        <script src="Vista/alertManager.js"></script>
+        <script src="Vista/js/bootstrap.min.js"></script>
     </div>   
 </asp:Content>

@@ -64,10 +64,10 @@ namespace Pynterfase.Datos
             string exec = "";
             exec += "DECLARE @newIdSolicitud INT;\n";
             exec += "EXEC insgetSolicitud\n";
-            exec += "@idTipoSolicitud = 1,\n";
-            exec += "@Titulo = 'Floppa2',\n";
-            exec += "@Correo = 'andresfelipeibanezcuta2@gmail.com',\n";
-            exec += "@Mensaje = 'La lechuga es un buen alimento',\n";
+            exec += "@idTipoSolicitud = "+objSolicitud.idTipoSolicitud+",\n";
+            exec += "@Titulo = '"+objSolicitud.Titulo+"',\n";
+            exec += "@Correo = '"+objSolicitud.Correo+"',\n";
+            exec += "@Mensaje = '"+objSolicitud.Mensaje+"',\n";
             exec += "@idSolicitud = @newIdSolicitud OUTPUT;\n";
             exec += "SELECT CAST(@newIdSolicitud AS INT) AS 'id';";
 

@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="115.96551"
-     inkscape:cy="50.558135"
+     inkscape:zoom="4"
+     inkscape:cx="217.375"
+     inkscape:cy="28.75"
      inkscape:window-width="1366"
      inkscape:window-height="745"
      inkscape:window-x="-8"
@@ -122,27 +122,6 @@
        style="display:inline;fill:none;stroke:#c5c5c5;stroke-width:0.165202;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        d="M 0,4.6119423 H 61.15974"
        id="path3685" />
-    <path
-       style="display:inline;fill:none;stroke:#c5c5c5;stroke-width:0.036;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       d="m 59.65965,2.8588428 -0.95518,-0.95518"
-       id="path3756" />
-    <path
-       style="display:inline;fill:none;stroke:#c5c5c5;stroke-width:0.036;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       d="m 59.65965,1.9036628 -0.95518,0.95518"
-       id="path3758" />
-    <path
-       style="display:inline;fill:none;stroke:#c5c5c5;stroke-width:0.072;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       d="m 57.96533,1.6735628 h -0.86067 v 0.86068 h 0.86067 z"
-       id="path3856" />
-    <path
-       style="display:inline;fill:none;stroke:#c5c5c5;stroke-width:0.046;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       d="m 57.5293,2.1096128 h -0.87549 v 0.87548 h 0.87549 z"
-       id="path3858"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       style="display:inline;fill:none;stroke:#c5c5c5;stroke-width:0.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       d="m 55.85799,2.5361028 h -1.32291 v -0.33073 h 1.32291 z"
-       id="path4586" />
     <path
        style="display:inline;fill:none;stroke:#c5c5c5;stroke-width:0.165137;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        d="M 61.07514,53.404573 H 0.07868"

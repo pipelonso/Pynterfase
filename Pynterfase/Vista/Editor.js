@@ -2851,7 +2851,7 @@ function GeneratePython() {
 }
 
 function DownLoad() {
-
+    GeneratePython();
     var txtpyGenerated = document.getElementById("txtpyGenerated");
 
     var pythonCode = txtpyGenerated.value;

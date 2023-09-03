@@ -9,7 +9,7 @@ namespace Pynterfase.Entidades
     {
 
         public int IdImagenSolicitud { get; set; }
-        public string idSolicitud { get; set; }
+        public int idSolicitud { get; set; }
         public string nombre { get; set; }
         public string Ruta { get; set; }
 

@@ -474,5 +474,10 @@ namespace Pynterfase.Vista
             
 
         }
+
+        protected void lkbMensajes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/InboxAdmin.aspx");
+        }
     }
 }

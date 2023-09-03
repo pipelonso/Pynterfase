@@ -138,6 +138,7 @@
     <Content Include="Vista\imagenes\back1.gif" />
     <Content Include="Vista\imagenes\backreglogin.gif" />
     <Content Include="Vista\imagenes\backselection.svg" />
+    <Content Include="Vista\imagenes\bg_inbox.svg" />
     <Content Include="Vista\imagenes\bignite.svg" />
     <Content Include="Vista\imagenes\box-arrow-in-right.svg" />
     <Content Include="Vista\imagenes\btnSavedOff.svg" />
@@ -206,6 +207,7 @@
     <Content Include="Vista\imagenes\Inicio\TrasnMintDeg.svg" />
     <Content Include="Vista\imagenes\leave.svg" />
     <Content Include="Vista\imagenes\LogRegBack3.gif" />
+    <Content Include="Vista\imagenes\massageAdmin.svg" />
     <Content Include="Vista\imagenes\normProj.svg" />
     <Content Include="Vista\imagenes\OnBar.svg" />
     <Content Include="Vista\imagenes\pencil-fill.svg" />
@@ -239,6 +241,8 @@
     <Content Include="Vista\imagenes\UserPics\24331490_4800_1_05.jpg" />
     <Content Include="Vista\imagenes\window_base.svg" />
     <Content Include="Vista\imagenes\x-circle.svg" />
+    <Content Include="Vista\InboxAdmin.aspx" />
+    <Content Include="Vista\inboxAdmin.js" />
     <Content Include="Vista\InfoUsuario.aspx" />
     <Content Include="Vista\InfoUsuario.js" />
     <Content Include="Vista\mycss\Admin.css" />
@@ -246,6 +250,7 @@
     <Content Include="Vista\mycss\create.css" />
     <Content Include="Vista\mycss\Documentacion.css" />
     <Content Include="Vista\mycss\Editor.css" />
+    <Content Include="Vista\mycss\inboxAdmin.css" />
     <Content Include="Vista\mycss\InfoUser.css" />
     <Content Include="Vista\mycss\Inicio.css" />
     <Content Include="Vista\mycss\PrincipalMaster.css" />
@@ -311,6 +316,7 @@
     <Compile Include="Datos\ClProcesosSQL.cs" />
     <Compile Include="Datos\ClProyectoD.cs" />
     <Compile Include="Datos\ClRolD.cs" />
+    <Compile Include="Datos\ClSolicitudD.cs" />
     <Compile Include="Datos\ClusuarioD.cs" />
     <Compile Include="Datos\Procedimientos.cs" />
     <Compile Include="Documentation.aspx.cs">
@@ -349,6 +355,7 @@
     <Compile Include="Logica\ClProyectoL.cs" />
     <Compile Include="Logica\ClRandomCodeGen.cs" />
     <Compile Include="Logica\ClRolL.cs" />
+    <Compile Include="Logica\ClSolicitudL.cs" />
     <Compile Include="Logica\ClusuarioL.cs" />
     <Compile Include="Logica\MailManager.cs" />
     <Compile Include="Login.aspx.cs">
@@ -428,6 +435,13 @@
     </Compile>
     <Compile Include="Vista\forgotpassword.aspx.designer.cs">
       <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\InboxAdmin.aspx.cs">
+      <DependentUpon>InboxAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\InboxAdmin.aspx.designer.cs">
+      <DependentUpon>InboxAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\InfoUsuario.aspx.cs">
       <DependentUpon>InfoUsuario.aspx</DependentUpon>

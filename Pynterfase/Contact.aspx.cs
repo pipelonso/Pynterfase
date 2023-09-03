@@ -4,6 +4,7 @@ using Pynterfase.Logica;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Web;
@@ -20,12 +21,17 @@ namespace Pynterfase.Vista
 
             if (!IsPostBack) { 
             
-                ddlSolicitud.Items.Clear();
-                ddlSolicitud.Items.Add("Recomendación");
-                ddlSolicitud.Items.Add("Reclamo");
-                ddlSolicitud.Items.Add("Problema");
-                ddlSolicitud.Items.Add("Felicitaciones");
-
+                //ddlSolicitud.Items.Clear();
+                //ddlSolicitud.Items.Add("Recomendación");
+                //ddlSolicitud.Items.Add("Reclamo");
+                //ddlSolicitud.Items.Add("Problema");
+                //ddlSolicitud.Items.Add("Felicitaciones");
+                ClSolicitudL objSolicitud = new ClSolicitudL();
+                List<ClTipoSolicitudE> ListaSolicitud = objSolicitud.GetAllTipoSolicitud();
+                ddlSolicitud.DataSource = ListaSolicitud;
+                ddlSolicitud.DataValueField = "idTipoSolicitud";
+                ddlSolicitud.DataTextField = "Nombre";
+                ddlSolicitud.DataBind();
 
             }
 
@@ -85,7 +91,7 @@ namespace Pynterfase.Vista
 
                             ClSolitudE objSolicitudE = new ClSolitudE();
 
-                            objSolicitudE.idTipoSolicitud = 1;
+                            objSolicitudE.idTipoSolicitud =  int.Parse(ddlSolicitud.SelectedValue);
                             objSolicitudE.Titulo = txtTitulo.Text;
                             objSolicitudE.Correo = txtMail.Text;
                             objSolicitudE.Mensaje = txtMensaje.Text;
@@ -98,9 +104,10 @@ namespace Pynterfase.Vista
                             for (int i = 0; i < listaImagenes.Count; i++)
                             {
 
-                                rutas = Server.MapPath("~/Users/Solicitudes/" + res + " " + i + ".png");
+                                rutas = Path.Combine(Server.MapPath("~/Users/Solicitudes/" + res + "_" + i + ".png"));
                                 flIMG.SaveAs(rutas);
-                                rutasimg.Add(rutas);
+                                string newruta = "~/Users/Solicitudes/" + res + "_" + i + ".png";
+                                rutasimg.Add(newruta);
 
                             }
                             if (rutasimg.Count >= 1)
@@ -109,15 +116,34 @@ namespace Pynterfase.Vista
                             }
 
                             
+                            if (res >= 1)
+                            {
+
+                                ScriptManager.RegisterStartupScript(this, GetType(), "succes", "successalert();", true);
+
+
+                            }
                             
                             
 
                         }
 
                     }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(),"camposfaltantes", "voidall();", true);
+                    }
 
                 }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "camposfaltantes", "voidall();", true);
+                }
 
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "camposfaltantes", "voidall();", true);
             }
              
         }
